@@ -3288,7 +3288,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name ="小go（维护中）",
     Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E6%B2%B3%E5%8C%97%E5%94%90%E5%8E%BF"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E6%B2%B3%E5%8C%97%E5%94%90%E5%8E%BF"))()
     end
 })
 Tab:AddButton({
@@ -3360,7 +3360,7 @@ local Section = Tab:AddSection({
 Tab:AddButton({
     Name="游戏v1",
     Callback=function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/ui"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/yujhvvghsjhgvshhs/refs/heads/main/V1"))()
   end
 })
 
@@ -3376,7 +3376,7 @@ local Section = Tab:AddSection({
 Tab:AddButton({
     Name="游戏v2",
     Callback=function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/ui1"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/Jsjhsbwbjsksnbebshs/refs/heads/main/V2"))()
   end
 })
 
