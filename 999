@@ -860,7 +860,7 @@ do
 			
 			utility:Tween(textbox.Button, {
 				Size = UDim2.new(0, 200, 0, 16),
-				Position = UDim2.new(1, -210, 0.5, -8)
+				Position = UDim2.new(1, -310, 0.5, -8)
 			}, 0.2)
 			
 			wait()
