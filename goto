@@ -67,7 +67,7 @@ Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/GTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"))()
-local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "xgo"})
+local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "krx"})
 local Tab = Window:MakeTab({
     Name = "用户",
     Icon = "rbxassetid://7734068321",
@@ -103,7 +103,7 @@ Tab:AddButton({
      setclipboard("3795512080")
   	end
 })
-选项卡:添加按钮({
+Tab:AddButton({
 	Name = "复制QQ群",
 	Callback = function()
      setclipboard("877251886")
@@ -836,7 +836,7 @@ Tab:AddButton({
 Tab:AddButton({
     Name ="goto飞车",
     Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E9%A3%9E%E8%BD%A6"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%A3%9E%E8%BD%A6"))()
     end
 })
 Tab:AddButton({
@@ -885,7 +885,7 @@ Tab:AddButton({
 Tab:AddButton({
     Name ="卡哇伊黑洞（可以锁人的哦）",
     Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%BB%91%E6%B4%9E",true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E9%BB%91%E6%B4%9E",true))()
     end
 })
 Tab:AddButton({
@@ -1659,7 +1659,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name ="小go制作",
     Callback = function()
-    loadstring(game:HttpGet(("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/DOORS%E9%BE%99%E6%94%B9")))()
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/DOORS%E9%BE%99%E6%94%B9")))()
     end
 })
 Tab:AddButton({
@@ -1683,7 +1683,7 @@ Tab:AddButton({
 Tab:AddButton({
     Name = "小go汉化版",
     Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/DOORS"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/DOORS"))()
     end
 })
 Tab:AddButton({
@@ -1787,7 +1787,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name ="小go力量传奇🕊️",
     Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/main/%E5%8A%9B%E9%87%8F%E4%BC%A0%E5%A5%87"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/main/%E5%8A%9B%E9%87%8F%E4%BC%A0%E5%A5%87"))()
     end
 })
 Tab:AddButton({
@@ -3285,7 +3285,12 @@ local Tab = Window:MakeTab({
     Icon = "rbxassetid://1000140976",
     PremiumOnly = false
 })
-
+Tab:AddButton({
+    Name ="小go（维护中）",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E6%B2%B3%E5%8C%97%E5%94%90%E5%8E%BF"))()
+    end
+})
 Tab:AddButton({
     Name ="皮",
     Callback = function()
