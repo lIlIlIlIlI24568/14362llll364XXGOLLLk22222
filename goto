@@ -67,7 +67,7 @@ Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/GTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"))()
-local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "xgo"})
+local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "krx"})
 local Tab = Window:MakeTab({
     Name = "用户",
     Icon = "rbxassetid://7734068321",
