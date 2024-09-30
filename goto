@@ -1884,6 +1884,12 @@ Tab:AddButton({
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ByNami/dkhub/main/Script", true))()
     end
 })
+Tab:AddButton({
+    Name ="国外脚本（VersionsV3.6.9）加载较慢",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/PawsThePaw/Plutonium.AA/refs/heads/main/Versions/V3.6.9.txt", true))()
+    end
+})
 
 Tab:AddButton({
     Name ="禁漫中心◇",
