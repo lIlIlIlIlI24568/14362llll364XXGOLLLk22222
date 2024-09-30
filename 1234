@@ -1,0 +1,3391 @@
+local CoreGui = game:GetService("StarterGui")
+
+CoreGui:SetCore("SendNotification", {
+    Title = "goto_O",
+    Text = "小go努力加载中..（启动反挂机系统）",
+    Duration = 6, 
+})
+
+CoreGui:SetCore("SendNotification", {
+    Title = "goto脚本",
+    Text = "🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️",
+    Duration = 7, 
+})
+
+CoreGui:SetCore("SendNotification", {
+    Title = "<(￣3￣)>哼！=☞盘他",
+    Text = "加载成功⸝ヽ(๏~๏)ﾉ",
+    Duration = 8, 
+})
+
+print("开启成功")
+		local vu = game:GetService("VirtualUser")
+		game:GetService("Players").LocalPlayer.Idled:connect(function()
+		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		   wait(1)
+		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		end)
+
+local LBLG = Instance.new("ScreenGui", getParent)
+local LBL = Instance.new("TextLabel", getParent)
+local player = game.Players.LocalPlayer
+LBLG.Name = "LBLG"
+LBLG.Parent = game.CoreGui
+LBLG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LBLG.Enabled = true
+LBL.Name = "LBL"
+LBL.Parent = LBLG
+LBL.BackgroundColor3 = Color3.new(1, 1, 1)
+LBL.BackgroundTransparency = 1
+LBL.BorderColor3 = Color3.new(0, 0, 0)
+LBL.Position = UDim2.new(0.75,0,0.010,0)
+LBL.Size = UDim2.new(0, 133, 0, 30)
+LBL.Font = Enum.Font.GothamSemibold
+LBL.Text = "TextLabel"
+LBL.TextColor3 = Color3.new(1, 1, 1)
+LBL.TextScaled = true
+LBL.TextSize = 14
+LBL.TextWrapped = true
+LBL.Visible = true
+
+local FpsLabel = LBL
+local Heartbeat = game:GetService("RunService").Heartbeat
+local LastIteration, Start
+local FrameUpdateTable = {}
+
+local function HeartbeatUpdate()
+	LastIteration = tick()
+	for Index = #FrameUpdateTable, 1, -1 do
+		FrameUpdateTable[Index + 1] = (FrameUpdateTable[Index] >= LastIteration - 1) and FrameUpdateTable[Index] or nil
+	end
+	FrameUpdateTable[1] = LastIteration
+	local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
+	CurrentFPS = CurrentFPS - CurrentFPS % 1
+	FpsLabel.Text = ("时间"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S").."秒")
+end
+Start = tick()
+Heartbeat:Connect(HeartbeatUpdate)
+
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/main/GTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"))()
+local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "krx"})
+local Tab = Window:MakeTab({
+    Name = "用户",
+    Icon = "rbxassetid://7734068321",
+    PremiumOnly = false
+})
+CoreGui:SetCore("SendNotification", {
+    Title = "goto_O",
+    Text = "小go欢迎各位",
+    Duration = 10, 
+})
+OrionLib:MakeNotification({
+	Name = "goto_O",
+	Content = "欢迎使用goto脚本",
+	Image = "rbxassetid://1000140976",
+	Time = 2
+})
+
+Tab:AddParagraph("小go为你查看账户年龄:"..player.AccountAge.."天")
+Tab:AddParagraph("用户名:"," "..game.Players.LocalPlayer.Name.."")
+Tab:AddParagraph("注入器查看:"," "..identifyexecutor().."")
+Tab:AddParagraph("服务器的ID"," "..game.GameId.."")
+Tab:AddParagraph("获取客户端ID:"..game:GetService("RbxAnalyticsService"):GetClientId())
+Tab:AddParagraph("服务器名称:"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
+local Tab =Window:MakeTab({
+	Name = "关于作者",
+	Icon = "rbxassetid://7734053495",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "复制作者QQ",
+	Callback = function()
+     setclipboard("3795512080")
+  	end
+})
+Tab:AddButton({
+	Name = "复制QQ群",
+	Callback = function()
+     setclipboard("877251886")
+  	end
+})
+local Section = Tab:AddSection({
+	Name = "💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗"
+})
+local Section = Tab:AddSection({
+	Name = "💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗"
+})
+OrionLib:MakeNotification({
+	Name = "稀🍚你 ",
+	Content = "持续更新",
+	Image = "rbxassetid://17360377302",
+	Time = 2
+})
+
+local Tab = Window:MakeTab({
+    Name = "小go音乐区",
+    Icon = "rbxassetid://18923878915",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="重新加入游戏 如果想换音乐只能重进",
+    Callback = function()
+      game:GetService("TeleportService"):TeleportToPlaceInstance(
+            game.PlaceId,
+            game.JobId,
+            game:GetService("Players").LocalPlayer
+        )
+    end
+})
+local Section = Tab:AddSection({ 
+       Name = "小go提示:音乐功无法关闭哦  "
+})
+Tab:AddButton({
+    Name ="Direct & Park Avenue - I'll Go 挺好听的", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://5410081298"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Rogue - Motion", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://7028557220"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Rome in Silver & Beach Season - Skin 和上一首一样，都挺好听的", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://7028570258"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="轻松", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1837871067"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="轻松2", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1837849285"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="轻松3 ", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1836842889"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Pixel Terror & Aviella - Enigma  女版", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://5410084645"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Grant - Color  女版", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://7023828725"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Til the Morning (a)女版", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1840041842"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="轻松7   女版", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1847606454"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="轻松8", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1839721437"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+local Section = Tab:AddSection({ 
+       Name = " Dj🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️"
+})
+Tab:AddButton({
+    Name ="Autotuned Dancing Roach  不知道怎么形容这电音", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://4050095124"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Dj", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1843497734"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Dj2", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://7028977687 "
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Dj3", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1836594449"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Dj4 ", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://792323017"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Dj5", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1842940193"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Robotic Dance A", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1837853076"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Parry Gripp - Pancake Robot", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://9245558138"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj8", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1837434037"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj9", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1839037193"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj10", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1837560230"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj11", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1842908121"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj12", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://9042493127"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj13", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1839246774"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj14", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1842940253"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj15", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://9041933055"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj16", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://5410086218"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj17", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1839703786"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj18", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1838627720"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj19", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://5410085763"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj20", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1839898469"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj21", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1848213471"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj22", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://5410080771"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj23", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1837843720"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj24", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1842802012"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj25", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1846863084"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj26", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1842802498"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj27", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1838075732"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj28", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://5410083226"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj29", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://792323017"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj30", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://7028913008"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj31", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://9042616023"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj32", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1847799916"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Rip the Guts Out", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1837814958"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Pixel Terror - Machina", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://5410080475"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="We Go Hard", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1842940420"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Fight Or Flight", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1842940300"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Alarm", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1845080313"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Parry Gripp - Last Train to Awesome Town", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://9245554658"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Uproar", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1842934837"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="The Will To Fight A", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1845793864"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Mindwinder (a)", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1838075377"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="dj42", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="FWLR - Hot", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://5410082534"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Noisestorm - Escape", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://5410082879"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Skull Crusher", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1842558494"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="45", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://9041932892"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Heist", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1836782065"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+
+
+
+local Section = Tab:AddSection({ 
+       Name = "休闲安逸快乐🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️"
+})
+Tab:AddButton({
+    Name ="Cute Story", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1839755231"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="快乐一点的", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://9039445224"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Swing it", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1843313385"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="Police 打鼓伴奏", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1842981634"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="睡眠歌曲 Baby Song", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1838998127"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+Tab:AddButton({
+    Name ="防空警报", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://792323017"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+    
+    Tab:AddButton({
+    Name ="义勇军进行曲", 
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1845918434"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+    
+    Tab:AddButton({
+    Name ="彩虹瀑布",
+    Callback =function()
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://1837879082"
+    sound.Parent = game.Workspace
+    sound:Play()
+    end
+})
+
+local Tab = Window:MakeTab({
+    Name = "如果fl不能用，可以启用这里",
+    Icon = "rbxassetid://1000140976",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="阿尔宙斯",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20X%20V3"))()
+    end
+})
+Tab:AddButton({
+    Name ="管理员注入 暂时无法使用，可能会被踢出去",
+    Callback = function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/iK4oS/backdoor.exe/master/source.lua'),true))()
+    end
+})
+Tab:AddButton({
+	Name = "管理员权限 可获得游戏内的通行证",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%AE%A1%E7%90%86%E5%91%98"))()
+end
+})
+
+local Tab = Window:MakeTab({
+    Name = "通用",
+    Icon = "rbxassetid://15613376871",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="玩家进入通知",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="小goFe合集",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/main/Fe"))()
+    end
+})
+ Tab:AddButton({
+	Name = "无限跳",
+    Default = false,
+	Callback = function(Value)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E6%97%A0%E9%99%90%E8%B7%B3", true))()
+	end
+})
+ Tab:AddButton({
+	Name = "踏空行走",
+	Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
+	end
+})
+Tab:AddButton({
+    Name ="小go 全图传送 地图点到哪传送哪",
+    Callback = function()
+    mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "小go全图内任意传送" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpack
+    end
+})
+Tab:AddButton({
+    Name ="铁拳（能打飞人）",
+    Callback = function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_rf6iQURzu1fqrytcnLBAvW34C9N55kS9g9G3CKz086rC47M6632sEd4ZZYB0AYgV.lua.txt'),true))()
+    end
+})
+Tab:AddButton({
+    Name ="iw指令",
+    Callback =function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end
+})
+Tab:AddButton({
+    Name ="动作🎊",
+    Callback = function()
+    loadstring(game:HttpGet("https://yarhm.goteamst.com/scr?channel=afem"))()
+    end
+})
+Tab:AddButton({
+    Name ="goto飞车",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E9%A3%9E%E8%BD%A6"))()
+    end
+})
+Tab:AddButton({
+    Name ="goto制作小宇飞",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E4%B9%8B%E5%89%8D%E7%9A%84%E9%A3%9E%E8%A1%8C"))()
+    end
+})
+Tab:AddButton({
+    Name ="goto制作小宇飞1.5百倍飞行",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E5%B0%8F%E5%AE%87%E9%A3%9E"))()
+    end
+})
+Tab:AddButton({
+    Name ="黑洞小go汉化",
+    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E9%BB%91%E6%B4%9E2"))()
+    end
+})
+Tab:AddButton({
+    Name ="黑洞 汉化",
+    Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/jQd1HedN"))()
+    end
+})
+Tab:AddButton({
+    Name ="黑洞 0.4",
+    Callback = function()
+--blackhole script 0.4: fixed all issues
+loadstring(game:HttpGet('https://gist.githubusercontent.com/AxolotlBmgo/8888080921c2b426a32dd9ff587baff1/raw/d45e03afed3c1716f36523bbf6dd741d3d2aad00/gistfile1.txt'))()
+    end
+})
+Tab:AddButton({
+    Name ="黑洞v2",
+    Callback = function()
+    loadstring(game:HttpGet("https://pastefy.app/t0djamGi/raw"))()
+    end
+})
+Tab:AddButton({
+    Name ="黑洞v3",
+    Callback = function()
+    loadstring(game:HttpGet("https://pastefy.app/0eN0ONOw/raw"))()
+    end
+})
+Tab:AddButton({
+    Name ="卡哇伊黑洞（可以锁人的哦）",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E9%BB%91%E6%B4%9E",true))()
+    end
+})
+Tab:AddButton({
+    Name ="甩人通用",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E7%94%A9%E4%BA%BA%E9%80%9A%E7%94%A8"))()
+    end
+})
+Tab:AddButton({
+    Name ="反挂机",
+    Callback = function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/9fFu43FF"))()
+    end
+})
+Tab:AddButton({
+    Name ="骂人无违规",
+    Callback = function()
+    loadstring(game:GetObjects("rbxassetid://1262435912")[1].Source)()
+    end
+})
+Tab:AddButton({
+    Name ="F3X",
+    Callback = function()
+     loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+    end
+})
+Tab:AddButton({
+    Name ="工具包（三个经典工具）",
+    Callback = function()
+    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	  	
+    end
+})
+Tab:AddButton({
+    Name ="工具挂",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/StandAwekening.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="键盘",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+    end
+})
+Tab:AddButton({
+    Name ="光影菜单  小go推荐",
+    Callback = function()
+    loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Shader-RTX-New-12425"))()
+    end
+})
+Tab:AddButton({
+    Name ="RTX  图形画质",
+    Callback = function()
+     local light = game.Lighting
+        for i, v in pairs(light:GetChildren()) do
+            v:Destroy()
+        end
+
+        local ter = workspace.Terrain
+        local color = Instance.new("ColorCorrectionEffect")
+        local bloom = Instance.new("BloomEffect")
+        local sun = Instance.new("SunRaysEffect")
+        local blur = Instance.new("BlurEffect")
+
+        color.Parent = light
+        bloom.Parent = light
+        sun.Parent = light
+        blur.Parent = light
+
+      --enable or disable shit
+
+        local config = {
+            Terrain = true,
+            ColorCorrection = true,
+            Sun = true,
+            Lighting = true,
+            BloomEffect = true
+        }
+
+        --settings {
+
+        color.Enabled = false
+        color.Contrast = 0.15
+        color.Brightness = 0.1
+        color.Saturation = 0.25
+        color.TintColor = Color3.fromRGB(255, 222, 211)
+
+        bloom.Enabled = false
+        bloom.Intensity = 0.1
+
+        sun.Enabled = false
+        sun.Intensity = 0.2
+        sun.Spread = 1
+
+        bloom.Enabled = false
+        bloom.Intensity = 0.05
+        bloom.Size = 32
+        bloom.Threshold = 1
+
+        blur.Enabled = false
+        blur.Size = 6
+
+        --settings }
+
+        if config.ColorCorrection then
+            color.Enabled = true
+        end
+
+        if config.Sun then
+            sun.Enabled = true
+        end
+
+        if config.Terrain then
+             --settings {
+            ter.WaterWaveSize = 0.1
+            ter.WaterWaveSpeed = 22
+            ter.WaterTransparency = 0.9
+            ter.WaterReflectance = 0.05
+        --settings }
+        end
+        if config.Lighting then
+            -- settings {
+            light.Ambient = Color3.fromRGB(0, 0, 0)
+            light.Brightness = 4
+            light.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+            light.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+            light.ExposureCompensation = 0
+            light.FogColor = Color3.fromRGB(132, 132, 132)
+            light.GlobalShadows = true
+            light.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
+            light.Outlines = false
+        --settings }
+        end
+        local a = game.Lighting
+        a.Ambient = Color3.fromRGB(33, 33, 33)
+        a.Brightness = 5.69
+        a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+        a.ColorShift_Top = Color3.fromRGB(255, 247, 237)
+        a.EnvironmentDiffuseScale = 0.105
+        a.EnvironmentSpecularScale = 0.522
+        a.GlobalShadows = true
+        a.OutdoorAmbient = Color3.fromRGB(51, 54, 67)
+        a.ShadowSoftness = 0.18
+        a.GeographicLatitude = -15.525
+        a.ExposureCompensation = 0.75
+        b.Enabled = true
+        b.Intensity = 0.99
+        b.Size = 9999
+        b.Threshold = 0
+        local c = Instance.new("ColorCorrectionEffect", a)
+        c.Brightness = 0.015
+        c.Contrast = 0.25
+        c.Enabled = true
+        c.Saturation = 0.2
+        c.TintColor = Color3.fromRGB(217, 145, 57)
+        if getgenv().mode == "Summer" then
+            c.TintColor = Color3.fromRGB(255, 220, 148)
+        elseif getgenv().mode == "Autumn" then
+            c.TintColor = Color3.fromRGB(217, 145, 57)
+        else
+            warn("没选择模式！  小go🤔")
+            print("请选择一种模式")
+            b:Destroy()
+            c:Destroy()
+        end
+        local d = Instance.new("DepthOfFieldEffect", a)
+        d.Enabled = true
+        d.FarIntensity = 0.077
+        d.FocusDistance = 21.54
+        d.InFocusRadius = 20.77
+        d.NearIntensity = 0.277
+        local e = Instance.new("ColorCorrectionEffect", a)
+        e.Brightness = 0
+        e.Contrast = -0.07
+        e.Saturation = 0
+        e.Enabled = true
+        e.TintColor = Color3.fromRGB(255, 247, 239)
+        local e2 = Instance.new("ColorCorrectionEffect", a)
+        e2.Brightness = 0.2
+        e2.Contrast = 0.45
+        e2.Saturation = -0.1
+        e2.Enabled = true
+        e2.TintColor = Color3.fromRGB(255, 255, 255)
+        local s = Instance.new("SunRaysEffect", a)
+        s.Enabled = true
+        s.Intensity = 0.01
+        s.Spread = 0.146
+
+        print("小go  RTX图形加载完毕!")
+    end
+})
+Tab:AddButton({
+    Name ="光影v2",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
+    end
+})
+Tab:AddButton({
+    Name ="光影v4",
+    Callback = function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/gUceVJig'))()
+    end
+})
+Tab:AddButton({
+	Name = "替身",
+	Callback = function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrillexMe/SkrillexLoader/main/SkrillexLoadMain')))()
+    end
+})
+Tab:AddButton({
+	Name = "爬墙",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+    end
+})
+
+Tab:AddButton({
+    Name="立即死亡",
+    Callback= function()
+        game.Players.LocalPlayer.Character.Humanoid.Health=0
+    end
+})
+
+local Tab = Window:MakeTab({
+    Name = "通用2",
+    Icon = "rbxassetid://1000140976",
+    PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "小go制作玩家控制喜欢俄亥俄的，可以搭配起来超级好用",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6"))()
+end
+})
+Tab:AddButton({
+	Name = "小go超级无敌旋转",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E5%88%9D%E4%BB%A3%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()
+end
+})
+Tab:AddButton({
+	Name = "小go超级无敌旋转2.0",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()
+end
+})
+Tab:AddButton({
+	Name = "鼠标（手机非常不建议用）",
+	Callback = function()
+loadstring(game:HttpGet(('https://pastefy.ga/V75mqzaz/raw'),true))()
+	end
+})
+Tab:AddButton({
+    Name="锁定视角 摄像机",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E9%94%81%E5%AE%9A%E8%A7%86%E8%A7%92"))()
+  end
+})
+Tab:AddButton({
+    Name="小go 在外网找的几个道具",
+    Callback=function()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/b04e28198c8eeb1408921a1560792152/raw/67739a2bc571093976e6cd7e51fb526dedd75861/tools",true))()
+  end
+})
+
+local Tab = Window:MakeTab({
+    Name = "玩家",
+    Icon = "rbxassetid://1000140976",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "无敌",
+	Callback = function()
+local lp = game:GetService "Players".LocalPlayer
+
+if lp.Character:FindFirstChild "Head" then
+
+    local char = lp.Character
+
+    char.Archivable = true
+
+    local new = char:Clone()
+
+    new.Parent = workspace
+
+    lp.Character = new
+
+    wait(2)
+
+    local oldhum = char:FindFirstChildWhichIsA "Humanoid"
+
+    local newhum = oldhum:Clone()
+
+    newhum.Parent = char
+
+    newhum.RequiresNeck = false
+
+    oldhum.Parent = nil
+
+    wait(2)
+
+    lp.Character = char
+
+    new:Destroy()
+
+    wait(1)
+
+    newhum:GetPropertyChangedSignal("Health"):Connect(
+
+        function()
+
+            if newhum.Health <= 0 then
+
+                oldhum.Parent = lp.Character
+
+                wait(1)
+
+                oldhum:Destroy()
+
+            end
+
+        end)
+
+    workspace.CurrentCamera.CameraSubject = char
+
+    if char:FindFirstChild "Animate" then
+
+        char.Animate.Disabled = true
+
+        wait(.1)
+
+        char.Animate.Disabled = false
+
+    end
+
+    lp.Character:FindFirstChild "Head":Destroy()
+
+end
+
+end
+
+})
+
+Tab:AddButton({
+    Name ="重新加入游戏",
+    Callback = function()
+      game:GetService("TeleportService"):TeleportToPlaceInstance(
+            game.PlaceId,
+            game.JobId,
+            game:GetService("Players").LocalPlayer
+        )
+    end
+})
+Tab:AddButton({
+    Name ="保存游戏",
+    Callback = function()
+    saveinstance()
+    end
+})
+Tab:AddButton({
+    Name ="离开游戏",
+    Callback = function()
+      game:Shutdown()
+    end
+})
+Tab:AddButton({
+    Name ="最高帧率",
+    Callback = function()
+         setfpscap(999)
+    end
+})
+Tab:AddTextbox({
+	Name = "视角  目前有 Bug",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(V)
+		  game.Workspace.CurrentCamera.FieldOfView = v
+	end
+})
+Tab:AddTextbox({
+	Name = "血量 可能是假血",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.Health = Value
+	end
+})
+Tab:AddSlider({
+	Name = "速度!",
+	Min = 16,
+	Max = 200,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "数值",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end
+})
+Tab:AddSlider({
+	Name = "跳跃高度!",
+	Min = 50,
+	Max = 200,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "数值",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end
+})
+Tab:AddTextbox({
+	Name = "跳跃高度设置",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end
+})
+Tab:AddTextbox({
+	Name = "移动速度设置",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end
+})
+Tab:AddTextbox({
+	Name = "重力设置",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Workspace.Gravity = Value
+	end
+})
+Tab:AddToggle({
+
+	Name = "穿墙",
+
+	Default = false,
+
+	Callback = function(Value)
+
+		if Value then
+
+		    Noclip = true
+
+		    Stepped = game.RunService.Stepped:Connect(function()
+
+			    if Noclip == true then
+
+				    for a, b in pairs(game.Workspace:GetChildren()) do
+
+                        if b.Name == game.Players.LocalPlayer.Name then
+
+                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
+
+                                if v:IsA("BasePart") then
+
+                                    v.CanCollide = false
+
+                                end
+
+                            end
+
+                        end
+
+                    end
+
+			    else
+
+				    Stepped:Disconnect()
+
+			    end
+
+		    end)
+
+	    else
+
+		    Noclip = false
+
+	    end
+
+	end
+
+})
+Tab:AddButton({
+    Name ="穿墙汉化",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TtmScripter/OtherScript/main/Noclip"))()
+    end
+})
+Tab:AddToggle({
+	Name = "夜视",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+		    game.Lighting.Ambient = Color3.new(1, 1, 1)
+		else
+		    game.Lighting.Ambient = Color3.new(0, 0, 0)
+		end
+	end
+})
+Tab:AddToggle({
+	Name = "锁头 加入队伍检测",
+	Default = false,
+	Callback = function(Value)
+		_G.AimbotEnabled = Value
+
+		local Camera = workspace.CurrentCamera
+		local Players = game:GetService("Players")
+		local RunService = game:GetService("RunService")
+		local UserInputService = game:GetService("UserInputService")
+		local TweenService = game:GetService("TweenService")
+		local LocalPlayer = Players.LocalPlayer
+		local Holding = false
+
+		_G.TeamCheck = true
+		_G.AimPart = "Head"
+		_G.Sensitivity = 0
+
+		_G.CircleSides = 64
+		_G.CircleColor = Color3.fromRGB(255, 255, 255)
+		_G.CircleTransparency = 0.7
+		_G.CircleRadius = 80
+		_G.CircleFilled = false
+		_G.CircleVisible = false
+		_G.CircleThickness = 0
+
+		local FOVCircle = Drawing.new("Circle")
+		FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
+		FOVCircle.Radius = _G.CircleRadius
+		FOVCircle.Filled = _G.CircleFilled
+		FOVCircle.Color = _G.CircleColor
+		FOVCircle.Visible = _G.CircleVisible
+		FOVCircle.Radius = _G.CircleRadius
+		FOVCircle.Transparency = _G.CircleTransparency
+		FOVCircle.NumSides = _G.CircleSides
+		FOVCircle.Thickness = _G.CircleThickness
+
+		local function GetClosestPlayer()
+			local MaximumDistance = _G.CircleRadius
+			local Target = nil
+
+			for _, v in next, Players:GetPlayers() do
+				if v.Name ~= LocalPlayer.Name then
+					if _G.TeamCheck == true then
+						if v.Team ~= LocalPlayer.Team then
+							if v.Character ~= nil then
+								if v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
+									if v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("Humanoid").Health ~= 0 then
+										local ScreenPoint = Camera:WorldToScreenPoint(v.Character:WaitForChild("HumanoidRootPart", math.huge).Position)
+										local VectorDistance = (Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y) - Vector2.new(ScreenPoint.X, ScreenPoint.Y)).Magnitude
+
+										if VectorDistance < MaximumDistance then
+											Target = v
+										end
+									end
+								end
+							end
+						end
+					else
+						if v.Character ~= nil then
+							if v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
+								if v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("Humanoid").Health ~= 0 then
+									local ScreenPoint = Camera:WorldToScreenPoint(v.Character:WaitForChild("HumanoidRootPart", math.huge).Position)
+									local VectorDistance = (Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y) - Vector2.new(ScreenPoint.X, ScreenPoint.Y)).Magnitude
+
+									if VectorDistance < MaximumDistance then
+										Target = v
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+
+			return Target
+		end
+
+		UserInputService.InputBegan:Connect(function(Input)
+			if Input.UserInputType == Enum.UserInputType.MouseButton2 then
+				Holding = true
+			end
+		end)
+
+		UserInputService.InputEnded:Connect(function(Input)
+			if Input.UserInputType == Enum.UserInputType.MouseButton2 then
+				Holding = false
+			end
+		end)
+
+		RunService.RenderStepped:Connect(function()
+			FOVCircle.Position = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
+			FOVCircle.Radius = _G.CircleRadius
+			FOVCircle.Filled = _G.CircleFilled
+			FOVCircle.Color = _G.CircleColor
+			FOVCircle.Visible = _G.CircleVisible
+			FOVCircle.Radius = _G.CircleRadius
+			FOVCircle.Transparency = _G.CircleTransparency
+			FOVCircle.NumSides = _G.CircleSides
+			FOVCircle.Thickness = _G.CircleThickness
+
+			if Holding == true and _G.AimbotEnabled == true then
+				TweenService:Create(Camera, TweenInfo.new(_G.Sensitivity, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(Camera.CFrame.Position, GetClosestPlayer().Character[_G.AimPart].Position)}):Play()
+			end
+		end)
+	end    
+})
+Tab:AddButton({
+	Name = "情云同款自瞄可以调整大小，绘制距离 fl目前有bug",
+	Callback = function()
+	    local fov = 100 local smoothness = 10 local crosshairDistance = 5 local RunService = game:GetService("RunService") local UserInputService = game:GetService("UserInputService") local Players = game:GetService("Players") local Cam = game.Workspace.CurrentCamera local FOVring = Drawing.new("Circle") FOVring.Visible = true FOVring.Thickness = 2 FOVring.Color = Color3.fromRGB(0, 255, 0) FOVring.Filled = false FOVring.Radius = fov FOVring.Position = Cam.ViewportSize / 2 local Player = Players.LocalPlayer local PlayerGui = Player:WaitForChild("PlayerGui") local ScreenGui = Instance.new("ScreenGui") ScreenGui.Name = "FovAdjustGui" ScreenGui.Parent = PlayerGui local Frame = Instance.new("Frame") Frame.Name = "MainFrame" Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30) Frame.BorderColor3 = Color3.fromRGB(128, 0, 128) Frame.BorderSizePixel = 2 Frame.Position = UDim2.new(0.3, 0, 0.3, 0) Frame.Size = UDim2.new(0.4, 0, 0.4, 0) Frame.Active = true Frame.Draggable = true Frame.Parent = ScreenGui local MinimizeButton = Instance.new("TextButton") MinimizeButton.Name = "MinimizeButton" MinimizeButton.Text = "-" MinimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255) MinimizeButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50) MinimizeButton.Position = UDim2.new(0.9, 0, 0, 0) MinimizeButton.Size = UDim2.new(0.1, 0, 0.1, 0) MinimizeButton.Parent = Frame local isMinimized = false MinimizeButton.MouseButton1Click:Connect(function() isMinimized = not isMinimized if isMinimized then Frame:TweenSize(UDim2.new(0.1, 0, 0.1, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true) MinimizeButton.Text = "+" else Frame:TweenSize(UDim2.new(0.4, 0, 0.4, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true) MinimizeButton.Text = "-" end end) local FovLabel = Instance.new("TextLabel") FovLabel.Name = "FovLabel" FovLabel.Text = "自瞄范围" FovLabel.TextColor3 = Color3.fromRGB(255, 255, 255) FovLabel.BackgroundTransparency = 1 FovLabel.Position = UDim2.new(0.1, 0, 0.1, 0) FovLabel.Size = UDim2.new(0.8, 0, 0.2, 0) FovLabel.Parent = Frame local FovSlider = Instance.new("TextBox") FovSlider.Name = "FovSlider" FovSlider.Text = tostring(fov) FovSlider.TextColor3 = Color3.fromRGB(255, 255, 255) FovSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50) FovSlider.Position = UDim2.new(0.1, 0, 0.3, 0) FovSlider.Size = UDim2.new(0.8, 0, 0.2, 0) FovSlider.Parent = Frame local SmoothnessLabel = Instance.new("TextLabel") SmoothnessLabel.Name = "SmoothnessLabel" SmoothnessLabel.Text = "自瞄平滑度" SmoothnessLabel.TextColor3 = Color3.fromRGB(255, 255, 255) SmoothnessLabel.BackgroundTransparency = 1 SmoothnessLabel.Position = UDim2.new(0.1, 0, 0.5, 0) SmoothnessLabel.Size = UDim2.new(0.8, 0, 0.2, 0) SmoothnessLabel.Parent = Frame local SmoothnessSlider = Instance.new("TextBox") SmoothnessSlider.Name = "SmoothnessSlider" SmoothnessSlider.Text = tostring(smoothness) SmoothnessSlider.TextColor3 = Color3.fromRGB(255, 255, 255) SmoothnessSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50) SmoothnessSlider.Position = UDim2.new(0.1, 0, 0.7, 0) SmoothnessSlider.Size = UDim2.new(0.8, 0, 0.2, 0) SmoothnessSlider.Parent = Frame local CrosshairDistanceLabel = Instance.new("TextLabel") CrosshairDistanceLabel.Name = "CrosshairDistanceLabel" CrosshairDistanceLabel.Text = "自瞄预判距离" CrosshairDistanceLabel.TextColor3 = Color3.fromRGB(255, 255, 255) CrosshairDistanceLabel.BackgroundTransparency = 1 CrosshairDistanceLabel.Position = UDim2.new(0.1, 0, 0.9, 0) CrosshairDistanceLabel.Size = UDim2.new(0.8, 0, 0.2, 0) CrosshairDistanceLabel.Parent = Frame local CrosshairDistanceSlider = Instance.new("TextBox") CrosshairDistanceSlider.Name = "CrosshairDistanceSlider" CrosshairDistanceSlider.Text = tostring(crosshairDistance) CrosshairDistanceSlider.TextColor3 = Color3.fromRGB(255, 255, 255) CrosshairDistanceSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50) CrosshairDistanceSlider.Position = UDim2.new(0.1, 0, 1.1, 0) CrosshairDistanceSlider.Size = UDim2.new(0.8, 0, 0.2, 0) CrosshairDistanceSlider.Parent = Frame local targetCFrame = Cam.CFrame local function updateDrawings() local camViewportSize = Cam.ViewportSize FOVring.Position = camViewportSize / 2 FOVring.Radius = fov end local function onKeyDown(input) if input.KeyCode == Enum.KeyCode.Delete then RunService:UnbindFromRenderStep("FOVUpdate") FOVring:Remove() end end UserInputService.InputBegan:Connect(onKeyDown) local function getClosestPlayerInFOV(trg_part) local nearest = nil local last = math.huge local playerMousePos = Cam.ViewportSize / 2 for _, player in ipairs(Players:GetPlayers()) do if player ~= Players.LocalPlayer then local part = player.Character and player.Character:FindFirstChild(trg_part) if part then local ePos, isVisible = Cam:WorldToViewportPoint(part.Position) local distance = (Vector2.new(ePos.x, ePos.y) - playerMousePos).Magnitude if distance < last and isVisible and distance < fov then last = distance nearest = player end end end end return nearest end RunService.RenderStepped:Connect(function() updateDrawings() local closest = getClosestPlayerInFOV("Head") if closest and closest.Character:FindFirstChild("Head") then local targetCharacter = closest.Character local targetHead = targetCharacter.Head local targetRootPart = targetCharacter:FindFirstChild("HumanoidRootPart") local isMoving = targetRootPart.Velocity.Magnitude > 0.1 local targetPosition if isMoving then targetPosition = targetHead.Position + (targetHead.CFrame.LookVector * crosshairDistance) else targetPosition = targetHead.Position end targetCFrame = CFrame.new(Cam.CFrame.Position, targetPosition) else targetCFrame = Cam.CFrame end Cam.CFrame = Cam.CFrame:Lerp(targetCFrame, 1 / smoothness) end) FovSlider.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLoss) if enterPressed then local newFov = tonumber(FovSlider.Text) if newFov then fov = newFov else FovSlider.Text = tostring(fov) end end end) SmoothnessSlider.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLoss) if enterPressed then local newSmoothness = tonumber(SmoothnessSlider.Text) if newSmoothness then smoothness = newSmoothness else SmoothnessSlider.Text = tostring(smoothness) end end end) CrosshairDistanceSlider.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLoss) if enterPressed then local newCrosshairDistance = tonumber(CrosshairDistanceSlider.Text) if newCrosshairDistance then crosshairDistance = newCrosshairDistance else CrosshairDistanceSlider.Text = tostring(crosshairDistance) end end end)
+    end
+})
+Tab:AddButton({
+    Name ="小go宙斯二改汉化自瞄",
+    Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/0K2bLjJ5"))()
+    end
+})
+Tab:AddButton({
+	Name = "自瞄",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/gXsy4tYU"))()
+end
+})
+Tab:AddButton({
+	Name = "范围",
+	Callback = function()
+        _G.HeadSize = 20
+_G.Disabled = true
+
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+    end
+})
+Tab:AddButton({
+	Name = "中级范围",
+	Callback = function()
+        _G.HeadSize = 100
+_G.Disabled = true
+
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really red")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+    end
+})
+Tab:AddButton({
+	Name = "高级范围",
+	Callback = function()
+        _G.HeadSize = 500
+_G.Disabled = true
+
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really red")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+    end
+})
+Tab:AddTextbox({
+	Name = "范围修改",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(value)
+	  print(value)
+_G.HeadSize = value
+_G.Disabled = true
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+   end
+})
+Tab:AddButton({
+  Name = "隐身道具",
+  Callback = function()
+    loadstring(game:HttpGet("https://gist.githubusercontent.com/skid123skidlol/cd0d2dce51b3f20ad1aac941da06a1a1/raw/f58b98cce7d51e53ade94e7bb460e4f24fb7e0ff/%257BFE%257D%2520Invisible%2520Tool%2520(can%2520hold%2520tools)",true))()
+  end
+})
+
+local Tab =Window:MakeTab({
+	Name = "驾驶帝国",
+	Icon = "rbxassetid://1000140976",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name ="自动刷钱",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/main/drivingempire"))()
+    end
+})
+
+local Tab = Window:MakeTab({
+	Name = "鲨口求生2",
+	Icon = "rbxassetid://1000140976",
+	PremiumOnly = false
+})
+
+Tab:AddDropdown({
+	Name = "免费船只",
+	Default = "1",
+	Options = {"DuckyBoatBeta", "DuckyBoat", "BlueCanopyMotorboat", "BlueWoodenMotorboat", "UnicornBoat", "Jetski", "RedMarlin", "Sloop", "TugBoat", "SmallDinghyMotorboat", "JetskiDonut", "Marlin", "TubeBoat", "FishingBoat", "VikingShip", "SmallWoodenSailboat", "RedCanopyMotorboat", "Catamaran", "CombatBoat", "TourBoat", "Duckmarine", "PartyBoat", "MilitarySubmarine",  "GingerbreadSteamBoat", "Sleigh2022", "Snowmobile", "CruiseShip"},
+	Callback = function(Value)
+local ohString1 = (Value)
+game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(ohString1)
+	end
+})
+Tab:AddButton({
+	Name = "自动杀鲨鱼🦈",
+	Callback = function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/sharkbite2.lua",true))()
+  	end
+})
+
+local Tab = Window:MakeTab({
+    Name = "DOORS🚪",
+    Icon = "rbxassetid://15613376871",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="小go制作",
+    Callback = function()
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/DOORS%E9%BE%99%E6%94%B9")))()
+    end
+})
+Tab:AddButton({
+    Name ="zs lll 2 卡密:nrty",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zuohongjian/bjb/main/ZS%20III"))()
+    end
+})
+Tab:AddButton({
+    Name ="FLOOR2",
+    Callback = function()
+    loadstring(game:HttpGet("https://github.com/DocYogurt/Main/raw/main/Scripts/DF2RW.lua"))()
+    end
+})
+Tab:AddButton({
+    Name = "AND已汉化 推荐配合穿墙",
+    Callback = function()
+    --[[Doors Blackking And BobHub脚本汉化]]loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\54\53\84\119\84\56\106\97"))()
+    end
+})
+Tab:AddButton({
+    Name = "小go汉化版",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/DOORS"))()
+    end
+})
+Tab:AddButton({
+    Name ="嗯，本人喜欢用😘",
+    Callback = function()
+    loadstring(game:HttpGet('https://rawscripts.net/raw/DOORS-FFJ-Hub-11365'))()
+    end
+})
+Tab:AddButton({
+	Name = "穿墙(无拉回)",
+	Callback = function()
+loadstring(game:HttpGet("https://github.com/DXuwu/OK/raw/main/clip"))()
+    end
+})
+local Section = Tab:AddSection({
+	Name = "娱乐ก็ʕ•͡ᴥ•ʔ ก้也包括小go内置🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️"
+})
+Tab:AddButton({
+  Name = "全局高亮",
+  Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/4LDKiJ5a"))()
+    end
+})
+Tab:AddButton({
+    Name ="骷髅钥匙我感觉应该没用",
+    Callback = function()
+    local item = game:GetObjects("rbxassetid://11697889137")[1]item.Parent = game.Players.LocalPlayer.Backpack
+    end
+})
+Tab:AddButton({
+  Name = "手电筒",
+  Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/9Daqa4hD'))()
+  	end
+})
+Tab:AddButton({
+    Name ="吸铁石",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/MagnetByNerd.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="剪刀",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/shears_done.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="圣光炸弹我用过一次，不过炸完之后就不能游戏了，只能娱乐",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/HolyGrenadeByNerd.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="臭猫😽  加载有点慢",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/K0t1n/Public/main/Maxwell%20Plushie"))()
+    end
+})
+Tab:AddButton({
+    Name ="控制物体大小的枪在不可能模式中使用",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/SizeChangerByNerd.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="香蕉🍌枪只有在困难模式才能发射香蕉子弹",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/BananaGunByNerd.lua"))()
+    end
+})
+
+local Tab = Window:MakeTab({
+    Name = "压力🍏",
+    Icon = "rbxassetid://1000140976",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="creepyV2.4",
+    Callback = function()
+    loadstring(game:HttpGet("https://github.com/Drop56796/CreepyEyeHub/blob/main/obfuscate.lua?raw=true"))()
+    end
+})
+Tab:AddButton({
+    Name ="无敌，唯一缺点就是能被机枪扫到",
+    Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Pressure-*-Mode-15992"))()
+    end
+})
+Tab:AddButton({
+    Name ="人机压力",
+    Callback = function()
+    loadstring(game:HttpGet(('https://github.com/DocYogurt/Main/raw/main/Scripts/Pressure')))()
+    end
+})
+local Tab = Window:MakeTab({
+    Name = "力量传奇💪",
+    Icon = "rbxassetid://1000140976",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="小go力量传奇🕊️",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/main/%E5%8A%9B%E9%87%8F%E4%BC%A0%E5%A5%87"))()
+    end
+})
+Tab:AddButton({
+	Name = "剑客:需加群组",
+	Callback = function()
+jianke_V4 = "作者_初夏"jianke__V4 = "作者QQ1412152634"jianke___V4 = "剑客QQ群347724155"loadstring(game:HttpGet(('https://raw.githubusercontent.com/JianKeCX/JianKeV4/main/ChuXia')))()
+	end
+})
+Tab:AddButton({
+    Name ="力量heep",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))()
+    end
+})
+Tab:AddButton({
+    Name = "力量传奇修改力量",
+    Callback = function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/jynzl/main/main/Musclas%20Legenos.lua'))()
+    end
+})
+local Section = Tab:AddSection({
+	Name = "传送位置"
+})
+Tab:AddButton({
+	Name = "传送到出生点",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7, 3, 108)
+    end
+})
+Tab:AddButton({
+	Name = "传送到冰霜健身房",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2543, 13, -410)
+    end
+})
+Tab:AddButton({
+	Name = "传送到神话健身房",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2177, 13, 1070)
+    end
+})
+Tab:AddButton({
+	Name = "传送到永恒健身房",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6686, 13, -1284)
+    end
+})
+Tab:AddButton({
+	Name = "传送到传说健身房",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4676, 997, -3915)
+    end
+})
+Tab:AddButton({
+	Name = "传送到肌肉之王健身房",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-8554, 22, -5642)
+    end
+})
+Tab:AddButton({
+	Name = "传送到安全岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-39, 10, 1838)
+    end
+})
+Tab:AddButton({
+	Name = "传送到幸运抽奖区域",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2606, -2, 5753)
+  	end
+})
+
+local Tab = Window:MakeTab({
+    Name = "其他脚本",
+    Icon = "rbxassetid://1000140976",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name ="作者喜欢的一个外国脚本，不喜勿喷",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ByNami/dkhub/main/Script", true))()
+    end
+})
+
+Tab:AddButton({
+    Name ="禁漫中心◇",
+    Callback = function()
+    getgenv().lishichuan="禁漫中心1001390385" loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/anlushanjinchangantangwanle/main/jmjmjmjmjmjmjmjmjmjmjmjmjmjmjmjm.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name ="鸭Hub 🦆v2",
+    Callback = function()
+    loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,81,89,49,113,112,99,115,106})end)())))()
+    end
+})
+
+Tab:AddButton({
+    Name = "林🌲卡密:林nb",
+    Callback = function()
+lin = "作者林"lin ="林QQ群 747623342"loadstring(game:HttpGet("https://raw.githubusercontent.com/linnblin/lin/main/lin"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "丁丁免费版🐌",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/vvbnn/main/%E4%B8%81%E4%B8%81%E8%84%9A%E6%9C%AC%E9%98%89%E5%89%B2.txt"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "皮👹",
+    Callback = function()
+    getgenv().XiaoPi="皮脚本QQ群1002100032" loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/QQ1002100032-Roblox-Pi-script.lua"))()
+    end
+})
+
+Tab:AddButton({
+	Name = "龙破解版🐛",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/nahida-cn/Roblox/main/long"))()
+	end
+})
+
+Tab:AddButton({
+    Name ="情云☁️",
+    Callback = function()
+    loadstring(utf8.char((function() return table.unpack({108,111,97,100,115,116,114,105,110,103,40,103,97,109,101,58,72,116,116,112,71,101,116,40,34,104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,67,104,105,110,97,81,89,47,45,47,109,97,105,110,47,37,69,54,37,56,51,37,56,53,37,69,52,37,66,65,37,57,49,34,41,41,40,41})end)()))()
+    end
+})
+
+Tab:AddButton({
+	Name = "导管中心🙀修复版",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/useranewrff/roblox/main/%E6%9D%A1%E6%AC%BE%E5%8D%8F%E8%AE%AE.lua"))()
+	end
+})
+
+Tab:AddButton({
+    Name ="退休(=´ᴥ`)",
+    Callback = function()
+    TUIXUI="作者退休☯︎"JIAOBEN="永久免费缝合"qun="809771141"loadstring(game:HttpGet("https://pastebin.com/raw/yPhwFHy4"))()
+    end
+})
+
+Tab:AddButton({
+    Name ="皇🍋",
+    Callback = function()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\87\115\78\83\122\78\110\100"))()
+    end
+})
+
+Tab:AddButton({
+	Name = "xK脚本中心🕊️",
+	Callback = function()
+	loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\66\73\78\106\105\97\111\98\122\120\54\47\66\73\78\106\105\97\111\47\109\97\105\110\47\88\75\46\84\88\84\34\41\41\40\41\10")()
+	end
+})
+
+Tab:AddButton({
+	Name = "Wus缝合脚本",
+	Callback = function()
+	loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\84\72\68\90\69\80\47\104\104\104\47\109\97\105\110\47\37\69\57\37\57\51\37\56\49\37\69\57\37\57\51\37\56\49\37\69\53\37\56\49\37\57\67\37\69\53\37\56\49\37\57\67\37\69\53\37\56\49\37\57\67\34\41\41\40\41\10")()
+	end
+})
+
+Tab:AddButton({
+	Name = "小达内部",
+	Callback = function()
+	xiaoda = "作者_小达"Xiaoda = "作者QQ_3491629303"XiaoDa = "QQ群_705257336"loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\49\51\51\117\102\117\100\104\100\117\47\72\76\68\72\81\86\81\82\80\66\47\109\97\105\110\47\81\85\81\34\41\41\40\41\10")()
+	end
+})
+
+Tab:AddButton({
+	Name = "NN中心",
+	Callback = function()
+	loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\115\100\104\100\98\120\117\98\47\110\110\115\105\101\106\119\47\109\97\105\110\47\71\85\73\89\68\83\83\46\108\117\97\34\41\41\40\41\10")()
+	end
+})
+
+Tab:AddButton({
+    Name ="黑鸦",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/game123xjp/arw.15604934247-bj/main/Protected_5884649977234684.txt"))()
+    end
+})
+
+Tab:AddButton({
+	Name = "落叶🍃",
+	Callback = function()
+	getgenv().LS="落叶中心"loadstring(game:HttpGet("https://raw.githubusercontent.com/krlpl/Deciduous-center-LS/main/%E8%90%BD%E5%8F%B6%E4%B8%AD%E5%BF%83%E6%B7%B7%E6%B7%86.txt"))()
+	end
+})
+
+Tab:AddButton({
+    Name ="水💦卡密114514",
+    Callback = function()
+    loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,99,102,102,99,106,104,104,110,118,118,49,47,100,100,100,47,109,97,105,110,47,101,106,101,106})end)())))()
+    end
+})
+
+Tab:AddButton({
+	Name = "TB",
+	Callback = function()
+	_G["TB Script 作者:2537716078"]="TB Script Update the cloud"local SCC_CharPool={[1]= tostring(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,80,75,67,54,106,56,77,53})end)()))}loadstring(game:HttpGet(SCC_CharPool[1],true))()
+	end
+})
+
+Tab:AddButton({
+	Name = "tty",
+	Callback = function()
+	loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,115,107,103,51,55,65,100,106})end)())))()
+	end
+})
+
+Tab:AddButton({
+    Name ="独家",
+    Callback = function()
+    loadstring(game:HttpGet("https://gitee.com/kbms1223/rbolox/raw/main/JIOBEN"))()
+    end
+})
+
+Tab:AddButton({
+	Name = "幻想",
+	Callback = function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/RPMMiF5y"))()
+	end
+})
+
+Tab:AddButton({
+	Name = "QI免费版",
+	Callback = function()
+	loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\52\118\53\110\55\110\47\108\108\108\108\108\108\108\108\108\108\108\108\108\108\108\108\108\108\108\108\108\47\109\97\105\110\47\81\73\37\69\56\37\56\52\37\57\65\37\69\54\37\57\67\37\65\67\37\69\53\37\56\53\37\56\68\37\69\56\37\66\52\37\66\57\37\69\55\37\56\57\37\56\56\46\108\117\97\34\41\41\40\41\9\10")()
+	end
+})
+
+Tab:AddButton({
+	Name = "绿",
+	Callback = function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/Esw6YQKR"))()
+	end
+})
+
+Tab:AddButton({
+	Name = "缝合",
+	Callback = function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/htNFZ8vU"))()
+	end
+})
+
+Tab:AddButton({
+	Name = "秋",
+	Callback = function()
+	_G[".秋·自制脚本 遗存抢救"]="2024dncxddtsnchzxtb0112"loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,87,83,98,117,113,47,45,47,109,97,105,110,47,37,69,55,37,65,55,37,56,66,37,67,50,37,66,55,37,69,56,37,56,55,37,65,65,37,69,53,37,56,56,37,66,54,37,69,56,37,56,52,37,57,65,37,69,54,37,57,67,37,65,67})end)())))()
+	end
+})
+
+Tab:AddButton({
+    Name ="神光重置0.18",
+    Callback = function()
+    loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,115,115,115,120,105,97,111,99,104,97,111,115,115,115,47,45,47,109,97,105,110,47,80,114,111,116,101,99,116,101,100,95,49,53,53,49,57,52,50,56,50,52,57,48,55,52,48,55,46,108,117,97})end)())))()
+    end
+})
+
+Tab:AddButton({
+    Name ="猫剑😼卡密：支持猫王和阴星和龙和霖溺",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kmlyfcbjyd/22222/main/Protected_7156604127243871.lua.txt", true))()
+    end
+})
+
+Tab:AddButton({
+    Name ="霜",
+    Callback = function()
+    loadstring("\45\45\32\232\132\154\230\156\172\230\148\190\232\191\153\233\135\140\10\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\115\104\117\97\110\103\122\117\105\115\104\117\97\105\47\115\104\117\97\110\103\47\109\97\105\110\47\37\69\57\37\57\67\37\57\67\118\50\46\108\117\97\34\41\41\40\41\10")()
+    end
+})
+
+Tab:AddButton({
+    Name ="黑子中心",
+    Callback = function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/mnMaZwBQ"))()
+    end
+})
+
+Tab:AddButton({
+    Name ="脚本中心",
+    Callback = function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/Launcher.lua'),true))()
+    end
+})
+
+Tab:AddButton({
+	Name = "操人脚本",
+	Callback = function()
+	--Variables
+local SimpleSexGUI = Instance.new("ScreenGui")
+local FGUI = Instance.new("Frame")
+local btnNaked = Instance.new("TextButton")
+local btnSex = Instance.new("TextButton")
+local tbxVictim = Instance.new("TextBox")
+local lblFUCKEMALL = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local lbltitle = Instance.new("TextLabel")
+local TextLabel = Instance.new("TextLabel")
+--Properties
+SimpleSexGUI.Name = "SimpleSexGUI"
+SimpleSexGUI.Parent = game.CoreGui
+
+FGUI.Name = "FGUI"
+FGUI.Parent = SimpleSexGUI
+FGUI.BackgroundColor3 = Color3.new(255,255,255)
+FGUI.BorderSizePixel = 1
+FGUI.Position = UDim2.new(0,0, 0.667, 0)
+FGUI.Size = UDim2.new(0,317, 0,271)
+FGUI.Draggable = true
+
+lbltitle.Name = "Title"
+lbltitle.Parent = FGUI
+lbltitle.BackgroundColor3 = Color3.new(255,255,255)
+lbltitle.BorderSizePixel = 1
+lbltitle.Position = UDim2.new (0, 0,-0.122, 0)
+lbltitle.Size = UDim2.new (0, 317,0, 33)
+lbltitle.Visible = true
+lbltitle.Active = true
+lbltitle.Draggable = false
+lbltitle.Selectable = true
+lbltitle.Font = Enum.Font.SourceSansBold
+lbltitle.Text = "一个简单的操🖕"
+lbltitle.TextColor3 = Color3.new(0, 0, 0)
+lbltitle.TextSize = 20
+
+btnSex.Name = "Sex"
+btnSex.Parent = FGUI
+btnSex.BackgroundColor3 = Color3.new(255,255,255)
+btnSex.BorderSizePixel = 1
+btnSex.Position = UDim2.new (0.044, 0,0.229, 0)
+btnSex.Size = UDim2.new (0, 99,0, 31)
+btnSex.Visible = true
+btnSex.Active = true
+btnSex.Draggable = false
+btnSex.Selectable = true
+btnSex.Font = Enum.Font.SourceSansBold
+btnSex.Text = "┐(´-｀)┌启动吧"
+btnSex.TextColor3 = Color3.new(0, 0, 0)
+btnSex.TextSize = 20
+
+tbxVictim.Name = "VictimTEXT"
+tbxVictim.Parent = FGUI
+tbxVictim.BackgroundColor3 = Color3.new(255,255,255)
+tbxVictim.BorderSizePixel = 1
+tbxVictim.Position = UDim2.new (0.533, 0,0.229, 0)
+tbxVictim.Size = UDim2.new (0, 133,0, 27)
+tbxVictim.Visible = true
+tbxVictim.Active = true
+tbxVictim.Draggable = false
+tbxVictim.Selectable = true
+tbxVictim.Font = Enum.Font.SourceSansBold
+tbxVictim.Text = "名字"
+tbxVictim.TextColor3 = Color3.new(0, 0, 0)
+tbxVictim.TextSize = 20
+
+lblFUCKEMALL.Name = "FUCKEMALL"
+lblFUCKEMALL.Parent = FGUI
+lblFUCKEMALL.BackgroundColor3 = Color3.new(255,255,255)
+lblFUCKEMALL.BorderSizePixel = 1
+lblFUCKEMALL.Position = UDim2.new (0.025, 0,0.856, 0)
+lblFUCKEMALL.Size = UDim2.new (0, 301,0, 27)
+lblFUCKEMALL.Visible = true
+lblFUCKEMALL.Font = Enum.Font.SourceSansBold
+lblFUCKEMALL.Text = "一玩一个不吱声"
+lblFUCKEMALL.TextColor3 = Color3.new(0, 0, 0)
+lblFUCKEMALL.TextSize = 20
+
+ImageLabel.Name = "ImageLabel"
+ImageLabel.Parent = FGUI
+ImageLabel.Image = "http://www.roblox.com/asset/?id=42837..."
+ImageLabel.BorderSizePixel = 1
+ImageLabel.Position = UDim2.new (0.274, 0,0.358, 0)
+ImageLabel.Size = UDim2.new (0, 106,0, 121)
+--Scripts
+btnSex.MouseButton1Click:Connect(function()
+local player = tbxVictim.Text
+local stupid = Instance.new('Animation')
+stupid.AnimationId = 'rbxassetid://148840371'
+hummy = game:GetService("Players").LocalPlayer.Character.Humanoid
+pcall(function()
+    hummy.Parent.Pants:Destroy()
+end)
+pcall(function()
+    hummy.Parent.Shirt:Destroy()
+end)
+local notfunny = hummy:LoadAnimation(stupid)
+notfunny:Play()
+notfunny:AdjustSpeed(10)
+while hummy.Parent.Parent ~= nil do
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[tbxVictim.Text].Character.HumanoidRootPart.CFrame
+end
+end)
+end
+})
+
+local Tab = Window:MakeTab({
+    Name = "监狱人生",
+    Icon = "rbxassetid://18942249554",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "手里剑（秒杀）",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/jian"))()
+  	end
+})
+local Section = Tab:AddSection({
+	Name = "传送位置"
+})
+Tab:AddButton({
+	Name = "警卫室",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(847.7261352539062, 98.95999908447266, 2267.387451171875)
+  	end
+})
+Tab:AddButton({
+	Name = "监狱室内",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.2575073242188, 98.95999908447266, 2379.74169921875)
+  	end
+})
+Tab:AddButton({
+	Name = "罪犯复活点",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-937.5891723632812, 93.09876251220703, 2063.031982421875)
+  	end
+})
+Tab:AddButton({
+	Name = "监狱室外",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(760.6033325195312, 96.96992492675781, 2475.405029296875)
+  	end
+})
+
+local Tab = Window:MakeTab({
+    Name = "战斗勇士",
+    Icon = "rbxassetid://1000140976",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "弓箭爆头",
+    Callback = function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/6RQGbFqD"))()
+    end
+})
+
+local Tab = Window:MakeTab({
+	Name = "忍者传奇👾",
+	Icon = "rbxassetid://1000140976",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "小go内置"
+})
+autoswing = false
+function swinging()
+    spawn(
+        function()
+            while autoswing == true do
+                task.wait()
+                game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
+                if not autoswing then
+                    break
+                end
+            end
+        end
+    )
+end
+autosell = false
+function selling()
+    spawn(
+        function()
+            while autosell == true do
+                task.wait(.01)
+                if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
+                    game.workspace.sellAreaCircles["sellAreaCircle7"].circleInner.CFrame =
+                        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame
+                    wait(.1)
+                    game.workspace.sellAreaCircles["sellAreaCircle7"].circleInner.CFrame =
+                        game.Workspace.Part.CFrame
+                    if not autosell then
+                        break
+                    end
+                end
+            end
+        end
+    )
+end
+autosellmax = false
+function maxsell()
+    spawn(
+        function()
+            while autosellmax == true do
+                task.wait()
+                if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
+                    if game.Players.LocalPlayer.PlayerGui.gameGui.maxNinjitsuMenu.Visible == true then
+                        game.workspace.sellAreaCircles["sellAreaCircle7"].circleInner.CFrame =
+                            game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame
+                        task.wait()
+                        game.workspace.sellAreaCircles["sellAreaCircle7"].circleInner.CFrame =
+                            game.Workspace.Part.CFrame
+                    end
+                end
+                if not autosellmax then
+                    break
+                end
+            end
+        end
+    )
+end
+autobuyswords = false
+function buyswords()
+    spawn(
+        function()
+            while autobuyswords == true do
+                task.wait()
+                if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
+                    local oh1 = "buyAllSwords"
+                    local oh2 = {
+                        "Ground",
+                        "Astral Island",
+                        "Space Island",
+                        "Tundra Island",
+                        "Eternal Island",
+                        "Sandstorm",
+                        "Thunderstorm",
+                        "Ancient Inferno Island",
+                        "Midnight Shadow Island",
+                        "Mythical Souls Island",
+                        "Winter Wonder Island"
+                    }
+                    for i = 1, #oh2 do
+                        game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(oh1, oh2[i])
+                    end
+                end
+                if not autobuyswords then
+                    break
+                end
+            end
+        end
+    )
+end
+autobuybelts = false
+function buybelts()
+    spawn(
+        function()
+            while autobuybelts == true do
+                task.wait()
+                if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
+                    local oh1 = "buyAllBelts"
+                    local oh2 = {
+                        "Ground",
+                        "Astral Island",
+                        "Space Island",
+                        "Tundra Island",
+                        "Eternal Island",
+                        "Sandstorm",
+                        "Thunderstorm",
+                        "Ancient Inferno Island",
+                        "Midnight Shadow Island",
+                        "Mythical Souls Island",
+                        "Winter Wonder Island"
+                    }
+                    for i = 1, #oh2 do
+                        game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(oh1, oh2[i])
+                    end
+                end
+                if not autobuybelts then
+                    break
+                end
+            end
+        end
+    )
+end
+autobuyranks = false
+function buyranks()
+    spawn(
+        function()
+            while autobuyranks == true do
+                task.wait()
+                if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
+                    local oh1 = "buyRank"
+                    local oh2 = game:GetService("ReplicatedStorage").Ranks.Ground:GetChildren()
+                    for i = 1, #oh2 do
+                        game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(oh1, oh2[i].Name)
+                    end
+                end
+                if not autobuyranks then
+                    break
+                end
+            end
+        end
+    )
+end
+autobuyskill = false
+function buyskill()
+    spawn(
+        function()
+            while autobuyskill == true do
+                task.wait()
+                if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
+                    local oh1 = "buyAllSkills"
+                    local oh2 = {
+                        "Ground",
+                        "Astral Island",
+                        "Space Island",
+                        "Tundra Island",
+                        "Eternal Island",
+                        "Sandstorm",
+                        "Thunderstorm",
+                        "Ancient Inferno Island",
+                        "Midnight Shadow Island",
+                        "Mythical Souls Island",
+                        "Winter Wonder Island"
+                    }
+                    for i = 1, #oh2 do
+                        game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(oh1, oh2[i])
+                    end
+                end
+                if not autobuyskill then
+                    break
+                end
+            end
+        end
+    )
+end
+autobuyshurikens = false
+function buyshurikens()
+    spawn(
+        function()
+            while autobuyshurikens == true do
+                task.wait()
+                if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
+                    local oh1 = "buyAllShurikens"
+                    local oh2 = {
+                        "Ground",
+                        "Astral Island",
+                        "Space Island",
+                        "Tundra Island",
+                        "Eternal Island",
+                        "Sandstorm",
+                        "Thunderstorm",
+                        "Ancient Inferno Island",
+                        "Midnight Shadow Island",
+                        "Mythical Souls Island",
+                        "Winter Wonder Island"
+                    }
+                    for i = 1, #oh2 do
+                        game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(oh1, oh2[i])
+                    end
+                end
+                if not autobuyshurikens then
+                    break
+                end
+            end
+        end
+    )
+end
+
+local Section = Tab:AddSection({
+	Name = "自动挥舞/售卖"
+})
+
+Tab:AddToggle(
+    {
+        Name = "自动挥舞",
+        Default = false,
+        Callback = function(x)
+            autoswing = x
+            if autoswing then
+                swinging()
+            end
+        end
+    }
+)
+
+Tab:AddToggle(
+    {
+        Name = "自动售卖",
+        Default = false,
+        Callback = function(x)
+            autosell = x
+            if autosell then
+                selling()
+            end
+        end
+    }
+)
+    
+Tab:AddToggle(
+    {
+        Name = "存满了自动售卖",
+        Default = false,
+        Callback = function(x)
+            autosellmax = x
+            if autosellmax then
+                maxsell()
+            end
+        end
+    }
+)
+
+local Section = Tab:AddSection({
+	Name = "自动购买功能"
+})
+
+Tab:AddToggle(
+    {
+        Name = "自动购买剑",
+        Default = false,
+        Callback = function(x)
+            autobuyswords = x
+            if autobuyswords then
+                buyswords()
+            end
+        end
+    }
+)
+
+Tab:AddToggle(
+    {
+        Name = "自动购买腰带",
+        Default = false,
+        Callback = function(x)
+            autobuybelts = x
+            if autobuybelts then
+                buybelts()
+            end
+        end
+    }
+)
+
+Tab:AddToggle(
+    {
+        Name = "自动购买称号",
+        Default = false,
+        Callback = function(x)
+            autobuyranks = x
+            if autobuyranks then
+                buyranks()
+            end
+        end
+    }
+)
+
+Tab:AddToggle(
+    {
+        Name = "自动购买忍术",
+        Default = false,
+        Callback = function(x)
+            autobuyskill = x
+            if autobuyskill then
+                buyskill()
+            end
+        end
+    }
+)
+
+Tab:AddToggle(
+    {
+        Name = "自动购买",
+        Default = false,
+        Callback = function(x)
+            autobuyshurikens = x
+            if autobuyshurikens then
+                buyshurikens()
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "解锁所有岛",
+        Callback = function()
+            for _, v in next, game.workspace.islandUnlockParts:GetChildren() do
+                if v then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.islandSignPart.CFrame
+                    wait(.5)
+                end
+            end
+        end
+    }
+)
+local Section = Tab:AddSection({
+	Name = "位置传送"
+})
+Tab:AddButton({
+	Name = "传送到出生点",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(25.665502548217773, 3.4228405952453613, 29.919952392578125)
+    end
+})
+Tab:AddButton({
+	Name = "传送到附魔岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(51.17238235473633, 766.1807861328125, -138.44842529296875)
+    end
+})
+Tab:AddButton({
+	Name = "传送到神秘岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(171.97178649902344, 4047.380859375, 42.0699577331543)
+    end
+})
+Tab:AddButton({
+	Name = "传送到太空岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(148.83824157714844, 5657.18505859375, 73.5014877319336)
+    end
+})
+Tab:AddButton({
+	Name = "传送到冻土岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(139.28330993652344, 9285.18359375, 77.36406707763672)
+    end
+})
+Tab:AddButton({
+	Name = "传送到永恒岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(149.34817504882812, 13680.037109375, 73.3861312866211)
+    end
+})
+Tab:AddButton({
+	Name = "传送到沙暴岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(133.37144470214844, 17686.328125, 72.00334167480469)
+    end
+})
+Tab:AddButton({
+	Name = "传送到雷暴岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(143.19349670410156, 24070.021484375, 78.05432891845703)
+    end
+})
+Tab:AddButton({
+	Name = "传送到远古炼狱岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(141.27163696289062, 28256.294921875, 69.3790283203125)
+    end
+})
+Tab:AddButton({
+	Name = "传送到午夜暗影岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(132.74267578125, 33206.98046875, 57.495574951171875)
+    end
+})
+Tab:AddButton({
+	Name = "传送到神秘灵魂岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(137.76148986816406, 39317.5703125, 61.06639862060547)
+    end
+})
+Tab:AddButton({
+	Name = "传送到冬季奇迹岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(137.2720184326172, 46010.5546875, 55.941951751708984)
+    end
+})
+Tab:AddButton({
+	Name = "传送到黄金大师岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(128.32339477539062, 52607.765625, 56.69411849975586)
+    end
+})
+Tab:AddButton({
+	Name = "传送到龙传奇岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(146.35226440429688, 59594.6796875, 77.53300476074219)
+    end
+})
+Tab:AddButton({
+	Name = "传送到赛博传奇岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(137.3321075439453, 66669.1640625, 72.21722412109375)
+    end
+})
+Tab:AddButton({
+Name = "传送到天岚超能岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(135.48077392578125, 70271.15625, 57.02311325073242)
+    end
+})
+Tab:AddButton({
+	Name = "传送到混沌传奇岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(148.58590698242188, 74442.8515625, 69.3177719116211)
+    end
+})
+Tab:AddButton({
+	Name = "传送到灵魂融合岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(136.9700927734375, 79746.984375, 58.54051971435547)
+    end
+})
+Tab:AddButton({
+	Name = "传送到黑暗元素岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(141.697265625, 83198.984375, 72.73107147216797)
+    end
+})
+Tab:AddButton({
+	Name = "传送到内心和平岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(135.3157501220703, 87051.0625, 66.78429412841797)
+    end
+})
+Tab:AddButton({
+	Name = "传送到炽烈漩涡岛",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(135.08216857910156, 91246.0703125, 69.56692504882812)
+    end
+})
+Tab:AddButton({
+	Name = "传送到35倍金币区域",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(86.2938232421875, 91245.765625, 120.54232788085938)
+    end
+})
+Tab:AddButton({
+	Name = "传送到死亡宠物",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4593.21337890625, 130.87181091308594, 1430.2239990234375)
+    end
+})
+local Section = Tab:AddSection({
+	Name = "其他脚本"
+})
+Tab:AddButton({
+    Name ="安",
+    Callback = function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/wucan114514/gegeyxjb/main/ninjalegend')))()
+    end
+})
+Tab:AddButton({
+	Name = "剑客:需加群组",
+	Callback = function()
+jianke_V4 = "作者_初夏"jianke__V4 = "作者QQ1412152634"jianke___V4 = "剑客QQ群347724155"loadstring(game:HttpGet(('https://raw.githubusercontent.com/JianKeCX/JianKeV4/main/ChuXia')))()
+	end
+})
+
+local Tab = Window:MakeTab({
+    Name = "极速传奇⛷",
+    Icon = "rbxassetid://18942670945",
+    PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "小go内置"
+})
+Tab:AddTextbox({
+	Name = "腰角高  可在空中移动 设置高度",
+	Default = " ",
+	TextDisappear = false,
+	Callback = function(phh)
+		game.Players.LocalPlayer.Character.Humanoid.HipHeight = phh
+	end	  
+})
+
+Tab:AddButton({
+	Name = "开启卡宠",
+	Callback = function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/BYJUBDuz"))()
+	end
+})
+Tab:AddButton({
+	Name = "反踢出 小go推荐卡宠使用，降低被踢风险",
+	Callback = function()
+      	local vu = game:GetService("VirtualUser")
+            game:GetService("Players").LocalPlayer.Idled:connect(function()
+                    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+                    wait(1)
+                vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+            end)	
+	end 
+})
+Tab:AddButton({
+	Name = "低分辨率图形",
+	Callback = function()
+      	        _G.Settings = {
+            Players = {
+                ["Ignore Me"] = true, -- Ignore your Character
+                ["Ignore Others"] = true -- Ignore other Characters
+            },
+            Meshes = {
+            Destroy = false,
+            LowDetail = true
+        },
+        Images = {
+            Invisible = true,
+            LowDetail = false,
+            Destroy = false,
+        },
+        ["No Particles"] = true, -- Disables all ParticleEmitter, Trail, Smoke, Fire and Sparkles
+        ["No Camera Effects"] = true, -- Disables all PostEffect's (Camera/Lighting Effects)
+        ["No Explosions"] = true, -- Makes Explosion's invisible
+        ["No Clothes"] = true, -- Removes Clothing from the game
+        ["Low Water Graphics"] = true, -- Removes Water Quality
+        ["No Shadows"] = true, -- Remove Shadows
+        ["Low Rendering"] = true, -- Lower Rendering
+        ["Low Quality Parts"] = true -- Lower quality parts
+    }
+        loadstring(game:HttpGet("https://pastebin.com/raw/EzbhQJMi"))()	
+	end    
+})
+Tab:AddButton({
+	Name = "自动重生和自动刷等级",
+	Callback = function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/T9wTL150"))()        
+  	end    
+})
+Tab:AddToggle({
+	Name = "自动重生",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer("rebirthRequest")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "固定地点刷跳圈",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 local children = workspace.Hoops:GetChildren()
+                    for i, child in ipairs(children) do
+                    if child.Name == "Hoop" then
+                          child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                   end
+                end
+        end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "自动黄色球体(x50)",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City") 
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+Tab:AddToggle({
+	Name = "自动红色球体(x50)",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City")
+           end
+        else
+           _G.loop = false
+        end
+    end    
+})
+
+Tab:AddToggle({
+	Name = "自动宝石球(x50)",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "City")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+Tab:AddSection({
+	Name = "雪城"
+})
+
+Tab:AddToggle({
+	Name = "自动黄色球体(x50)",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Snow City")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "自动红色球体(x50)",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City")
+           end
+        else
+           _G.loop = false
+        end
+    end    
+})
+  
+ Tab:AddToggle({
+	Name = "自动宝石球(x50)",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Snow City")
+           end
+        else
+           _G.loop = false
+        end
+    end    
+})
+  
+ Tab:AddToggle({
+	Name = "自动宝石球(x50)",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Snow City")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+Tab:AddSection({
+	Name = "岩浆城"
+})
+
+Tab:AddToggle({
+	Name = "自动黄色球体(x50)",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "Magma City")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "自动红色球体(x50)",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "Magma City") 
+           end
+        else
+           _G.loop = false
+        end
+    end    
+})
+
+Tab:AddToggle({
+	Name = "自动宝石球(x50)",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City") game:GetService('ReplicatedStorage').rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+local MainCrystalsSection = Tab:AddSection({
+	Name = "城市抽奖区"
+})
+
+Tab:AddToggle({
+	Name = "红色水晶",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.openCrystalRemote:InvokeServer("openCrystal", "Red Crystal")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "紫色水晶",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.openCrystalRemote:InvokeServer("openCrystal", "Purple Crystal")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "黄色晶体",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.openCrystalRemote:InvokeServer("openCrystal", "Yellow Crystal")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "闪电水晶",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.openCrystalRemote:InvokeServer("openCrystal", "Lightning Crystal")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "雪晶",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.openCrystalRemote:InvokeServer("openCrystal", "Snow Crystal") 
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "地狱水晶",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.openCrystalRemote:InvokeServer("openCrystal", "Inferno Crystal")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "欧米伽晶体",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.openCrystalRemote:InvokeServer("openCrystal", "Electro Legends Crystal")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+
+local SpaceCrystalsSection = Tab:AddSection({
+	Name = "太空抽奖"
+})
+
+Tab:AddToggle({
+	Name = "太空晶体",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.openCrystalRemote:InvokeServer("openCrystal", "Space Crystal")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "异形晶体",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.openCrystalRemote:InvokeServer("openCrystal", "Alien Crystal")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+local DesertCrystalsSection = Tab:AddSection({
+	Name = "沙漠抽奖区"
+})
+
+Tab:AddToggle({
+	Name = "沙漠水晶",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.openCrystalRemote:InvokeServer("openCrystal", "Desert Crystal")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+
+
+Tab:AddToggle({
+	Name = "电子晶体",
+	Default = false,
+	Callback = function(state)
+		if state then
+           _G.loop = true
+           while _G.loop == true do wait()
+                 game:GetService('ReplicatedStorage').rEvents.openCrystalRemote:InvokeServer("openCrystal", "Electro Crystal")
+           end
+        else
+           _G.loop = false
+        end
+	end    
+})
+local Section = Tab:AddSection({
+	Name = "传送城市和赛道"
+})
+Tab:AddButton({
+	Name = "城市",
+	Callback = function()
+      	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-559.2, -7.45058e-08, 417.4))
+	end    
+})
+
+Tab:AddButton({
+	Name = "雪城",
+	Callback = function()
+      	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-858.358, 0.5, 2170.35))
+	end    
+})
+
+Tab:AddButton({
+	Name = "岩浆城",
+	Callback = function()
+      	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1707.25, 0.550008, 4331.05))
+	end    
+})
+
+Tab:AddButton({
+	Name = "传奇公路",
+	Callback = function()
+      	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(3594.68, 214.804, 7274.56))
+	end    
+})
+Tab:AddButton({
+	Name = "草原赛道",
+	Callback = function()
+      	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1687.65, 1.007, -5943.91))
+	end    
+})
+Tab:AddButton({
+	Name = "沙漠赛道",
+	Callback = function()
+      	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(58.8, 1.007, -8684.72))
+	end    
+})
+Tab:AddButton({
+	Name = "岩浆赛道",
+	Callback = function()
+      	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1013.4, 1.007, -10997))
+	end    
+})
+local Section = Tab:AddSection({
+	Name = "其他脚本"
+})
+Tab:AddButton({
+    Name ="超级简洁ui",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TtmScripter/GoodScript/main/LegendOfSpeed(Chinese)"))()
+    end
+})
+Tab:AddButton({
+    Name =" AL有交易恶心系统",
+    Callback = function()
+    AL = "制作人员 123fa98（AL）"loadstring(game:HttpGet("https://raw.githubusercontent.com/renlua/Roblox/main/%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="安",
+    Callback = function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/wucan114514/gegeyxjb/main/speedoflegend')))()
+    end
+})
+Tab:AddButton({
+	Name = "剑客:需要加群组",
+	Callback = function()
+jianke_V4 = "作者_初夏"jianke__V4 = "作者QQ1412152634"jianke___V4 = "剑客QQ群347724155"loadstring(game:HttpGet(('https://raw.githubusercontent.com/JianKeCX/JianKeV4/main/ChuXia')))()
+	end
+})
+
+local Tab = Window:MakeTab({
+    Name = "彩虹朋友🌈",
+    Icon = "rbxassetid://1000140976",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "第1个ฅ●ω●ฅ",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
+	end
+})
+
+local Tab = Window:MakeTab({
+    Name = "健身房联盟🤝",
+    Icon = "rbxassetid://1000140976",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name ="安",
+    Callback = function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/wucan114514/gegeyxjb/main/Gymlm')))()
+    end
+})
+local Tab = Window:MakeTab({
+    Name = "河北唐县",
+    Icon = "rbxassetid://1000140976",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name ="小go（维护中）",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E6%B2%B3%E5%8C%97%E5%94%90%E5%8E%BF"))()
+    end
+})
+Tab:AddButton({
+    Name ="皮",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/Pi-script-Hebeitangxian.lua"))()
+    end
+})
+Tab:AddButton({
+    Name ="卡车刷钱",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/ok/T%20ang%20County"))()
+    end
+})
+local Tab = Window:MakeTab({
+    Name = "疯狂电梯",
+    Icon = "rbxassetid://1000140976",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "传送VIP室",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1883.12255859375, -396.84991455078125, 908.6722412109375)
+   end
+})
+Tab:AddButton({
+	Name = "传送大厅",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1916.0081787109375, -396.90020751953125, 926.0120239257812)
+   end
+})
+Tab:AddButton({
+	Name = "传送游戏",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.3450292348861694, 3.999999761581421, -8.305864334106445)
+   end
+})
+Tab:AddButton({
+    Name = "自动比赛",
+    Callback = function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/r5b265Zy"))()
+    end
+})
+Tab:AddButton({
+    Name = "疯狂电梯1",
+    Callback = function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Darkmoonxhubscript/Darkmoonx1/main/Script'))()
+    end
+})
+local Tab = Window:MakeTab({
+    Name = "goto☃️",
+    Icon = "rbxassetid://16060333448",
+    PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "你可以理解为其他游戏脚本在里边，主要的那些通用都在这边有的一些是之前加的，我就不想搬过去了"
+})
+local Section = Tab:AddSection({
+        Name = " V2和v1都会覆盖,这两个是我的宝藏，里面都是游戏脚本,这两个我基本会随机添加几个游戏在里面"
+})
+local Section = Tab:AddSection({
+	Name = "goto游戏中心v1💗💗💗💗💗💗💗💗💗💗💗💗🕊️爱你们🕊️💗💗💗💗💗💗💗💗💗💗💗💗💗💗"
+})
+local Section = Tab:AddSection({
+	Name = "游戏:刀刃球，伐木大亨2,内脏与火药，飞行靴子赛车模拟器， Bf，战争大亨，"
+})
+Tab:AddButton({
+    Name="游戏v1",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/main/ui"))()
+  end
+})
+
+local Tab = Window:MakeTab({
+    Name = "goto☃️☃️",
+    Icon = "rbxassetid://18923878915",
+    PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "火箭发射模拟器,以后还会加载"
+})
+Tab:AddButton({
+    Name="游戏v2",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/main/ui1"))()
+  end
+})
+
+
+
+
+
+
+
+
+
+
