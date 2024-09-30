@@ -67,7 +67,7 @@ Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/GTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"))()
-local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "krx"})
+local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "xgo"})
 local Tab = Window:MakeTab({
     Name = "用户",
     Icon = "rbxassetid://7734068321",
@@ -3285,12 +3285,7 @@ local Tab = Window:MakeTab({
     Icon = "rbxassetid://1000140976",
     PremiumOnly = false
 })
-Tab:AddButton({
-    Name ="小go（维护中）",
-    Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E6%B2%B3%E5%8C%97%E5%94%90%E5%8E%BF"))()
-    end
-})
+
 Tab:AddButton({
     Name ="皮",
     Callback = function()
