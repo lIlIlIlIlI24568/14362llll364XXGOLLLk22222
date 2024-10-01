@@ -1242,6 +1242,13 @@ Tab:AddButton({
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E6%AD%BB%E4%BA%A1%E7%AC%94%E8%AE%B0"))()
   end
 })
+Tab:AddButton({
+    Name="娱乐特效",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/xgoizlx/refs/heads/main/ui"))()
+  end
+})
+
 
 local Tab = Window:MakeTab({
     Name = "玩家",
