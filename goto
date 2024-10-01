@@ -1165,6 +1165,13 @@ Tab:AddButton({
 loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/b04e28198c8eeb1408921a1560792152/raw/67739a2bc571093976e6cd7e51fb526dedd75861/tools",true))()
   end
 })
+Tab:AddButton({
+    Name="可以画画的图片",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/pamn/refs/heads/main/xza",true))()
+  end
+})
+
 
 local Tab = Window:MakeTab({
     Name = "玩家",
