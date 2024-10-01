@@ -1250,40 +1250,6 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-        Name = "传送到玩家身边",
-	Callback = function(Value)
--- 假设你有一个按钮，玩家点击后会触发传送 
-        local debounce = false -- 防止多次点击   
-script.Parent.MouseButton1Down:Connect(function(player) 
-        if debounce then return end 
-        debounce = true 
-
-        local character = player.Character 
-        if not character then warn(player.Name .. " 没有角色模型") 
-        debounce = false 
-        return 
-   end 
-
-        local rootPart = 
-character:WaitForChild("HumanoidRootPart") 
-        local targetPlayer = game.Players:GetPlayerWhoIsNearestTo(rootPart.Position) 
-        if not targetPlayer then warn("没有找到最近的玩家") 
-        debounce = false 
-        return 
-    end 
-        local targetCharacter = targetPlayer.Character 
-       if not targetCharacter then warn(targetPlayer.Name .. " 没有角色模型") 
-        debounce = false 
-  return 
-end 
-        local targetRootPart = 
-        targetCharacter:WaitForChild("HumanoidRootPart") 
-        rootPart.CFrame = targetRootPart.CFrame * CFrame.new(0, 2) -- 传送到目标玩家上方2个单位的位置 
-        task.wait(0.5) -- 等待0.5秒，确保传送完成 
-        debounce = false 
-  end)
-})
-Tab:AddButton({
 	Name = "无敌",
 	Callback = function()
 local lp = game:GetService "Players".LocalPlayer
