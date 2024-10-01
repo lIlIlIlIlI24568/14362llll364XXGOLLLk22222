@@ -1166,9 +1166,9 @@ loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/b04e28198c
   end
 })
 Tab:AddButton({
-    Name="可以画画的图片",
+    Name="聊天绘画图",
     Callback=function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/pamn/refs/heads/main/xza"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/pamn/refs/heads/main/xz"))()
   end
 })
 
