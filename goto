@@ -815,7 +815,7 @@ Tab:AddButton({
     local blur = Inst
   end
 })
-player:AddButton({ 
+Tab:AddButton({ 
 	Name = "动态模糊",
 	Callback = function()
        	local camera = workspace.CurrentCamera
@@ -851,7 +851,7 @@ end)
   	end
 })
 
-player:AddButton({ 
+Tab:AddButton({ 
 	Name = "光影（浅）",
 	Callback = function()
        	loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
