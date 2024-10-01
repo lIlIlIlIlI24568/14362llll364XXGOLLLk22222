@@ -8,7 +8,7 @@ CoreGui:SetCore("SendNotification", {
 
 CoreGui:SetCore("SendNotification", {
     Title = "goto脚本",
-    Text = "🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️",
+    Text = "自动重进服务器系统已启动",
     Duration = 7, 
 })
 
@@ -25,7 +25,10 @@ print("开启成功")
 		   wait(1)
 		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 		end)
-
+                local vu = game:GetService("VirtualUser")
+                game:service"NetworkClient".ChildRemoved:Connect(function()
+   game:service"TeleportService":TeleportToPlaceInstance(game.PlaceId, game.JobId, game:service"Players".LocalPlayer);
+end)
 local LBLG = Instance.new("ScreenGui", getParent)
 local LBL = Instance.new("TextLabel", getParent)
 local player = game.Players.LocalPlayer
