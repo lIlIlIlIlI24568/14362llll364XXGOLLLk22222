@@ -1171,7 +1171,12 @@ Tab:AddButton({
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/pamn/refs/heads/main/xz"))()
   end
 })
-
+Tab:AddButton({
+    Name="死亡笔记",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E6%AD%BB%E4%BA%A1%E7%AC%94%E8%AE%B0"))()
+  end
+})
 
 local Tab = Window:MakeTab({
     Name = "玩家",
