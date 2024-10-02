@@ -1072,6 +1072,12 @@ Tab:AddButton({
     end
 })
 Tab:AddButton({
+    Name ="动作 R6",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ocfi/Animations-obfus/refs/heads/main/obfus"))()
+    end
+})
+Tab:AddButton({
     Name ="goto飞车",
     Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%A3%9E%E8%BD%A6"))()
@@ -1256,26 +1262,6 @@ local Tab = Window:MakeTab({
     PremiumOnly = false
 })
 
-Tab:AddButton({
-        Name = "检测",
-	Callback = function()
-
-function checkFunctions()
-    local workingCount = 0
-    local totalCount = 0
-    for name, value in pairs(getfenv()) do
-        totalCount = totalCount + 1
-        if type(value) == "function" then
-            print(name .. " ✅")
-            workingCount = workingCount + 1
-        else
-            print(name .. " ❌")
-        end
-    end
-    print("=====================")
-    print("Working functions: " .. workingCount .. "/" .. totalCount)
-end
-})
 Tab:AddButton({
 	Name = "无敌",
 	Callback = function()
