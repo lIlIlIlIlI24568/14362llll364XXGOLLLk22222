@@ -1932,13 +1932,37 @@ Tab:AddToggle({
     		                 Highlight.Adornee = v.Character
     		              end       
     		           end    
-		            end       
+		        end       
 		      end    
 		    end  
-		end    
-		end)
-	end	  
+		 end    
+	       end)
+	     end	  
 })
+Tab:AddButton({
+    Name="彩色",
+    Callback=function(Value)
+getgenv().Rainbow = Value
+		while wait() do
+		    if not getgenv().Rainbow then return end
+		    getgenv().Color = Color3.new(148, 0, 211)
+		    wait()
+		    getgenv().Color = Color3.new(75, 0, 130)
+		    wait()
+		    getgenv().Color = Color3.new(0, 0, 255)
+		    wait()
+		    getgenv().Color = Color3.new(0, 255, 0)
+		    wait()
+		    getgenv().Color = Color3.new(255, 255, 0)
+		    wait()
+		    getgenv().Color = Color3.new(255, 127, 0)
+		    wait()
+		    getgenv().Color = Color3.new(255, 0 , 0)
+		    wait()
+		end    
+  end
+})
+
 
 Tab:AddToggle({
 	Name = "锁头 加入队伍检测",
