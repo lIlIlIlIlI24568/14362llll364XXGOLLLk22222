@@ -1019,7 +1019,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
     Name = "通用",
-    Icon = "rbxassetid://15613376871",
+    Icon = "rbxassetid://18923878915",
     PremiumOnly = false
 })
 Tab:AddButton({
@@ -1123,7 +1123,7 @@ Tab:AddButton({
 Tab:AddButton({
     Name ="卡哇伊黑洞（可以锁人的哦）",
     Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E9%BB%91%E6%B4%9E",true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%BB%91%E6%B4%9E",true))()
     end
 })
 Tab:AddButton({
@@ -2091,7 +2091,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
     Name = "DOORS🚪",
-    Icon = "rbxassetid://15613376871",
+    Icon = "rbxassetid://18923878915",
     PremiumOnly = false
 })
 Tab:AddButton({
