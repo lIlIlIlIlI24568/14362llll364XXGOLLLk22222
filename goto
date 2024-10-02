@@ -3489,9 +3489,19 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/Jsjhsbwbjsksnbe
   end
 })
 
+local Tab = Window:MakeTab({
+    Name = "杂项",
+    Icon = "rbxassetid://16060333448",
+    PremiumOnly = false
+})
 
-
-
+Tab:AddColorpicker({
+	Name = "Colorpicker",
+	Default = Color3.fromRGB(255, 0, 0),
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
 
 
 
