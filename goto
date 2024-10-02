@@ -3496,7 +3496,7 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddColorpicker({
-	Name = "Colorpicker",
+	Name = "开发中...",
 	Default = Color3.fromRGB(255, 0, 0),
 	Callback = function(Value)
 		print(Value)
