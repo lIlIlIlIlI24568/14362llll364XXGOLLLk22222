@@ -84,7 +84,7 @@ CoreGui:SetCore("SendNotification", {
 OrionLib:MakeNotification({
 	Name = "goto_O",
 	Content = "欢迎使用goto脚本",
-	Image = "rbxassetid://1000140976",
+	Image = "rbxassetid://18923878915",
 	Time = 2
 })
 
@@ -121,7 +121,7 @@ local Section = Tab:AddSection({
 OrionLib:MakeNotification({
 	Name = "稀🍚你 ",
 	Content = "持续更新",
-	Image = "rbxassetid://17360377302",
+	Image = "rbxassetid://18923878915",
 	Time = 2
 })
 
@@ -760,7 +760,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
     Name = "如果fl不能用，可以启用这里",
-    Icon = "rbxassetid://1000140976",
+    Icon = "rbxassetid://18923878915",
     PremiumOnly = false
 })
 Tab:AddButton({
@@ -796,7 +796,7 @@ end
 
 local Tab = Window:MakeTab({
     Name = "图像画质",
-    Icon = "rbxassetid://15613376871",
+    Icon = "rbxassetid://18923878915",
     PremiumOnly = false
 })
 Tab:AddButton({
@@ -1190,7 +1190,7 @@ loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
 
 local Tab = Window:MakeTab({
     Name = "通用2",
-    Icon = "rbxassetid://1000140976",
+    Icon = "rbxassetid://18923878915",
     PremiumOnly = false
 })
 Tab:AddButton({
@@ -1251,7 +1251,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/xgoizlx/refs/h
 
 local Tab = Window:MakeTab({
     Name = "玩家",
-    Icon = "rbxassetid://1000140976",
+    Icon = "rbxassetid://18923878915",
     PremiumOnly = false
 })
 
@@ -1599,7 +1599,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
     Name = "透视自瞄",
-    Icon = "rbxassetid://1000140976",
+    Icon = "rbxassetid://18923878915",
     PremiumOnly = false
 })
 
@@ -1883,6 +1883,64 @@ end)
     end
 })
 Tab:AddToggle({
+	Name = "透视",
+	Default = false,
+	Callback = function(Value)
+        getgenv().esp = Value
+		spawn(function()
+		while wait() do
+		    if not getgenv().esp then
+		          for i,v in pairs(game.Players:GetChildren()) do
+		              if v.Character and v.Character:FindFirstChild("Highlight") then
+		                  local Highlight = v.Character:FindFirstChild("Highlight")
+		                  Highlight.Enabled = false
+    		      end
+		      end 
+		      else
+		          for i,v in pairs(game.Players:GetChildren()) do
+		             if getgenv().teamcheck == true then
+		               if v.Character and v ~= game.Players.LocalPlayer and v.TeamColor ~= game.Players.LocalPlayer.TeamColor then
+    		                 if v.Character:FindFirstChild("Highlight") then
+    		                 local Highlight = v.Character:FindFirstChild("Highlight") 
+    		                 Highlight.Enabled = true
+    		                 Highlight.FillColor = getgenv().Color
+    		                 Highlight.Adornee = v.Character
+    		                 else
+    		                 local Highlight = Instance.new("Highlight",v.Character)
+    		                 Highlight.Enabled = true
+    		                 Highlight.FillColor = getgenv().Color
+    		                 Highlight.Adornee = v.Character
+    		              end       
+    		           end  
+		                if v.TeamColor == game.Players.LocalPlayer.TeamColor then
+    		              if v.Character and v.Character:FindFirstChild("Highlight") then
+    		                  local Highlight = v.Character:FindFirstChild("Highlight")
+        		              Highlight.Enabled = false
+        		          end    
+    		            end 
+    		          else
+    		              if v.Character and v ~= game.Players.LocalPlayer then
+    		                 if v.Character:FindFirstChild("Highlight") then
+    		                 local Highlight = v.Character:FindFirstChild("Highlight") 
+    		                 Highlight.Enabled = true
+    		                 Highlight.FillColor = getgenv().Color
+    		                 Highlight.Adornee = v.Character
+    		                 else
+    		                 local Highlight = Instance.new("Highlight",v.Character)
+    		                 Highlight.Enabled = true
+    		                 Highlight.FillColor = getgenv().Color
+    		                 Highlight.Adornee = v.Character
+    		              end       
+    		           end    
+		            end       
+		      end    
+		    end  
+		end    
+		end)
+	end	  
+})
+
+Tab:AddToggle({
 	Name = "锁头 加入队伍检测",
 	Default = false,
 	Callback = function(Value)
@@ -2010,7 +2068,7 @@ end
 
 local Tab = Window:MakeTab({
     Name = "其他脚本",
-    Icon = "rbxassetid://1000140976",
+    Icon = "rbxassetid://18923878915",
     PremiumOnly = false
 })
 
