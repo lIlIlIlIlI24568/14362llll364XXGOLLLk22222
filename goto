@@ -2008,6 +2008,12 @@ Tab:AddButton({
 loadstring(game:HttpGet("https://pastebin.com/raw/gXsy4tYU"))()
 end
 })
+Tab:AddButton({
+	Name = "自瞄ui",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/zm"))()
+end
+})
 
 local Tab = Window:MakeTab({
     Name = "其他脚本",
