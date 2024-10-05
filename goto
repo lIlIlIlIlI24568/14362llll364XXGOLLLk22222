@@ -1,9 +1,12 @@
+--如果你看到了xgo的源码....嗯，你看到了我也没办法꒰ঌ ✝︎ ໒꒱ྀིˎˊ˗ 
+--祝你有个美好的一天     ꒰ঌᐢ.ˬ.ᐢ໒꒱˚
+--    ✞♡✞♡✞♡✞♡✞         𝗛𝗮𝗽𝗽𝘆 𝗗𝗮𝘆𝘀 • 更新💡 ​​​          xgo的留言❤️🇨🇳
 local CoreGui = game:GetService("StarterGui")    --哈哈 xgo超无敌
 --xgo--xgo--xgo--xgo--xgo--xgo--xgo--
 CoreGui:SetCore("SendNotification", {    Title = "goto_O",    Text = "小go努力加载中..（启动反挂机系统）",    Duration = 6, })
 -- ᘏ ⑅ ᘏ
 --꒰ ⸝⸝ᴗ̤ ̫ ɞ̴̶̷⸝⸝꒱
---꒰ つ (i love x ) ഒ （我爱x）
+--꒰ つ (i love x ) ഒ （我爱xgo）
 --　　∪ ∪ ♡̩͙
 --
 CoreGui:SetCore("SendNotification", {    Title = "goto脚本",    Text = "自动重进服务器系统已启动",    Duration = 7, })
@@ -584,26 +587,11 @@ Tab:AddButton({
         )
     end
 })
-Tab:AddButton({
-    Name ="保存游戏",
-    Callback = function()
-    saveinstance()
-    end
-})
-Tab:AddButton({
-    Name ="离开游戏",
-    Callback = function()
-      game:Shutdown()
-    end
-})
-Tab:AddButton({
-    Name ="最高帧率",
-    Callback = function()
-         setfpscap(999)
-    end
-})
+Tab:AddButton({    Name ="保存游戏",    Callback = function()    saveinstance()    end})
+Tab:AddButton({    Name ="离开游戏",    Callback = function()     game:Shutdown()    end})
+Tab:AddButton({    Name ="最高帧率",    Callback = function()         setfpscap(999)    end})
 Tab:AddTextbox({
-        Name = "视角  目前有 Bug",
+        Name = "广角  目前有 Bug",
         Min = 0,
         Max = 360,
 	Default = "",
@@ -612,6 +600,7 @@ Tab:AddTextbox({
 		  game.Workspace.CurrentCamera.FieldOfView = v
 	end
 })
+Tab:AddTextbox({        Name = "超广角（Fov）",        Callback = function()      workspace.CurrentCamera.FieldOfView = 120       end})
 Tab:AddTextbox({
 	Name = "血量 可能是假血",
 	Default = "",
