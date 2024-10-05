@@ -77,6 +77,7 @@ local Section = Tab:AddSection({	Name = "💗💗💗💗💗💗💗💗💗�
 local Section = Tab:AddSection({	Name = "💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗"})
 OrionLib:MakeNotification({	Name = "稀🍚你 ",	Content = "持续更新",	Image = "rbxassetid://18923878915",	Time = 2})
 local Tab = Window:MakeTab({    Name = "小go音乐区",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
+local Tab1 = Window:MakeTab({    Name = "如果fl不能用，可以启用这里",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({Name ="重新加入游戏 如果想换音乐只能重进",    Callback = function()      game:GetService("TeleportService"):TeleportToPlaceInstance(            game.PlaceId,            game.JobId,            game:GetService("Players").LocalPlayer        )    end})
 local Section = Tab:AddSection({        Name = "小go提示:音乐功无法关闭哦  "})
 Tab:AddButton({    Name ="Direct & Park Avenue - I'll Go 挺好听的",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410081298"    sound.Parent = game.Workspace    sound:Play()    end})
@@ -148,36 +149,31 @@ Tab:AddButton({    Name ="睡眠歌曲 Baby Song",     Callback =function()    l
 Tab:AddButton({    Name ="防空警报",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://792323017"    sound.Parent = game.Workspace    sound:Play()    end}) 
 Tab:AddButton({    Name ="义勇军进行曲",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1845918434"    sound.Parent = game.Workspace    sound:Play()    end})
 Tab:AddButton({    Name ="彩虹瀑布",    Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837879082"    sound.Parent = game.Workspace    sound:Play()    end})
-local Tab = Window:MakeTab({
-    Name = "如果fl不能用，可以启用这里",
-    Icon = "rbxassetid://18923878915",
-    PremiumOnly = false
-})
-Tab:AddButton({
+Tab1:AddButton({
     Name ="阿尔宙斯",
     Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20X%20V3"))()
     end
 })
-Tab:AddButton({
+Tab1:AddButton({
     Name ="管理员注入 暂时无法使用，可能会被踢出去",
     Callback = function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/iK4oS/backdoor.exe/master/source.lua'),true))()
     end
 })
-Tab:AddButton({
+Tab1:AddButton({
 	Name = "管理员权限 可获得游戏内的通行证",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%AE%A1%E7%90%86%E5%91%98"))()
 end
 })
-Tab:AddButton({
+Tab1:AddButton({
 	Name = "资源管理器",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/solara_dex"))()
 end
 })
-Tab:AddButton({
+Tab1:AddButton({
 	Name = "远程监控",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/remotespy_save"))()
