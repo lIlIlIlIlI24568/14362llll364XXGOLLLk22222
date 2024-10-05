@@ -296,7 +296,8 @@ Tab:AddButton({    Name ="RTX  图形画质",    Callback = function()     local
         s.Enabled = true
         s.Intensity = 0.01
         s.Spread = 0.146
-        print("小go  RTX图形加载完毕!")    end})
+        print("小go  RTX图形加载完毕!")    
+end})
 local Tab = Window:MakeTab({    Name = "通用",   Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({    Name ="玩家进入通知",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()    end})
 Tab:AddButton({    Name ="小goFe合集",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/Fe"))()    end})
