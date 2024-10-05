@@ -6,7 +6,7 @@ local CoreGui = game:GetService("StarterGui")    --哈哈 xgo超无敌
 CoreGui:SetCore("SendNotification", {    Title = "goto_O",    Text = "小go努力加载中..（启动反挂机系统）",    Duration = 6, })
 -- ᘏ ⑅ ᘏ
 --꒰ ⸝⸝ᴗ̤ ̫ ɞ̴̶̷⸝⸝꒱
---꒰ つ (i love x ) ഒ （我爱xgo）
+--꒰ つ (i love x ) ഒ （xgo超可爱）
 --　　∪ ∪ ♡̩͙
 --
 CoreGui:SetCore("SendNotification", {    Title = "goto脚本",    Text = "自动重进服务器系统已启动",    Duration = 7, })
