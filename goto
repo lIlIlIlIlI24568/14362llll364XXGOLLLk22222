@@ -1,23 +1,15 @@
-local CoreGui = game:GetService("StarterGui")
-
-CoreGui:SetCore("SendNotification", {
-    Title = "goto_O",
-    Text = "小go努力加载中..（启动反挂机系统）",
-    Duration = 6, 
-})
-
-CoreGui:SetCore("SendNotification", {
-    Title = "goto脚本",
-    Text = "自动重进服务器系统已启动",
-    Duration = 7, 
-})
-
-CoreGui:SetCore("SendNotification", {
-    Title = "<(￣3￣)>哼！=☞盘他",
-    Text = "加载成功⸝ヽ(๏~๏)ﾉ",
-    Duration = 8, 
-})
-
+local CoreGui = game:GetService("StarterGui")    --哈哈 xgo超无敌
+--xgo--xgo--xgo--xgo--xgo--xgo--xgo--
+CoreGui:SetCore("SendNotification", {    Title = "goto_O",    Text = "小go努力加载中..（启动反挂机系统）",    Duration = 6, })
+-- ᘏ ⑅ ᘏ
+--꒰ ⸝⸝ᴗ̤ ̫ ɞ̴̶̷⸝⸝꒱
+--꒰ つ (i love x ) ഒ （我爱x）
+--　　∪ ∪ ♡̩͙
+--
+CoreGui:SetCore("SendNotification", {    Title = "goto脚本",    Text = "自动重进服务器系统已启动",    Duration = 7, })
+--♡.꒰⑅:Why?xgo如此可愛らしい…
+CoreGui:SetCore("SendNotification", {    Title = "<(￣3￣)>哼！=☞盘他",    Text = "加载成功⸝ヽ(๏~๏)ﾉ",    Duration = 8, })
+--𝑅𝑎𝑖𝑛 ☂︎ ⸝⸝⸝ 下雨天捕捉浪漫🌧不管阴天雨天🍥，🥂有好心情就是晴天🍹
 print("xgo goto_O")
 		local vu = game:GetService("VirtualUser")
 		game:GetService("Players").LocalPlayer.Idled:connect(function()
