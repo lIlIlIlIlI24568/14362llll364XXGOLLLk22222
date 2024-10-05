@@ -70,126 +70,96 @@ Tab:AddParagraph("服务器的ID"," "..game.GameId.."")
 Tab:AddParagraph("获取客户端ID:"..game:GetService("RbxAnalyticsService"):GetClientId())
 Tab:AddParagraph("服务器名称:"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
 local Tab =Window:MakeTab({	Name = "关于作者",	Icon = "rbxassetid://7734053495",	PremiumOnly = false})
-
 Tab:AddButton({	Name = "复制作者QQ",	Callback = function()     setclipboard("3795512080")  	end})
 Tab:AddButton({	Name = "复制QQ群",	Callback = function()     setclipboard("877251886")  	end})
 local Section = Tab:AddSection({	Name = "💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗"})
 local Section = Tab:AddSection({	Name = "💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗"})
 OrionLib:MakeNotification({	Name = "稀🍚你 ",	Content = "持续更新",	Image = "rbxassetid://18923878915",	Time = 2})
-local Tab = Window:MakeTab({    Name = "小go音乐区",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
-local Tab1 = Window:MakeTab({    Name = "如果fl不能用，可以启用这里",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
-Tab:AddButton({Name ="重新加入游戏 如果想换音乐只能重进",    Callback = function()      game:GetService("TeleportService"):TeleportToPlaceInstance(            game.PlaceId,            game.JobId,            game:GetService("Players").LocalPlayer        )    end})
-local Section = Tab:AddSection({        Name = "小go提示:音乐功无法关闭哦  "})
-Tab:AddButton({    Name ="Direct & Park Avenue - I'll Go 挺好听的",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410081298"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Rogue - Motion",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7028557220"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Rome in Silver & Beach Season - Skin 和上一首一样，都挺好听的",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7028570258"   sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="轻松",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837871067"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="轻松2",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837849285"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="轻松3 ",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1836842889"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Pixel Terror & Aviella - Enigma  女版",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410084645"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Grant - Color  女版",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7023828725"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Til the Morning (a)女版",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1840041842"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="轻松7   女版",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1847606454"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="轻松8",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839721437"    sound.Parent = game.Workspace    sound:Play()    end})
-local Section = Tab:AddSection({        Name = " Dj🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️"})
-Tab:AddButton({    Name ="Autotuned Dancing Roach  不知道怎么形容这电音",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://4050095124"    sound.Parent = game.Workspace   sound:Play()    end})
-Tab:AddButton({    Name ="Dj",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1843497734"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Dj2",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7028977687 "    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Dj3",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1836594449"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Dj4 ",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://792323017"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Dj5",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842940193"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Robotic Dance A",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837853076"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Parry Gripp - Pancake Robot",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9245558138"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj8",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837434037"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj9",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839037193"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj10",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837560230"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj11",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842908121"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj12",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9042493127"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj13",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839246774"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj14",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842940253"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj15",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9041933055"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj16",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410086218"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj17",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839703786"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj18",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1838627720"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj19",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410085763"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj20",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839898469"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj21",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1848213471"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj22",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410080771"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj23",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837843720"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj24",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842802012"    sound.Parent = game.Workspace    sound:Play()   end})
-Tab:AddButton({    Name ="dj25",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1846863084"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj26",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842802498"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj27",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1838075732"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj28",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410083226"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj29",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://792323017"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj30",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7028913008"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj31",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9042616023"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj32",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1847799916"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Rip the Guts Out",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837814958"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Pixel Terror - Machina",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410080475"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="We Go Hard",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842940420"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Fight Or Flight",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842940300"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Alarm",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1845080313"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Parry Gripp - Last Train to Awesome Town",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9245554658"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Uproar",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842934837"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="The Will To Fight A",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1845793864"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Mindwinder (a)",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1838075377"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="dj42",     Callback =function()   local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="FWLR - Hot",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410082534"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Noisestorm - Escape",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410082879"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Skull Crusher",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842558494"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="45",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9041932892"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Heist",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1836782065"    sound.Parent = game.Workspace    sound:Play()    end})
-local Section = Tab:AddSection({        Name = "休闲安逸快乐🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️"})
-Tab:AddButton({    Name ="Cute Story",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839755231"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="快乐一点的",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9039445224"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Swing it",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1843313385"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="Police 打鼓伴奏",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842981634"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="睡眠歌曲 Baby Song",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1838998127"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="防空警报",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://792323017"    sound.Parent = game.Workspace    sound:Play()    end}) 
-Tab:AddButton({    Name ="义勇军进行曲",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1845918434"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab:AddButton({    Name ="彩虹瀑布",    Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837879082"    sound.Parent = game.Workspace    sound:Play()    end})
-Tab1:AddButton({
-    Name ="阿尔宙斯",
-    Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20X%20V3"))()
-    end
-})
-Tab1:AddButton({
-    Name ="管理员注入 暂时无法使用，可能会被踢出去",
-    Callback = function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/iK4oS/backdoor.exe/master/source.lua'),true))()
-    end
-})
-Tab1:AddButton({
-	Name = "管理员权限 可获得游戏内的通行证",
-	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%AE%A1%E7%90%86%E5%91%98"))()
-end
-})
-Tab1:AddButton({
-	Name = "资源管理器",
-	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/solara_dex"))()
-end
-})
-Tab1:AddButton({
-	Name = "远程监控",
-	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/remotespy_save"))()
-end
-})
+local Tab1 = Window:MakeTab({    Name = "小go音乐区",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
+local Tab2 = Window:MakeTab({    Name = "如果fl不能用，可以启用这里",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
+local Tab3 = Window:MakeTab({    Name = "图像画质",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 
-local Tab = Window:MakeTab({
-    Name = "图像画质",
-    Icon = "rbxassetid://18923878915",
-    PremiumOnly = false
-})
-Tab:AddButton({
-  Name = "美丽天空",
-  Callback = function()
-    -- Roblox Graphics Enhancher
-    local light = game.Lighting
+
+
+
+
+Tab1:AddButton({Name ="重新加入游戏 如果想换音乐只能重进",    Callback = function()      game:GetService("TeleportService"):TeleportToPlaceInstance(            game.PlaceId,            game.JobId,            game:GetService("Players").LocalPlayer        )    end})
+local Section = Tab1:AddSection({        Name = "小go提示:音乐功无法关闭哦  "})
+Tab1:AddButton({    Name ="Direct & Park Avenue - I'll Go 挺好听的",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410081298"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Rogue - Motion",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7028557220"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Rome in Silver & Beach Season - Skin 和上一首一样，都挺好听的",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7028570258"   sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="轻松",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837871067"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="轻松2",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837849285"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="轻松3 ",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1836842889"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Pixel Terror & Aviella - Enigma  女版",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410084645"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Grant - Color  女版",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7023828725"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Til the Morning (a)女版",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1840041842"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="轻松7   女版",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1847606454"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="轻松8",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839721437"    sound.Parent = game.Workspace    sound:Play()    end})
+local Section = Tab1:AddSection({        Name = " Dj🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️"})
+Tab1:AddButton({    Name ="Autotuned Dancing Roach  不知道怎么形容这电音",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://4050095124"    sound.Parent = game.Workspace   sound:Play()    end})
+Tab1:AddButton({    Name ="Dj",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1843497734"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Dj2",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7028977687 "    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Dj3",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1836594449"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Dj4 ",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://792323017"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Dj5",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842940193"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Robotic Dance A",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837853076"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Parry Gripp - Pancake Robot",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9245558138"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj8",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837434037"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj9",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839037193"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj10",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837560230"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj11",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842908121"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj12",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9042493127"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj13",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839246774"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj14",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842940253"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj15",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9041933055"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj16",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410086218"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj17",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839703786"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj18",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1838627720"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj19",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410085763"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj20",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839898469"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj21",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1848213471"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj22",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410080771"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj23",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837843720"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj24",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842802012"    sound.Parent = game.Workspace    sound:Play()   end})
+Tab1:AddButton({    Name ="dj25",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1846863084"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj26",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842802498"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj27",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1838075732"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj28",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410083226"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj29",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://792323017"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj30",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7028913008"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj31",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9042616023"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj32",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1847799916"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Rip the Guts Out",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837814958"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Pixel Terror - Machina",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410080475"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="We Go Hard",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842940420"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Fight Or Flight",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842940300"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Alarm",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1845080313"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Parry Gripp - Last Train to Awesome Town",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9245554658"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Uproar",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842934837"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="The Will To Fight A",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1845793864"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Mindwinder (a)",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1838075377"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="dj42",     Callback =function()   local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="FWLR - Hot",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410082534"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Noisestorm - Escape",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410082879"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Skull Crusher",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842558494"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="45",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9041932892"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Heist",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1836782065"    sound.Parent = game.Workspace    sound:Play()    end})
+local Section = Tab1:AddSection({        Name = "休闲安逸快乐🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️"})
+Tab1:AddButton({    Name ="Cute Story",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839755231"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="快乐一点的",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://9039445224"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Swing it",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1843313385"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="Police 打鼓伴奏",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1842981634"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="睡眠歌曲 Baby Song",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1838998127"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="防空警报",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://792323017"    sound.Parent = game.Workspace    sound:Play()    end}) 
+Tab1:AddButton({    Name ="义勇军进行曲",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1845918434"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab1:AddButton({    Name ="彩虹瀑布",    Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837879082"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab2:AddButton({    Name ="阿尔宙斯",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20X%20V3"))()    end})
+Tab2:AddButton({    Name ="管理员注入 暂时无法使用，可能会被踢出去",    Callback = function()    loadstring(game:HttpGet(('https://raw.githubusercontent.com/iK4oS/backdoor.exe/master/source.lua'),true))()    end})
+Tab2:AddButton({    Name = "管理员权限 可获得游戏内的通行证",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%AE%A1%E7%90%86%E5%91%98"))()   end})
+Tab2:AddButton({    Name = "资源管理器",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/solara_dex"))()   end})
+Tab2:AddButton({    Name = "远程监控",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/remotespy_save"))()  end})
+Tab3:AddButton({    Name = "美丽天空",   Callback = function()   -- Roblox Graphics Enhancher xgo    local light = game.Lighting
     for i, v in pairs(light:GetChildren()) do
       v:Destroy()
     end
@@ -199,20 +169,13 @@ Tab:AddButton({
     local bloom = Instance.new("BloomEffect")
     local sun = Instance.new("SunRaysEffect")
     local blur = Inst
-  end
-})
-Tab:AddButton({ 
-	Name = "动态模糊",
-	Callback = function()
-       	local camera = workspace.CurrentCamera
+  end})
+Tab3:AddButton({ 	Name = "动态模糊",	Callback = function()       	local camera = workspace.CurrentCamera
 local blurAmount = 10
 local blurAmplifier = 5
 local lastVector = camera.CFrame.LookVector
-
 local motionBlur = Instance.new("BlurEffect", camera)
-
 local runService = game:GetService("RunService")
-
 workspace.Changed:Connect(function(property)
  if property == "CurrentCamera" then
   print("Changed")
@@ -221,60 +184,28 @@ workspace.Changed:Connect(function(property)
    motionBlur.Parent = camera
   else
    motionBlur = Instance.new("BlurEffect", camera)
-  end
- end
-end)
-
+  end end end)
 runService.Heartbeat:Connect(function()
  if not motionBlur or motionBlur.Parent == nil then
   motionBlur = Instance.new("BlurEffect", camera)
- end
- 
+ end 
  local magnitude = (camera.CFrame.LookVector - lastVector).magnitude
  motionBlur.Size = math.abs(magnitude)*blurAmount*blurAmplifier/2
  lastVector = camera.CFrame.LookVector
-end)
-  	end
-})
-
-Tab:AddButton({ 
-	Name = "光影（浅）",
-	Callback = function()
-       	loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
-  	end
-})
-Tab:AddButton({
-    Name ="光影菜单  小go推荐",
-    Callback = function()
-    loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Shader-RTX-New-12425"))()
-    end
-})
-Tab:AddButton({
-    Name ="光影v2",
-    Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
-    end
-})
-Tab:AddButton({
-    Name ="光影v4",
-    Callback = function()
-    loadstring(game:HttpGet('https://pastebin.com/raw/gUceVJig'))()
-    end
-})
-Tab:AddButton({
-    Name ="RTX  图形画质",
-    Callback = function()
-     local light = game.Lighting
+end)  	end})
+Tab3:AddButton({    Name = "光影（浅）",	Callback = function()       	loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()  	end})
+Tab3:AddButton({    Name ="光影菜单  小go推荐",    Callback = function()    loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Shader-RTX-New-12425"))()    end})
+Tab3:AddButton({    Name ="光影v2",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()    end})
+Tab3:AddButton({    Name ="光影v4",    Callback = function()    loadstring(game:HttpGet('https://pastebin.com/raw/gUceVJig'))()    end})
+Tab:AddButton({    Name ="RTX  图形画质",    Callback = function()     local light = game.Lighting
         for i, v in pairs(light:GetChildren()) do
             v:Destroy()
         end
-
         local ter = workspace.Terrain
         local color = Instance.new("ColorCorrectionEffect")
         local bloom = Instance.new("BloomEffect")
         local sun = Instance.new("SunRaysEffect")
         local blur = Instance.new("BlurEffect")
-
         color.Parent = light
         bloom.Parent = light
         sun.Parent = light
@@ -287,8 +218,7 @@ Tab:AddButton({
             ColorCorrection = true,
             Sun = true,
             Lighting = true,
-            BloomEffect = true
-        }
+            BloomEffect = true}
 
         --settings {
 
@@ -297,19 +227,15 @@ Tab:AddButton({
         color.Brightness = 0.1
         color.Saturation = 0.25
         color.TintColor = Color3.fromRGB(255, 222, 211)
-
         bloom.Enabled = false
         bloom.Intensity = 0.1
-
         sun.Enabled = false
         sun.Intensity = 0.2
         sun.Spread = 1
-
         bloom.Enabled = false
         bloom.Intensity = 0.05
         bloom.Size = 32
         bloom.Threshold = 1
-
         blur.Enabled = false
         blur.Size = 6
 
@@ -318,11 +244,9 @@ Tab:AddButton({
         if config.ColorCorrection then
             color.Enabled = true
         end
-
         if config.Sun then
             sun.Enabled = true
         end
-
         if config.Terrain then
              --settings {
             ter.WaterWaveSize = 0.1
@@ -399,9 +323,7 @@ Tab:AddButton({
         s.Intensity = 0.01
         s.Spread = 0.146
 
-        print("小go  RTX图形加载完毕!")
-    end
-})
+        print("小go  RTX图形加载完毕!")    end})
 
 local Tab = Window:MakeTab({
     Name = "通用",
