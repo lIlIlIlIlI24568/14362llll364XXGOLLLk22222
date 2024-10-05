@@ -1,11 +1,7 @@
 local CoreGui = game:GetService("StarterGui")
-
 CoreGui:SetCore("SendNotification", {    Title = "goto_O",    Text = "小go努力加载中..（启动反挂机系统）",    Duration = 6, })
-
 CoreGui:SetCore("SendNotification", {    Title = "goto脚本",    Text = "自动重进服务器系统已启动",    Duration = 7, })
-
 CoreGui:SetCore("SendNotification", {    Title = "<(￣3￣)>哼！=☞盘他",    Text = "加载成功⸝ヽ(๏~๏)ﾉ",    Duration = 8, })
-
 print("开启成功")
 		local vu = game:GetService("VirtualUser")
 		game:GetService("Players").LocalPlayer.Idled:connect(function()
@@ -15,8 +11,7 @@ print("开启成功")
 		end)
                 local vu = game:GetService("VirtualUser")
                 game:service"NetworkClient".ChildRemoved:Connect(function()
-   game:service"TeleportService":TeleportToPlaceInstance(game.PlaceId, game.JobId, game:service"Players".LocalPlayer);
-end)
+   game:service"TeleportService":TeleportToPlaceInstance(game.PlaceId, game.JobId, game:service"Players".LocalPlayer);   end)
 local LBLG = Instance.new("ScreenGui", getParent)
 local LBL = Instance.new("TextLabel", getParent)
 local player = game.Players.LocalPlayer
@@ -38,12 +33,10 @@ LBL.TextScaled = true
 LBL.TextSize = 14
 LBL.TextWrapped = true
 LBL.Visible = true
-
 local FpsLabel = LBL
 local Heartbeat = game:GetService("RunService").Heartbeat
 local LastIteration, Start
 local FrameUpdateTable = {}
-
 local function HeartbeatUpdate()
 	LastIteration = tick()
 	for Index = #FrameUpdateTable, 1, -1 do
@@ -56,13 +49,11 @@ local function HeartbeatUpdate()
 end
 Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
-
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/GTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"))()
 local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "xgo"})
 local Tab = Window:MakeTab({    Name = "用户",    Icon = "rbxassetid://7734068321",    PremiumOnly = false})
 CoreGui:SetCore("SendNotification", {    Title = "goto_O",    Text = "小go欢迎各位",    Duration = 10, })
 OrionLib:MakeNotification({	Name = "goto_O",	Content = "欢迎使用goto脚本",	Image = "rbxassetid://18923878915",	Time = 2})
-
 Tab:AddParagraph("小go为你查看账户年龄:"..player.AccountAge.."天")
 Tab:AddParagraph("用户名:"," "..game.Players.LocalPlayer.Name.."")
 Tab:AddParagraph("注入器查看:"," "..identifyexecutor().."")
@@ -70,13 +61,11 @@ Tab:AddParagraph("服务器的ID"," "..game.GameId.."")
 Tab:AddParagraph("获取客户端ID:"..game:GetService("RbxAnalyticsService"):GetClientId())
 Tab:AddParagraph("服务器名称:"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
 local Tab =Window:MakeTab({	Name = "关于作者",	Icon = "rbxassetid://7734053495",	PremiumOnly = false})
-
 Tab:AddButton({	Name = "复制作者QQ",	Callback = function()     setclipboard("3795512080")  	end})
 Tab:AddButton({	Name = "复制QQ群",	Callback = function()    setclipboard("877251886") 	end})
 local Section = Tab:AddSection({	Name = "💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗"})
 local Section = Tab:AddSection({	Name = "💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗"})
 OrionLib:MakeNotification({	Name = "稀🍚你 ",	Content = "持续更新",	Image = "rbxassetid://18923878915",	Time = 2})
-
 local Tab = Window:MakeTab({    Name = "小go音乐区",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({Name ="重新加入游戏 如果想换音乐只能重进",    Callback = function()      game:GetService("TeleportService"):TeleportToPlaceInstance(            game.PlaceId,            game.JobId,            game:GetService("Players").LocalPlayer        )    end})
 local Section = Tab:AddSection({        Name = "小go提示:音乐功无法关闭哦  "})
@@ -156,128 +145,67 @@ Tab:AddButton({    Name = "管理员权限 可获得游戏内的通行证",	Call
 Tab:AddButton({    Name = "资源管理器",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/solara_dex"))()   end})
 Tab:AddButton({    Name = "远程监控",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/remotespy_save"))()  end})
 local Tab = Window:MakeTab({    Name = "图像画质",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
+Tab:AddButton({  Name = "美丽天空",  Callback = function()    -- Roblox Graphics Enhancher    local light = game.Lighting
+    for i, v in pairs(light:GetChildren()) do      v:Destroy()    end
+    local ter = workspace.Terrain
+    local color = Instance.new("ColorCorrectionEffect")
+    local bloom = Instance.new("BloomEffect")
+    local sun = Instance.new("SunRaysEffect")
+    local blur = Inst  end})
 Tab:AddButton({ 	Name = "光影（浅）",	Callback = function()      	loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()  	end})
 Tab:AddButton({    Name ="光影菜单  小go推荐",    Callback = function()    loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Shader-RTX-New-12425"))()    end})
 Tab:AddButton({    Name ="光影v2",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()    end})
 Tab:AddButton({    Name ="光影v4",    Callback = function()    loadstring(game:HttpGet('https://pastebin.com/raw/gUceVJig'))()   end})
 Tab:AddButton({    Name ="RTX  图形画质",    Callback = function()     local light = game.Lighting
-        for i, v in pairs(light:GetChildren()) do
-            v:Destroy()
-        end
+        for i, v in pairs(light:GetChildren()) do            v:Destroy()        end
         local ter = workspace.Terrain
         local color = Instance.new("ColorCorrectionEffect")
         local bloom = Instance.new("BloomEffect")
         local sun = Instance.new("SunRaysEffect")
-        local blur = Instance.new("BlurEffect")
-        color.Parent = light
-        bloom.Parent = light
-        sun.Parent = light
-        blur.Parent = light
-      --enable or disable shit
-        local config = {
-            Terrain = true,
-            ColorCorrection = true,
-            Sun = true,
-            Lighting = true,
-            BloomEffect = true
-        }
-        --settings {
-        color.Enabled = false
-        color.Contrast = 0.15
-        color.Brightness = 0.1
-        color.Saturation = 0.25
-        color.TintColor = Color3.fromRGB(255, 222, 211)
-        bloom.Enabled = false
-        bloom.Intensity = 0.1
-        sun.Enabled = false
-        sun.Intensity = 0.2
-        sun.Spread = 1
-        bloom.Enabled = false
-        bloom.Intensity = 0.05
-        bloom.Size = 32
-        bloom.Threshold = 1
-        blur.Enabled = false
-        blur.Size = 6
-        --settings }
+        local blur = Instance.new("BlurEffect")       color.Parent = light        bloom.Parent = light        sun.Parent = light        blur.Parent = light      --enable or disable shit
+        local config = {            Terrain = true,            ColorCorrection = true,            Sun = true,            Lighting = true,            BloomEffect = true  }
+        --settings {        color.Enabled = false        color.Contrast = 0.15        color.Brightness = 0.1       color.Saturation = 0.25        color.TintColor = Color3.fromRGB(255, 222, 211)        bloom.Enabled = false        bloom.Intensity = 0.1        sun.Enabled = false        sun.Intensity = 0.2        sun.Spread = 1        bloom.Enabled = false        bloom.Intensity = 0.05        bloom.Size = 32        bloom.Threshold = 1        blur.Enabled = false        blur.Size = 6       --settings }
         if config.ColorCorrection then
-            color.Enabled = true
-        end
+            color.Enabled = true        end
         if config.Sun then
-            sun.Enabled = true
-        end
+            sun.Enabled = true        end
         if config.Terrain then
-             --settings {
-            ter.WaterWaveSize = 0.1
-            ter.WaterWaveSpeed = 22
-            ter.WaterTransparency = 0.9
-            ter.WaterReflectance = 0.05
-        --settings }
-        end
+             --settings {            ter.WaterWaveSize = 0.1            ter.WaterWaveSpeed = 22            ter.WaterTransparency = 0.9            ter.WaterReflectance = 0.05        --settings }        end
         if config.Lighting then
-            -- settings {
-            light.Ambient = Color3.fromRGB(0, 0, 0)
-            light.Brightness = 4
-            light.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
-            light.ColorShift_Top = Color3.fromRGB(0, 0, 0)
-            light.ExposureCompensation = 0
-            light.FogColor = Color3.fromRGB(132, 132, 132)
-            light.GlobalShadows = true
-            light.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
-            light.Outlines = false
-        --settings }
-        end
-        local a = game.Lighting
-        a.Ambient = Color3.fromRGB(33, 33, 33)
-        a.Brightness = 5.69
-        a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
-        a.ColorShift_Top = Color3.fromRGB(255, 247, 237)
-        a.EnvironmentDiffuseScale = 0.105
-        a.EnvironmentSpecularScale = 0.522
-        a.GlobalShadows = true
-        a.OutdoorAmbient = Color3.fromRGB(51, 54, 67)
-        a.ShadowSoftness = 0.18
-        a.GeographicLatitude = -15.525
-        a.ExposureCompensation = 0.75
-        b.Enabled = true
-        b.Intensity = 0.99
-        b.Size = 9999
-        b.Threshold = 0
-        local c = Instance.new("ColorCorrectionEffect", a)
-        c.Brightness = 0.015
-        c.Contrast = 0.25
-        c.Enabled = true
-        c.Saturation = 0.2
-        c.TintColor = Color3.fromRGB(217, 145, 57)
-        if getgenv().mode == "Summer" then
-            c.TintColor = Color3.fromRGB(255, 220, 148)
-        elseif getgenv().mode == "Autumn" then
-            c.TintColor = Color3.fromRGB(217, 145, 57)
-        else
-            warn("没选择模式！  小go🤔")
-            print("请选择一种模式")
-            b:Destroy()
-            c:Destroy()
-        end
-        local d = Instance.new("DepthOfFieldEffect", a)
-        d.Enabled = true
-        d.FarIntensity = 0.077
-        d.FocusDistance = 21.54
-        d.InFocusRadius = 20.77
-        d.NearIntensity = 0.277
-        local e = Instance.new("ColorCorrectionEffect", a)
-        e.Brightness = 0
-        e.Contrast = -0.07
-        e.Saturation = 0
-        e.Enabled = true
-        e.TintColor = Color3.fromRGB(255, 247, 239)
-        local e2 = Instance.new("ColorCorrectionEffect", a)
-        e2.Brightness = 0.2
-        e2.Contrast = 0.45
-        e2.Saturation = -0.1
-        e2.Enabled = true
-        e2.TintColor = Color3.fromRGB(255, 255, 255)
-        local s = Instance.new("SunRaysEffect", a)
-        s.Enabled = true
-        s.Intensity = 0.01
-        s.Spread = 0.146
-        print("小go  RTX图形加载完毕!")    end})
+            -- settings {            light.Ambient = Color3.fromRGB(0, 0, 0)            light.Brightness = 4            light.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)            light.ColorShift_Top = Color3.fromRGB(0, 0, 0)            light.ExposureCompensation = 0            light.FogColor = Color3.fromRGB(132, 132, 132)            light.GlobalShadows = true         light.OutdoorAmbient = Color3.fromRGB(112, 117, 128)    light.Outlines = false        --settings }        end
+        local a = game.Lighting        a.Ambient = Color3.fromRGB(33, 33, 33)        a.Brightness = 5.69        a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)       a.ColorShift_Top = Color3.fromRGB(255, 247, 237)        a.EnvironmentDiffuseScale = 0.105        a.EnvironmentSpecularScale = 0.522        a.GlobalShadows = true        a.OutdoorAmbient = Color3.fromRGB(51, 54, 67)        a.ShadowSoftness = 0.18        a.GeographicLatitude = -15.525        a.ExposureCompensation = 0.75        b.Enabled = true        b.Intensity = 0.99        b.Size = 9999        b.Threshold = 0
+        local c = Instance.new("ColorCorrectionEffect", a)        c.Brightness = 0.015        c.Contrast = 0.25        c.Enabled = true        c.Saturation = 0.2        c.TintColor = Color3.fromRGB(217, 145, 57)        if getgenv().mode == "Summer" then          c.TintColor = Color3.fromRGB(255, 220, 148)        elseif getgenv().mode == "Autumn" then            c.TintColor = Color3.fromRGB(217, 145, 57)        else            warn("没选择模式！  小go🤔")            print("请选择一种模式")            b:Destroy()          c:Destroy()        end
+        local d = Instance.new("DepthOfFieldEffect", a)       d.Enabled = true        d.FarIntensity = 0.077        d.FocusDistance = 21.54        d.InFocusRadius = 20.77        d.NearIntensity = 0.277
+        local e = Instance.new("ColorCorrectionEffect", a)        e.Brightness = 0        e.Contrast = -0.07        e.Saturation = 0        e.Enabled = true        e.TintColor = Color3.fromRGB(255, 247, 239)
+        local e2 = Instance.new("ColorCorrectionEffect", a)        e2.Brightness = 0.2        e2.Contrast = 0.45        e2.Saturation = -0.1        e2.Enabled = true        e2.TintColor = Color3.fromRGB(255, 255, 255)
+        local s = Instance.new("SunRaysEffect", a)        s.Enabled = true        s.Intensity = 0.01        s.Spread = 0.146        print("小go  RTX图形加载完毕!")    end})
+local Tab = Window:MakeTab({    Name = "通用",   Icon = "rbxassetid://18923878915",    PremiumOnly = false})
+Tab:AddButton({    Name ="玩家进入通知",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()    end})
+Tab:AddButton({    Name ="小goFe合集",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/Fe"))()    end})
+Tab:AddButton({	Name = "无限跳",    Default = false,	Callback = function(Value)      loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E6%97%A0%E9%99%90%E8%B7%B3", true))()	end})
+Tab:AddButton({	Name = "踏空行走",	Callback = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()	end})
+Tab:AddButton({    Name ="小go 全图传送 地图点到哪传送哪",    Callback = function()    mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "小go全图内任意传送" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpack    end})
+Tab:AddButton({    Name ="铁拳（能打飞人）",    Callback = function()    loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_rf6iQURzu1fqrytcnLBAvW34C9N55kS9g9G3CKz086rC47M6632sEd4ZZYB0AYgV.lua.txt'),true))()    end})
+Tab:AddButton({    Name ="iw指令",    Callback =function()    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()    end})
+Tab:AddButton({    Name ="动作🎊",    Callback = function()    loadstring(game:HttpGet("https://yarhm.goteamst.com/scr?channel=afem"))()    end})
+Tab:AddButton({    Name ="动作 R6",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/ocfi/Animations-obfus/refs/heads/main/obfus"))()    end})
+Tab:AddButton({    Name ="goto飞车",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%A3%9E%E8%BD%A6"))()    end})
+Tab:AddButton({    Name ="goto制作小宇飞",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E4%B9%8B%E5%89%8D%E7%9A%84%E9%A3%9E%E8%A1%8C"))()    end})
+Tab:AddButton({    Name ="goto制作小宇飞1.5百倍飞行",    Callback = function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%B0%8F%E5%AE%87%E9%A3%9E"))()    end})
+Tab:AddButton({    Name ="黑洞小go汉化",    Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%BB%91%E6%B4%9E2"))()    end})
+Tab:AddButton({    Name ="黑洞 汉化",    Callback = function()    loadstring(game:HttpGet("https://pastebin.com/raw/jQd1HedN"))()    end})
+Tab:AddButton({    Name ="黑洞 0.4",    Callback = function()     --blackhole script 0.4: fixed all issues      loadstring(game:HttpGet('https://gist.githubusercontent.com/AxolotlBmgo/8888080921c2b426a32dd9ff587baff1/raw/d45e03afed3c1716f36523bbf6dd741d3d2aad00/gistfile1.txt'))()    end})
+Tab:AddButton({    Name ="黑洞v2",    Callback = function()    loadstring(game:HttpGet("https://pastefy.app/t0djamGi/raw"))()    end})
+Tab:AddButton({    Name ="黑洞v3",    Callback = function()    loadstring(game:HttpGet("https://pastefy.app/0eN0ONOw/raw"))()    end})
+Tab:AddButton({    Name ="卡哇伊黑洞（可以锁人的哦）",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%BB%91%E6%B4%9E",true))()    end})
+Tab:AddButton({    Name ="甩人通用",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E7%94%A9%E4%BA%BA%E9%80%9A%E7%94%A8"))()    end})
+Tab:AddButton({    Name ="反挂机",   Callback = function()    loadstring(game:HttpGet("https://pastebin.com/raw/9fFu43FF"))()    end})
+Tab:AddButton({    Name ="骂人无违规",    Callback = function()    loadstring(game:GetObjects("rbxassetid://1262435912")[1].Source)()    end})
+Tab:AddButton({    Name ="F3X",    Callback = function()     loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()    end})
+Tab:AddButton({    Name ="工具包（三个经典工具）",    Callback = function()    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	  	    end})
+Tab:AddButton({    Name ="工具挂",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/StandAwekening.lua"))()    end})
+Tab:AddButton({	Name = "建筑工具",	Callback = function()		Hammer = Instance.new("HopperBin")		Hammer.Name = "锤子"		Hammer.BinType = 4		Hammer.Parent = game.Players.LocalPlayer.Backpack		Clone = Instance.new("HopperBin")		Clone.Name = "克隆"		Clone.BinType = 3		Clone.Parent = game.Players.LocalPlayer.Backpack		Grab = Instance.new("HopperBin")		Grab.Name = "抓取"		Grab.BinType = 2	end})
+Tab:AddButton({    Name ="键盘",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()    end})
+Tab:AddButton({    Name ="键盘可单独按键",    Callback = function()    loadstring(game:HttpGet("https://gist.githubusercontent.com/RedZenXYZ/4d80bfd70ee27000660e4bfa7509c667/raw/da903c570249ab3c0c1a74f3467260972c3d87e6/KeyBoard%2520From%2520Ohio%2520Fr%2520Fr"))()    end})
+Tab:AddButton({	Name = "替身",	Callback = function()     loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrillexMe/SkrillexLoader/main/SkrillexLoadMain')))()    end})
+Tab:AddButton({	Name = "爬墙",	Callback = function()    loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()    end})
