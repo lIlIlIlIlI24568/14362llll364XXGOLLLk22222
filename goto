@@ -533,7 +533,7 @@ Tab:AddButton({    Name ="保存游戏",    Callback = function()    saveinstanc
 Tab:AddButton({    Name ="离开游戏",    Callback = function()      game:Shutdown()    end})
 Tab:AddButton({    Name ="最高帧率",    Callback = function()         setfpscap(999)    end})
 Tab:AddTextbox({        Name = "视角  目前有 Bug",        Min = 0,        Max = 360,	Default = "",	TextDisappear = true,	Callback = function(V)		  game.Workspace.CurrentCamera.FieldOfView = v	end})
-Tab:AddTextbox({    Name = "超高视野(Fov)",      workspace.CurrentCamera.FieldOfView = 1200          end})
+Tab:AddTextbox({    Name = "超高视野(Fov)",   Callback = function()       workspace.CurrentCamera.FieldOfView = 1200          end})
 Tab:AddTextbox({	Name = "血量 可能是假血",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.Health = Value	end})
 Tab:AddSlider({	Name = "速度!",	Min = 16,	Max = 200,	Default = 16,	Color = Color3.fromRGB(255,255,255),	Increment = 1,	ValueName = "数值",	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value	end})
 Tab:AddSlider({	Name = "跳跃高度!",	Min = 50,	Max = 200,	Default = 50,	Color = Color3.fromRGB(255,255,255),	Increment = 1,	ValueName = "数值",	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end})
