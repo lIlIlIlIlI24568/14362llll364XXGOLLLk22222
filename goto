@@ -1,7 +1,22 @@
 local CoreGui = game:GetService("StarterGui")
-CoreGui:SetCore("SendNotification", {    Title = "goto_O",    Text = "小go努力加载中..（启动反挂机系统）",    Duration = 6, })
-CoreGui:SetCore("SendNotification", {    Title = "goto脚本",    Text = "自动重进服务器系统已启动",    Duration = 7, })
-CoreGui:SetCore("SendNotification", {    Title = "<(￣3￣)>哼！=☞盘他",    Text = "加载成功⸝ヽ(๏~๏)ﾉ",    Duration = 8, })
+
+CoreGui:SetCore("SendNotification", {
+    Title = "goto_O",
+    Text = "小go努力加载中..（启动反挂机系统）",
+    Duration = 6, 
+})
+
+CoreGui:SetCore("SendNotification", {
+    Title = "goto脚本",
+    Text = "自动重进服务器系统已启动",
+    Duration = 7, 
+})
+
+CoreGui:SetCore("SendNotification", {
+    Title = "<(￣3￣)>哼！=☞盘他",
+    Text = "加载成功⸝ヽ(๏~๏)ﾉ",
+    Duration = 8, 
+})
 
 print("开启成功")
 		local vu = game:GetService("VirtualUser")
@@ -12,7 +27,8 @@ print("开启成功")
 		end)
                 local vu = game:GetService("VirtualUser")
                 game:service"NetworkClient".ChildRemoved:Connect(function()
-   game:service"TeleportService":TeleportToPlaceInstance(game.PlaceId, game.JobId, game:service"Players".LocalPlayer);   end)
+   game:service"TeleportService":TeleportToPlaceInstance(game.PlaceId, game.JobId, game:service"Players".LocalPlayer);
+end)
 local LBLG = Instance.new("ScreenGui", getParent)
 local LBL = Instance.new("TextLabel", getParent)
 local player = game.Players.LocalPlayer
@@ -34,10 +50,12 @@ LBL.TextScaled = true
 LBL.TextSize = 14
 LBL.TextWrapped = true
 LBL.Visible = true
+
 local FpsLabel = LBL
 local Heartbeat = game:GetService("RunService").Heartbeat
 local LastIteration, Start
 local FrameUpdateTable = {}
+
 local function HeartbeatUpdate()
 	LastIteration = tick()
 	for Index = #FrameUpdateTable, 1, -1 do
@@ -50,6 +68,7 @@ local function HeartbeatUpdate()
 end
 Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
+
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/GTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"))()
 local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "xgo"})
 local Tab = Window:MakeTab({    Name = "用户",    Icon = "rbxassetid://7734068321",    PremiumOnly = false})
