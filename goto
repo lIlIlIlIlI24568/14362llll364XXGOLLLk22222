@@ -863,49 +863,13 @@ end)
 -- xgo
 RunService.RenderStepped:Connect(function()
     updateESP()
-end)
-end})
-Tab:AddToggle({
-Name = "Esp开关",
-Default = true,
-Callback = function(Value)
-getgenv().toggleespmpt = Value
-end    
-})
-
-Tab:AddColorpicker({
-Name = "Esp颜色",
-Default = Color3.fromRGB(255, 255, 255),
-Callback = function(Value)
-getgenv().mptespcolour = Value
-end  
-})
-
-Tab:AddSlider({
-Name = "Esp最大距离",
-Min = 1,
-Max = 100000,
-Default = 100000,
-Color = Color3.fromRGB(255,255,255),
-Increment = 250,
-ValueName = "距离",
-Callback = function(Value)
-getgenv().mptespdistance = Value
-end    
-})
-
-Tab:AddSlider({
-Name = "Esp厚度",
-Min = 1,
-Max = 30,
-Default = 2,
-Color = Color3.fromRGB(255,255,255),
-Increment = 1,
-ValueName = "厚度",
-Callback = function(Value)
-getgenv().mptespthickness = Value
-end    
-})
+end)    end})
+Tab:AddButton({   Name = "CheatX GUI", 	Callback = function() local UILibrary = loadstring(game:HttpGet("https://pastebin.com/raw/V1ca2q9s"))() local MainUI = UILibrary.Load("CheatX - 3008") local Home = MainUI.AddPage("Home") -- ESP local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))() ESP:Toggle(true) ESP.Players = false ESP.Tracers = false ESP.Boxes = false ESP.Names = false -- notify function local function notify(message) game.StarterGui:SetCore("SendNotification", { Title = "CheatX"; Text = message; Icon = ""; Duration = 5; }) end local function teleportToItem(itemName) local donesearch = false for i,v in pairs(game:GetService("Workspace").GameObjects.Physical.Items:GetDescendants()) do if v.Name == "Root" and v.Parent.Name == itemName then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame donesearch = true break end end if donesearch == false then notify("Item position not defined") end end ESP:AddObjectListener(game:GetService("Workspace").GameObjects.Physical.Items, { Type = "Model", Color = Color3.fromRGB(0, 119, 255), IsEnabled = "itemESP" }) ESP:AddObjectListener(game:GetService("Workspace").GameObjects.Physical.Employees, { Type = "Model", CustomName = "Employee", Color = Color3.fromRGB(255, 0, 4), IsEnabled = "employeeToggle" }) Home.AddButton("Unlock Third Person", function() game.Players.LocalPlayer.CameraMaxZoomDistance = 50 game.Players.LocalPlayer.CameraMode = Enum.CameraMode.Classic end) Home.AddToggle("ESP", false, function(Value) ESP.Boxes = Value end) Home.AddToggle("ESP Tracers", false, function(Value) ESP.Tracers = Value end) Home.AddToggle("ESP Nametags", false, function(Value) ESP.Names = Value end) Home.AddToggle("Show Players", false, function(Value) ESP.Players = Value end) Home.AddToggle("Show Employees", false, function(Value) ESP.employeeToggle = Value end) Home.AddToggle("Show Items", false, function(Value) ESP.itemESP = Value end) local Teleports = MainUI.AddPage("Teleports") Teleports.AddButton("Teleport to Hotdog", function() teleportToItem("Hotdog") end) Teleports.AddButton("Teleport to Pizza", function() teleportToItem("Pizza") end) Teleports.AddButton("Teleport to Burger", function() teleportToItem("Burger") end) Teleports.AddButton("Teleport to Medkit", function() teleportToItem("Medkit") end) 	end })
+Tab:AddToggle({   Name = "Esp开关",       Default = true,        Callback = function(Value)        getgenv().toggleespmpt = Value      end    })
+Tab:AddColorpicker({   Name = "Esp颜色",     Default = Color3.fromRGB(255, 255, 255),    Callback = function(Value)     getgenv().mptespcolour = Value     end  })
+Tab:AddSlider({   Name = "Esp最大距离",        Min = 1,        Max = 100000,       Default = 100000,        Color = Color3.fromRGB(255,255,255),         Increment = 250,         ValueName = "距离",         Callback = function(Value)         getgenv().mptespdistance = Value    end    })
+Tab:AddSlider({   Name = "Esp厚度",       Min = 1,        Max = 30,       Default = 2,        Color = Color3.fromRGB(255,255,255),       Increment = 1,        ValueName = "厚度",        Callback = function(Value)
+getgenv().mptespthickness = Value     end    })
 Tab:AddButton({   Name ="辅助瞄准v2",    Callback = function()   loadstring(game:HttpGet('https://raw.githubusercontent.com/yzeedw/Mortalv2-main/refs/heads/main/universal%20silent%20aim%20by%20Mortalexploits'))()       end})        
 Tab:AddToggle({	Name = "锁头 加入队伍检测",	Default = false,	Callback = function(Value)
 		_G.AimbotEnabled = Value
@@ -1220,7 +1184,7 @@ Tab:AddButton({    Name = "AND已汉化 推荐配合穿墙",    Callback = funct
 Tab:AddButton({    Name = "小go汉化版",   Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/DOORS"))()    end})
 Tab:AddButton({    Name = "room自动走",   Callback = function()    loadstring(game:HttpGet("https://scriptblox.com/raw/DOORS-Auto-A1000-9285"))()    end})
 Tab:AddButton({    Name ="嗯，xgo喜欢用😘",    Callback = function()   loadstring(game:HttpGet('https://rawscripts.net/raw/DOORS-FFJ-Hub-11365'))()   end})
-Tab:AddButton({    Name = "穿墙(无拉回)",	Callback = function()      loadstring(game:HttpGet("https://github.com/DXuwu/OK/raw/main/clip"))()    end})
+Tab:AddDropdown({   Name = "脚本模式",	Default = "无",	Options = {"硬核模式", "硬核模式重置", "不可能模式", "Oof的不可能模式", "超级困难模式", "混乱模式", "EndlessDoors模式", "碎片模式", "管理员恶搞模式", "疯狂模式", "Plamen6789的硬核模式", "NAUTIC的硬核模式", "恐怖模式", "恶搞模式", ""},	Callback = function(a)    if a == "硬核模式" then    loadstring(game:HttpGet(("https://pastebin.com/raw/80Fi9ZaJ"),true))()    elseif a == "硬核模式重置" then    loadstring(game:HttpGet(("https://pastebin.com/raw/tufDF1vi"),true))()    elseif a == "不可能模式" then    loadstring(game:HttpGet(("https://pastebin.com/raw/YTbbweA8"),true))()    elseif a == "超级困难模式" then    loadstring(game:HttpGet(("https://pastebin.com/raw/8M9WjLKu"),true))()    elseif a == "混乱模式" then    loadstring(game:HttpGet('https://raw.githubusercontent.com/HollowedOutMods/MayhemMode/main/loader.lua'))()    elseif a == "EndlessDoors模式" then    game.SoundService.AmbientReverb = "City"           loadstring(game:HttpGet("https://raw.githubusercontent.com/check78/worldcuuuup/main/Script.lua"))()              loadstring(game:HttpGet("https://raw.githubusercontent.com/check78/worldcuuuup/main/ScriptNoAchievements.txt"))()             loadstring(game:HttpGet("https://raw.githubusercontent.com/check78/worldcuuuup/main/seekeye.lua"))()             loadstring(game:HttpGet("https://raw.githubusercontent.com/check78/worldcuuuup/main/seekmodel.lua"))()             loadstring(game:HttpGet("https://raw.githubusercontent.com/check78/worldcuuuup/main/VictrolaRecreation.txt"))()            loadstring(game:HttpGet("https://raw.githubusercontent.com/check78/worldcuuuup/main/MusicReplace.txt"))()             loadstring(game:HttpGet("https://raw.githubusercontent.com/check78/Entities/main/DeathSound.txt"))()    elseif a == "碎片模式" then    loadstring(game:HttpGet("https://raw.githubusercontent.com/Potato032/Doors-Fragmented-Mode/main/ScriptDontShareItsOnDC.txt"))()    elseif a == "" then    local CoreGui = game:GetService("StarterGui")                            CoreGui:SetCore("SendNotification", {    Title = "🕊️",    Text = "选的空白是干什么？点错了吗？",    Duration = 2, })    elseif a == "管理员恶搞模式" then    Loadstring(game:HttpGet(("https://pastebin.com/raw/YgC1rSfw"),true))()    elseif a == "疯狂模式" then    loadstring(game:HttpGet('https://raw.githubusercontent.com/MuhXd/DoorSuff/main/DoorsModes/HardMode(Multplayer%2CProtected).lua'))()    elseif a == "Plamen6789的硬核模式" then    loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/HardcoreScriptDOORS/main/HardcoreModeScript'))()    elseif a == "NAUTIC的硬核模式" then    loadstring(game:HttpGet("https://glot.io/snippets/gp5pu59o7f/raw"))()    elseif a == "恐怖模式" then    loadstring(game:HttpGet(("https://pastebin.com/raw/AriSD2rK"),true))()    elseif a == "恶搞模式" then    loadstring(game:HttpGet('https://pastebin.com/raw/qP0QFU0D'))()    elseif a == "Oof的不可能模式" then    loadstring(game:HttpGet('https://raw.githubusercontent.com/Ukazix/impossible-mode/main/Protected_79.lua.txt'))()    end    end})
 local Section = Tab:AddSection({	Name = "娱乐ก็ʕ•͡ᴥ•ʔ ก้也包括小go内置🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️"})
 Tab:AddButton({    Name = "全局高亮",  Callback = function()    loadstring(game:HttpGet("https://pastebin.com/raw/4LDKiJ5a"))()    end})
 Tab:AddButton({    Name = "手电筒",  Callback = function()      loadstring(game:HttpGet('https://pastebin.com/raw/9Daqa4hD'))()  	end})
@@ -1688,8 +1652,6 @@ Tab:AddButton({    Name="游戏v1",    Callback=function()     loadstring(game:H
 local Tab = Window:MakeTab({    Name = "goto☃️☃️",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 local Section = Tab:AddSection({	Name = "火箭发射模拟器,以后还会加载"})
 Tab:AddButton({    Name="游戏v2",    Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/Jsjhsbwbjsksnbebshs/refs/heads/main/V2"))()  end})
-local Tab = Window:MakeTab({    Name = "杂项",    Icon = "rbxassetid://16060333448",    PremiumOnly = false})
-Tab:AddColorpicker({	Name = "开发中...",	Default = Color3.fromRGB(255, 0, 0),	Callback = function(Value)		print(Value)	end	  })
 
 
 
