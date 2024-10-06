@@ -737,6 +737,130 @@ game.Players.PlayerAdded:Connect(function(v)
     end
     coroutine.wrap(lineesp)()
 end)   end})
+Tab:AddButton({    Name ="框架0.1",    Callback = function()
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Camera = workspace.CurrentCamera
+local LocalPlayer = Players.LocalPlayer
+
+-- xgo
+local espElements = {}
+
+-- xgo
+local function createESP(player)
+    if player == LocalPlayer then return end -- Игнорируем себя
+
+    -- xgo
+    local espTable = {}
+    
+    -- xgo
+    local nameTag = Drawing.new("Text")
+    nameTag.Visible = false
+    nameTag.Center = true
+    nameTag.Outline = true
+    nameTag.Size = 18
+    nameTag.Color = Color3.fromRGB(255, 255, 0) --xgo颜色
+    nameTag.Text = player.Name
+    espTable.nameTag = nameTag
+    
+    -- xgo
+    local lines = {}
+    for i = 1, 8 do
+        local line = Drawing.new("Line")
+        line.Visible = false
+        line.Thickness = 2
+        line.Transparency = 1
+        line.Color = Color3.fromRGB(255, 255, 0) -- xgo颜色
+        table.insert(lines, line)
+    end
+    espTable.lines = lines
+    
+    espElements[player] = espTable
+end
+
+-- xgo
+local function updateESP()
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            local character = player.Character
+            local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+            local head = character:FindFirstChild("Head")
+            local lines = espElements[player].lines
+            local nameTag = espElements[player].nameTag
+            
+            if head and humanoidRootPart then
+                local rootPos, onScreen = Camera:WorldToViewportPoint(humanoidRootPart.Position)
+                local headPos = Camera:WorldToViewportPoint(head.Position + Vector3.new(0, 0.5, 0))
+                local torsoPos = Camera:WorldToViewportPoint(humanoidRootPart.Position + Vector3.new(0, -1, 0))
+                
+                -- xgo
+                if onScreen then
+                    -- xgo
+                    nameTag.Position = Vector2.new(headPos.X, headPos.Y - 30)
+                    nameTag.Visible = true
+
+                    --xgo
+                    local points = {
+                        Camera:WorldToViewportPoint(humanoidRootPart.Position + Vector3.new(-1, 2, 0)),   -- 根据
+                        Camera:WorldToViewportPoint(humanoidRootPart.Position + Vector3.new(1, 2, 0)),    -- xgo
+                        Camera:WorldToViewportPoint(humanoidRootPart.Position + Vector3.new(-1, -2, 0)),  -- xgo
+                        Camera:WorldToViewportPoint(humanoidRootPart.Position + Vector3.new(1, -2, 0)),   -- xgo
+                    }
+
+                    -- xgo
+                    lines[1].From = Vector2.new(points[1].X, points[1].Y)
+                    lines[1].To = Vector2.new(points[2].X, points[2].Y)
+                    lines[1].Visible = true
+
+                    lines[2].From = Vector2.new(points[2].X, points[2].Y)
+                    lines[2].To = Vector2.new(points[4].X, points[4].Y)
+                    lines[2].Visible = true
+
+                    lines[3].From = Vector2.new(points[4].X, points[4].Y)
+                    lines[3].To = Vector2.new(points[3].X, points[3].Y)
+                    lines[3].Visible = true
+
+                    lines[4].From = Vector2.new(points[3].X, points[3].Y)
+                    lines[4].To = Vector2.new(points[1].X, points[1].Y)
+                    lines[4].Visible = true
+                else
+                    --xgo
+                    for _, line in pairs(lines) do
+                        line.Visible = false
+                    end
+                    nameTag.Visible = false
+                end
+            end
+        end
+    end
+end
+
+-- xgo
+for _, player in pairs(Players:GetPlayers()) do
+    createESP(player)
+end
+
+-- xgo ESP 
+Players.PlayerAdded:Connect(function(player)
+    createESP(player)
+end)
+
+-- xgo
+Players.PlayerRemoving:Connect(function(player)
+    if espElements[player] then
+        for _, line in pairs(espElements[player].lines) do
+            line:Remove()
+        end
+        espElements[player].nameTag:Remove()
+        espElements[player] = nil
+    end
+end)
+
+-- xgo
+RunService.RenderStepped:Connect(function()
+    updateESP()
+end)
+end})
 Tab:AddButton({    Name ="辅助瞄准v2",    Callback = function()   loadstring(game:HttpGet('https://raw.githubusercontent.com/yzeedw/Mortalv2-main/refs/heads/main/universal%20silent%20aim%20by%20Mortalexploits'))()       end})        
 Tab:AddToggle({	Name = "锁头 加入队伍检测",	Default = false,	Callback = function(Value)
 		_G.AimbotEnabled = Value
