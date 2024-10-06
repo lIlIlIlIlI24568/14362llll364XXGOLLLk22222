@@ -864,47 +864,6 @@ RunService.RenderStepped:Connect(function()
     updateESP()
 end)
 end})
-Tab:AddToggle({
-Name = "Esp开关",
-Default = true,
-Callback = function(Value)
-getgenv().toggleespmpt = Value
-end    
-})
-
-Tab:AddColorpicker({
-Name = "Esp颜色",
-Default = Color3.fromRGB(255, 255, 255),
-Callback = function(Value)
-getgenv().mptespcolour = Value
-end  
-})
-
-Tab:AddSlider({
-Name = "Esp最大距离",
-Min = 1,
-Max = 100000,
-Default = 100000,
-Color = Color3.fromRGB(255,255,255),
-Increment = 250,
-ValueName = "距离",
-Callback = function(Value)
-getgenv().mptespdistance = Value
-end    
-})
-
-Tab:AddSlider({
-Name = "Esp厚度",
-Min = 1,
-Max = 30,
-Default = 2,
-Color = Color3.fromRGB(255,255,255),
-Increment = 1,
-ValueName = "厚度",
-Callback = function(Value)
-getgenv().mptespthickness = Value
-end    
-})
 Tab:AddButton({   Name ="辅助瞄准v2",    Callback = function()   loadstring(game:HttpGet('https://raw.githubusercontent.com/yzeedw/Mortalv2-main/refs/heads/main/universal%20silent%20aim%20by%20Mortalexploits'))()       end})        
 Tab:AddToggle({	Name = "锁头 加入队伍检测",	Default = false,	Callback = function(Value)
 		_G.AimbotEnabled = Value
