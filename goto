@@ -159,6 +159,18 @@ Tab:AddButton({    Name ="管理员注入 暂时无法使用，可能会被踢�
 Tab:AddButton({    Name = "管理员权限 可获得游戏内的通行证",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%AE%A1%E7%90%86%E5%91%98"))()   end})
 Tab:AddButton({    Name = "资源管理器",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/solara_dex"))()   end})
 Tab:AddButton({    Name = "远程监控",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/remotespy_save"))()  end})
+local Tab = Window:MakeTab({    Name = "动作",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
+Tab:AddButton({    Name ="丧尸包", Callback = function()
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616158929"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616160636"
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
+Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616161997"
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616156119"
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616157476"
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end})
+
 local Tab = Window:MakeTab({    Name = "图像画质",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({  Name = "美丽天空",  Callback = function()    -- Roblox Graphics Enhancher    local light = game.Lighting
 for i, v in pairs(light:GetChildren()) do      v:Destroy()    end
