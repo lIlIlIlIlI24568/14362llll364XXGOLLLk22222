@@ -160,7 +160,17 @@ Tab:AddButton({    Name = "管理员权限 可获得游戏内的通行证",	Call
 Tab:AddButton({    Name = "资源管理器",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/solara_dex"))()   end})
 Tab:AddButton({    Name = "远程监控",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/remotespy_save"))()  end})
 local Tab = Window:MakeTab({    Name = "动作",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
-Tab:AddButton({    Name ="丧尸包", Callback = function()
+A_Zombie.Name = "僵尸"
+A_Zombie.Parent = NormalTab
+A_Zombie.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+A_Zombie.BorderSizePixel = 0
+A_Zombie.Position = UDim2.new(-1.1920929e-07, 0, 0.582352936, 0)
+A_Zombie.Size = UDim2.new(0, 150, 0, 30)
+A_Zombie.Font = Enum.Font.SciFi
+A_Zombie.Text = "僵尸"
+A_Zombie.TextColor3 = Color3.new(1, 1, 1)
+A_Zombie.TextSize = 20
+A_Zombie.MouseButton1Click:Connect({function()
 Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616158929"
 Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616160636"
 Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
