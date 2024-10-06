@@ -24,8 +24,27 @@ local vu = game:GetService("VirtualUser")
 game:service"NetworkClient".ChildRemoved:Connect(function()
 game:service"TeleportService":TeleportToPlaceInstance(game.PlaceId, game.JobId, game:service"Players".LocalPlayer);
 end)
-
-
+local LBLG = Instance.new("ScreenGui", getParent)
+local LBL = Instance.new("TextLabel", getParent)
+local player = game.Players.LocalPlayer
+LBLG.Name = "LBLG"
+LBLG.Parent = game.CoreGui
+LBLG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LBLG.Enabled = true
+LBL.Name = "LBL"
+LBL.Parent = LBLG
+LBL.BackgroundColor3 = Color3.new(1, 1, 1)
+LBL.BackgroundTransparency = 1
+LBL.BorderColor3 = Color3.new(0, 0, 0)
+LBL.Position = UDim2.new(0.75,0,0.010,0)
+LBL.Size = UDim2.new(0, 133, 0, 30)
+LBL.Font = Enum.Font.GothamSemibold
+LBL.Text = "TextLabel"
+LBL.TextColor3 = Color3.new(1, 1, 1)
+LBL.TextScaled = true
+LBL.TextSize = 14
+LBL.TextWrapped = true
+LBL.Visible = true
                    local FpsLabel = LBL
 local Heartbeat = game:GetService("RunService").Heartbeat
                  local LastIteration,Start
@@ -44,7 +63,7 @@ FpsLabel.Text = ("时间"..os.date("%H").."时"..os.date("%M").."分"..os.date("
                         Start = tick()
              Heartbeat:Connect(HeartbeatUpdate)
 
-local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/dUiCrXYP"))()
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/GTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"))()
 local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "xgo"})
 local Tab = Window:MakeTab({    Name = "用户",    Icon = "rbxassetid://7734068321",    PremiumOnly = false})
 CoreGui:SetCore("SendNotification", {    Title = "goto_O",    Text = "小go欢迎各位",    Duration = 10, })
@@ -359,7 +378,7 @@ Tab:AddButton({    Name ="重新加入游戏",   Callback = function()      game
 Tab:AddButton({    Name ="保存游戏",    Callback = function()    saveinstance()    end})
 Tab:AddButton({    Name ="离开游戏",    Callback = function()     game:Shutdown()    end})
 Tab:AddButton({    Name ="最高帧率",    Callback = function()         setfpscap(999)    end})
-Tab:AddSlider({	Name = "视角",	Min = 1,	Max = 360,	Default = 0,	Color = Color3.fromRGB(255,192,203),	Increment = 2,	ValueName = "视角",	Callback = function(Value)		workspace.CurrentCamera.FieldOfView = Value	end    })
+Tab:AddTextbox({   Name = "广角 ",       Min = 0,        Max = 360,	Default = "",	TextDisappear = true,	Callback = function(V)		  game.Workspace.CurrentCamera.FieldOfView = v	end})
 Tab:AddTextbox({   Name = "超广角（Fov）两者各有不同",        Callback = function()      workspace.CurrentCamera.FieldOfView = 120       end})
 Tab:AddTextbox({   Name = "血量 可能是假血",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.Health = Value	end})
 Tab:AddSlider({	   Name = "速度!",	Min = 16,	Max = 200,	Default = 16,        Color = Color3.fromRGB(255,255,255),	Increment = 1,	ValueName = "数值",	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value	end})
