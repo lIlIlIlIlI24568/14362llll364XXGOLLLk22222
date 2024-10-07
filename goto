@@ -88,6 +88,8 @@ OrionLib:MakeNotification({	Name = "稀🍚你 ",	Content = "持续更新",	Imag
 local Tab = Window:MakeTab({    Name = "小go音乐区",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({Name ="重新加入游戏 如果想换音乐只能重进 （所有皆为xgo，一人收集）",    Callback = function()      game:GetService("TeleportService"):TeleportToPlaceInstance(            game.PlaceId,            game.JobId,            game:GetService("Players").LocalPlayer        )    end})
 local Section = Tab:AddSection({        Name = "小go提示:音乐功无法关闭哦  "})
+Tab:AddButton({    Name="音乐播放器",   Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/beta/main/music.lua"))()   end})
+Tab:AddButton({    Name ="xgo内置音乐播放器",     Callback =function(v)    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://v"    sound.Parent = game.Workspace    sound:Play()    end})
 Tab:AddButton({    Name ="Direct & Park Avenue - I'll Go 挺好听的",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410081298"    sound.Parent = game.Workspace    sound:Play()    end})
 Tab:AddButton({    Name ="Rogue - Motion",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7028557220"    sound.Parent = game.Workspace    sound:Play()    end})
 Tab:AddButton({    Name ="Rome in Silver & Beach Season - Skin 和上一首一样，都挺好听的",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7028570258"   sound.Parent = game.Workspace    sound:Play()    end})
