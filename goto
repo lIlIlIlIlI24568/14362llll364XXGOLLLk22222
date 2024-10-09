@@ -446,7 +446,7 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local function spamChat()
-    local message = "_____________________________________________________________________________________________________________________________________________________________________________SERVER_IS_BEING_RAIDED"
+    local message = V
     while true do
         game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, "All")
         wait(2)
