@@ -814,7 +814,7 @@ if settings.recenter then
     end)      end     end})
 Tab:AddButton({    Name ="战神十字架（超级）",    Callback = function()   settings = {
     color = Color3.fromRGB(0, 255, 255),    -- 十字线的颜色，采用任何Color3
-    thickness = 4,                              -- 在像素中的十字线的厚度需要任何全数
+    thickness = 6,                              -- 在像素中的十字线的厚度需要任何全数
     length = 1000,                                 -- 每侧的像素的长度都占据了任何全部。
     opacity = 1,                                -- 十字线的不透明度，取得任何数字，1是完全可见的，0是看不见的。
 	x_offset = 0,                               -- 十字线的X偏移，采用任何正数或负数
@@ -878,6 +878,7 @@ if settings.recenter then
         getgenv().crosshair_y["Line"]["To"] = Vector2.new((cam.ViewportSize.x / 2) - settings.x_offset, ((cam.ViewportSize.y / 2) - settings.y_offset) - settings.length)
         getgenv().crosshair_y["Line"]["From"] = Vector2.new((cam.ViewportSize.x / 2) - settings.x_offset, ((cam.ViewportSize.y / 2) - settings.y_offset) + settings.length)
     end)       end      end})
+Tab:AddButton({    Name ="可调节十字准心",    Callback = function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/kn0a/Crosshair-M/main/Source.lua", true))()     end})
 Tab:AddButton({    Name ="人物框架",    Callback = function()
     -- xgo
 local Settings = {
