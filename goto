@@ -530,7 +530,7 @@ local messages = {
     “你是我见过的最愚蠢的球员”，
     “你是如此垃圾，它真的很伤心”，
      “你是个笑话”，
-
+     }
 -- 索引跟踪当前消息
 local currentIndex = 1
 
@@ -560,12 +560,12 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
     end
 end)
 
--- Create a ScreenGui
+-- 创建一个屏幕
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "CreditsGui"
 screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
--- Create a TextLabel
+-- 创建文本标签
 local textLabel = Instance.new("TextLabel")
 textLabel.Parent = screenGui
 textLabel.Text = "xgo 按G进行输出"
