@@ -58,7 +58,7 @@ FrameUpdateTable[Index + 1] = (FrameUpdateTable[Index] >= LastIteration - 1) and
 	      FrameUpdateTable[1] = LastIteration
 local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
 	    CurrentFPS = CurrentFPS - CurrentFPS % 1
-FpsLabel.Text = ("⏰"..os.date("%H")..""..os.date("%M")..""..os.date("%S").."")
+FpsLabel.Text = ("⏰"..os.date("%H").."-"..os.date("%M").."-"..os.date("%S").."~")
                              end
                         Start = tick()
              Heartbeat:Connect(HeartbeatUpdate)
