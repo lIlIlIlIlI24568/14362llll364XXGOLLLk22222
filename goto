@@ -24,14 +24,6 @@ local vu = game:GetService("VirtualUser")
 game:service"NetworkClient".ChildRemoved:Connect(function()
 game:service"TeleportService":TeleportToPlaceInstance(game.PlaceId, game.JobId, game:service"Players".LocalPlayer);
 end)
-local Tab:AddButton = script.Parent
-local soundId = "rbxassetid://421058925"
-SoundId local buttonSound = Instance.new("Sound") 
-buttonSound.SoundId = soundId 
-buttonSound.Parent = game.SoundService 
-YourButton.MouseButton1Click:Connect(function() 
-buttonSound:Play() 
-end)
 local LBLG = Instance.new("ScreenGui", getParent)
 local LBL = Instance.new("TextLabel", getParent)
 local player = game.Players.LocalPlayer
