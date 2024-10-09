@@ -1235,6 +1235,7 @@ Tab:AddButton({	Name = "普通蜡烛",	Callback = function()    local item = gam
 Tab:AddButton({	Name = "咖啡",	Callback = function()    local item = game:GetObjects("rbxassetid://5933367192")[1]    item.Parent = game.Players.LocalPlayer.Backpack  	end    })
 Tab = Window:MakeTab({    Name = "其他脚本",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({ Name ="作者喜欢的一个外国脚本，不喜勿喷",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/ByNami/dkhub/main/Script", true))()    end})
+Tab:AddButton({ Name ="国外脚本(FireHub 半缝合)",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/NotMooDy0/FireHub/refs/heads/main/Firehub"))()    end})
 Tab:AddButton({ Name ="国外脚本（VersionsV3.6.9）加载较慢",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/PawsThePaw/Plutonium.AA/refs/heads/main/Versions/V3.6.9.txt", true))()    end})
 Tab:AddButton({ Name ="禁漫中心◇",    Callback = function()    getgenv().lishichuan="禁漫中心1001390385" loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/anlushanjinchangantangwanle/main/jmjmjmjmjmjmjmjmjmjmjmjmjmjmjmjm.lua"))()    end})
 Tab:AddButton({ Name ="鸭Hub 🦆v2",    Callback = function()    loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,81,89,49,113,112,99,115,106})end)())))()    end})
