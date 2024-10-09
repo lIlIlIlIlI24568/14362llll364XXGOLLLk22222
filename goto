@@ -670,6 +670,7 @@ Tab:AddButton({  Name = "隐身道具",  Callback = function()    loadstring(gam
 Tab:AddButton({    Name="立即死亡",   Callback= function()        game.Players.LocalPlayer.Character.Humanoid.Health=0    end})
 local Tab = Window:MakeTab({    Name = "透视自瞄",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({    Name ="辅助瞄准",    Callback = function()   loadstring(game:HttpGet('https://raw.githubusercontent.com/yzeedw/Mortalv2-main/main/universal%20silent%20aim%20by%20Mortalexploits'))()      end})
+Tab:AddButton({    Name ="普通中心点",    Callback = function()   local d = Drawing.new("Circle")            d.Color, d.Radius, d.Filled, d.Visible = Color3.new(0, 0, 8), 3, true, false            game:GetService("RunService").RenderStepped:Connect(function()    d.Position = workspace.CurrentCamera.ViewportSize / 2    d.Visible = true        end)       end})
 Tab:AddButton({    Name ="战神十字架（小）",    Callback = function()   
 settings = {
     color = Color3.fromRGB(0, 255, 255),    -- 十字线的颜色，采用任何Color3
@@ -879,6 +880,7 @@ if settings.recenter then
         getgenv().crosshair_y["Line"]["From"] = Vector2.new((cam.ViewportSize.x / 2) - settings.x_offset, ((cam.ViewportSize.y / 2) - settings.y_offset) + settings.length)
     end)       end      end})
 Tab:AddButton({    Name ="可调节十字准心",    Callback = function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/kn0a/Crosshair-M/main/Source.lua", true))()     end})
+Tab:AddButton({    Name ="框架 血条 射线 准心 依旧fl有 Bug  不过我已经改得非常好了",    Callback = function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/eeeeeeeeeeeppppppppppppssassssssssss/refs/heads/main/%E9%80%8F%E8%A7%86%E3%80%82%E6%A1%86%E6%9E%B6"))()ExunysDeveloperESP()     end})
 Tab:AddButton({    Name ="人物框架",    Callback = function()
     -- xgo
 local Settings = {
