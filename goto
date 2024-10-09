@@ -440,7 +440,7 @@ Tab:AddButton({    Name ="键盘可单独按键",    Callback = function()    lo
 Tab:AddButton({	   Name = "替身",	Callback = function()      loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrillexMe/SkrillexLoader/main/SkrillexLoadMain')))()    end})
 Tab:AddButton({	   Name = "爬墙",	Callback = function()       loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()    end})
 local Tab = Window:MakeTab({    Name = "通用2",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
-Tab:AddTextbox({   Name="聊天发送循环（xgo提醒:别说一些容易被举报的话）",Callback=function(V)
+Tab:AddTextbox({   Name="聊天发送循环（xgo提醒:别说一些容易被举报的话）需要点两下",Callback=function(V)
 local TeleportService = game:GetService("TeleportService")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
