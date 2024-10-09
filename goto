@@ -670,11 +670,11 @@ Tab:AddButton({  Name = "隐身道具",  Callback = function()    loadstring(gam
 Tab:AddButton({    Name="立即死亡",   Callback= function()        game.Players.LocalPlayer.Character.Humanoid.Health=0    end})
 local Tab = Window:MakeTab({    Name = "透视自瞄",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({    Name ="辅助瞄准",    Callback = function()   loadstring(game:HttpGet('https://raw.githubusercontent.com/yzeedw/Mortalv2-main/main/universal%20silent%20aim%20by%20Mortalexploits'))()      end})
-Tab:AddButton({    Name ="战神十字架",    Callback = function()   
+Tab:AddButton({    Name ="战神十字架（小）",    Callback = function()   
 settings = {
-    color = Color3.fromRGB(255, 255/2, 255),    -- 十字线的颜色，采用任何Color3
+    color = Color3.fromRGB(0, 255, 255),    -- 十字线的颜色，采用任何Color3
     thickness = 2,                              -- 在像素中的十字线的厚度需要任何全数
-    length = 18,                                 -- 每侧的像素的长度都占据了任何全部。
+    length = 8,                                 -- 每侧的像素的长度都占据了任何全部。
     opacity = 1,                                -- 十字线的不透明度，取得任何数字，1是完全可见的，0是看不见的。
 	x_offset = 0,                               -- 十字线的X偏移，采用任何正数或负数
 	y_offset = 0,                               -- 十字丘的Y偏移，采用任何正数或负数
