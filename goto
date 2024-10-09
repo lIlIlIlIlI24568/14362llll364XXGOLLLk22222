@@ -86,7 +86,11 @@ local Section = Tab:AddDropdown({	Name = "💗💗💗💗💗💗💗💗💗�
 local Section = Tab:AddSection({	Name = "💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗"})
 OrionLib:MakeNotification({	Name = "稀🍚你 ",	Content = "持续更新",	Image = "rbxassetid://18923878915",	Time = 2})
 local Tab = Window:MakeTab({    Name = "小go音乐区",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
-Tab:AddButton({Name ="重新加入游戏 如果想换音乐只能重进 （所有皆为xgo，一人收集）",    Callback = function()      game:GetService("TeleportService"):TeleportToPlaceInstance(            game.PlaceId,            game.JobId,            game:GetService("Players").LocalPlayer        )    end})
+Tab:AddButton({Name ="停止播放音乐（所有皆为xgo，一人收集）",    Callback = function()      for i,v in pairs(workspace:GetDescendants()) do
+			if v:IsA("Sound") then
+				v:Destroy()
+			end
+		end   end})
 Tab:AddButton({    Name="音乐播放器",   Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/beta/main/music.lua"))()   end})
 local Section = Tab:AddSection({        Name = "小go提示:音乐功无法关闭哦 嗯，这次更新后面会加上音乐id 前边的话我就不加了，太麻烦了 "})
 Tab:AddButton({    Name ="Direct & Park Avenue - I'll Go 挺好听的",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410081298"    sound.Parent = game.Workspace    sound:Play()    end})
