@@ -327,7 +327,8 @@ Tab:AddButton({    Name ="RTX  图形画质",    Callback = function()     local
              s.Intensity = 0.01
               s.Spread = 0.146
                 print("小go  RTX图形加载完毕!")    end})
-Tab:AddButton({    Name ="红色地图  特效",    Callback = function()   for i,v in next,workspace:children''do
+Tab:AddButton({    Name ="红色地图  特效",    Callback = function()   
+for i,v in next,workspace:children''do
 			if(v:IsA'BasePart')then
 				me=v;
 				bbg=Instance.new('BillboardGui',me);
@@ -361,8 +362,7 @@ Tab:AddButton({    Name ="红色地图  特效",    Callback = function()   for 
 					f=Instance.new('Fire',v);
 					f.Size=19;
 					f.Heat=22;
-				end;
-	
+				end;	
 				local dec = 'http://www.roblox.com/asset/?id=19399245';
 				local fac = {'Front', 'Back', 'Left', 'Right', 'Top', 'Bottom'}
 				--coroutine.wrap(function()
@@ -372,15 +372,9 @@ Tab:AddButton({    Name ="红色地图  特效",    Callback = function()   for 
 				--ddec.Texture = dec
 				--end end)()
 				if #(v:GetChildren())>0 then
-					xds(v) 
-				end
-			end
-		end
+					xds(v) 				end			end		end
 		xds(game.Workspace)
-	end)
-	
-end
-end})
+	end	       end       end})
 local Tab = Window:MakeTab({    Name = "通用",   Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({    Name ="对玩家进行观战",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/eeeeeeeeeeeppppppppppppssassssssssss/refs/heads/main/%E8%A7%82%E6%88%98%E7%8E%A9%E5%AE%B6"))()    end})
 Tab:AddButton({    Name ="玩家进入通知",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()    end})
