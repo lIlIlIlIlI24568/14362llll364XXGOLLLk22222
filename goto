@@ -477,6 +477,41 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/head
 spawn(spamChat)
 spawn(flingAll)
 end})
+local Tab = Window:MakeTab({    Name = "玩家",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
+Tab:AddTextbox({	Name = "时间（24小时制）请输入1~24",	    Min = 0,	    Max = 24,	    Default = 14,	  	Callback = function(Time)        game.Lighting.ClockTime = Time    end})
+Tab:AddTextbox({   Name="显示FPS",Callback=function()
+local ScreenGui = Instance.new("ScreenGui")
+local FpsLabel = Instance.new("TextLabel")
+
+ScreenGui.Name = "FPSGui"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+FpsLabel.Name = "FPSLabel"
+FpsLabel.Size = UDim2.new(0, 100, 0, 50)
+FpsLabel.Position = UDim2.new(0.75,20,0.075,20)--位置
+FpsLabel.BackgroundTransparency = 1
+FpsLabel.Font = Enum.Font.SourceSansBold
+FpsLabel.Text = "FPS: 0"
+FpsLabel.TextSize = 30
+FpsLabel.TextColor3 = Color3.fromRGB(255, 255, 255) --颜色
+FpsLabel.Parent = ScreenGui
+
+local frameCounter = 0
+
+function updateFpsLabel()
+    frameCounter = frameCounter + 1
+    if frameCounter >= 20 then -- 20帧
+        local fps = math.floor(1 / game:GetService("RunService").RenderStepped:Wait())
+        FpsLabel.Text = "FPS: " .. fps
+        frameCounter = 0
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(updateFpsLabel)
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+end})
 Tab:AddButton({	Name = "无敌",	Callback = function()
 local lp = game:GetService "Players".LocalPlayer
 if lp.Character:FindFirstChild "Head" then
