@@ -436,10 +436,21 @@ Tab:AddButton({    Name ="工具包（三个经典工具）",    Callback = func
 Tab:AddButton({    Name ="工具挂",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/StandAwekening.lua"))()    end})
 Tab:AddButton({	   Name = "建筑工具",	Callback = function()		Hammer = Instance.new("HopperBin")		Hammer.Name = "锤子"		Hammer.BinType = 4		Hammer.Parent = game.Players.LocalPlayer.Backpack		Clone = Instance.new("HopperBin")		Clone.Name = "克隆"		Clone.BinType = 3		Clone.Parent = game.Players.LocalPlayer.Backpack		Grab = Instance.new("HopperBin")		Grab.Name = "抓取"		Grab.BinType = 2	end})
 Tab:AddButton({    Name ="键盘",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()    end})
-Tab:AddButton({    Name ="键盘可单独按键",    Callback = function()    loadstring(game:HttpGet("https://gist.githubusercontent.com/RedZenXYZ/4d80bfd70ee27000660e4bfa7509c667/raw/da903c570249ab3c0c1a74f3467260972c3d87e6/KeyBoard%2520From%2520Ohio%2520Fr%2520Fr"))()    end})
 Tab:AddButton({	   Name = "替身",	Callback = function()      loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrillexMe/SkrillexLoader/main/SkrillexLoadMain')))()    end})
 Tab:AddButton({	   Name = "爬墙",	Callback = function()       loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()    end})
 local Tab = Window:MakeTab({    Name = "通用2",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
+Tab:AddButton({    Name = "传送到玩家面前循环（嘲讽）",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Orbit%20GUI"))()      end})
+Tab:AddButton({	   Name = "小go制作玩家控制喜欢俄亥俄的，可以搭配起来超级好用",	Callback = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6"))()    end})
+Tab:AddButton({    Name = "小go超级无敌旋转",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%88%9D%E4%BB%A3%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()      end})
+Tab:AddButton({    Name = "小go超级无敌旋转2.0",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()    end})
+Tab:AddButton({	   Name = "鼠标（手机非常不建议用）",	Callback = function()        loadstring(game:HttpGet(('https://pastefy.ga/V75mqzaz/raw'),true))()	end})
+Tab:AddButton({    Name="锁定视角 摄像机",    Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%94%81%E5%AE%9A%E8%A7%86%E8%A7%92"))()  end})
+Tab:AddButton({    Name="小go 在外网找的几个道具",    Callback=function()      loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/b04e28198c8eeb1408921a1560792152/raw/67739a2bc571093976e6cd7e51fb526dedd75861/tools",true))()  end})
+Tab:AddButton({    Name="聊天绘画图",    Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/pamn/refs/heads/main/xz"))()  end})
+Tab:AddButton({    Name="死亡笔记",    Callback=function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E6%AD%BB%E4%BA%A1%E7%AC%94%E8%AE%B0"))()  end})
+Tab:AddButton({    Name="娱乐特效",    Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/xgoizlx/refs/heads/main/ui"))()  end})
+local Tab = Window:MakeTab({    Name = "聊天中枢",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
+Tab:AddButton({    Name ="键盘可单独按键",    Callback = function()    loadstring(game:HttpGet("https://gist.githubusercontent.com/RedZenXYZ/4d80bfd70ee27000660e4bfa7509c667/raw/da903c570249ab3c0c1a74f3467260972c3d87e6/KeyBoard%2520From%2520Ohio%2520Fr%2520Fr"))()    end})
 Tab:AddTextbox({   Name="聊天发送循环（xgo提醒:别说一些容易被举报的话）需要点两下",Callback=function(V)
 local TeleportService = game:GetService("TeleportService")
 local Players = game:GetService("Players")
@@ -466,18 +477,110 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/head
 spawn(spamChat)
 spawn(flingAll)
 end})
+Tab:AddButton({    Name ="键盘可单独按键",    Callback = function() 
+-- 本地脚本xgo
+-- 邮件列表
+local messages = {
+    "你知道这款游戏有一个很好的教程“，
+    ”女狗“，
+    ”eezz“，
+    ”哭泣“，
+    ”诚实垃圾“，
+    ”狗水“，
+    ”想象一下是坏“，
+    ”老实说“，
+    ”Trashhhh“，
+    ”我甚至甚至不努力和我赢了“，
+    ”兄弟你只是可怕的“，
+    ”你能在比赛中变得更糟“，
+    ”你很容易杀了“，
+    ”我从来没有见过这个游戏这么糟糕“，
+    ”我对你感到难过，你在游戏中让我畏缩“，
+    ”你是最糟糕的球员我曾经扮演过“，
+    ”Looool“，
+    ”eeeez“，
+    ”兄弟你这么疯狂“，
+    ”老实说，你是搞笑你有多糟糕“，
+    ”你被垃圾如此努力“，
+    ”继续哭泣“，
+    ”我甚至不努力哈哈“，
+    ”只是戒掉你令自己令人尴尬的“，
+    ”我觉得我很喜欢对阵机器人“，
+    ”只是接受你令人恐惧的事实“，
+    ”我嘲笑你的糟糕是“，”你真的没有技巧“，
+    ”你很容易击败“,
+    ”你怎么玩“，
+    ”停止哭泣关于失败“，
+    ”得到gud“，
+    ”你怎么不尴尬“，
+    ”我从未见过任何人玩这么可怕的“，
+    ”我的小弟弟可以比你更好“，
+    ”老实说，
+    “甚至没有试图在游戏中变得更好”，
+    “这就像你想要丢失”,
+    “你这么开玩笑”，
+    “只是放弃”，“这是如此简单”，
+    “这是一个完整的笑话”，“我很无聊对着你”，
+    “你是如此可怕”，
+    “保持抱怨，这很有趣”，
+    我觉得我觉得我只是欺负你现在“，
+    "这实际上是悲伤的”，
+    “你只是浪费你的时间”，
+    “你太慢了”，
+    “你是我见过的最愚蠢的球员”，
+    “你是如此垃圾，它真的很伤心”，
+     “你是个笑话”，
+
+-- 索引跟踪当前消息
+local currentIndex = 1
+
+-- 函数向聊天发送消息
+local function sendMessage(message)
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, "All")
+end
+
+-- 用户输入服务检测键压制
+local UserInputService = game:GetService("UserInputService")
+
+-- 按键的事件侦听器
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed then -- Ensure the player is not typing in a text box
+        if input.KeyCode == Enum.KeyCode.G then
+            -- 发送当前消息
+            sendMessage(messages[currentIndex])
+            
+            -- 移动到列表中的下一个消息
+            currentIndex = currentIndex + 1
+            
+            -- 如果我们已到达列表的末尾，请从第一条消息开始
+            if currentIndex > #messages then
+                currentIndex = 1
+            end
+        end
+    end
+end)
+
+-- Create a ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "CreditsGui"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Create a TextLabel
+local textLabel = Instance.new("TextLabel")
+textLabel.Parent = screenGui
+textLabel.Text = "xgo 按G进行输出"
+textLabel.Size = UDim2.new(0, 200, 0, 50) -- 宽度：200px，高度：50px
+textLabel.Position = UDim2.new(1, -210, 1, -60) -- 从右边10px，底部10px
+textLabel.BackgroundTransparency = 1 -- Make the background transparent
+textLabel.TextColor3 = Color3.new(1, 0.41, 0.71) -- 粉色文本
+textLabel.TextStrokeTransparency = 0.5 -- 略微可见的文本笔划
+textLabel.TextSize = 20 -- 字体大小
+textLabel.Font = Enum.Font.SourceSans -- 字体类型
+textLabel.TextXAlignment = Enum.TextXAlignment.Right -- 将文本对齐
+textLabel.TextYAlignment = Enum.TextYAlignment.Bottom -- 将文本与底部对齐
+end})
 Tab:AddButton({    Name = "Al聊天机器人",	Callback = function()        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Synergy-Networks/products/main/BetterBypasser/loader.lua"))()      end})
 Tab:AddButton({    Name ="骂人无违规",    Callback = function()    loadstring(game:GetObjects("rbxassetid://1262435912")[1].Source)()    end})
-Tab:AddButton({    Name = "传送到玩家面前循环（嘲讽）",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Orbit%20GUI"))()      end})
-Tab:AddButton({	   Name = "小go制作玩家控制喜欢俄亥俄的，可以搭配起来超级好用",	Callback = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6"))()    end})
-Tab:AddButton({    Name = "小go超级无敌旋转",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%88%9D%E4%BB%A3%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()      end})
-Tab:AddButton({    Name = "小go超级无敌旋转2.0",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()    end})
-Tab:AddButton({	   Name = "鼠标（手机非常不建议用）",	Callback = function()        loadstring(game:HttpGet(('https://pastefy.ga/V75mqzaz/raw'),true))()	end})
-Tab:AddButton({    Name="锁定视角 摄像机",    Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%94%81%E5%AE%9A%E8%A7%86%E8%A7%92"))()  end})
-Tab:AddButton({    Name="小go 在外网找的几个道具",    Callback=function()      loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/b04e28198c8eeb1408921a1560792152/raw/67739a2bc571093976e6cd7e51fb526dedd75861/tools",true))()  end})
-Tab:AddButton({    Name="聊天绘画图",    Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/pamn/refs/heads/main/xz"))()  end})
-Tab:AddButton({    Name="死亡笔记",    Callback=function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E6%AD%BB%E4%BA%A1%E7%AC%94%E8%AE%B0"))()  end})
-Tab:AddButton({    Name="娱乐特效",    Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/xgoizlx/refs/heads/main/ui"))()  end})
 local Tab = Window:MakeTab({    Name = "玩家",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddTextbox({	Name = "时间（24小时制）请输入1~24",	    Min = 0,	    Max = 24,	    Default = 14,	  	Callback = function(Time)        game.Lighting.ClockTime = Time    end})
 Tab:AddTextbox({   Name="显示FPS",Callback=function()
