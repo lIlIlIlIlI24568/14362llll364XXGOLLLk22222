@@ -86,12 +86,8 @@ local Section = Tab:AddDropdown({	Name = "💗💗💗💗💗💗💗💗💗�
 local Section = Tab:AddSection({	Name = "💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗"})
 OrionLib:MakeNotification({	Name = "稀🍚你 ",	Content = "持续更新",	Image = "rbxassetid://18923878915",	Time = 2})
 local Tab = Window:MakeTab({    Name = "小go音乐区",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
-Tab:AddButton({Name ="停止播放音乐（所有皆为xgo，一人收集）",    Callback = function()      for i,v in pairs(workspace:GetDescendants()) do
-			if v:IsA("Sound") then
-				v:Destroy()
-			end
-		end   end})
-Tab:AddButton({    Name="音乐播放器",   Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/beta/main/music.lua"))()   end})
+Tab:AddButton({Name ="停止播放音乐（所有皆为xgo 一人收集）",    Callback = function()      for i,v in pairs(workspace:GetDescendants())    do			if v:IsA("Sound") then				v:Destroy()			end		end   end})
+Tab:AddButton({    Name="音乐播放器    如果有好听的可以投稿",   Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/beta/main/music.lua"))()   end})
 local Section = Tab:AddSection({        Name = "小go提示:音乐功无法关闭哦 嗯，这次更新后面会加上音乐id 前边的话我就不加了，太麻烦了 "})
 Tab:AddButton({    Name ="Direct & Park Avenue - I'll Go 挺好听的",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410081298"    sound.Parent = game.Workspace    sound:Play()    end})
 Tab:AddButton({    Name ="Rogue - Motion",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7028557220"    sound.Parent = game.Workspace    sound:Play()    end})
@@ -107,6 +103,7 @@ Tab:AddButton({    Name ="轻松7   女版",     Callback =function()    local s
 Tab:AddButton({    Name ="嗯，挺好听的，不知道叫啥   女版",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7023741506"    sound.Parent = game.Workspace    sound:Play()    end})
 Tab:AddButton({    Name ="住宅区(1845554017)",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1845554017"    sound.Parent = game.Workspace    sound:Play()    end})
 Tab:AddButton({    Name ="轻松8",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1839721437"    sound.Parent = game.Workspace    sound:Play()    end})
+Tab:AddButton({    Name ="不知道叫啥好听（6942391979）",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://6942391979"    sound.Parent = game.Workspace    sound:Play()    end})
 local Section = Tab:AddSection({        Name = " Dj🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️要音乐id，可以联系我🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️"})
 Tab:AddButton({    Name ="Autotuned Dancing Roach  不知道怎么形容这电音",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://4050095124"    sound.Parent = game.Workspace   sound:Play()    end})
 Tab:AddButton({    Name ="Dj",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1843497734"    sound.Parent = game.Workspace    sound:Play()    end})
@@ -173,6 +170,7 @@ Tab:AddButton({    Name ="睡眠歌曲 Baby Song",     Callback =function()    l
 Tab:AddButton({    Name ="义勇军进行曲",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1845918434"    sound.Parent = game.Workspace    sound:Play()    end})
 Tab:AddButton({    Name ="彩虹瀑布",    Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://1837879082"    sound.Parent = game.Workspace    sound:Play()    end})
 local Section = Tab:AddSection({        Name = "整蛊语音🕊️还有一些梗🕊️🕊️🕊️xgo找这些好辛苦的🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️"})
+Tab:AddButton({    Name ="第1次听吓我一跳（7795812961）",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://7795812961"    sound.Parent = game.Workspace    sound:Play()    end})
 Tab:AddButton({    Name ="我跌倒了,爬不起来（130768088）",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://130768088"    sound.Parent = game.Workspace    sound:Play()    end})
 Tab:AddButton({    Name ="胜利的声音(12222253)",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://12222253"    sound.Parent = game.Workspace    sound:Play()    end})
 Tab:AddButton({    Name ="死亡的声音(12222242)",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://12222242"    sound.Parent = game.Workspace    sound:Play()    end})
@@ -329,6 +327,60 @@ Tab:AddButton({    Name ="RTX  图形画质",    Callback = function()     local
              s.Intensity = 0.01
               s.Spread = 0.146
                 print("小go  RTX图形加载完毕!")    end})
+Tab:AddButton({    Name ="红色地图  特效",    Callback = function()   for i,v in next,workspace:children''do
+			if(v:IsA'BasePart')then
+				me=v;
+				bbg=Instance.new('BillboardGui',me);
+				bbg.Name='stuf';
+				bbg.Adornee=me;
+				bbg.Size=UDim2.new(2.5,0,2.5,0)
+				--bbg.StudsOffset=Vector3.new(0,2,0)
+				tlb=Instance.new'TextLabel';
+				tlb.Text='666 666 666 666 666 666';
+				tlb.Font='SourceSansBold';
+				tlb.FontSize='Size48';
+				tlb.TextColor3=Color3.new(1,0,0);
+				tlb.Size=UDim2.new(1.25,0,1.25,0);
+				tlb.Position=UDim2.new(-0.125,-22,-1.1,0);
+				tlb.BackgroundTransparency=1;
+				tlb.Parent=bbg;
+			end;end;
+		function xds(dd)
+			for i,v in next,dd:children''do
+				if(v:IsA'BasePart')then
+					v.BrickColor=BrickColor.new'Really black';
+					v.TopSurface='Smooth';
+					v.BottomSurface='Smooth';
+					s=Instance.new('SelectionBox',v);
+					s.Adornee=v;
+					s.Color=BrickColor.new'Really red';
+					a=Instance.new('PointLight',v);
+					a.Color=Color3.new(1,0,0);
+					a.Range=15;
+					a.Brightness=5;
+					f=Instance.new('Fire',v);
+					f.Size=19;
+					f.Heat=22;
+				end;
+	
+				local dec = 'http://www.roblox.com/asset/?id=19399245';
+				local fac = {'Front', 'Back', 'Left', 'Right', 'Top', 'Bottom'}
+				--coroutine.wrap(function()
+				--for ,_ in pairs(fac) do
+				--local ddec = Instance.new("Decal", v)
+				--ddec.Face = 
+				--ddec.Texture = dec
+				--end end)()
+				if #(v:GetChildren())>0 then
+					xds(v) 
+				end
+			end
+		end
+		xds(game.Workspace)
+	end)
+	
+end
+end})
 local Tab = Window:MakeTab({    Name = "通用",   Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({    Name ="对玩家进行观战",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/eeeeeeeeeeeppppppppppppssassssssssss/refs/heads/main/%E8%A7%82%E6%88%98%E7%8E%A9%E5%AE%B6"))()    end})
 Tab:AddButton({    Name ="玩家进入通知",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()    end})
