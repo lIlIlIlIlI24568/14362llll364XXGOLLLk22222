@@ -455,7 +455,7 @@ end
 
 local function flingAll()
     while true do
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/111"))()
+        loadstring(game:HttpGet("https://raw .githubusercontent.com/GTAFAW/goto/refs/heads/main/1111"))()
         wait(3)
         TeleportService:Teleport(game.PlaceId, Players.LocalPlayer)
     end
