@@ -27,18 +27,6 @@ end)
 local LBLG = Instance.new("ScreenGui", getParent)
 local LBL = Instance.new("TextLabel", getParent)
 local player = game.Players.LocalPlayer
-local function getPlayer(name)
-	local lowerName = string.lower(name)
-	for _, p in pairs(players:GetPlayers()) do
-		local lowerPlayer = string.lower(p.Name)
-		if string.find(lowerPlayer, lowerName) then
-			return p
-		elseif string.find(string.lower(p.DisplayName), lowerName) then
-			return p
-		end
-	end
-end
-local player = nil
 LBLG.Name = "LBLG"
 LBLG.Parent = game.CoreGui
 LBLG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -494,7 +482,19 @@ Tab:AddButton({    Name ="xgo 随机骂人输出 （手机需要键盘按G）", 
 Tab:AddButton({    Name ="键盘可单独按键",    Callback = function()    loadstring(game:HttpGet("https://gist.githubusercontent.com/RedZenXYZ/4d80bfd70ee27000660e4bfa7509c667/raw/da903c570249ab3c0c1a74f3467260972c3d87e6/KeyBoard%2520From%2520Ohio%2520Fr%2520Fr"))()    end})
 local Tab = Window:MakeTab({    Name = "玩家",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddTextbox({    Name="输入玩家",     Callback = function(name, focuslost)
-    if focuslost then
+local function getPlayer(name)
+	local lowerName = string.lower(name)
+	for _, p in pairs(players:GetPlayers()) do
+		local lowerPlayer = string.lower(p.Name)
+		if string.find(lowerPlayer, lowerName) then
+			return p
+		elseif string.find(string.lower(p.DisplayName), lowerName) then
+			return p
+		end
+	end
+end
+local player = nil
+      if focuslost then
         local player = getPlayer(name)
         if player then
             plr.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
