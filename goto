@@ -670,6 +670,84 @@ Tab:AddButton({  Name = "隐身道具",  Callback = function()    loadstring(gam
 Tab:AddButton({    Name="立即死亡",   Callback= function()        game.Players.LocalPlayer.Character.Humanoid.Health=0    end})
 local Tab = Window:MakeTab({    Name = "透视自瞄",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({    Name ="辅助瞄准",    Callback = function()   loadstring(game:HttpGet('https://raw.githubusercontent.com/yzeedw/Mortalv2-main/main/universal%20silent%20aim%20by%20Mortalexploits'))()      end})
+Tab:AddButton({    Name ="战神十字架",    Callback = function()   
+settings = {
+    color = Color3.fromRGB(255, 255/2, 255),    -- 十字线的颜色，采用任何Color3
+    thickness = 2,                              -- 在像素中的十字线的厚度需要任何全数
+    length = 18,                                 -- 每侧的像素的长度都占据了任何全部。
+    opacity = 1,                                -- 十字线的不透明度，取得任何数字，1是完全可见的，0是看不见的。
+	x_offset = 0,                               -- 十字线的X偏移，采用任何正数或负数
+	y_offset = 0,                               -- 十字丘的Y偏移，采用任何正数或负数
+	
+    recenter = true                             -- .如果您的窗口调整大小，自动彻底是十字准线，这是一个选项，以防我非常怀疑的任何人导致滞后，如果它为您提供，请停止使用您的微波器for Roblox
+}
+
+local cam = workspace.CurrentCamera or workspace:FindFirstChildOfClass("Camera")
+
+getgenv().crosshair_x = getgenv().crosshair_x or {}
+getgenv().crosshair_y = getgenv().crosshair_y or {}
+
+local function draw(a1, a2)
+    local obj = Drawing.new(a1)
+    for i, v in pairs(a2) do 
+        obj[i] = v
+    end
+    return obj
+end
+
+if getgenv().crosshair_x ~= nil or getgenv().crosshair_x ~= {} then
+    if getgenv().crosshair_x["Line"] then
+        getgenv().crosshair_x["Line"]:Remove()
+    end
+    
+    if getgenv().crosshair_x["Connection"] then
+        getgenv().crosshair_x["Connection"]:Disconnect()
+    end
+    getgenv().crosshair_x = {}
+end
+
+if getgenv().crosshair_y ~= nil or getgenv().crosshair_y ~= {} then
+    if getgenv().crosshair_y["Line"] then
+        getgenv().crosshair_y["Line"]:Remove()
+    end
+
+    if getgenv().crosshair_y["Connection"] then
+        getgenv().crosshair_y["Connection"]:Disconnect()
+    end
+    
+    getgenv().crosshair_y = {}
+end
+
+getgenv().crosshair_x["Line"] = draw("Line", {
+    To = Vector2.new(((cam.ViewportSize.x / 2) - settings.x_offset) - settings.length, (cam.ViewportSize.y / 2) - settings.y_offset),
+    From = Vector2.new(((cam.ViewportSize.x / 2) - settings.x_offset) + settings.length, (cam.ViewportSize.y / 2) - settings.y_offset),
+    Thickness = settings.thickness,
+    Color = settings.color,
+    Transparency = settings.opacity,
+    Visible = true
+})
+
+getgenv().crosshair_y["Line"] = draw("Line", {
+    To = Vector2.new((cam.ViewportSize.x / 2) - settings.x_offset, ((cam.ViewportSize.y / 2) - settings.y_offset) - settings.length),
+    From = Vector2.new((cam.ViewportSize.x / 2) - settings.x_offset, ((cam.ViewportSize.y / 2) - settings.y_offset) + settings.length),
+    Thickness = settings.thickness,
+    Color = settings.color,
+    Transparency = settings.opacity,
+    Visible = true
+})
+
+if settings.recenter then
+    getgenv().crosshair_x["Connection"] = cam:GetPropertyChangedSignal("ViewportSize"):Connect(function()
+        getgenv().crosshair_x["Line"]["To"] = Vector2.new(((cam.ViewportSize.x / 2) - settings.x_offset) - settings.length, (cam.ViewportSize.y / 2) - settings.y_offset)
+        getgenv().crosshair_x["Line"]["From"] = Vector2.new(((cam.ViewportSize.x / 2) - settings.x_offset) + settings.length, (cam.ViewportSize.y / 2) - settings.y_offset)
+    end)
+
+    getgenv().crosshair_y["Connection"] = cam:GetPropertyChangedSignal("ViewportSize"):Connect(function()
+        getgenv().crosshair_y["Line"]["To"] = Vector2.new((cam.ViewportSize.x / 2) - settings.x_offset, ((cam.ViewportSize.y / 2) - settings.y_offset) - settings.length)
+        getgenv().crosshair_y["Line"]["From"] = Vector2.new((cam.ViewportSize.x / 2) - settings.x_offset, ((cam.ViewportSize.y / 2) - settings.y_offset) + settings.length)
+    end)
+end
+end})
 Tab:AddButton({    Name ="人物框架",    Callback = function()
     -- xgo
 local Settings = {
