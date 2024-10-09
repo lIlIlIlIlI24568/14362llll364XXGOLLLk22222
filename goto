@@ -481,7 +481,6 @@ Tab:AddButton({    Name ="骂人无违规",    Callback = function()    loadstri
 Tab:AddButton({    Name ="xgo 随机骂人输出 （手机需要键盘按G）",    Callback = function()      loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/ldzs/refs/heads/main/%E8%81%8A%E5%A4%A9%E4%B8%AD%E6%9E%A2"))()     end})
 Tab:AddButton({    Name ="键盘可单独按键",    Callback = function()    loadstring(game:HttpGet("https://gist.githubusercontent.com/RedZenXYZ/4d80bfd70ee27000660e4bfa7509c667/raw/da903c570249ab3c0c1a74f3467260972c3d87e6/KeyBoard%2520From%2520Ohio%2520Fr%2520Fr"))()    end})
 local Tab = Window:MakeTab({    Name = "玩家",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
-Tab:AddTextbox({    Name="输入玩家",     Callback = function(name, focuslost)
 local function getPlayer(name)
 	local lowerName = string.lower(name)
 	for _, p in pairs(players:GetPlayers()) do
@@ -494,7 +493,8 @@ local function getPlayer(name)
 	end
 end
 local player = nil
-      if focuslost then
+Tab:AddTextbox({    Name="玩家",  Callback = function (name, focuslost)
+    if focuslost then
         local player = getPlayer(name)
         if player then
             plr.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
@@ -502,7 +502,7 @@ local player = nil
     end
 end})
 Tab:AddTextbox({   Name = "时间（24小时制）请输入1~24",	    Min = 0,	    Max = 24,	    Default = 14,	  	Callback = function(Time)        game.Lighting.ClockTime = Time    end})
-Tab:AddTextbox({   Name="显示FPS",Callback=function()
+Tab:AddButton({   Name="显示FPS",Callback=function()
 local ScreenGui = Instance.new("ScreenGui")
 local FpsLabel = Instance.new("TextLabel")
 
@@ -516,8 +516,8 @@ FpsLabel.Position = UDim2.new(0.75,20,0.075,20)--位置
 FpsLabel.BackgroundTransparency = 1
 FpsLabel.Font = Enum.Font.SourceSansBold
 FpsLabel.Text = "FPS: 0"
-FpsLabel.TextSize = 30
-FpsLabel.TextColor3 = Color3.fromRGB(255, 255, 255) --颜色
+FpsLabel.TextSize = 20
+FpsLabel.TextColor3 = Color3.fromRGB(255, 165, 0) --颜色
 FpsLabel.Parent = ScreenGui
 
 local frameCounter = 0
