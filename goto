@@ -1177,7 +1177,7 @@ for i,v in pairs(game.Players:GetChildren()) do
                 local Vector, OnScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
 
                 if OnScreen then
-                    Tracer.From = Vector2.new(camera.ViewportSize.X / 2, camera.ViewportSize.Y / 1)
+                    Tracer.From = Vector2.new(camera.ViewportSize.X / 1, camera.ViewportSize.Y / 2)
                     Tracer.To = Vector2.new(Vector.X, Vector.Y)
 
                     if _G.TeamCheck and v.TeamColor == lplr.TeamColor then
@@ -1197,7 +1197,6 @@ for i,v in pairs(game.Players:GetChildren()) do
     end
     coroutine.wrap(lineesp)()
 end
-
 game.Players.PlayerAdded:Connect(function(v)
     local Tracer = Drawing.new("Line")
     Tracer.Visible = false
