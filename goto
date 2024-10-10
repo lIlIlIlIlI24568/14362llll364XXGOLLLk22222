@@ -87,6 +87,100 @@ local Section = Tab:AddSection({	Name = "💗💗💗💗💗💗💗💗💗�
 OrionLib:MakeNotification({	Name = "稀🍚你 ",	Content = "持续更新",	Image = "rbxassetid://18923878915",	Time = 2})
 local Tab = Window:MakeTab({    Name = "小go音乐区",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({Name ="停止播放音乐（所有皆为xgo 一人收集）",    Callback = function()      for i,v in pairs(workspace:GetDescendants())    do			if v:IsA("Sound") then				v:Destroy()			end		end   end})
+Tab:AddButton({    Name="音乐播放器  xgo版本",   Callback=function()     -- Create the GUI
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local CloseButton = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local BetaText = Instance.new("TextLabel")
+local UICornerForClose = Instance.new("UICorner")
+local TextBox = Instance.new("TextBox")
+local PlayButton = Instance.new("TextButton")
+local Sound = Instance.new("Sound")
+-- 将GUI到玩家的屏幕
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+-- 帧属性（主GUI窗口）
+Frame.Size = UDim2.new(0, 100, 0, 100)
+Frame.Position = UDim2.new(0.5, -150, 0.5, -100)
+Frame.BackgroundColor3 = Color3.fromRGB(1, 1, 1)
+Frame.Parent = ScreenGui
+Frame.Active = true
+Frame.Draggable = true  -- 使它拖累
+-- UI角用于框架上的光滑边缘
+UICorner.CornerRadius = UDim.new(0.1, 0)  -- 光滑的边缘
+UICorner.Parent = Frame
+-- Close Button (a circle with 'X' in it)
+CloseButton.Text = "X"
+CloseButton.Size = UDim2.new(0, 40, 0, 40)
+CloseButton.Position = UDim2.new(1, -45, 0, 5)  -- 位于右上角的位置
+CloseButton.BackgroundColor3 = Color3.fromRGB(1, 0.5, 0)
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.Parent = Frame
+CloseButton.Font = Enum.Font.SourceSansBold
+CloseButton.TextSize = 24
+-- ui角用于关闭按钮上的光滑边缘
+UICornerForClose.CornerRadius = UDim.new(1, 0)  -- 完整的循环
+UICornerForClose.Parent = CloseButton
+-- Beta通知的弹出文本标签
+BetaText.Size = UDim2.new(0, 250, 0, 50)
+BetaText.Position = UDim2.new(0.5, -125, 0.5, -25)
+BetaText.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+BetaText.Text = "This is still in beta; we will improve this soon"
+BetaText.TextColor3 = Color3.fromRGB(255, 255, 255)
+BetaText.Font = Enum.Font.SourceSansBold
+BetaText.TextSize = 18
+BetaText.Parent = ScreenGui
+BetaText.Visible = true
+-- ui角落在beta文本上的光滑边缘
+local BetaTextCorner = Instance.new("UICorner")
+BetaTextCorner.CornerRadius = UDim.new(0.1, 0)
+BetaTextCorner.Parent = BetaText
+-- 在几秒钟后使beta文本消失
+wait(3)
+for i = 1, 50 do
+    BetaText.TextTransparency = i / 50
+    BetaText.BackgroundTransparency = i / 50
+    wait(0.05)
+end
+BetaText:Destroy()
+-- 关闭按钮功能
+CloseButton.MouseButton1Click:Connect(function()
+    Sound:Stop()  -- Stop the music when the GUI is closed
+    ScreenGui:Destroy()
+end)
+-- 用于输入音乐ID的TextBox
+TextBox.Size = UDim2.new(0, 200, 0, 40)
+TextBox.Position = UDim2.new(0.5, -100, 0.3, -20)
+TextBox.PlaceholderText = "输入歌曲ID"
+TextBox.Text = ""
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(1, 1, 1)
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.TextSize = 18
+-- 播放按钮
+PlayButton.Size = UDim2.new(0, 100, 0, 40)
+PlayButton.Position = UDim2.new(0.5, -50, 0.5, 20)
+PlayButton.Text = "播放 xgo"
+PlayButton.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+PlayButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayButton.Parent = Frame
+PlayButton.Font = Enum.Font.SourceSansBold
+PlayButton.TextSize = 18
+-- 创建声音对象
+Sound.Parent = game.Workspace
+-- 播放按钮功能
+PlayButton.MouseButton1Click:Connect(function()
+    local musicId = tonumber(TextBox.Text)
+    if musicId then
+        Sound.SoundId = "rbxassetid://" .. musicId
+        Sound:Play()
+    else
+        warn("Please enter a valid music ID")
+    end
+end)   end})
 Tab:AddButton({    Name="音乐播放器    如果有好听的可以投稿",   Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/beta/main/music.lua"))()   end})
 local Section = Tab:AddSection({        Name = "小go提示:音乐功无法关闭哦 嗯，这次更新后面会加上音乐id 前边的话我就不加了，太麻烦了 "})
 Tab:AddButton({    Name ="Direct & Park Avenue - I'll Go 挺好听的",     Callback =function()    local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://5410081298"    sound.Parent = game.Workspace    sound:Play()    end})
