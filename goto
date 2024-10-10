@@ -2148,7 +2148,7 @@ local Tab = Window:MakeTab({    Name = "河北唐县",    Icon = "rbxassetid://1
 Tab:AddButton({    Name ="小go（维护中）",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E6%B2%B3%E5%8C%97%E5%94%90%E5%8E%BF"))()    end})
 Tab:AddButton({    Name ="皮",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/Pi-script-Hebeitangxian.lua"))()    end})
 Tab:AddButton({    Name ="卡车刷钱",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/ok/T%20ang%20County"))()    end})
-local Tab = Window:MakeTab({    Name = "疯狂电梯",    Icon = "rbxassetid://18439654850",    PremiumOnly = false})
+local Tab = Window:MakeTab({    Name = "疯狂电梯",    Icon = "rbxassetid://1000140976",    PremiumOnly = false})
 Tab:AddButton({	Name = "传送VIP室",	Callback = function()	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1883.12255859375, -396.84991455078125, 908.6722412109375)   end})
 Tab:AddButton({	Name = "传送大厅",	Callback = function()	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1916.0081787109375, -396.90020751953125, 926.0120239257812)   end})
 Tab:AddButton({	Name = "传送游戏",	Callback = function()	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.3450292348861694, 3.999999761581421, -8.305864334106445)   end})
