@@ -178,7 +178,7 @@ PlayButton.MouseButton1Click:Connect(function()
         Sound.SoundId = "rbxassetid://" .. musicId
         Sound:Play()
     else
-        warn("Please enter a valid music ID")
+        warn("xgo准备好音乐id，然后输入进去即可")
     end
 end)   end})
 Tab:AddButton({    Name="音乐播放器    如果有好听的可以投稿",   Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/beta/main/music.lua"))()   end})
