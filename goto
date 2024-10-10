@@ -593,13 +593,68 @@ local function getPlayer(name)
 	end
 end
 local player = nil
-Tab:AddTextbox({    Name="玩家",  Callback = function (name, focuslost)
-    if focuslost then
-        local player = getPlayer(name)
-        if player then
-            plr.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
-        end
+Tab:AddTextbox({    Name="玩家",  Callback = function ()
+    -- 获取玩家和传送点位置
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+local rootPart = character:WaitForChild("HumanoidRootPart")
+
+
+
+-- 设置传送点位置
+
+local teleportPosition = Vector3.new(0, 10, 0) -- 你可以根据需要修改这个位置
+
+
+
+-- 传送玩家的函数
+
+local function TeleportPlayer()
+
+    -- 检查玩家是否在游戏内
+
+    if not player or not character or not humanoid or not rootPart then
+
+        return
+
     end
+
+
+
+    -- 设置玩家角色的位置到传送点位置
+
+    rootPart.CFrame = CFrame.new(teleportPosition)
+
+end
+
+
+
+-- 绑定一个热键来触发传送，例如按住 'T' 键
+
+local function OnKeyDown(key)
+
+    if key == Enum.KeyCode.T then
+
+        TeleportPlayer()
+
+    end
+
+end
+
+
+
+-- 连接到玩家的键盘事件
+
+game:GetService("Players").LocalPlayer.PlayerGui.InputBegan:Connect(OnKeyDown)
+
+
+
+-- 注意：这个脚本仅适用于本地玩家，如果你想要为所有玩家设置传送点，需要将脚本放在服务器端，并适当修改。
 end})
 Tab:AddTextbox({   Name = "时间（24小时制）请输入1~24",	    Min = 0,	    Max = 24,	    Default = 14,	  	Callback = function(Time)        game.Lighting.ClockTime = Time    end})
 Tab:AddButton({   Name="显示FPS",Callback=function()
