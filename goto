@@ -664,6 +664,7 @@ Tab:AddSlider({    Name = "跳跃高度!",	Min = 50,	Max = 200,	Default = 50,	Co
 Tab:AddTextbox({   Name = "跳跃高度设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end})
 Tab:AddTextbox({   Name = "移动速度设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value	end})
 Tab:AddTextbox({   Name = "重力设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Workspace.Gravity = Value	end})
+Tab:AddButton({    Name = "人物坐下",    Callback = function()     local player = game.Players.LocalPlayer               local character = player.Character or player.CharacterAdded:Wait()              local humanoid = character:WaitForChild("Humanoid")         if humanoid and character then    humanoid.Sit = true        else    warn("Humanoid or Character not found.")      end       end})
 Tab:AddToggle({	Name = "穿墙",	Default = false,	Callback = function(Value)
  if Value then
   Noclip = true
