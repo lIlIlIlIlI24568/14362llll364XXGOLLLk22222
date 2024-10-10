@@ -102,7 +102,7 @@ local Sound = Instance.new("Sound")
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ResetOnSpawn = false
 -- 帧属性（主GUI窗口）
-Frame.Size = UDim2.new(0, 100, 0, 100)
+Frame.Size = UDim2.new(0, 250, 0, 250)
 Frame.Position = UDim2.new(0.5, -150, 0.5, -100)
 Frame.BackgroundColor3 = Color3.fromRGB(1, 1, 1)
 Frame.Parent = ScreenGui
