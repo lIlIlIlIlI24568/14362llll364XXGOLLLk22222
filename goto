@@ -524,8 +524,7 @@ coroutine.resume(NetworkAccess)
                 while game:GetService("RunService").RenderStepped:Wait() do
                     Attachment1.WorldCFrame = Updated
                 end           end)    end})
-Tab:AddButton({    Name ="黑洞v2",    Callback = function()    loadstring(game:HttpGet("https://pastefy.app/t0djamGi/raw"))()    end})
-Tab:AddButton({    Name ="黑洞v3",    Callback = function()    loadstring(game:HttpGet("https://pastefy.app/0eN0ONOw/raw"))()    end})
+Tab:AddButton({    Name ="黑洞v3",    Callback = function()    loadstring(game:HttpGet("https://pastefy.app/vaXK1Kgy/raw"))()    end})
 Tab:AddButton({    Name ="卡哇伊黑洞（可以锁人的哦）",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%BB%91%E6%B4%9E",true))()    end})
 Tab:AddButton({    Name ="甩人通用",   Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E7%94%A9%E4%BA%BA%E9%80%9A%E7%94%A8"))()    end})
 Tab:AddButton({    Name ="锁定甩飞，不过你也会死",   Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/KAWAII-FREAKY-FLING/main/kawaii_freaky_fling.lua"))()    end})
