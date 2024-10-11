@@ -590,7 +590,6 @@ Tab:AddButton("HitboxColor", {
         _G.HitboxColor = color
     end
 })
-loadstring(game:HttpGet("https://raw.githubusercontent.com/EntonioDMI/EntonioDevelopment/refs/heads/main/HitboxExpander"))()
 Tab:AddTextbox({   Name = "时间（24小时制）请输入1~24",	    Min = 0,	    Max = 24,	    Default = 14,	  	Callback = function(Time)        game.Lighting.ClockTime = Time    end})
 Tab:AddButton({   Name="显示FPS",Callback=function()
 local ScreenGui = Instance.new("ScreenGui")
@@ -2157,7 +2156,7 @@ local Tab = Window:MakeTab({    Name = "goto☃️☃️",    Icon = "rbxassetid
 local Section = Tab:AddSection({	Name = "火箭发射模拟器,以后还会加载"})
 Tab:AddButton({    Name="游戏v2",    Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/Jsjhsbwbjsksnbebshs/refs/heads/main/V2"))()  end})
 
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EntonioDMI/EntonioDevelopment/refs/heads/main/HitboxExpander"))()
 
 
 
