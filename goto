@@ -581,15 +581,7 @@ Tab:AddButton({    Name ="骂人无违规",    Callback = function()    loadstri
 Tab:AddButton({    Name ="xgo 随机骂人输出 （手机需要键盘按G）",    Callback = function()      loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/ldzs/refs/heads/main/%E8%81%8A%E5%A4%A9%E4%B8%AD%E6%9E%A2"))()     end})
 Tab:AddButton({    Name ="键盘可单独按键",    Callback = function()    loadstring(game:HttpGet("https://gist.githubusercontent.com/RedZenXYZ/4d80bfd70ee27000660e4bfa7509c667/raw/da903c570249ab3c0c1a74f3467260972c3d87e6/KeyBoard%2520From%2520Ohio%2520Fr%2520Fr"))()    end})
 local Tab = Window:MakeTab({    Name = "玩家",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
-Tab:AddButton({
-    Title = "Hitbox Color",
-    Description = "Select the color of the hitbox",
-    Default = Color3.fromRGB(255, 0, 0),
-    Callback = function(color)
-        _G.HitboxColor = color
-    end
-})
-Tab:AddTextbox({   Name = "时间（24小时制）请输入1~24",	    Min = 0,	    Max = 24,	    Default = 14,	  	Callback = function(Time)        game.Lighting.ClockTime = Time    end})
+Tab:AddTextbox({   Name = "时间（24小时制）请输入1~24",	    Min = 0,	    Max = 24,	    Default = "输入",	  	Callback = function(Time)        game.Lighting.ClockTime = Time    end})
 Tab:AddButton({   Name="显示FPS",Callback=function()
 local ScreenGui = Instance.new("ScreenGui")
 local FpsLabel = Instance.new("TextLabel")
@@ -663,14 +655,14 @@ Tab:AddButton({    Name ="保存游戏",    Callback = function()    saveinstanc
 Tab:AddButton({    Name ="离开游戏",    Callback = function()     game:Shutdown()    end})
 Tab:AddButton({    Name ="进入人少的服务器",    Callback = function()     local Http = game:GetService("HttpService")         local TPS = game:GetService("TeleportService")          local Api = "https://games.roblox.com/v1/games/"               local _place = game.PlaceId       local _servers = Api.._place.."/servers/Public?sortOrder=Asc&limit=100"          function ListServers(cursor)  local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))  return Http:JSONDecode(Raw)         end            local Server, Next; repeat  local Servers = ListServers(Next)  Server = Servers.data[1]  Next = Servers.nextPageCursor       until Server           TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)        end})
 Tab:AddButton({    Name ="最高帧率",    Callback = function()         setfpscap(999)    end})
-Tab:AddTextbox({   Name = "广角 ",       Min = 0,        Max = 360,	Default = "",	TextDisappear = true,	Callback = function(V)		  game.Workspace.CurrentCamera.FieldOfView = v	end})
+Tab:AddTextbox({   Name = "广角 ",       Min = 0,        Max = 360,	Default = "输入",	TextDisappear = true,	Callback = function(V)		  game.Workspace.CurrentCamera.FieldOfView = v	end})
 Tab:AddTextbox({   Name = "超广角（Fov）两者各有不同",        Callback = function()      workspace.CurrentCamera.FieldOfView = 120       end})
 Tab:AddTextbox({   Name = "血量 可能是假血",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.Health = Value	end})
-Tab:AddSlider({	   Name = "速度!",	Min = 16,	Max = 200,	Default = 16,        Color = Color3.fromRGB(255,255,255),	Increment = 1,	ValueName = "数值",	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value	end})
-Tab:AddSlider({    Name = "跳跃高度!",	Min = 50,	Max = 200,	Default = 50,	Color = Color3.fromRGB(255,255,255),	Increment = 1,	ValueName = "数值",	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end})
-Tab:AddTextbox({   Name = "跳跃高度设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end})
-Tab:AddTextbox({   Name = "移动速度设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value	end})
-Tab:AddTextbox({   Name = "重力设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Workspace.Gravity = Value	end})
+Tab:AddSlider({	   Name = "速度!",	Min = 16,	Max = 200,	Default = "输入",        Color = Color3.fromRGB(255,255,255),	Increment = 1,	ValueName = "数值",	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value	end})
+Tab:AddSlider({    Name = "跳跃高度!",	Min = 50,	Max = 200,	Default = "输入",	Color = Color3.fromRGB(255,255,255),	Increment = 1,	ValueName = "数值",	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end})
+Tab:AddTextbox({   Name = "跳跃高度设置",	Default = "输入",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end})
+Tab:AddTextbox({   Name = "移动速度设置",	Default = "输入",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value	end})
+Tab:AddTextbox({   Name = "重力设置",	Default = "输入",	TextDisappear = true,	Callback = function(Value)		game.Workspace.Gravity = Value	end})
 Tab:AddButton({    Name = "人物坐下",    Callback = function()     local player = game.Players.LocalPlayer               local character = player.Character or player.CharacterAdded:Wait()              local humanoid = character:WaitForChild("Humanoid")         if humanoid and character then    humanoid.Sit = true        else    warn("Humanoid or Character not found.")      end       end})
 Tab:AddToggle({	Name = "穿墙",	Default = false,	Callback = function(Value)
  if Value then
