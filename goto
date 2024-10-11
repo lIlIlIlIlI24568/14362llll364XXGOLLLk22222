@@ -24,45 +24,6 @@ local vu = game:GetService("VirtualUser")
 game:service"NetworkClient".ChildRemoved:Connect(function()
 game:service"TeleportService":TeleportToPlaceInstance(game.PlaceId, game.JobId, game:service"Players".LocalPlayer);
 end)
-local LBLG = Instance.new("ScreenGui", getParent)
-local LBL = Instance.new("TextLabel", getParent)
-local player = game.Players.LocalPlayer
-LBLG.Name = "LBLG"
-LBLG.Parent = game.CoreGui
-LBLG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-LBLG.Enabled = true
-LBL.Name = "LBL"
-LBL.Parent = LBLG
-LBL.BackgroundColor3 = Color3.new(1, 1, 1)
-LBL.BackgroundTransparency = 0.5
-LBL.BorderColor3 = Color3.new(0, 0, 0)
-LBL.Position = UDim2.new(0.75,0,0.010,0)
-LBL.Size = UDim2.new(0, 133, 0, 30)
-LBL.Font = Enum.Font.GothamSemibold
-LBL.Text = "TextLabel"
-LBL.TextColor3 = Color3.new(1, 1, 0.5)
-LBL.TextScaled = true
-LBL.TextSize = 14
-LBL.TextWrapped = true
-LBL.Visible = true
-                   local FpsLabel = LBL
-local Heartbeat = game:GetService("RunService").Heartbeat
-                 local LastIteration,Start
-                local FrameUpdateTable = {}
-
-              local function HeartbeatUpdate()
-	           LastIteration = tick()
-	    for Index = #FrameUpdateTable, 1, -1 do
-FrameUpdateTable[Index + 1] = (FrameUpdateTable[Index] >= LastIteration - 1) and FrameUpdateTable[Index] or nil
-	                    end
-	      FrameUpdateTable[1] = LastIteration
-local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
-	    CurrentFPS = CurrentFPS - CurrentFPS % 1
-FpsLabel.Text = ("⏰"..os.date("%H").."<"..os.date("%M").."-"..os.date("%S")..">")
-                             end
-                        Start = tick()
-             Heartbeat:Connect(HeartbeatUpdate)
-
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/GTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"))()
 local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "xgo"})
 local Tab = Window:MakeTab({    Name = "用户",    Icon = "rbxassetid://7734068321",    PremiumOnly = false})
@@ -617,6 +578,94 @@ game:GetService("RunService").RenderStepped:Connect(updateFpsLabel)
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 end})
+Tab:AddButton({   Name="显示ping",Callback=function()
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local Ping = Instance.new("ScreenGui")
+local Pingtext = Instance.new("TextLabel")
+Ping.Name = "Ping"
+Ping.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Ping.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Ping.ResetOnSpawn = false
+Pingtext.Name = "Pingtext"
+Pingtext.Parent = Ping
+Pingtext.BackgroundTransparency = 1
+local initialPingPositionPC = UDim2.new(1, -230, 0, 0)
+local initialFPSPositionPC = UDim2.new(1, -120, 0, 0)
+local initialPingPositionMobile = UDim2.new(1, -230, 1, -353)
+local initialFPSPositionMobile = UDim2.new(1, -120, 1, -353)
+-- xxxxxxg
+local initialPingPosition = initialPingPositionPC
+local initialFPSPosition = initialFPSPositionPC
+Pingtext.Position = initialPingPosition
+Pingtext.Size = UDim2.new(0, 100, 0, 25)
+Pingtext.Font = Enum.Font.SourceSans
+Pingtext.Text = "Ping: "
+Pingtext.TextColor3 = Color3.fromRGB(255, 255, 255)
+Pingtext.TextStrokeTransparency = 0.5
+Pingtext.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+Pingtext.TextScaled = true
+Pingtext.TextSize = 14.000
+Pingtext.TextWrapped = true
+-- xxxxxxxxxxxxxgo
+RunService.RenderStepped:Connect(function(ping) 
+    Pingtext.Text = "Ping: " .. game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(math.round(2/ping))
+end)
+-- xxxxxxxxxxxxgo
+local lastTime = tick()
+local frameCount = 0
+local TextLabel = Instance.new("TextLabel") 
+TextLabel.Name = "FPSLabel"
+TextLabel.Parent = Ping
+TextLabel.BackgroundTransparency = 1
+TextLabel.Position = initialFPSPosition
+TextLabel.Size = UDim2.new(0, 45, 0, 25)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "FPS: "
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextStrokeTransparency = 0.5
+TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+-- Función para formatear el FPS y cambiar el color si está por debajo de 25
+local function FormatFPS(fps)
+    local formattedFPS = string.format("FPS: %d", math.floor(fps + 0.5))
+    -- Cambiar el color del texto si los FPS están por debajo de 25
+    if fps < 30 then
+        TextLabel.TextColor3 = Color3.new(1, 0, 0) -- Rojo
+    else
+        TextLabel.TextColor3 = Color3.new(1, 1, 1) -- Blanco
+    end
+    return formattedFPS
+end
+-- Actualización de FPS
+RunService.RenderStepped:Connect(function()
+    local currentTime = tick()
+    frameCount = frameCount + 1
+    if currentTime - lastTime >= 1 then
+        local fps = frameCount / (currentTime - lastTime)
+        TextLabel.Text = FormatFPS(fps)
+        frameCount = 0
+        lastTime = currentTime
+    end
+end)
+-- Función para actualizar las posiciones según el entorno
+local function updatePositions(isMobile)
+    if isMobile then
+        initialPingPosition = initialPingPositionMobile
+        initialFPSPosition = initialFPSPositionMobile
+    else
+        initialPingPosition = initialPingPositionPC
+        initialFPSPosition = initialFPSPositionPC
+    end    end
+-- Detectar cambios en la interfaz de usuario (PC a móvil y viceversa)
+UserInputService.UserInterfaceChanged:Connect(function()
+    local isMobile = UserInputService.TouchEnabled
+    updatePositions(isMobile)
+    Pingtext.Position = initialPingPosition
+    TextLabel.Position = initialFPSPosition
+end)       end})
 Tab:AddButton({	Name = "无敌",	Callback = function()
 local lp = game:GetService "Players".LocalPlayer
 if lp.Character:FindFirstChild "Head" then
