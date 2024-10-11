@@ -555,7 +555,6 @@ Tab:AddTextbox({   Name="聊天发送循环（xgo提醒:别说一些容易被举
 local TeleportService = game:GetService("TeleportService")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
 local function spamChat()
     local message = V
     while true do
@@ -582,7 +581,7 @@ Tab:AddButton({    Name ="骂人无违规",    Callback = function()    loadstri
 Tab:AddButton({    Name ="xgo 随机骂人输出 （手机需要键盘按G）",    Callback = function()      loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/ldzs/refs/heads/main/%E8%81%8A%E5%A4%A9%E4%B8%AD%E6%9E%A2"))()     end})
 Tab:AddButton({    Name ="键盘可单独按键",    Callback = function()    loadstring(game:HttpGet("https://gist.githubusercontent.com/RedZenXYZ/4d80bfd70ee27000660e4bfa7509c667/raw/da903c570249ab3c0c1a74f3467260972c3d87e6/KeyBoard%2520From%2520Ohio%2520Fr%2520Fr"))()    end})
 local Tab = Window:MakeTab({    Name = "玩家",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
-Tab:AddButton("HitboxColor", {
+Tab:AddButton({
     Title = "Hitbox Color",
     Description = "Select the color of the hitbox",
     Default = Color3.fromRGB(255, 0, 0),
