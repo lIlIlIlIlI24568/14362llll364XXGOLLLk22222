@@ -425,7 +425,7 @@ Tab:AddButton({    Name ="RTX  图形画质",    Callback = function()     local
              s.Intensity = 0.01
               s.Spread = 0.146
                 print("小go  RTX图形加载完毕!")    end})
-local Tab = Window:MakeTab({    Name = "通用",   Icon = "rbxassetid://18923878915",    PremiumOnly = false})
+--[[  local Tab = Window:MakeTab({    Name = "通用",   Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({    Name ="对玩家进行观战",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/eeeeeeeeeeeppppppppppppssassssssssss/refs/heads/main/%E8%A7%82%E6%88%98%E7%8E%A9%E5%AE%B6"))()    end})
 Tab:AddButton({    Name ="玩家进入通知",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()    end})
 Tab:AddButton({    Name ="小goFe合集",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/Fe"))()    end})
@@ -538,7 +538,7 @@ Tab:AddButton({    Name ="工具挂",    Callback = function()    loadstring(gam
 Tab:AddButton({	   Name = "建筑工具",	Callback = function()		Hammer = Instance.new("HopperBin")		Hammer.Name = "锤子"		Hammer.BinType = 4		Hammer.Parent = game.Players.LocalPlayer.Backpack		Clone = Instance.new("HopperBin")		Clone.Name = "克隆"		Clone.BinType = 3		Clone.Parent = game.Players.LocalPlayer.Backpack		Grab = Instance.new("HopperBin")		Grab.Name = "抓取"		Grab.BinType = 2	end})
 Tab:AddButton({    Name ="键盘",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()    end})
 Tab:AddButton({	   Name = "替身",	Callback = function()      loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrillexMe/SkrillexLoader/main/SkrillexLoadMain')))()    end})
-Tab:AddButton({	   Name = "爬墙",	Callback = function()       loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()    end})
+Tab:AddButton({	   Name = "爬墙",	Callback = function()       loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()    end})  ]]
 local Tab = Window:MakeTab({    Name = "通用2",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({	   Name = "查玩家ip地址 聊天发送（只能吓唬人 因为是随机数字）",	Callback = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/BingusWR/FakeRobloxIPGrabber/refs/heads/main/FERobloxIpGrabberScrip"))()    end})
 Tab:AddButton({	   Name = "小go制作玩家控制喜欢俄亥俄的，可以搭配起来超级好用",	Callback = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6"))()    end})
