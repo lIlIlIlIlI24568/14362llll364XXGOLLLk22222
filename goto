@@ -2206,6 +2206,7 @@ Tab:AddButton({	Name = "草原赛道",	Callback = function()      	game.Players.
 Tab:AddButton({	Name = "沙漠赛道",	Callback = function()      	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(58.8, 1.007, -8684.72))	end    })
 Tab:AddButton({	Name = "岩浆赛道",	Callback = function()     	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(1013.4, 1.007, -10997))	end    })
 local Section = Tab:AddSection({	Name = "其他脚本"})
+Tab:AddButton({   Name ="xgo极速",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87.lua"))()    end})
 Tab:AddButton({   Name ="超级简洁ui",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/TtmScripter/GoodScript/main/LegendOfSpeed(Chinese)"))()    end})
 Tab:AddButton({    Name =" AL有交易恶心系统",    Callback = function()    AL = "制作人员 123fa98（AL）"loadstring(game:HttpGet("https://raw.githubusercontent.com/renlua/Roblox/main/%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87.lua"))()    end})
 Tab:AddButton({    Name ="安",    Callback = function()    loadstring(game:HttpGet(('https://raw.githubusercontent.com/wucan114514/gegeyxjb/main/speedoflegend')))()    end})
