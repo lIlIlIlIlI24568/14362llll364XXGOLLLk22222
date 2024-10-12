@@ -82,9 +82,12 @@ Tab:AddParagraph("服务器名称:"..game:GetService("MarketplaceService"):GetPr
 local Tab =Window:MakeTab({	Name = "关于作者",	Icon = "rbxassetid://7734053495",	PremiumOnly = false})
 Tab:AddButton({	Name = "复制作者QQ",	Callback = function()     setclipboard("3795512080")  	end})
 Tab:AddButton({	Name = "复制QQ群",	Callback = function()    setclipboard("259461151") 	end})
+OrionLib:MakeNotification({	Name = "稀🍚你 ",	Content = "持续更新",	Image = "rbxassetid://18923878915",	Time = 2})
 local Section = Tab:AddSection({Name = "安全三大王 如果要测试脚本，请开启一下三下避免直接被封禁（主要是由某人制作恶意封禁脚本）建议全开💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗"})
 Tab:AddButton({	Name = "（生产）分支，禁止从其他脚本的更改值。 应该用于保护",	Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/MainProd"))()  	end})
-OrionLib:MakeNotification({	Name = "稀🍚你 ",	Content = "持续更新",	Image = "rbxassetid://18923878915",	Time = 2})
+local Section = Tab:AddSection({Name = "仅适用于Codex用户!由于其发行与空闲连接（Codex）分支具有兼容性更新这相当于生产分支"})
+Tab:AddButton({	Name = " 但没有基于连接的所有连接 并且只能由Codex用户使用，直到他们的问题得到解决",	Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/CodexTest"))()  	end})
+Tab:AddButton({	Name = "（开发）分支，允许更改其他潜在恶意脚本的值 主要用于调试和测试",	Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/Main"))()  	end})
 local Tab = Window:MakeTab({    Name = "小go音乐区",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({Name ="停止播放音乐（所有皆为xgo 一人收集）",    Callback = function()      for i,v in pairs(workspace:GetDescendants())    do			if v:IsA("Sound") then				v:Destroy()			end		end   end})
 Tab:AddButton({    Name="音乐播放器  xgo版本",   Callback=function()     -- Create the GUI
