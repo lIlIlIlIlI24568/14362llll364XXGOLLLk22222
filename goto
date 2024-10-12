@@ -536,6 +536,7 @@ Tab:AddButton({    Name ="F3X",    Callback = function()     loadstring(game:Get
 Tab:AddButton({    Name ="工具包（三个经典工具）",    Callback = function()    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	  	    end})
 Tab:AddButton({    Name ="工具挂",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/StandAwekening.lua"))()    end})
 Tab:AddButton({	   Name = "建筑工具",	Callback = function()		Hammer = Instance.new("HopperBin")		Hammer.Name = "锤子"		Hammer.BinType = 4		Hammer.Parent = game.Players.LocalPlayer.Backpack		Clone = Instance.new("HopperBin")		Clone.Name = "克隆"		Clone.BinType = 3		Clone.Parent = game.Players.LocalPlayer.Backpack		Grab = Instance.new("HopperBin")		Grab.Name = "抓取"		Grab.BinType = 2	end})
+Tab:AddButton({    Name ="xgo键盘",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo%E5%BB%BA%E7%9B%98.lua", true))()    end})
 Tab:AddButton({    Name ="键盘",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()    end})
 Tab:AddButton({	   Name = "替身",	Callback = function()      loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrillexMe/SkrillexLoader/main/SkrillexLoadMain')))()    end})
 Tab:AddButton({	   Name = "爬墙",	Callback = function()       loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()    end})
