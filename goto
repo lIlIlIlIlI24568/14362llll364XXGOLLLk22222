@@ -2534,40 +2534,6 @@ Auto:AddToggle({	Name = "自动卖",	Callback = function(value)		autoSellEnabled
 Auto:AddToggle({	Name = "自动购买",	Callback = function(value)		autoBuyEnabled = value        autoBuy()  	end    })
 Auto:AddToggle({	Name = "自动obby",	Callback = function(value)		autoObbyEnabled = value        autoObby()  	end    })
 Auto:AddToggle({	Name = "控制单击TP",	Callback = function()        clickTpEnabled = not clickTpEnabled        game:GetService("UserInputService").InputBegan:Connect(teleportLocalPlayer)  	end    })
-local Tab = Window:MakeTab({	Name = "汗水驱逐舰 - 忍者传说",	Icon = "rbxassetid://18787314969",	PremiumOnly = false})
-local function chat(message)    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, 'All');   end
-print("被检测到的人: " .. game.Players.LocalPlayer.Name.."/ "..game.Players.LocalPlayer.DisplayName)
-print("但是你为什么看")   print("在这里，我，我不是完全滑行")
-local playersService = game:GetService("Players")
-local Players = game:GetService("Players")
-local textService = game:GetService("TextService")
-local lightingService = game:GetService("Lighting")
-local textChatService = game:GetService("TextChatService")
-local inputService = game:GetService("UserInputService")
-local runService = game:GetService("RunService")
-local RunService = game:GetService("RunService")
-local replicatedStorageService = game:GetService("ReplicatedStorage")
-local tweenService = game:GetService("TweenService")
-local gameCamera = workspace.CurrentCamera
-local lplr = playersService.LocalPlayer -- why did i call this lplr WHO KNOWS FR
-local HttpService = game:GetService("HttpService")
-local Mouse = lplr:GetMouse()
-local UserInputService = game:GetService("UserInputService")
-local LocalPlayer = Players.LocalPlayer
-local AutoEnabled = false
-local function SendText()    if not AutoEnabled then      return    end
-    local A_1 = "Phone"
-    local Event = game:GetService("ReplicatedStorage").Events.SendTexts
-    Event:FireServer(A_1)    end
-local plr = game.Players.LocalPlayer
-Tab:AddToggle({	Name = "自动攻击（装备Katana）",	Default = false,	Callback = function(v)		 getgenv().autoswing = v         while true do     if not getgenv().autoswing then return end     for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do       if v:FindFirstChild("ninjitsuGain") then          game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)          break         end              local A_1 = "swingKatana"     local Event = plr.ninjaEvent     Event:FireServer(A_1)     wait(0.025)     end	end        end})
-Tab:AddToggle({	Name = "自动卖",	Default = false,	Callback = function(v)     getgenv().autosell = v     while true do            if getgenv().autosell == false then return end            game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame            wait(0.1)            game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = CFrame.new(0,0,0)            wait(0.1)         end    end})
-Tab:AddButton({    Name = "解锁所有岛屿",    Default = false,    Callback = function()        local oldC = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame        for _, islandPart in pairs(game:GetService("Workspace").islandUnlockParts:GetChildren()) do            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = islandPart.CFrame            wait(0.2)        end        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldC    end})
-Tab:AddLabel("Tropxz编码")
-Tab:AddLabel("这个帖帖的所有脚本是由tropxz（me）制作的  xgo 负责r给汉化")
-Tab:AddLabel("UI库创建者：Shelxware（Orion）")
-Tab:AddLabel("如果脚本不能使用，请联系我 xgo")
-Tab:AddLabel("如果你有任何错误或问题，dm tropxz＃5665") 
 
 
 
