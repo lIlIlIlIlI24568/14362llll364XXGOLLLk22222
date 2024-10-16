@@ -2540,7 +2540,6 @@ Auto:AddToggle({	Name = "自动卖",	Callback = function(value)		autoSellEnabled
 Auto:AddToggle({	Name = "自动购买",	Callback = function(value)		autoBuyEnabled = value        autoBuy()  	end    })
 Auto:AddToggle({	Name = "自动obby",	Callback = function(value)		autoObbyEnabled = value        autoObby()  	end    })
 Auto:AddToggle({	Name = "控制单击TP",	Callback = function()        clickTpEnabled = not clickTpEnabled        game:GetService("UserInputService").InputBegan:Connect(teleportLocalPlayer)  	end    })
-Auto:AddSlider({	Name = "步行速度",	Min = 16,	Max = 600,	Default = 32,	Color = Color3.fromRGB(51, 204, 51),	Increment = 1,	ValueName = "Walk Speed",	Callback = function(Value)		walkSpeed(Value)	end    })
 local Tab = Window:MakeTab({    Name = "goto☃️",    Icon = "rbxassetid://18787314969",    PremiumOnly = false})
 local Section = Tab:AddSection({	Name = "你可以理解为其他游戏脚本在里边，主要的那些通用都在这边有的一些是之前加的，我就不想搬过去了"})
 local Section = Tab:AddSection({        Name = " V2和v1都会覆盖,这两个是我的宝藏，里面都是游戏脚本,这两个我基本会随机添加几个游戏在里面"})
