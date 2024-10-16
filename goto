@@ -2536,98 +2536,21 @@ local Section = Tab:AddSection({	Name = "你可以理解为其他游戏脚本在
 local Section = Tab:AddSection({        Name = " V2和v1都会覆盖,这两个是我的宝藏，里面都是游戏脚本,这两个我基本会随机添加几个游戏在里面"})
 local Section = Tab:AddSection({	Name = "goto游戏中心v1💗💗💗💗💗💗💗💗💗💗💗💗🕊️爱你们🕊️💗💗💗💗💗💗💗💗💗💗💗💗💗💗"})
 local Section = Tab:AddSection({	Name = "游戏:刀刃球，伐木大亨2,内脏与火药，飞行靴子赛车模拟器， Bf，战争大亨，"})
-local Auto = Window:MakeTab({
-	Name = "给新手大亨喂食",
-	Icon = "rbxassetid://259820115",
-	PremiumOnly = false
-})
-
-
-Auto:AddToggle({
-	Name = "自动收集",
-	Callback = function(value)
-		autoCollectEnabled = value
-        autoCollect()
-  	end    
-})
-
-Auto:AddToggle({
-	Name = "自动卖",
-	Callback = function(value)
-		autoSellEnabled = value
-        autoSell()
-  	end    
-})
-
-Auto:AddToggle({
-	Name = "自动购买",
-	Callback = function(value)
-		autoBuyEnabled = value
-        autoBuy()
-  	end    
-})
-
-Auto:AddToggle({
-	Name = "自动obby",
-	Callback = function(value)
-		autoObbyEnabled = value
-        autoObby()
-  	end    
-})
-
-Misc:AddToggle({
-	Name = "无限跳",
-	Callback = function()
-		infiniteJumpEnabled = not infiniteJumpEnabled
-        infiniteJump()
-  	end    
-})
-
-
-Misc:AddToggle({
-	Name = "控制单击TP",
-	Callback = function()
-        clickTpEnabled = not clickTpEnabled
-        game:GetService("UserInputService").InputBegan:Connect(teleportLocalPlayer)
-  	end    
-})
-
-Misc:AddSlider({
-	Name = "步行速度",
-	Min = 16,
-	Max = 600,
-	Default = 32,
-	Color = Color3.fromRGB(51, 204, 51),
-	Increment = 1,
-	ValueName = "Walk Speed",
-	Callback = function(Value)
-		walkSpeed(Value)
-	end    
-})
-
-local TeleportTo = Window:MakeTab({
-	Name = "传送玩家",
-	Icon = "rbxassetid://259820115",
-	PremiumOnly = false
-})
-
-TeleportTo:AddSection({
-    Name = "传送到玩家"
-})
-
-for i, player in ipairs(game.Players:GetPlayers()) do
-    TeleportTo:AddButton({
-        Name = player.Name,
-        Callback = function()
-            teleportTo(player)
-        end
-    })
-end
-------------- UI ----------------
+local Auto = Window:MakeTab({	Name = "给新手大亨喂食",	Icon = "rbxassetid://18787314969",	PremiumOnly = false})
+Auto:AddToggle({	Name = "自动收集",	Callback = function(value)		autoCollectEnabled = value        autoCollect()  	end    })
+Auto:AddToggle({	Name = "自动卖",	Callback = function(value)		autoSellEnabled = value        autoSell()  	end    })
+Auto:AddToggle({	Name = "自动购买",	Callback = function(value)		autoBuyEnabled = value        autoBuy()  	end    })
+Auto:AddToggle({	Name = "自动obby",	Callback = function(value)		autoObbyEnabled = value        autoObby()  	end    })
+Auto:AddToggle({	Name = "无限跳",	Callback = function()		infiniteJumpEnabled = not infiniteJumpEnabled        infiniteJump()  	end    })
+Auto:AddToggle({	Name = "控制单击TP",	Callback = function()        clickTpEnabled = not clickTpEnabled        game:GetService("UserInputService").InputBegan:Connect(teleportLocalPlayer)  	end    })
+Auto:AddSlider({	Name = "步行速度",	Min = 16,	Max = 600,	Default = 32,	Color = Color3.fromRGB(51, 204, 51),	Increment = 1,	ValueName = "Walk Speed",	Callback = function(Value)		walkSpeed(Value)	end    })
+local TeleportTo = Window:MakeTab({	Name = "传送玩家",	Icon = "rbxassetid://259820115",	PremiumOnly = false})
+TeleportTo:AddSection({    Name = "传送到玩家"})
+for i, player in ipairs(game.Players:GetPlayers()) do    TeleportTo:AddButton({        Name = player.Name,        Callback = function()           teleportTo(player)        end    })end
+------------- xgo ----------------
 destroyIfExists(game.Players.LocalPlayer.PlayerGui.FDN.BuyCashFrame)
 destroyIfExists(game.Players.LocalPlayer.PlayerGui.UI.Notifications.NotificationCreator)
------------Remove unwanted GUI------------
-
+-----------xxxxxxxxxxxxxxxgo------------
 Tab:AddButton({    Name="游戏v1",    Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/yujhvvghsjhgvshhs/refs/heads/main/V1"))()  end})
 local Tab = Window:MakeTab({    Name = "goto☃️☃️",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 local Section = Tab:AddSection({	Name = "火箭发射模拟器,以后还会加载"})
