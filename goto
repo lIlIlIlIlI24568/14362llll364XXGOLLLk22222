@@ -1139,6 +1139,9 @@ v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
            end)    end    end    end    end)    end})
 Tab:AddButton({  Name = "隐身道具",  Callback = function()    loadstring(game:HttpGet("https://gist.githubusercontent.com/skid123skidlol/cd0d2dce51b3f20ad1aac941da06a1a1/raw/f58b98cce7d51e53ade94e7bb460e4f24fb7e0ff/%257BFE%257D%2520Invisible%2520Tool%2520(can%2520hold%2520tools)",true))()  end})
 Tab:AddButton({    Name="立即死亡",   Callback= function()        game.Players.LocalPlayer.Character.Humanoid.Health=0    end})  
+local TeleportTo = Window:MakeTab({	Name = "传送玩家",	Icon = "rbxassetid://259820115",	PremiumOnly = false})
+TeleportTo:AddSection({    Name = "选择玩家进行传送"})
+for i, player in ipairs(game.Players:GetPlayers()) do    TeleportTo:AddButton({        Name = player.Name,        Callback = function()           teleportTo(player)        end    })end
 local Tab = Window:MakeTab({    Name = "透视自瞄",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({    Name ="辅助瞄准",    Callback = function()   loadstring(game:HttpGet('https://raw.githubusercontent.com/yzeedw/Mortalv2-main/main/universal%20silent%20aim%20by%20Mortalexploits'))()      end})
 Tab:AddButton({    Name ="普通中心点",    Callback = function()   local d = Drawing.new("Circle")            d.Color, d.Radius, d.Filled, d.Visible = Color3.new(0, 0, 8), 3, true, false            game:GetService("RunService").RenderStepped:Connect(function()    d.Position = workspace.CurrentCamera.ViewportSize / 2    d.Visible = true        end)       end})
@@ -2541,12 +2544,8 @@ Auto:AddToggle({	Name = "自动收集",	Callback = function(value)		autoCollectE
 Auto:AddToggle({	Name = "自动卖",	Callback = function(value)		autoSellEnabled = value        autoSell()  	end    })
 Auto:AddToggle({	Name = "自动购买",	Callback = function(value)		autoBuyEnabled = value        autoBuy()  	end    })
 Auto:AddToggle({	Name = "自动obby",	Callback = function(value)		autoObbyEnabled = value        autoObby()  	end    })
-Auto:AddToggle({	Name = "无限跳",	Callback = function()		infiniteJumpEnabled = not infiniteJumpEnabled        infiniteJump()  	end    })
 Auto:AddToggle({	Name = "控制单击TP",	Callback = function()        clickTpEnabled = not clickTpEnabled        game:GetService("UserInputService").InputBegan:Connect(teleportLocalPlayer)  	end    })
 Auto:AddSlider({	Name = "步行速度",	Min = 16,	Max = 600,	Default = 32,	Color = Color3.fromRGB(51, 204, 51),	Increment = 1,	ValueName = "Walk Speed",	Callback = function(Value)		walkSpeed(Value)	end    })
-local TeleportTo = Window:MakeTab({	Name = "传送玩家",	Icon = "rbxassetid://259820115",	PremiumOnly = false})
-TeleportTo:AddSection({    Name = "传送到玩家"})
-for i, player in ipairs(game.Players:GetPlayers()) do    TeleportTo:AddButton({        Name = player.Name,        Callback = function()           teleportTo(player)        end    })end
 ------------- xgo ----------------
 destroyIfExists(game.Players.LocalPlayer.PlayerGui.FDN.BuyCashFrame)
 destroyIfExists(game.Players.LocalPlayer.PlayerGui.UI.Notifications.NotificationCreator)
