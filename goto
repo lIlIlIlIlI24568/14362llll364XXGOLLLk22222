@@ -321,7 +321,7 @@ local Tab = Window:MakeTab({    Name = "其他注入器",    Icon = "rbxassetid:
 Tab:AddButton({    Name ="阿尔宙斯",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20X%20V3"))()    end})
 Tab:AddButton({    Name ="SOROLAZ BETTER SORALA注入器",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/PHNKSC/soralaz/refs/heads/main/better%20sorolaz"))()    end})
 Tab:AddButton({    Name ="管理员注入 暂时无法使用，可能会被踢出去",    Callback = function()    loadstring(game:HttpGet(('https://raw.githubusercontent.com/iK4oS/backdoor.exe/master/source.lua'),true))()    end})
-Tab:AddButton({    Name ="xgo 普通执行",    Callback = function()    loadstring(game:HttpGet(('https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo%20%E6%99%AE%E9%80%9A%E6%89%A7%E8%A1%8C%E5%99%A8'))()    end})
+Tab:AddButton({    Name ="xgo 普通执行",    Callback = function()    loadstring(game:HttpGet(('https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo%20%E6%99%AE%E9%80%9A%E6%89%A7%E8%A1%8C%E5%99%A8')))()    end})
 Tab:AddButton({    Name = "管理员权限 可获得游戏内的通行证",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%AE%A1%E7%90%86%E5%91%98"))()   end})
 Tab:AddButton({    Name = "资源管理器",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/solara_dex"))()   end})
 Tab:AddButton({    Name = "远程监控",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/remotespy_save"))()  end})
