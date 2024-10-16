@@ -2539,18 +2539,7 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://6026568198",
 	PremiumOnly = false
 })
-local shared = {
-    aimbot = false,
-    autokick = false,
-    accuracy = 0.1,
-    ws,
-    jp,
-    autoupgrade = false,
-    upgrade,
-    upgradeamount,
-    autochest = false,
-    chest
-}
+
 
 local chests = {}
 for i,v in pairs(workspace:WaitForChild("ChestStands"):GetChildren()) do
@@ -2576,7 +2565,7 @@ Tab3:AddSlider({Name = "步行速度",Min = 16,Max = 150,Default = 20,Increment 
     end
 end})
 
-Tab3:AddSlider({Name = "跳跃力量",Min = 50,Max = 200,Default = 50,Increment = 1,ValueName = "JumpPower",Callback = function(value)
+Tab:AddSlider({Name = "跳跃力量",Min = 50,Max = 200,Default = 50,Increment = 1,ValueName = "JumpPower",Callback = function(value)
     shared.jp = value
     if shared.jp ~= nil and game.Players.LocalPlayer.Character  then
         game.Players.LocalPlayer.Character:WaitForChild("Humanoid").JumpPower = shared.jp
