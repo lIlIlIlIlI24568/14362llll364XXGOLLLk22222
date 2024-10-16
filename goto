@@ -2536,45 +2536,13 @@ Auto:AddToggle({	Name = "自动obby",	Callback = function(value)		autoObbyEnable
 Auto:AddToggle({	Name = "控制单击TP",	Callback = function()        clickTpEnabled = not clickTpEnabled        game:GetService("UserInputService").InputBegan:Connect(teleportLocalPlayer)  	end    })
 local Tab = Window:MakeTab({
 	Name = "目标模拟器",
-	Icon = "rbxassetid://6026568198",
-	PremiumOnly = false
-})
-
-
-local chests = {}
-for i,v in pairs(workspace:WaitForChild("ChestStands"):GetChildren()) do
-    table.insert(chests,tostring(v))
-end
-
-
-local resume = coroutine.resume
-local create = coroutine.create
-local Tab = Window:MakeTab({
-	Name = "目标模拟器",
-	Icon = "rbxassetid://6026568198",
+	Icon = "rbxassetid://18787314969",
 	PremiumOnly = false
 })
 
 Tab:AddSlider({Name = "准确性",Min = 0.1,Max = 1,Default = 1,Increment = 0.1,ValueName = "Accuracy",Callback = function(value)
     shared.accuracy = value
 end})
-Tab3:AddSlider({Name = "步行速度",Min = 16,Max = 150,Default = 20,Increment = 1,ValueName = "WalkSpeed",Callback = function(value)
-    shared.ws = value
-    if shared.ws ~= nil and game.Players.LocalPlayer.Character and shared.ws ~= 20 then
-        game.Players.LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = shared.ws
-    end
-end})
-
-Tab:AddSlider({Name = "跳跃力量",Min = 50,Max = 200,Default = 50,Increment = 1,ValueName = "JumpPower",Callback = function(value)
-    shared.jp = value
-    if shared.jp ~= nil and game.Players.LocalPlayer.Character  then
-        game.Players.LocalPlayer.Character:WaitForChild("Humanoid").JumpPower = shared.jp
-    end
-end})
-
-
-
-
 Tab:AddToggle({Name = "踢瞄准",Default = false,Callback = function(value)
     shared.aimbot = value
 end})
