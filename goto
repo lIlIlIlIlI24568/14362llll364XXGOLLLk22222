@@ -2534,6 +2534,11 @@ Auto:AddToggle({	Name = "自动卖",	Callback = function(value)		autoSellEnabled
 Auto:AddToggle({	Name = "自动购买",	Callback = function(value)		autoBuyEnabled = value        autoBuy()  	end    })
 Auto:AddToggle({	Name = "自动obby",	Callback = function(value)		autoObbyEnabled = value        autoObby()  	end    })
 Auto:AddToggle({	Name = "控制单击TP",	Callback = function()        clickTpEnabled = not clickTpEnabled        game:GetService("UserInputService").InputBegan:Connect(teleportLocalPlayer)  	end    })
+local Tab = Window:MakeTab({
+	Name = "目标模拟器",
+	Icon = "rbxassetid://6026568198",
+	PremiumOnly = false
+})
 local shared = {
     aimbot = false,
     autokick = false,
