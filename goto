@@ -2572,7 +2572,7 @@ end))
 
 Tab:AddDropdown({
 	Name = "选择胸部",
-	Default = "",
+	Default = "无",
 	Options = {unpack(chests)},
 	Callback = function(Value)
 	    shared.chest = Value
