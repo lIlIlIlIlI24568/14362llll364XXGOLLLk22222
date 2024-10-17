@@ -557,6 +557,7 @@ Tab:AddButton({    Name ="黑洞v3",    Callback = function()    loadstring(game
 Tab:AddButton({    Name ="卡哇伊黑洞（可以锁人的哦）",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E9%BB%91%E6%B4%9E",true))()    end})
 Tab:AddButton({    Name ="甩人通用",   Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/%E7%94%A9%E4%BA%BA%E9%80%9A%E7%94%A8"))()    end})
 Tab:AddButton({    Name ="锁定甩飞，不过你也会死",   Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/KAWAII-FREAKY-FLING/main/kawaii_freaky_fling.lua"))()    end})
+Tab:AddButton({    Name ="xgo 锁定甩飞",    Callback = function()    loadstring(game:HttpGet("loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo%20%E9%94%81%E5%AE%9A%E7%94%A9%E9%A3%9E.lua"))()"))()    end})
 Tab:AddButton({    Name ="反挂机",    Callback = function()    loadstring(game:HttpGet("https://pastebin.com/raw/9fFu43FF"))()    end})
 Tab:AddButton({    Name ="F3X",    Callback = function()     loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()    end})
 Tab:AddButton({    Name ="工具包（三个经典工具）",    Callback = function()    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	  	    end})
