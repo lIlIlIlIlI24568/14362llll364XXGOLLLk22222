@@ -2514,7 +2514,367 @@ Tab:AddToggle({Name = "自动胸部",Default = false,Callback = function(value) 
 resume(create(function()    while true do game:GetService("RunService").Stepped:wait()        if shared.autochest and shared.chest ~= nil then            game:GetService("Players").LocalPlayer.PlayerGui.ChestResult.Content.ImageTransparency = 1
 local ohString1 = "PromptPurchaseChest"
 local ohInstance2 = workspace.ChestStands[shared.chest]                        game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(ohString1, ohInstance2)        end    end        end))
+local Factory = tostring(game.Players.LocalPlayer.Team)
+local linha
+local PL
+local CV
+for i,v in pairs(game:GetService("Workspace").Tycoons[Factory].Model.Lines:GetChildren()) do
+if v.Name ~= 'Exclusive' then
+PL = v
+end
+end
+local Tab = Window:MakeTab({
+	Name = "汽车工厂大亨",
+	Icon = "rbxassetid://18787314969", 
+	PremiumOnly = false
+})
 
+
+local Section = Tab:AddSection({
+	Name = "填充"
+})
+Tab:AddLabel("这是什么？")
+	Tab:AddParagraph("填充","它从桩中抓住'金属'和'玻璃'，并为每个输送机添加到另一部分解释的地方")
+	Tab:AddParagraph("要求","能够同时携带2件物品")
+
+	Tab:AddLabel("为什么这款滑块？")
+	Tab:AddParagraph("欢迎来到滑块","这将是你最后一个输送机的数量，从1到8（下一个游戏更新它可能会扩大）")
+
+Tab:AddSlider({
+	Name = "最后输送机",
+	Min = 1,
+	Max = 12,
+	Default = 1,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	--ValueName = "bananas",
+	Callback = function(Value)
+			linha = ('Conveyor'..Value)
+			CV = Value
+			--print(linha)
+	--	print(Value)
+	end    
+})
+local wor
+Tab:AddParagraph("你上次输送机上有多少工人？","这是为了防止汽车的臭虫卡住")
+Tab:AddSlider({
+	Name = "最后一次输送工人",
+	Min = 0,
+	Max = 5,
+	Default = 0,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	--ValueName = "bananas",
+	Callback = function(Value)
+wor = Value
+	end    
+})
+local InvF
+Tab:AddParagraph("将反转填充顺序","而不是第一传送带，它将从最后一个传送带开始")
+
+Tab:AddToggle({
+	Name = "反转填写[遗产]",
+	Default = false,
+	Callback = function(Value)
+		InvF = Value
+	end
+	})
+
+
+Tab:AddToggle({
+	Name = "填写[传统]",
+	Default = false,
+	Callback = function(Value)
+--collect
+getgenv().Fill = Value
+if getgenv().Fill == true then
+	repeat
+		wait()
+game:GetService("ReplicatedStorage").Packages.Knit.Services.MaterialService.RF.Collect:InvokeServer('Glass')
+game:GetService("ReplicatedStorage").Packages.Knit.Services.MaterialService.RF.Collect:InvokeServer('Metal')
+
+--Conveyors
+if InvF == false then
+for i = 1, CV do
+	local PLR = ('Conveyor'..i)
+wait()
+game:GetService("ReplicatedStorage").Packages.Knit.Services.MaterialService.RF.Drop:InvokeServer(PL.Parent[PLR])
+end
+else
+	for i= CV, 1, -1 do
+local PLR = ('Conveyor'..i)
+wait()
+game:GetService("ReplicatedStorage").Packages.Knit.Services.MaterialService.RF.Drop:InvokeServer(PL.Parent[PLR])
+end
+end
+until getgenv().Fill == false
+end
+end
+})
+--Cool Fill
+local function autoFillConveyors()
+	local numConveyors = CV
+	local conv = 1
+
+	for i = 1, numConveyors do
+		local conveyorName = 'Conveyor'..conv
+		--warn(conveyorName) 
+		local A_1 = conveyorName
+		local Event = game:GetService("ReplicatedStorage").Packages.Knit.Services.MaterialService.RF.AutoFill
+		Event:InvokeServer(A_1)
+		conv = conv + 1
+	end
+end
+Tab:AddParagraph("更好的自动填充","如果您想在没有任何问题的情况下使您的农场完全自动化，请使用此AutoFill而不是传统。 它允许您完成所有步骤，包括放置轮子，而不会破坏流量. 这是因为您不能同时携带供应物品和轮子.")
+Tab:AddParagraph("警告","可能需要一个供应商工作人员（第一个建筑物上的第一个成本750个宝石）")
+Tab:AddToggle({
+	Name = "自动填充",
+	Default = false,
+	Callback = function(Value)
+		getgenv().AutoFill = Value
+		if getgenv().AutoFill == true then
+			while getgenv().AutoFill == true do
+				autoFillConveyors()
+				wait(5)
+			end
+		end
+	end
+})
+
+
+local Section = Tab:AddSection({
+	Name = "轿车"
+})
+Tab:AddParagraph("它是一个复选框（一个循环）","它将完成5步（为6），最后一个步骤（而不是使用相同的遥控器跳过建筑物部件）")
+Tab:AddParagraph("自动化","为了能够让它不会被卡住，您需要使用AutoSell启用此AutoFarm")
+Tab:AddParagraph("完整的自动化问题","请注意，如果您当前使用的脚本以名称中的'遗留'，它们可能无法使用完全自动化功能的预期工作. 在这种情况下，您可以尝试使用其他自动填充选项")
+
+
+Tab:AddToggle({
+	Name = "创造汽车",
+	Default = false,
+	Callback = function(Value)
+--Create car
+getgenv().CC = Value
+if getgenv().CC == true then
+	repeat
+		wait()--Anti Stucker on car spawn
+for i = wor,4 do
+    game:GetService("ReplicatedStorage").Packages.Knit.Services.TycoonService.RF.SpawnCarSegment:InvokeServer(linha)
+    --game:GetService("ReplicatedStorage").Packages.Knit.Services.TycoonService.RF.SpawnCarSegment:InvokeServer(conv)
+    end
+    --place wheel
+	wait()
+for i = 1,8 do
+    game:GetService("ReplicatedStorage").Packages.Knit.Services.MaterialService.RF.CollectWheel:InvokeServer(linha)
+--    game:GetService("ReplicatedStorage").Packages.Knit.Services.MaterialService.RF.CollectWheel:InvokeServer(conv)
+    game:GetService("ReplicatedStorage").Packages.Knit.Services.MaterialService.RE.PlaceWheel:FireServer(linha)
+	wait()
+	game:GetService("ReplicatedStorage").Packages.Knit.Services.MaterialService.RF.Dispose:InvokeServer()
+end
+	--wait(3)
+	until getgenv().CC == false or getgenv().AutoSell == false
+	OrionLib:MakeNotification({
+		Name = "车辆结束！",
+		Content = "对于循环，启用AutoSell或读取文本以原因",
+		Image = "rbxassetid://4483345998",
+		Time = 10
+	})
+	
+end
+end
+})
+
+
+
+local Section = Tab:AddSection({
+	Name = "卖"
+})
+
+Tab:AddLabel("这是怎么回事？")
+Tab:AddParagraph("另一个复选框，另一个循环","它将用一个随机选项销售，为什么随机选项？ 听起来更像是人类的最佳价格（你知道，这是假的，没有支票价格，它只是一个随机的选项）（你仍然可以欺骗！）")
+
+Tab:AddToggle({
+	Name = "自动卖",
+	Default = false,
+	Callback = function(Value)
+--sell
+getgenv().AutoSell = Value
+if getgenv().AutoSell == true then
+	repeat
+		wait(1)
+for i,v in pairs(game:GetService("Workspace").Tycoons[Factory].Model.NPCs:GetChildren()) do
+    local ohInstance1 = v 
+    local ohString2 = math.random(1,3)--see the random option
+    
+    game:GetService("ReplicatedStorage").Packages.Knit.Services.TycoonService.RF.AcceptBid:InvokeServer(ohInstance1, ohString2)
+    end
+until getgenv().AutoSell == false
+end    
+end
+})
+local Section = Tab:AddSection({
+	Name = "可驱动的汽车mods"
+})
+Tab:AddLabel("完全改变你的汽车统计数据")
+Tab:AddParagraph("maxspeed","它是100不是意味着汽车不会超过100，这个值不同于游戏显示为sps")
+
+local MS 
+Tab:AddSlider({
+	Name = "最大速度",
+	Min = 90,
+	Max = 400,
+	Default = 100,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 10,
+	--ValueName = "bananas",
+	Callback = function(Value)
+MS = Value 
+	end    
+})
+Tab:AddParagraph("扭矩","如果需要较高，你可以爬墙，我想")
+local T
+Tab:AddSlider({
+	Name = "扭力",
+	Min = 100,
+	Max = 10000,
+	Default = 200,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 100,
+	--ValueName = "bananas",
+	Callback = function(Value)
+T = Value
+	end    
+})
+Tab:AddParagraph("它有多好的制动","它需要制动负面，如果它的积极会加速")
+local BF
+Tab:AddSlider({
+	Name = "制动力",
+	Min = -200,
+	Max = 200,
+	Default = -50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 10,
+	--ValueName = "bananas",
+	Callback = function(Value)
+BF = Value
+	end    
+})
+Tab:AddParagraph("轮到了多少车","我看不到改变了")
+local MSA
+Tab:AddSlider({
+	Name = "最大转向角度",
+	Min = -100,
+	Max = 200,
+	Default = 20,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 10,
+	--ValueName = "bananas",
+	Callback = function(Value)
+MSA = Value
+	end    
+})
+Tab:AddParagraph("按钮","进行更改后，单击它以Mod汽车您的驾驶/坐姿")
+Tab:AddButton({
+	Name = "Mod!",
+	Callback = function()
+		for _,t in pairs(getgc(true)) do
+			if type(t) == 'table' then
+			   if rawget(t, "MaxSpeed") then
+				   rawset(t, "MaxSpeed", MS)
+			   if rawget(t,'Torque') then
+				   rawset(t,'Torque', T)
+			   if rawget(t,'BrakeForce') then
+				   rawset(t,'BrakeForce',BF)
+			   if rawget(t,'MaxSteerAngle') then
+				   rawset(t,'MaxSteerAngle', MSA)--did not saw a difference from this
+			end
+			end
+			end
+			end
+			end
+			end  	
+		end    
+})
+
+
+local Section = Tab:AddSection({
+	Name = "传送点"
+})
+local car
+Tab:AddTextbox({
+	Name = "汽车名称",
+	Default = "写下你的车名，同样的汽车经销商",
+	TextDisappear = false,
+	Callback = function(Value)
+	car = Value
+	end	  
+})
+local time
+Tab:AddSlider({
+	Name = "时间",
+	Min = 3,
+	Max = 60,
+	Default = 21,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 0.25,
+	--ValueName = "bananas",
+	Callback = function(Value)
+time = Value
+	end    
+})
+
+Tab:AddParagraph("时间试验","如果在排行榜中将较低的时间展示出来，有一团糟")
+Tab:AddButton({
+	Name = "触发时间试用和传送到终点线",
+	Callback = function()
+		--car = 'Tiny Cooper'
+		local carro 
+		 
+		local A_1 = "TimeTrial"
+		local Event = game:GetService("ReplicatedStorage").Packages.Knit.Services.EventService.RF.StartEvent
+		Event:InvokeServer(A_1)
+		
+		wait(time)
+		for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+		if v.Name == car then
+		carro = v 
+		warn(v)
+		end
+		end
+		for a,t in pairs(carro:GetDescendants()) do
+		if t:IsA('Part') then
+		--t.CFrame = game:GetService("Workspace").TimeTrial.Start.CFrame
+		t.CFrame = game:GetService("Workspace").TimeTrial.Finish.CFrame
+		end
+		end  	
+	end    
+})
+
+Tab:AddButton({
+	Name = "带来比赛检查站",
+	Callback = function()
+local lp = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+for i,v in pairs(game:GetService("Workspace").Race.Checkpoints:GetChildren()) do
+v.CFrame = lp
+end
+  	end    
+})
+
+Tab:AddParagraph("游戏补丁","你只能在撞到地板/地面后收集")
+Tab:AddButton({
+	Name = "空投",
+	Callback = function()
+local old = game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame
+game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").World.AirDrops.Drops.AirDrop.Base.CFrame
+wait()
+game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = old  	end    
+})
+Tab:AddLabel("脚本")
+Tab:AddParagraph("xgo","mod汽车，自制的东西，等等")
+Tab:AddLabel("猎户座图书馆")
+Tab:AddLabel("文字改进")
+Tab:AddLabel("错误时更新")
 
 
 
