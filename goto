@@ -2512,17 +2512,6 @@ local ohString2 = shared.upgrade
 local ohNumber3 = math.huge            game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(ohString1, ohString2, ohNumber3)                    end    end      end))
 Tab:AddToggle({Name = "自动胸部",Default = false,Callback = function(value)    shared.autochest = value         end})
 resume(create(function()    while true do game:GetService("RunService").Stepped:wait()        if shared.autochest and shared.chest ~= nil then            game:GetService("Players").LocalPlayer.PlayerGui.ChestResult.Content.ImageTransparency = 1
-local ohString1 = "PromptPurchaseChest"
-local ohInstance2 = workspace.ChestStands[shared.chest]                        game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(ohString1, ohInstance2)        end    end        end))
-local Factory = tostring(game.Players.LocalPlayer.Team)
-local linha
-local PL
-local CV
-for i,v in pairs(game:GetService("Workspace").Tycoons[Factory].Model.Lines:GetChildren()) do
-if v.Name ~= 'Exclusive' then
-PL = v
-end
-end
 local Tab = Window:MakeTab({
 	Name = "汽车工厂大亨",
 	Icon = "rbxassetid://18787314969", 
