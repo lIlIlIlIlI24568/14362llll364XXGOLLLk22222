@@ -565,7 +565,7 @@ Tab:AddButton({	   Name = "建筑工具",	Callback = function()		Hammer = Instan
 Tab:AddButton({    Name ="xgo键盘",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo%E5%BB%BA%E7%9B%98.lua", true))()    end})
 Tab:AddButton({    Name ="键盘",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()    end})
 Tab:AddButton({	   Name = "替身",	Callback = function()      loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrillexMe/SkrillexLoader/main/SkrillexLoadMain')))()    end})
-Tab:AddButton({	   Name = "爬墙",	Callback = function()       loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()    end}) 
+Tab:AddButton({	   Name = "爬墙",	Callback = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/refs/heads/main/FE%20Walk%20On%20Walls%20Script%20(R6%2615).txt"))()    end}) 
 local Tab = Window:MakeTab({    Name = "通用2",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({	   Name = "xgo制作幽灵状态 可能会掉血",	Callback = function()     local offset = 1100 
 local LocalPlayer = game.Players.LocalPlayer
