@@ -2509,8 +2509,6 @@ local ohNumber3 = tonumber(shared.upgradeamount)           game:GetService("Repl
 local ohString1 = "UpgradeStats"
 local ohString2 = shared.upgrade
 local ohNumber3 = math.huge            game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(ohString1, ohString2, ohNumber3)                    end    end      end))
-Tab:AddToggle({Name = "自动胸部",Default = false,Callback = function(value)    shared.autochest = value         end})
-resume(create(function()    while true do game:GetService("RunService").Stepped:wait()        if shared.autochest and shared.chest ~= nil then            game:GetService("Players").LocalPlayer.PlayerGui.ChestResult.Content.ImageTransparency = 1
 
 
 
