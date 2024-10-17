@@ -2864,11 +2864,6 @@ game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFr
 wait()
 game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = old  	end    
 })
-Tab:AddLabel("脚本")
-Tab:AddParagraph("xgo","mod汽车，自制的东西，等等")
-Tab:AddLabel("猎户座图书馆")
-Tab:AddLabel("文字改进")
-Tab:AddLabel("错误时更新")
 
 
 
