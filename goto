@@ -2795,19 +2795,6 @@ Tab:AddTextbox({
 	end	  
 })
 
-Tab:AddSlider({
-	Name = "时间",
-	Min = 3,
-	Max = 60,
-	Default = 21,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 0.25,
-	--ValueName = "bananas",
-	Callback = function(Value)
-time = Value
-	end    
-})
-
 local Section = Tab:AddParagraph("时间试验","如果在排行榜中将较低的时间展示出来，有一团糟")
 Tab:AddButton({
 	Name = "触发时间试用和传送到终点线",
