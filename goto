@@ -2851,17 +2851,6 @@ Tab:AddToggle({
       end
   end    
 })
-OrionLib:MakeNotification({Name = "神话宠物 恭喜:)",Content = "恭喜！ 你有一个神话般的宠物！",Image = "rbxassetid://",Time = 7})
-local function  DisplaySystemMessage(player,message)
-	if player.Name == client.Name and message:find("mythic") or message:find("Mythic") then
-		OrionLib:MakeNotification({Name = fontcolor("Mythic",HTMLcolors["Red"]) .. " 宠物| 恭喜:)",Content = "恭喜！ 你有一个" .. fontcolor("Mythic",HTMLcolors["Red"]) .. " 宠物！",Image = "rbxassetid://",Time = 7})
-	elseif player.Name == client.Name and message:find("divine") or message:find("Divine") then
-		OrionLib:MakeNotification({Name = fontcolor("Divine",HTMLcolors["Sky Blue"]) .. " 宠物| 恭喜:)",Content = "恭喜！ 你有一个" .. fontcolor("Divine",HTMLcolors["Sky Blue"]) .. " 宠物!",Image = "rbxassetid://",Time = 7})
-	elseif player.Name == client.Name and message:find("legendary") or message:find("Legendary") then
-		OrionLib:MakeNotification({Name = fontcolor("Legendary",HTMLcolors["Yellow"]) .. " 宠物| 恭喜:)",Content = "恭喜！ 你有一个" .. fontcolor("Legendary",HTMLcolors["Yellow"]) .. " 宠物!",Image = "rbxassetid://",Time = 7})
-	end
-end
-end)
 
 
 
