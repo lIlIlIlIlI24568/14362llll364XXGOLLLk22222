@@ -2523,11 +2523,11 @@ local Section = Tab:AddSection({
 	Name = "填充"
 })
 Tab:AddLabel("这是什么？")
-	Tab:AddParagraph("填充","它从桩中抓住'金属'和'玻璃'，并为每个输送机添加到另一部分解释的地方")
-	Tab:AddParagraph("要求","能够同时携带2件物品")
+	local Section = Tab:AddParagraph("填充","它从桩中抓住'金属'和'玻璃'，并为每个输送机添加到另一部分解释的地方")
+	local Section = Tab:AddParagraph("要求","能够同时携带2件物品")
 
 	Tab:AddLabel("为什么这款滑块？")
-	Tab:AddParagraph("欢迎来到滑块","这将是你最后一个输送机的数量，从1到8（下一个游戏更新它可能会扩大）")
+	local Section = Tab:AddParagraph("欢迎来到滑块","这将是你最后一个输送机的数量，从1到8（下一个游戏更新它可能会扩大）")
 
 Tab:AddSlider({
 	Name = "最后输送机",
@@ -2545,7 +2545,7 @@ Tab:AddSlider({
 	end    
 })
 local wor
-Tab:AddParagraph("你上次输送机上有多少工人？","这是为了防止汽车的臭虫卡住")
+local Section = Tab:AddParagraph("你上次输送机上有多少工人？","这是为了防止汽车的臭虫卡住")
 Tab:AddSlider({
 	Name = "最后一次输送工人",
 	Min = 0,
@@ -2559,7 +2559,7 @@ wor = Value
 	end    
 })
 local InvF
-Tab:AddParagraph("将反转填充顺序","而不是第一传送带，它将从最后一个传送带开始")
+local Section = Tab:AddParagraph("将反转填充顺序","而不是第一传送带，它将从最后一个传送带开始")
 
 Tab:AddToggle({
 	Name = "反转填写[遗产]",
@@ -2614,8 +2614,8 @@ local function autoFillConveyors()
 		conv = conv + 1
 	end
 end
-Tab:AddParagraph("更好的自动填充","如果您想在没有任何问题的情况下使您的农场完全自动化，请使用此AutoFill而不是传统。 它允许您完成所有步骤，包括放置轮子，而不会破坏流量. 这是因为您不能同时携带供应物品和轮子.")
-Tab:AddParagraph("警告","可能需要一个供应商工作人员（第一个建筑物上的第一个成本750个宝石）")
+local Section = Tab:AddParagraph("更好的自动填充","如果您想在没有任何问题的情况下使您的农场完全自动化，请使用此AutoFill而不是传统。 它允许您完成所有步骤，包括放置轮子，而不会破坏流量. 这是因为您不能同时携带供应物品和轮子.")
+local Section = Tab:AddParagraph("警告","可能需要一个供应商工作人员（第一个建筑物上的第一个成本750个宝石）")
 Tab:AddToggle({
 	Name = "自动填充",
 	Default = false,
@@ -2634,9 +2634,9 @@ Tab:AddToggle({
 local Section = Tab:AddSection({
 	Name = "轿车"
 })
-Tab:AddParagraph("它是一个复选框（一个循环）","它将完成5步（为6），最后一个步骤（而不是使用相同的遥控器跳过建筑物部件）")
-Tab:AddParagraph("自动化","为了能够让它不会被卡住，您需要使用AutoSell启用此AutoFarm")
-Tab:AddParagraph("完整的自动化问题","请注意，如果您当前使用的脚本以名称中的'遗留'，它们可能无法使用完全自动化功能的预期工作. 在这种情况下，您可以尝试使用其他自动填充选项")
+local Section = Tab:AddParagraph("它是一个复选框（一个循环）","它将完成5步（为6），最后一个步骤（而不是使用相同的遥控器跳过建筑物部件）")
+local Section = Tab:AddParagraph("自动化","为了能够让它不会被卡住，您需要使用AutoSell启用此AutoFarm")
+local Section = Tab:AddParagraph("完整的自动化问题","请注意，如果您当前使用的脚本以名称中的'遗留'，它们可能无法使用完全自动化功能的预期工作. 在这种情况下，您可以尝试使用其他自动填充选项")
 
 
 Tab:AddToggle({
@@ -2681,7 +2681,7 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddLabel("这是怎么回事？")
-Tab:AddParagraph("另一个复选框，另一个循环","它将用一个随机选项销售，为什么随机选项？ 听起来更像是人类的最佳价格（你知道，这是假的，没有支票价格，它只是一个随机的选项）（你仍然可以欺骗！）")
+local Section = Tab:AddParagraph("另一个复选框，另一个循环","它将用一个随机选项销售，为什么随机选项？ 听起来更像是人类的最佳价格（你知道，这是假的，没有支票价格，它只是一个随机的选项）（你仍然可以欺骗！）")
 
 Tab:AddToggle({
 	Name = "自动卖",
@@ -2706,7 +2706,7 @@ local Section = Tab:AddSection({
 	Name = "可驱动的汽车mods"
 })
 Tab:AddLabel("完全改变你的汽车统计数据")
-Tab:AddParagraph("maxspeed","它是100不是意味着汽车不会超过100，这个值不同于游戏显示为sps")
+local Section = Tab:AddParagraph("maxspeed","它是100不是意味着汽车不会超过100，这个值不同于游戏显示为sps")
 
 local MS 
 Tab:AddSlider({
@@ -2721,7 +2721,7 @@ Tab:AddSlider({
 MS = Value 
 	end    
 })
-Tab:AddParagraph("扭矩","如果需要较高，你可以爬墙，我想")
+local Section = Tab:AddParagraph("扭矩","如果需要较高，你可以爬墙，我想")
 local T
 Tab:AddSlider({
 	Name = "扭力",
@@ -2735,7 +2735,7 @@ Tab:AddSlider({
 T = Value
 	end    
 })
-Tab:AddParagraph("它有多好的制动","它需要制动负面，如果它的积极会加速")
+local Section = Tab:AddParagraph("它有多好的制动","它需要制动负面，如果它的积极会加速")
 local BF
 Tab:AddSlider({
 	Name = "制动力",
@@ -2749,7 +2749,7 @@ Tab:AddSlider({
 BF = Value
 	end    
 })
-Tab:AddParagraph("轮到了多少车","我看不到改变了")
+local Section = Tab:AddParagraph("轮到了多少车","我看不到改变了")
 local MSA
 Tab:AddSlider({
 	Name = "最大转向角度",
@@ -2763,7 +2763,7 @@ Tab:AddSlider({
 MSA = Value
 	end    
 })
-Tab:AddParagraph("按钮","进行更改后，单击它以Mod汽车您的驾驶/坐姿")
+local Section = Tab:AddParagraph("按钮","进行更改后，单击它以Mod汽车您的驾驶/坐姿")
 Tab:AddButton({
 	Name = "Mod!",
 	Callback = function()
@@ -2813,7 +2813,7 @@ time = Value
 	end    
 })
 
-Tab:AddParagraph("时间试验","如果在排行榜中将较低的时间展示出来，有一团糟")
+local Section = Tab:AddParagraph("时间试验","如果在排行榜中将较低的时间展示出来，有一团糟")
 Tab:AddButton({
 	Name = "触发时间试用和传送到终点线",
 	Callback = function()
@@ -2850,7 +2850,7 @@ end
   	end    
 })
 
-Tab:AddParagraph("游戏补丁","你只能在撞到地板/地面后收集")
+local Section = Tab:AddParagraph("游戏补丁","你只能在撞到地板/地面后收集")
 Tab:AddButton({
 	Name = "空投",
 	Callback = function()
