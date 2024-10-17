@@ -2514,15 +2514,31 @@ Tab:AddToggle({Name = "自动胸部",Default = false,Callback = function(value) 
 resume(create(function()    while true do game:GetService("RunService").Stepped:wait()        if shared.autochest and shared.chest ~= nil then            game:GetService("Players").LocalPlayer.PlayerGui.ChestResult.Content.ImageTransparency = 1
 local ohString1 = "PromptPurchaseChest"
 local ohInstance2 = workspace.ChestStands[shared.chest]                        game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(ohString1, ohInstance2)        end    end        end))
+
+
+
+
+
+
+
+
+
 local Tab = Window:MakeTab({
-	Name = "请捐赠",
-	Icon = "rbxassetid://18787314969",
+	Name = "Main",
+	Icon = "rbxassetid://8950621656",
 	PremiumOnly = false
 })
 
+local Tab2 = Window:MakeTab({
+	Name = "UI",
+	Icon = "rbxassetid://5480743826",
+	PremiumOnly = false
+})
+
+
 Tab:AddTextbox({
-	Name = "捐赠者的用户名",
-	Default = "输入",
+	Name = "Donor's Username",
+	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
 		_G.WhoDonated = Value
@@ -2531,8 +2547,8 @@ Tab:AddTextbox({
 
 
 Tab:AddTextbox({
-	Name = "捐赠者的用户ID",
-	Default = "输入",
+	Name = "Donor's User Id",
+	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
 		_G.SmiteAnimationId = Value
@@ -2541,8 +2557,8 @@ Tab:AddTextbox({
 
 
 Tab:AddTextbox({
-	Name = "Dono Receiver的用户名",
-	Default = "输入",
+	Name = "Dono Receiver's Username",
+	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
 		_G.WhoGotRobux = Value
@@ -2550,7 +2566,7 @@ Tab:AddTextbox({
 })
 
 Tab:AddSlider({
-	Name = "罗布金额",
+	Name = "Robux Amount",
 	Min = 0,
 	Max = 1000000,
 	Default = 0,
@@ -2563,7 +2579,7 @@ Tab:AddSlider({
 })
 
 Tab:AddButton({
-	Name = "捐助！",
+	Name = "Donate!",
 	Callback = function()
 
 
@@ -2605,7 +2621,7 @@ game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
             TextSize = 18,
         })
 end
-
+--
 function normalmessage()
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
             Text = _G.WhoDonated.." tipped "..comma(_G.HowMuchRobux).. " Robux to ".._G.WhoGotRobux,
@@ -3264,54 +3280,7 @@ wait(1);
 	});
 	wait(1);
 	v21:Play();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
 
 
 
