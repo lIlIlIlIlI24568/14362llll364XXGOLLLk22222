@@ -97,111 +97,6 @@ end     FrameUpdateTable[1] = LastIteration
 end     Start = tick()  Heartbeat:Connect(HeartbeatUpdate)
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/neilonmacedo153/refs/heads/main/GTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"))()
 local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "xgo"})
-local client = game.Players.LocalPlayer
-local workspace = game:GetService("Workspace")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local TextChatService = game:GetService("TextChatService")
-local HTMLcolors = { 
-    ["Red"] = "rgb(255, 0, 0)",
-    ["Yellow"] = "rgb(255, 255, 0)",
-    ["Orange"] = "rgb(255, 165, 0)",
-    ["Pink"] = "rgb(255, 192, 203)",
-    ["Light Green"] = "rgb(50, 205, 50)",
-    ["Sky Blue"] = "rgb(135, 206, 235)",
-    ["Black"] = "rgb(0, 0, 0)",
-    ["Dark Red"] = "rgb(139, 0, 0)",
-    ["Dark Green"] = "rgb(0, 100, 0)",
-    ["Dark Blue"] = "rgb(0, 0, 139)",
-    ["Gray"] = "rgb(128, 128, 128)",
-    ["Dark Purple"] = "rgb(128, 0, 128)",
-    ["Dark Brown"] = "rgb(101, 67, 33)",
-    ["Dark Purple"] = "rgb(128, 0, 128)",
-    ["Dark Blue"] = "rgb(0, 0, 128)",
-    ["Brown"] = "rgb(139, 69, 19)",
-    ["Purple"] = "rgb(128, 0, 128)",
-    ["Blue"] = "rgb(0, 0, 255)",
-    ["White"] = "rgb(255, 255, 255)",
-    ["Green"] = "rgb(0, 255, 0)",
-    ["Bright Blue"] = "rgb(173, 216, 230)",
-    ["Lavender"] = "rgb(230, 230, 250)",
-    ["Peach"] = "rgb(255, 218, 185)",
-    ["Teal"] = "rgb(0, 128, 128)",
-    ["Salmon"] = "rgb(250, 128, 114)",
-    ["Gold"] = "rgb(255, 215, 0)",
-    ["Dark Slate Gray"] = "rgb(47, 79, 79)",
-    ["Slate Blue"] = "rgb(106, 90, 205)",
-    ["Cadet Blue"] = "rgb(95, 158, 160)",
-    ["Chocolate"] = "rgb(210, 105, 30)",
-    ["Forest Green"] = "rgb(34, 139, 34)",
-    ["Steel Blue"] = "rgb(70, 130, 180)",
-    ["Olive"] = "rgb(128, 128, 0)",
-    ["Tomato"] = "rgb(255, 99, 71)",
-    ["Khaki"] = "rgb(240, 230, 140)",
-    ["Peru"] = "rgb(205, 133, 63)",
-    ["Royal Blue"] = "rgb(65, 105, 225)",
-    ["Medium Purple"] = "rgb(147, 112, 219)",
-    ["Blue Violet"] = "rgb(138, 43, 226)",
-    ["Cornflower Blue"] = "rgb(100, 149, 237)",
-    ["Indian Red"] = "rgb(205, 92, 92)",
-    ["Medium Violet Red"] = "rgb(199, 21, 133)",
-    ["Pale Violet Red"] = "rgb(219, 112, 147)",
-    ["Medium Sea Green"] = "rgb(60, 179, 113)",
-    ["Yellow Green"] = "rgb(154, 205, 50)",
-    ["Sky Blue"] = "rgb(135, 206, 235)",
-    ["Medium Slate Blue"] = "rgb(123, 104, 238)",
-    ["Medium Turquoise"] = "rgb(72, 209, 204)",
-    ["Light Sea Green"] = "rgb(32, 178, 170)",
-    ["Dark Olive Green"] = "rgb(85, 107, 47)",
-    ["Medium Orchid"] = "rgb(186, 85, 211)",
-    ["Slate Gray"] = "rgb(112, 128, 144)",
-    ["Deep Sky Blue"] = "rgb(0, 191, 255)"
-}
-
-local lootgame = {
-  a = "",
-  b = 0,
-  c = false
-}
-local up = 0
-local mt = getrawmetatable(game);
-setreadonly(mt,false)
-local namecall = mt.__namecall
-
-mt.__namecall = newcclosure(function(self, ...)
-	local Method = getnamecallmethod()
-	local Args = {...}
-
-	if Method == 'InvokeServer' and self.Name == 'LaunchFinished' then
-                lootgame.a = Args[1]
-                lootgame.b = Args[2]
-                --lootgame.c = Args[3]
-	elseif Method == 'InvokeServer' and self.Name == 'UpgradeLauncher' then
-		up = Args[1]
-        end
-	return namecall(self, ...) 
-end)
-
-
-local function fontcolor(str,color)
-      return "<font color='" .. color .. "'>" .. str .. "</font>"
-end
-
-local function talk(str)
-	TextChatService["TextChannels"]["RBXGeneral"]:SendAsync(str)
-end
-
-local a_,b_ = pcall(function()
-local assets = {
-	Pets = {},
-	Launchers = {},
-	Eggs = {},
-	World = {}
-}
-
-OrionLib:AddTable(ReplicatedStorage["Assets"]["Worlds"],assets.World)
-OrionLib:AddTable(ReplicatedStorage["Assets"]["Eggs"],assets.Eggs)
-OrionLib:AddTable(ReplicatedStorage["Assets"]["Pets"],assets.Pets)
-OrionLib:AddTable(ReplicatedStorage["Assets"]["Launchers"],assets.Launchers)
 local Tab = Window:MakeTab({    Name = "用户",    Icon = "rbxassetid://7734068321",    PremiumOnly = false})
 CoreGui:SetCore("SendNotification", {    Title = "goto_O",    Text = "小go欢迎各位",    Duration = 10, })
 OrionLib:MakeNotification({	Name = "goto_O",	Content = "欢迎使用goto脚本",	Image = "rbxassetid://18923878915",	Time = 2})
@@ -2614,46 +2509,116 @@ local ohNumber3 = tonumber(shared.upgradeamount)           game:GetService("Repl
 local ohString1 = "UpgradeStats"
 local ohString2 = shared.upgrade
 local ohNumber3 = math.huge            game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(ohString1, ohString2, ohNumber3)                    end    end      end))
+local client = game.Players.LocalPlayer
+local workspace = game:GetService("Workspace")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TextChatService = game:GetService("TextChatService")
+local HTMLcolors = { 
+    ["Red"] = "rgb(255, 0, 0)",
+    ["Yellow"] = "rgb(255, 255, 0)",
+    ["Orange"] = "rgb(255, 165, 0)",
+    ["Pink"] = "rgb(255, 192, 203)",
+    ["Light Green"] = "rgb(50, 205, 50)",
+    ["Sky Blue"] = "rgb(135, 206, 235)",
+    ["Black"] = "rgb(0, 0, 0)",
+    ["Dark Red"] = "rgb(139, 0, 0)",
+    ["Dark Green"] = "rgb(0, 100, 0)",
+    ["Dark Blue"] = "rgb(0, 0, 139)",
+    ["Gray"] = "rgb(128, 128, 128)",
+    ["Dark Purple"] = "rgb(128, 0, 128)",
+    ["Dark Brown"] = "rgb(101, 67, 33)",
+    ["Dark Purple"] = "rgb(128, 0, 128)",
+    ["Dark Blue"] = "rgb(0, 0, 128)",
+    ["Brown"] = "rgb(139, 69, 19)",
+    ["Purple"] = "rgb(128, 0, 128)",
+    ["Blue"] = "rgb(0, 0, 255)",
+    ["White"] = "rgb(255, 255, 255)",
+    ["Green"] = "rgb(0, 255, 0)",
+    ["Bright Blue"] = "rgb(173, 216, 230)",
+    ["Lavender"] = "rgb(230, 230, 250)",
+    ["Peach"] = "rgb(255, 218, 185)",
+    ["Teal"] = "rgb(0, 128, 128)",
+    ["Salmon"] = "rgb(250, 128, 114)",
+    ["Gold"] = "rgb(255, 215, 0)",
+    ["Dark Slate Gray"] = "rgb(47, 79, 79)",
+    ["Slate Blue"] = "rgb(106, 90, 205)",
+    ["Cadet Blue"] = "rgb(95, 158, 160)",
+    ["Chocolate"] = "rgb(210, 105, 30)",
+    ["Forest Green"] = "rgb(34, 139, 34)",
+    ["Steel Blue"] = "rgb(70, 130, 180)",
+    ["Olive"] = "rgb(128, 128, 0)",
+    ["Tomato"] = "rgb(255, 99, 71)",
+    ["Khaki"] = "rgb(240, 230, 140)",
+    ["Peru"] = "rgb(205, 133, 63)",
+    ["Royal Blue"] = "rgb(65, 105, 225)",
+    ["Medium Purple"] = "rgb(147, 112, 219)",
+    ["Blue Violet"] = "rgb(138, 43, 226)",
+    ["Cornflower Blue"] = "rgb(100, 149, 237)",
+    ["Indian Red"] = "rgb(205, 92, 92)",
+    ["Medium Violet Red"] = "rgb(199, 21, 133)",
+    ["Pale Violet Red"] = "rgb(219, 112, 147)",
+    ["Medium Sea Green"] = "rgb(60, 179, 113)",
+    ["Yellow Green"] = "rgb(154, 205, 50)",
+    ["Sky Blue"] = "rgb(135, 206, 235)",
+    ["Medium Slate Blue"] = "rgb(123, 104, 238)",
+    ["Medium Turquoise"] = "rgb(72, 209, 204)",
+    ["Light Sea Green"] = "rgb(32, 178, 170)",
+    ["Dark Olive Green"] = "rgb(85, 107, 47)",
+    ["Medium Orchid"] = "rgb(186, 85, 211)",
+    ["Slate Gray"] = "rgb(112, 128, 144)",
+    ["Deep Sky Blue"] = "rgb(0, 191, 255)"
+}
 
-local Tab = Window:MakeTab({
-Name = "Main",
-Icon = "rbxassetid://",
-PremiumOnly = false
-})
+local lootgame = {
+  a = "",
+  b = 0,
+  c = false
+}
+local up = 0
+local mt = getrawmetatable(game);
+setreadonly(mt,false)
+local namecall = mt.__namecall
 
-local T2 = Window:MakeTab({
-Name = "Teleport",
-Icon = "rbxassetid://",
-PremiumOnly = false
-})
+mt.__namecall = newcclosure(function(self, ...)
+	local Method = getnamecallmethod()
+	local Args = {...}
 
-local T3 = Window:MakeTab({
-Name = "Hatch",
-Icon = "rbxassetid://",
-PremiumOnly = false
-})
+	if Method == 'InvokeServer' and self.Name == 'LaunchFinished' then
+                lootgame.a = Args[1]
+                lootgame.b = Args[2]
+                --lootgame.c = Args[3]
+	elseif Method == 'InvokeServer' and self.Name == 'UpgradeLauncher' then
+		up = Args[1]
+        end
+	return namecall(self, ...) 
+end)
 
-local T4 = Window:MakeTab({
-Name = "Merge",
-Icon = "rbxassetid://",
-PremiumOnly = false
-})
 
-local T5 = Window:MakeTab({
-Name = "Sell & Buy",
-Icon = "rbxassetid://",
-PremiumOnly = false
-})
+local function fontcolor(str,color)
+      return "<font color='" .. color .. "'>" .. str .. "</font>"
+end
 
-local S1 = T5:AddSection({
-     Name = "SELL PETS"
-})
+local function talk(str)
+	TextChatService["TextChannels"]["RBXGeneral"]:SendAsync(str)
+end
 
-local S2 = T5:AddSection({
-     Name = "BUY PETS"
-})
+local a_,b_ = pcall(function()
+local assets = {
+	Pets = {},
+	Launchers = {},
+	Eggs = {},
+	World = {}
+}
 
-S1:AddDropdown({
+OrionLib:AddTable(ReplicatedStorage["Assets"]["Worlds"],assets.World)
+OrionLib:AddTable(ReplicatedStorage["Assets"]["Eggs"],assets.Eggs)
+OrionLib:AddTable(ReplicatedStorage["Assets"]["Pets"],assets.Pets)
+OrionLib:AddTable(ReplicatedStorage["Assets"]["Launchers"],assets.Launchers)
+local Tab = Window:MakeTab({Name = "发射进入太空模拟器",Icon = "rbxassetid://",PremiumOnly = false})
+
+
+
+Tab:AddDropdown({
   Name = "Select the pet you wanna sell",
   Default = assets.Pets[1],
   Options = assets.Pets,
@@ -2662,7 +2627,7 @@ S1:AddDropdown({
   end    
 })
 
-S1:AddTextbox({
+Tab:AddTextbox({
   Name = "How much you wanna sell it",
   Default = "0",
   TextDisappear = false,
@@ -2671,14 +2636,14 @@ S1:AddTextbox({
   end  
 })
 
-S1:AddButton({
+Tab:AddButton({
 Name = "Say it!",
 Callback = function()
 	talk("selling " .. _G.forSell_system:lower() .. " for " .. _G.forSell_price:upper() .. " gems")
    end    
 })
 
-S2:AddDropdown({
+Tab:AddDropdown({
   Name = "Select the pet you wanna buy",
   Default = assets.Pets[1],
   Options = assets.Pets,
@@ -2687,14 +2652,14 @@ S2:AddDropdown({
   end    
 })
 
-S2:AddButton({
+Tab:AddButton({
 Name = "Say it!",
 Callback = function()
 	talk("buying " .. _G.forBuy_system:lower() .. ".")
    end    
 })
 
-T4:AddDropdown({
+Tab:AddDropdown({
   Name = "Select pets name",
   Default = assets.Pets[1],
   Options = assets.Pets,
@@ -2703,7 +2668,7 @@ T4:AddDropdown({
   end    
 })
 
-T4:AddDropdown({
+Tab:AddDropdown({
   Name = "Select result",
   Default = assets.Pets[1],
   Options = assets.Pets,
@@ -2712,7 +2677,7 @@ T4:AddDropdown({
   end    
 })
 
-T4:AddButton({
+Tab:AddButton({
 Name = "Merge equipped pets",
 Callback = function()
 	local onMerging = workspace["PETS"][client]:GetChildren()
@@ -2821,7 +2786,7 @@ Tab:AddToggle({
   end    
 })
 
-T2:AddToggle({
+Tab:AddToggle({
   Name = "Auto claim task/quest [ Premium Only ]",
   Default = false,
   Callback = function(Value)
@@ -2835,7 +2800,7 @@ T2:AddToggle({
   end    
 })
 
-T2:AddDropdown({
+Tab:AddDropdown({
   Name = "Select world",
   Default = assets.World[1],
   Options = assets.World,
@@ -2844,14 +2809,14 @@ T2:AddDropdown({
   end    
 })
 
-T2:AddButton({
+Tab:AddButton({
 Name = "Teleport",
 Callback = function()
       game:GetService("ReplicatedStorage")["Packages"]["_Index"]:FindFirstChild("sleitnick_knit@1.6.0")["knit"]["Services"]["PlotService"]["RF"]["ChangeWorld"]:InvokeServer(_G.tps)
   end    
 })
 
-T3:AddDropdown({
+Tab:AddDropdown({
   Name = "Select egg",
   Default = assets.Eggs[1],
   Options = assets.Eggs,
@@ -2860,7 +2825,7 @@ T3:AddDropdown({
   end    
 })
 
-T3:AddDropdown({
+Tab:AddDropdown({
   Name = "Hatch amount",
   Default = "X1",
   Options = {"X1","X4"},
@@ -2869,7 +2834,7 @@ T3:AddDropdown({
   end    
 })
 
-T3:AddToggle({
+Tab:AddToggle({
   Name = "Auto Hatch",
   Default = false,
   Callback = function(Value)
@@ -2886,23 +2851,17 @@ T3:AddToggle({
       end
   end    
 })
-
---OrionLib:MakeNotification({Name = "Mythic Pet | Congrats:)",Content = "Congratulations! You got a mythical pet!",Image = "rbxassetid://",Time = 7})
-
-local function DisplaySystemMessage(player,message)
+OrionLib:MakeNotification({Name = "神话宠物 恭喜:)",Content = "恭喜！ 你有一个神话般的宠物！",Image = "rbxassetid://",Time = 7})
+local function  DisplaySystemMessage(player,message)
 	if player.Name == client.Name and message:find("mythic") or message:find("Mythic") then
-		OrionLib:MakeNotification({Name = fontcolor("Mythic",HTMLcolors["Red"]) .. " Pet | Congrats:)",Content = "Congratulations! You got a " .. fontcolor("Mythic",HTMLcolors["Red"]) .. " pet!",Image = "rbxassetid://",Time = 7})
+		OrionLib:MakeNotification({Name = fontcolor("Mythic",HTMLcolors["Red"]) .. " 宠物| 恭喜:)",Content = "恭喜！ 你有一个" .. fontcolor("Mythic",HTMLcolors["Red"]) .. " 宠物！",Image = "rbxassetid://",Time = 7})
 	elseif player.Name == client.Name and message:find("divine") or message:find("Divine") then
-		OrionLib:MakeNotification({Name = fontcolor("Divine",HTMLcolors["Sky Blue"]) .. " Pet | Congrats:)",Content = "Congratulations! You got a " .. fontcolor("Divine",HTMLcolors["Sky Blue"]) .. " pet!",Image = "rbxassetid://",Time = 7})
+		OrionLib:MakeNotification({Name = fontcolor("Divine",HTMLcolors["Sky Blue"]) .. " 宠物| 恭喜:)",Content = "恭喜！ 你有一个" .. fontcolor("Divine",HTMLcolors["Sky Blue"]) .. " 宠物!",Image = "rbxassetid://",Time = 7})
 	elseif player.Name == client.Name and message:find("legendary") or message:find("Legendary") then
-		OrionLib:MakeNotification({Name = fontcolor("Legendary",HTMLcolors["Yellow"]) .. " Pet | Congrats:)",Content = "Congratulations! You got a " .. fontcolor("Legendary",HTMLcolors["Yellow"]) .. " pet!",Image = "rbxassetid://",Time = 7})
+		OrionLib:MakeNotification({Name = fontcolor("Legendary",HTMLcolors["Yellow"]) .. " 宠物| 恭喜:)",Content = "恭喜！ 你有一个" .. fontcolor("Legendary",HTMLcolors["Yellow"]) .. " 宠物!",Image = "rbxassetid://",Time = 7})
 	end
 end
 end)
-
-if not a_ then
-	OrionLib:MakeNotification({Name = "SCRIPT " .. fontcolor("ERROR",HTMLcolors["Red"]),Content = b_,Image = "rbxassetid://",Time = 7})
-end
 
 
 
