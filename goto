@@ -2107,6 +2107,7 @@ Tab:AddButton({	Name = "监狱室内",	Callback = function()	game.Players.LocalP
 Tab:AddButton({	Name = "罪犯复活点",	Callback = function()	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-937.5891723632812, 93.09876251220703, 2063.031982421875)  	end})
 Tab:AddButton({	Name = "监狱室外",	Callback = function()	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(760.6033325195312, 96.96992492675781, 2475.405029296875)  	end})
 local Tab = Window:MakeTab({    Name = "战斗勇士",    Icon = "rbxassetid://18787314969",    PremiumOnly = false})
+Tab:AddButton({    Name = "xgo",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/xgomn/eeeeeeeeeeeppppppppppppssassssssssss/refs/heads/main/xgo%20%E6%88%98%E6%96%97%E6%88%98%E5%A3%ABkk.lua"))()    end})
 Tab:AddButton({    Name = "弓箭爆头",    Callback = function()    loadstring(game:HttpGet("https://pastebin.com/raw/6RQGbFqD"))()    end})
 local Tab = Window:MakeTab({	Name = "忍者传奇👾",	Icon = "rbxassetid://18787314969",	PremiumOnly = false})
 local Section = Tab:AddSection({	Name = "小go内置"})
