@@ -95,7 +95,7 @@ end     FrameUpdateTable[1] = LastIteration
 	CurrentFPS = CurrentFPS - CurrentFPS % 1
 	FpsLabel.Text = ("时间"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S").."秒")
 end     Start = tick()  Heartbeat:Connect(HeartbeatUpdate)
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/GTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"))()
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Giangplay/Script/main/Orion_Library_PE_V2.lua"))()
 local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "xgo"})
 local Tab = Window:MakeTab({    Name = "用户",    Icon = "rbxassetid://7734068321",    PremiumOnly = false})
 CoreGui:SetCore("SendNotification", {    Title = "goto_O",    Text = "小go欢迎各位",    Duration = 10, })
