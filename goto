@@ -99,7 +99,7 @@ end     FrameUpdateTable[1] = LastIteration
 	CurrentFPS = CurrentFPS - CurrentFPS % 1
 	FpsLabel.Text = ("时间"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S").."秒")
 end     Start = tick()  Heartbeat:Connect(HeartbeatUpdate)
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Giangplay/Script/main/Orion_Library_PE_V2.lua"))()
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/Orion_Library_PE_V2.lua.txt"))()
 local Window = OrionLib:MakeWindow({Name = "goto_Oฅ●ω●ฅ🥂", HidePremium = false, SaveConfig = true,IntroText = "goto_O会一直更新", ConfigFolder = "xgo"})
 local Tab = Window:MakeTab({    Name = "用户",    Icon = "rbxassetid://7734068321",    PremiumOnly = false})
 CoreGui:SetCore("SendNotification", {    Title = "goto_O",    Text = "小go欢迎各位",    Duration = 10, })
@@ -2522,8 +2522,8 @@ _G.AutoClick = false
 _G.AutoRebirth = false
 _G.AutoUpgrade = false
 Tab:AddParagraph("重要说明","不要将自动升级与自动重生，给自己太多鱼的会破坏升级")
-Tab:AddTextbox({Name = "给鱼",	Default = "",	TextDisappear = true,	Callback = function(Value)        _G.giveFish = true		game:GetService("ReplicatedStorage").Fish:FireServer(Value)	end	  })
-Tab:AddToggle({   Name = "自动咔嗒声",	Default = false,    Callback = function(state)        _G.AutoClick = state        while _G.AutoClick do            ReplicatedStorage:WaitForChild("Click"):FindFirstChild("Click"):FireServer()            task.wait()        end    end})
+Tab:AddTextbox({Name = "给鱼",	Default = "输入",	TextDisappear = true,	Callback = function(Value)        _G.giveFish = true		game:GetService("ReplicatedStorage").Fish:FireServer(Value)	end	  })
+Tab:AddToggle({   Name = "自动获取小猫猫",	Default = false,    Callback = function(state)        _G.AutoClick = state        while _G.AutoClick do            ReplicatedStorage:WaitForChild("Click"):FindFirstChild("Click"):FireServer()            task.wait()        end    end})
 Tab:AddToggle({    Name = "自动重生",    Default = false,    Callback = function(state)        _G.AutoRebirth = state        while _G.AutoRebirth do            ReplicatedStorage:WaitForChild("Rebirth"):FireServer()            task.wait()        end    end})
 Tab:AddToggle({   Name = "自动升级",    Default = false,    Callback = function(state)        _G.AutoUpgrade = state        while _G.AutoUpgrade do            ReplicatedStorage:WaitForChild("MultiShop")['x100']:FireServer()            for _, event in ipairs(ReplicatedStorage.Shop:GetChildren()) do                event:FireServer()                task.wait()            end        end    end})
 Tab:AddButton({    Name = "反-AFK",    Default = false,    Callback = function()        local virtualUser = game:GetService('VirtualUser')       local players = game:GetService('Players')        local player = players.LocalPlayer        game:GetService('Players').LocalPlayer.Idled:Connect(function()            virtualUser:CaptureController()            virtualUser:ClickButton2(Vector2.new())            print('反-AFK triggered')         end)         print("防止挂机  Anti-AFK")    end})
