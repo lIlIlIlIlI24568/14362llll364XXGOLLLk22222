@@ -1,26 +1,3 @@
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
-
-if _G.AutoExecuter == true then
-local ScriptSpawnSlap = queueonteleport or queue_on_teleport
-if ScriptSpawnSlap then
-    ScriptSpawnSlap([[
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
-repeat wait() until game.Players.LocalPlayer
-wait(0.25)
-_G.AutoExecuter = true
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Giangplay/Slap_Battles/main/Slap_Battles.lua"))()
-    ]])
-else
-game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "You cannot auto execute",Icon = "rbxassetid://7733658504",Duration = 5})
-end
-end
-
-game:GetService("GuiService"):ClearError()
-
 local resume = coroutine.resume           local create = coroutine.create
 getgenv().autoCollectEnabled = true
 getgenv().autoSellEnabled = true
