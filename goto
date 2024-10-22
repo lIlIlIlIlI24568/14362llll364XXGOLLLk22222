@@ -105,7 +105,7 @@ local Tab = Window:MakeTab({    Name = "用户",    Icon = "rbxassetid://7734068
 CoreGui:SetCore("SendNotification", {    Title = "goto_O",    Text = "小go欢迎各位",    Duration = 10, })
 OrionLib:MakeNotification({	Name = "goto_O",	Content = "欢迎使用goto脚本",	Image = "rbxassetid://18923878915",	Time = 2})
 OrionLib:MakeNotification({	Name = "稀🍚你 ",	Content = "持续更新",	Image = "rbxassetid://18923878915",	Time = 2})
-Tab:AddParagraph("小go为你查看账户年龄:""..player.AccountAge.."天"")
+Tab:AddParagraph("小go为你查看账户年龄:"..player.AccountAge.."天")
 Tab:AddParagraph("用户名:"," "..game.Players.LocalPlayer.Name.."")
 Tab:AddParagraph("注入器查看:"," "..identifyexecutor().."")
 Tab:AddParagraph("服务器的ID:"," "..game.GameId.."")
