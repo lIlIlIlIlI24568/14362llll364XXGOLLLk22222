@@ -1314,14 +1314,62 @@ Tab:AddButton({    Name ="xgo 随机骂人输出 （手机需要键盘按G）", 
 local Tab = Window:MakeTab({    Name = "玩家",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddTextbox({   Name = "时间（24小时制）请输入1~24",	    Min = 0,	    Max = 24,	    Default = "输入",	  TextDisappear = true,    	Callback = function(Time)        game.Lighting.ClockTime = Time    end})
 Tab:AddButton({    Name ="冻结自己 可以将自己暂停",    Callback = function()      loadstring(game:HttpGet("https://raw.githubusercontent.com/creepstu/fuzzy-octo-giggle/main/Source"))()     end})
+Tab:AddButton({   Name="失重（可以被人当球踢）",Callback=function()    local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local Camera = workspace.CurrentCamera
+local SPEED_MULTIPLIER = 30
+local JUMP_POWER = 60
+local JUMP_GAP = 0.3
+local character = game.Players.LocalPlayer.Character
+for i,v in ipairs(character:GetDescendants()) do
+   if v:IsA("BasePart") then
+       v.CanCollide = false
+   end      end
+local ball = character.HumanoidRootPart
+ball.Shape = Enum.PartType.Ball
+ball.Size = Vector3.new(5,5,5)
+local humanoid = character:WaitForChild("Humanoid")
+local params = RaycastParams.new()
+params.FilterType = Enum.RaycastFilterType.Blacklist
+params.FilterDescendantsInstances = {character}
+local tc = RunService.RenderStepped:Connect(function(delta)
+   ball.CanCollide = true
+   humanoid.PlatformStand = true
+if UserInputService:GetFocusedTextBox() then return end
+if UserInputService:IsKeyDown("W") then
+ball.RotVelocity -= Camera.CFrame.RightVector * delta * SPEED_MULTIPLIER
+end
+if UserInputService:IsKeyDown("A") then
+ball.RotVelocity -= Camera.CFrame.LookVector * delta * SPEED_MULTIPLIER
+end
+if UserInputService:IsKeyDown("S") then
+ball.RotVelocity += Camera.CFrame.RightVector * delta * SPEED_MULTIPLIER
+end
+if UserInputService:IsKeyDown("D") then
+ball.RotVelocity += Camera.CFrame.LookVector * delta * SPEED_MULTIPLIER
+end
+--ball.RotVelocity = ball.RotVelocity - Vector3.new(0,ball.RotVelocity.Y/50,0)
+end)
+UserInputService.JumpRequest:Connect(function()
+local result = workspace:Raycast(
+ball.Position,
+Vector3.new(0,
+-((ball.Size.Y/2)+JUMP_GAP),
+0),
+params)
+if result then
+ball.Velocity = ball.Velocity + Vector3.new(0,JUMP_POWER,0)
+end
+end)
+Camera.CameraSubject = ball
+humanoid.Died:Connect(function() tc:Disconnect() end)
+end})
 Tab:AddButton({   Name="显示FPS",Callback=function()
 local ScreenGui = Instance.new("ScreenGui")
 local FpsLabel = Instance.new("TextLabel")
-
 ScreenGui.Name = "FPSGui"
 ScreenGui.ResetOnSpawn = false
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
 FpsLabel.Name = "FPSLabel"
 FpsLabel.Size = UDim2.new(0, 100, 0, 50)
 FpsLabel.Position = UDim2.new(0.75,20,0.075,20)--位置
@@ -1331,20 +1379,15 @@ FpsLabel.Text = "FPS: 0"
 FpsLabel.TextSize = 20
 FpsLabel.TextColor3 = Color3.fromRGB(255, 165, 0) --颜色
 FpsLabel.Parent = ScreenGui
-
 local frameCounter = 0
-
 function updateFpsLabel()
     frameCounter = frameCounter + 1
     if frameCounter >= 20 then -- 20帧
         local fps = math.floor(1 / game:GetService("RunService").RenderStepped:Wait())
         FpsLabel.Text = "FPS: " .. fps
         frameCounter = 0
-    end
-end
-
+    end      end
 game:GetService("RunService").RenderStepped:Connect(updateFpsLabel)
-
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 end})
 Tab:AddButton({   Name="显示ping",Callback=function()
@@ -1459,8 +1502,7 @@ if lp.Character:FindFirstChild "Head" then
       oldhum.Parent = lp.Character
               wait(1)
              oldhum:Destroy()
-            end
-           end)
+            end         end)
           workspace.CurrentCamera.CameraSubject = char
          if char:FindFirstChild "Animate" then
         char.Animate.Disabled = true
@@ -1468,8 +1510,7 @@ if lp.Character:FindFirstChild "Head" then
              char.Animate.Disabled = false
             end
            lp.Character:FindFirstChild "Head":Destroy()
-          end
-         end})
+          end       end})
 Tab:AddButton({    Name ="重新加入游戏",   Callback = function()      game:GetService("TeleportService"):TeleportToPlaceInstance(      game.PlaceId,         game.JobId,           game:GetService("Players").LocalPlayer                  )            end})
 Tab:AddButton({    Name ="保存游戏",    Callback = function()    saveinstance()    end})
 Tab:AddButton({    Name ="离开游戏",    Callback = function()     game:Shutdown()    end})
@@ -1492,24 +1533,18 @@ Tab:AddToggle({	Name = "穿墙",	Default = false,	Callback = function(Value)
          for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
           if v:IsA("BasePart") then
            v.CanCollide = false
-            end
-           end
-          end
-         end
+         end         end          end        end
         else
        Stepped:Disconnect()
-      end
-     end)
+      end     end)
     else
    Noclip = false
-  end
- end})
+  end    end})
 Tab:AddButton({    Name ="穿墙汉化",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/TtmScripter/OtherScript/main/Noclip"))()    end})
 Tab:AddToggle({    Name = "夜视",	Default = false,	Callback = function(Value)		if Value then		    game.Lighting.Ambient = Color3.new(1, 1, 1)		else		    game.Lighting.Ambient = Color3.new(0, 0, 0)		end	end})
 Tab:AddButton({	Name = "范围",	Callback = function()
                   _G.HeadSize = 20
                  _G.Disabled = true
-
 game:GetService('RunService').RenderStepped:connect(function()
                  if _G.Disabled then
 for i,v in next, game:GetService('Players'):GetPlayers() do
@@ -1524,7 +1559,6 @@ v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
 Tab:AddButton({	Name = "中级范围",	Callback = function()
                   _G.HeadSize = 100
                  _G.Disabled = true
-
 game:GetService('RunService').RenderStepped:connect(function()
                  if _G.Disabled then
 for i,v in next, game:GetService('Players'):GetPlayers() do
@@ -1539,7 +1573,6 @@ v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
 Tab:AddButton({	Name = "高级范围",	Callback = function()
                   _G.HeadSize = 500
                   _G.Disabled = true
-
 game:GetService('RunService').RenderStepped:connect(function()
                  if _G.Disabled then
 for i,v in next, game:GetService('Players'):GetPlayers() do
@@ -1554,7 +1587,6 @@ v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
 Tab:AddTextbox({	Name = "范围修改",	Default = "输入",	TextDisappear = true,	Callback = function(value)	  print(value)
                   _G.HeadSize = value
                  _G.Disabled = true
-
 game:GetService('RunService').RenderStepped:connect(function()
                  if _G.Disabled then
 for i,v in next, game:GetService('Players'):GetPlayers() do
@@ -1581,16 +1613,12 @@ settings = {
     length = 8,                                 -- 每侧的像素的长度都占据了任何全部。
     opacity = 1,                                -- 十字线的不透明度，取得任何数字，1是完全可见的，0是看不见的。
 	x_offset = 0,                               -- 十字线的X偏移，采用任何正数或负数
-	y_offset = 0,                               -- 十字丘的Y偏移，采用任何正数或负数
-	
+	y_offset = 0,                               -- 十字丘的Y偏移，采用任何正数或负数	
     recenter = true                             -- .如果您的窗口调整大小，自动彻底是十字准线，这是一个选项，以防我非常怀疑的任何人导致滞后，如果它为您提供，请停止使用您的微波器for Roblox
 }
-
 local cam = workspace.CurrentCamera or workspace:FindFirstChildOfClass("Camera")
-
 getgenv().crosshair_x = getgenv().crosshair_x or {}
 getgenv().crosshair_y = getgenv().crosshair_y or {}
-
 local function draw(a1, a2)
     local obj = Drawing.new(a1)
     for i, v in pairs(a2) do 
@@ -1598,30 +1626,24 @@ local function draw(a1, a2)
     end
     return obj
 end
-
 if getgenv().crosshair_x ~= nil or getgenv().crosshair_x ~= {} then
     if getgenv().crosshair_x["Line"] then
         getgenv().crosshair_x["Line"]:Remove()
     end
-    
     if getgenv().crosshair_x["Connection"] then
         getgenv().crosshair_x["Connection"]:Disconnect()
     end
     getgenv().crosshair_x = {}
 end
-
 if getgenv().crosshair_y ~= nil or getgenv().crosshair_y ~= {} then
     if getgenv().crosshair_y["Line"] then
         getgenv().crosshair_y["Line"]:Remove()
     end
-
     if getgenv().crosshair_y["Connection"] then
         getgenv().crosshair_y["Connection"]:Disconnect()
     end
-    
     getgenv().crosshair_y = {}
 end
-
 getgenv().crosshair_x["Line"] = draw("Line", {
     To = Vector2.new(((cam.ViewportSize.x / 2) - settings.x_offset) - settings.length, (cam.ViewportSize.y / 2) - settings.y_offset),
     From = Vector2.new(((cam.ViewportSize.x / 2) - settings.x_offset) + settings.length, (cam.ViewportSize.y / 2) - settings.y_offset),
@@ -1630,7 +1652,6 @@ getgenv().crosshair_x["Line"] = draw("Line", {
     Transparency = settings.opacity,
     Visible = true
 })
-
 getgenv().crosshair_y["Line"] = draw("Line", {
     To = Vector2.new((cam.ViewportSize.x / 2) - settings.x_offset, ((cam.ViewportSize.y / 2) - settings.y_offset) - settings.length),
     From = Vector2.new((cam.ViewportSize.x / 2) - settings.x_offset, ((cam.ViewportSize.y / 2) - settings.y_offset) + settings.length),
@@ -1639,13 +1660,11 @@ getgenv().crosshair_y["Line"] = draw("Line", {
     Transparency = settings.opacity,
     Visible = true
 })
-
 if settings.recenter then
     getgenv().crosshair_x["Connection"] = cam:GetPropertyChangedSignal("ViewportSize"):Connect(function()
         getgenv().crosshair_x["Line"]["To"] = Vector2.new(((cam.ViewportSize.x / 2) - settings.x_offset) - settings.length, (cam.ViewportSize.y / 2) - settings.y_offset)
         getgenv().crosshair_x["Line"]["From"] = Vector2.new(((cam.ViewportSize.x / 2) - settings.x_offset) + settings.length, (cam.ViewportSize.y / 2) - settings.y_offset)
     end)
-
     getgenv().crosshair_y["Connection"] = cam:GetPropertyChangedSignal("ViewportSize"):Connect(function()
         getgenv().crosshair_y["Line"]["To"] = Vector2.new((cam.ViewportSize.x / 2) - settings.x_offset, ((cam.ViewportSize.y / 2) - settings.y_offset) - settings.length)
         getgenv().crosshair_y["Line"]["From"] = Vector2.new((cam.ViewportSize.x / 2) - settings.x_offset, ((cam.ViewportSize.y / 2) - settings.y_offset) + settings.length)
@@ -1660,12 +1679,9 @@ if settings.recenter then
 	
     recenter = true                             -- .如果您的窗口调整大小，自动彻底是十字准线，这是一个选项，以防我非常怀疑的任何人导致滞后，如果它为您提供，请停止使用您的微波器for Roblox
 }
-
 local cam = workspace.CurrentCamera or workspace:FindFirstChildOfClass("Camera")
-
 getgenv().crosshair_x = getgenv().crosshair_x or {}
 getgenv().crosshair_y = getgenv().crosshair_y or {}
-
 local function draw(a1, a2)
     local obj = Drawing.new(a1)
     for i, v in pairs(a2) do 
@@ -1726,12 +1742,9 @@ Tab:AddButton({    Name ="战神十字架（超级）",    Callback = function()
 	
     recenter = true                             -- .如果您的窗口调整大小，自动彻底是十字准线，这是一个选项，以防我非常怀疑的任何人导致滞后，如果它为您提供，请停止使用您的微波器for Roblox
 }
-
 local cam = workspace.CurrentCamera or workspace:FindFirstChildOfClass("Camera")
-
 getgenv().crosshair_x = getgenv().crosshair_x or {}
 getgenv().crosshair_y = getgenv().crosshair_y or {}
-
 local function draw(a1, a2)
     local obj = Drawing.new(a1)
     for i, v in pairs(a2) do 
@@ -1809,21 +1822,15 @@ local function NewLine(color, thickness)
     line.Transparency = 1
     return line
 end
-
 local function Vis(lib, state)
     for i, v in pairs(lib) do
         v.Visible = state
-    end
-end
-
+    end      end
 local function Colorize(lib, color)
     for i, v in pairs(lib) do
         v.Color = color
-    end
-end
-
+    end      end
 local Black = Color3.fromRGB(0, 0, 0)
-
 local function Rainbow(lib, delay)
     for hue = 0, 1, 1/30 do
         local color = Color3.fromHSV(hue, 0.6, 1)
@@ -1844,13 +1851,10 @@ local function Main(plr)
     local Library = {
         TL1 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
         TL2 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
-
         TR1 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
         TR2 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
-
         BL1 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
         BL2 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
-
         BR1 = NewLine(Settings.Box_Color, Settings.Box_Thickness),
         BR2 = NewLine(Settings.Box_Color, Settings.Box_Thickness)
     }
@@ -1877,44 +1881,34 @@ local function Main(plr)
                     local TR = Camera:WorldToViewportPoint((oripart.CFrame * CFrame.new(-SizeX, SizeY, 0)).p)
                     local BL = Camera:WorldToViewportPoint((oripart.CFrame * CFrame.new(SizeX, -SizeY, 0)).p)
                     local BR = Camera:WorldToViewportPoint((oripart.CFrame * CFrame.new(-SizeX, -SizeY, 0)).p)
-
                     if Settings.Team_Check then
                         if plr.TeamColor == Player.TeamColor then
                             Colorize(Library, Color3.fromRGB(0, 255, 0))
                         else 
                             Colorize(Library, Color3.fromRGB(255, 0, 0))
-                        end
-                    end
-
+                        end               end
                     if Settings.Team_Color then
                         Colorize(Library, plr.TeamColor.Color)
                     end
-
                     local ratio = (Camera.CFrame.p - Hum.HumanoidRootPart.Position).magnitude
                     local offset = math.clamp(1/ratio*750, 2, 300)
-
                     Library.TL1.From = Vector2.new(TL.X, TL.Y)
                     Library.TL1.To = Vector2.new(TL.X + offset, TL.Y)
                     Library.TL2.From = Vector2.new(TL.X, TL.Y)
                     Library.TL2.To = Vector2.new(TL.X, TL.Y + offset)
-
                     Library.TR1.From = Vector2.new(TR.X, TR.Y)
                     Library.TR1.To = Vector2.new(TR.X - offset, TR.Y)
                     Library.TR2.From = Vector2.new(TR.X, TR.Y)
                     Library.TR2.To = Vector2.new(TR.X, TR.Y + offset)
-
                     Library.BL1.From = Vector2.new(BL.X, BL.Y)
                     Library.BL1.To = Vector2.new(BL.X + offset, BL.Y)
                     Library.BL2.From = Vector2.new(BL.X, BL.Y)
                     Library.BL2.To = Vector2.new(BL.X, BL.Y - offset)
-
                     Library.BR1.From = Vector2.new(BR.X, BR.Y)
                     Library.BR1.To = Vector2.new(BR.X - offset, BR.Y)
                     Library.BR2.From = Vector2.new(BR.X, BR.Y)
                     Library.BR2.To = Vector2.new(BR.X, BR.Y - offset)
-
                     Vis(Library, true)
-
                     if Settings.Autothickness then
                         local distance = (Player.Character.HumanoidRootPart.Position - oripart.Position).magnitude
                         local value = math.clamp(1/distance*100, 1, 4) --0.1 is min thickness, 6 is max
@@ -1924,8 +1918,7 @@ local function Main(plr)
                     else 
                         for u, x in pairs(Library) do
                             x.Thickness = Settings.Box_Thickness
-                        end
-                    end
+                        end            end
                 else 
                     Vis(Library, false)
                 end
@@ -1937,24 +1930,17 @@ local function Main(plr)
                         oripart:Destroy()
                     end
                     c:Disconnect()
-                end
-            end
-        end)
-    end
+                end          end      end)   end
     coroutine.wrap(Updater)()
 end
-
 -- xgo
 for i, v in pairs(game:GetService("Players"):GetPlayers()) do
     if v.Name ~= Player.Name then
       coroutine.wrap(Main)(v)
-    end
-end
-
+    end       end
 game:GetService("Players").PlayerAdded:Connect(function(newplr)
     coroutine.wrap(Main)(newplr)
 end)
-
 local function ApplyESP(v)
    if v.Character and v.Character:FindFirstChildOfClass'Humanoid' then
        v.Character.Humanoid.NameDisplayDistance = 9e9
@@ -1962,16 +1948,13 @@ local function ApplyESP(v)
        v.Character.Humanoid.HealthDisplayDistance = 9e9
        v.Character.Humanoid.HealthDisplayType = "AlwaysOn"
        v.Character.Humanoid.Health = v.Character.Humanoid.Health -- triggers changed
-   end
-end
+   end         end
 for i,v in pairs(game.Players:GetPlayers()) do
    ApplyESP(v)
    v.CharacterAdded:Connect(function()
        task.wait(0.33)
        ApplyESP(v)
-   end)
-end
-
+   end)     end
 game.Players.PlayerAdded:Connect(function(v)
    ApplyESP(v)
    v.CharacterAdded:Connect(function()
@@ -1982,25 +1965,20 @@ Tab:AddButton({    Name ="人物射线",    Callback = function()    local lplr 
 local camera = game:GetService("Workspace").CurrentCamera
 local CurrentCamera = workspace.CurrentCamera
 local worldToViewportPoint = CurrentCamera.worldToViewportPoint
-
 _G.TeamCheck = false -- Use True or False to toggle TeamCheck
-
 for i,v in pairs(game.Players:GetChildren()) do
     local Tracer = Drawing.new("Line")
     Tracer.Visible = false
     Tracer.Color = Color3.new(255,255,255)
     Tracer.Thickness = 1
     Tracer.Transparency = 1
-
     function lineesp()
         game:GetService("RunService").RenderStepped:Connect(function()
             if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lplr and v.Character.Humanoid.Health > 0 then
                 local Vector, OnScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
-
                 if OnScreen then
                     Tracer.From = Vector2.new(camera.ViewportSize.X / 2, camera.ViewportSize.Y / 10)
                     Tracer.To = Vector2.new(Vector.X, Vector.Y)
-
                     if _G.TeamCheck and v.TeamColor == lplr.TeamColor then
                         --//Teammates
                         Tracer.Visible = false
@@ -2013,9 +1991,7 @@ for i,v in pairs(game.Players:GetChildren()) do
                 end
             else
                 Tracer.Visible = false
-            end
-        end)
-    end
+            end        end)    end
     coroutine.wrap(lineesp)()
 end
 game.Players.PlayerAdded:Connect(function(v)
@@ -2024,16 +2000,13 @@ game.Players.PlayerAdded:Connect(function(v)
     Tracer.Color = Color3.new(0,255,50)
     Tracer.Thickness = 1
     Tracer.Transparency = 1
-
     function lineesp()
         game:GetService("RunService").RenderStepped:Connect(function()
             if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lplr and v.Character.Humanoid.Health > 0 then
                 local Vector, OnScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
-
                 if OnScreen then
                     Tracer.From = Vector2.new(camera.ViewportSize.X / 2, camera.ViewportSize.Y / 1)
                     Tracer.To = Vector2.new(Vector.X, Vector.Y)
-
                     if _G.TeamCheck and v.TeamColor == lplr.TeamColor then
                         --//Teammates
                         Tracer.Visible = false
@@ -2046,9 +2019,7 @@ game.Players.PlayerAdded:Connect(function(v)
                 end
             else
                 Tracer.Visible = false
-            end
-        end)
-    end
+            end        end)    end
     coroutine.wrap(lineesp)()
 end)   end}) 
 Tab:AddButton({    Name ="框架0.1",    Callback = function()
@@ -2056,18 +2027,11 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local Camera = workspace.CurrentCamera
 local LocalPlayer = Players.LocalPlayer
-
 -- xgo
-local espElements = {}
-
--- xgo
+local espElements = {}       -- xgo
 local function createESP(player)
-    if player == LocalPlayer then return end -- Игнорируем себя
-
-    -- xgo
-    local espTable = {}
-    
-    -- xgo
+    if player == LocalPlayer then return end -- Игнорируем себя  -- xgo
+    local espTable = {} -- xgo
     local nameTag = Drawing.new("Text")
     nameTag.Visible = false
     nameTag.Center = true
@@ -2075,9 +2039,7 @@ local function createESP(player)
     nameTag.Size = 18
     nameTag.Color = Color3.fromRGB(255, 255, 0) --xgo颜色
     nameTag.Text = player.Name
-    espTable.nameTag = nameTag
-    
-    -- xgo
+    espTable.nameTag = nameTag -- xgo
     local lines = {}
     for i = 1, 8 do
         local line = Drawing.new("Line")
@@ -2088,11 +2050,8 @@ local function createESP(player)
         table.insert(lines, line)
     end
     espTable.lines = lines
-    
     espElements[player] = espTable
-end
-
--- xgo
+end-- xgo
 local function updateESP()
     for _, player in pairs(Players:GetPlayers()) do
         if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
@@ -2101,65 +2060,43 @@ local function updateESP()
             local head = character:FindFirstChild("Head")
             local lines = espElements[player].lines
             local nameTag = espElements[player].nameTag
-            
             if head and humanoidRootPart then
                 local rootPos, onScreen = Camera:WorldToViewportPoint(humanoidRootPart.Position)
                 local headPos = Camera:WorldToViewportPoint(head.Position + Vector3.new(0, 0.5, 0))
-                local torsoPos = Camera:WorldToViewportPoint(humanoidRootPart.Position + Vector3.new(0, -1, 0))
-                
-                -- xgo
-                if onScreen then
-                    -- xgo
+                local torsoPos = Camera:WorldToViewportPoint(humanoidRootPart.Position + Vector3.new(0, -1, 0))                -- xgo
+                if onScreen then                   -- xgo
                     nameTag.Position = Vector2.new(headPos.X, headPos.Y - 30)
-                    nameTag.Visible = true
-
-                    --xgo
+                    nameTag.Visible = true                 --xgo
                     local points = {
                         Camera:WorldToViewportPoint(humanoidRootPart.Position + Vector3.new(-1, 2, 0)),   -- 根据
                         Camera:WorldToViewportPoint(humanoidRootPart.Position + Vector3.new(1, 2, 0)),    -- xgo
                         Camera:WorldToViewportPoint(humanoidRootPart.Position + Vector3.new(-1, -2, 0)),  -- xgo
                         Camera:WorldToViewportPoint(humanoidRootPart.Position + Vector3.new(1, -2, 0)),   -- xgo
-                    }
-
-                    -- xgo
+                    }                  -- xgo
                     lines[1].From = Vector2.new(points[1].X, points[1].Y)
                     lines[1].To = Vector2.new(points[2].X, points[2].Y)
                     lines[1].Visible = true
-
                     lines[2].From = Vector2.new(points[2].X, points[2].Y)
                     lines[2].To = Vector2.new(points[4].X, points[4].Y)
                     lines[2].Visible = true
-
                     lines[3].From = Vector2.new(points[4].X, points[4].Y)
                     lines[3].To = Vector2.new(points[3].X, points[3].Y)
                     lines[3].Visible = true
-
                     lines[4].From = Vector2.new(points[3].X, points[3].Y)
                     lines[4].To = Vector2.new(points[1].X, points[1].Y)
                     lines[4].Visible = true
-                else
-                    --xgo
+                else                  --xgo
                     for _, line in pairs(lines) do
                         line.Visible = false
                     end
                     nameTag.Visible = false
-                end
-            end
-        end
-    end
-end
-
--- xgo
+                end            end        end    end       end -- xgo
 for _, player in pairs(Players:GetPlayers()) do
     createESP(player)
-end
-
--- xgo ESP 
+end-- xgo ESP 
 Players.PlayerAdded:Connect(function(player)
     createESP(player)
-end)
-
--- xgo
+end)-- xgo
 Players.PlayerRemoving:Connect(function(player)
     if espElements[player] then
         for _, line in pairs(espElements[player].lines) do
@@ -2167,10 +2104,7 @@ Players.PlayerRemoving:Connect(function(player)
         end
         espElements[player].nameTag:Remove()
         espElements[player] = nil
-    end
-end)
-
--- xgo
+    end       end)-- xgo
 RunService.RenderStepped:Connect(function()
     updateESP()
 end)    end})
@@ -2194,11 +2128,9 @@ local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local LocalPlayer = Players.LocalPlayer
 local Holding = false
-
 _G.TeamCheck = true
 _G.AimPart = "Head"
 _G.Sensitivity = 0
-
 _G.CircleSides = 64
 _G.CircleColor = Color3.fromRGB(255, 255, 255)
 _G.CircleTransparency = 0.7
@@ -2206,7 +2138,6 @@ _G.CircleRadius = 80
 _G.CircleFilled = false
 _G.CircleVisible = false
 _G.CircleThickness = 0
-
 local FOVCircle = Drawing.new("Circle")
  FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
   FOVCircle.Radius = _G.CircleRadius
@@ -2217,11 +2148,9 @@ local FOVCircle = Drawing.new("Circle")
        FOVCircle.Transparency = _G.CircleTransparency
         FOVCircle.NumSides = _G.CircleSides
          FOVCircle.Thickness = _G.CircleThickness
-
 		local function GetClosestPlayer()
 			local MaximumDistance = _G.CircleRadius
 			local Target = nil
-
 			for _, v in next, Players:GetPlayers() do
 				if v.Name ~= LocalPlayer.Name then
 					if _G.TeamCheck == true then
@@ -2231,46 +2160,27 @@ local FOVCircle = Drawing.new("Circle")
 									if v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("Humanoid").Health ~= 0 then
 										local ScreenPoint = Camera:WorldToScreenPoint(v.Character:WaitForChild("HumanoidRootPart", math.huge).Position)
 										local VectorDistance = (Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y) - Vector2.new(ScreenPoint.X, ScreenPoint.Y)).Magnitude
-
 										if VectorDistance < MaximumDistance then
-											Target = v
-										end
-									end
-								end
-							end
-						end
+											Target = v									end									end								end						end				end
 					else
 						if v.Character ~= nil then
 							if v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
 								if v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("Humanoid").Health ~= 0 then
 									local ScreenPoint = Camera:WorldToScreenPoint(v.Character:WaitForChild("HumanoidRootPart", math.huge).Position)
 									local VectorDistance = (Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y) - Vector2.new(ScreenPoint.X, ScreenPoint.Y)).Magnitude
-
 									if VectorDistance < MaximumDistance then
 										Target = v
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-
+									end							end						end					end					end			end		end
 			return Target
 		end
-
 		UserInputService.InputBegan:Connect(function(Input)
 			if Input.UserInputType == Enum.UserInputType.MouseButton2 then
 				Holding = true
-			end
-		end)
-
+			end		end)
 		UserInputService.InputEnded:Connect(function(Input)
 			if Input.UserInputType == Enum.UserInputType.MouseButton2 then
 				Holding = false
-			end
-		end)
-
+			end		end)
 		RunService.RenderStepped:Connect(function()
 			FOVCircle.Position = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
 			FOVCircle.Radius = _G.CircleRadius
@@ -2281,12 +2191,9 @@ local FOVCircle = Drawing.new("Circle")
 			FOVCircle.Transparency = _G.CircleTransparency
 			FOVCircle.NumSides = _G.CircleSides
 			FOVCircle.Thickness = _G.CircleThickness
-
 			if Holding == true and _G.AimbotEnabled == true then
 				TweenService:Create(Camera, TweenInfo.new(_G.Sensitivity, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(Camera.CFrame.Position, GetClosestPlayer().Character[_G.AimPart].Position)}):Play()
-			end
-		end)
-	end    }) 
+			end		end)	end    }) 
 Tab:AddButton({	Name = "xgo3d人物射线",	Callback = function()         loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo3d%E4%BA%BA%E7%89%A9%E5%B0%84%E7%BA%BF.lua"))()    end}) 
 Tab:AddButton({	Name = "外网框架",	Callback = function()         loadstring(game:HttpGet("https://raw.githubusercontent.com/yzeedw/Mortalv2-main/refs/heads/main/UNIVERSAL%20AIMBOT%20V2"))()    end}) 
 Tab:AddButton({	Name = "情云同款自瞄可以调整大小，绘制距离 fl目前有bug",	Callback = function()	    local fov = 100 local smoothness = 10 local crosshairDistance = 5 local RunService = game:GetService("RunService") local UserInputService = game:GetService("UserInputService") local Players = game:GetService("Players") local Cam = game.Workspace.CurrentCamera local FOVring = Drawing.new("Circle") FOVring.Visible = true FOVring.Thickness = 2 FOVring.Color = Color3.fromRGB(0, 255, 0) FOVring.Filled = false FOVring.Radius = fov FOVring.Position = Cam.ViewportSize / 2 local Player = Players.LocalPlayer local PlayerGui = Player:WaitForChild("PlayerGui") local ScreenGui = Instance.new("ScreenGui") ScreenGui.Name = "FovAdjustGui" ScreenGui.Parent = PlayerGui local Frame = Instance.new("Frame") Frame.Name = "MainFrame" Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30) Frame.BorderColor3 = Color3.fromRGB(128, 0, 128) Frame.BorderSizePixel = 2 Frame.Position = UDim2.new(0.3, 0, 0.3, 0) Frame.Size = UDim2.new(0.4, 0, 0.4, 0) Frame.Active = true Frame.Draggable = true Frame.Parent = ScreenGui local MinimizeButton = Instance.new("TextButton") MinimizeButton.Name = "MinimizeButton" MinimizeButton.Text = "-" MinimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255) MinimizeButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50) MinimizeButton.Position = UDim2.new(0.9, 0, 0, 0) MinimizeButton.Size = UDim2.new(0.1, 0, 0.1, 0) MinimizeButton.Parent = Frame local isMinimized = false MinimizeButton.MouseButton1Click:Connect(function() isMinimized = not isMinimized if isMinimized then Frame:TweenSize(UDim2.new(0.1, 0, 0.1, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true) MinimizeButton.Text = "+" else Frame:TweenSize(UDim2.new(0.4, 0, 0.4, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true) MinimizeButton.Text = "-" end end) local FovLabel = Instance.new("TextLabel") FovLabel.Name = "FovLabel" FovLabel.Text = "自瞄范围" FovLabel.TextColor3 = Color3.fromRGB(255, 255, 255) FovLabel.BackgroundTransparency = 1 FovLabel.Position = UDim2.new(0.1, 0, 0.1, 0) FovLabel.Size = UDim2.new(0.8, 0, 0.2, 0) FovLabel.Parent = Frame local FovSlider = Instance.new("TextBox") FovSlider.Name = "FovSlider" FovSlider.Text = tostring(fov) FovSlider.TextColor3 = Color3.fromRGB(255, 255, 255) FovSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50) FovSlider.Position = UDim2.new(0.1, 0, 0.3, 0) FovSlider.Size = UDim2.new(0.8, 0, 0.2, 0) FovSlider.Parent = Frame local SmoothnessLabel = Instance.new("TextLabel") SmoothnessLabel.Name = "SmoothnessLabel" SmoothnessLabel.Text = "自瞄平滑度" SmoothnessLabel.TextColor3 = Color3.fromRGB(255, 255, 255) SmoothnessLabel.BackgroundTransparency = 1 SmoothnessLabel.Position = UDim2.new(0.1, 0, 0.5, 0) SmoothnessLabel.Size = UDim2.new(0.8, 0, 0.2, 0) SmoothnessLabel.Parent = Frame local SmoothnessSlider = Instance.new("TextBox") SmoothnessSlider.Name = "SmoothnessSlider" SmoothnessSlider.Text = tostring(smoothness) SmoothnessSlider.TextColor3 = Color3.fromRGB(255, 255, 255) SmoothnessSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50) SmoothnessSlider.Position = UDim2.new(0.1, 0, 0.7, 0) SmoothnessSlider.Size = UDim2.new(0.8, 0, 0.2, 0) SmoothnessSlider.Parent = Frame local CrosshairDistanceLabel = Instance.new("TextLabel") CrosshairDistanceLabel.Name = "CrosshairDistanceLabel" CrosshairDistanceLabel.Text = "自瞄预判距离" CrosshairDistanceLabel.TextColor3 = Color3.fromRGB(255, 255, 255) CrosshairDistanceLabel.BackgroundTransparency = 1 CrosshairDistanceLabel.Position = UDim2.new(0.1, 0, 0.9, 0) CrosshairDistanceLabel.Size = UDim2.new(0.8, 0, 0.2, 0) CrosshairDistanceLabel.Parent = Frame local CrosshairDistanceSlider = Instance.new("TextBox") CrosshairDistanceSlider.Name = "CrosshairDistanceSlider" CrosshairDistanceSlider.Text = tostring(crosshairDistance) CrosshairDistanceSlider.TextColor3 = Color3.fromRGB(255, 255, 255) CrosshairDistanceSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50) CrosshairDistanceSlider.Position = UDim2.new(0.1, 0, 1.1, 0) CrosshairDistanceSlider.Size = UDim2.new(0.8, 0, 0.2, 0) CrosshairDistanceSlider.Parent = Frame local targetCFrame = Cam.CFrame local function updateDrawings() local camViewportSize = Cam.ViewportSize FOVring.Position = camViewportSize / 2 FOVring.Radius = fov end local function onKeyDown(input) if input.KeyCode == Enum.KeyCode.Delete then RunService:UnbindFromRenderStep("FOVUpdate") FOVring:Remove() end end UserInputService.InputBegan:Connect(onKeyDown) local function getClosestPlayerInFOV(trg_part) local nearest = nil local last = math.huge local playerMousePos = Cam.ViewportSize / 2 for _, player in ipairs(Players:GetPlayers()) do if player ~= Players.LocalPlayer then local part = player.Character and player.Character:FindFirstChild(trg_part) if part then local ePos, isVisible = Cam:WorldToViewportPoint(part.Position) local distance = (Vector2.new(ePos.x, ePos.y) - playerMousePos).Magnitude if distance < last and isVisible and distance < fov then last = distance nearest = player end end end end return nearest end RunService.RenderStepped:Connect(function() updateDrawings() local closest = getClosestPlayerInFOV("Head") if closest and closest.Character:FindFirstChild("Head") then local targetCharacter = closest.Character local targetHead = targetCharacter.Head local targetRootPart = targetCharacter:FindFirstChild("HumanoidRootPart") local isMoving = targetRootPart.Velocity.Magnitude > 0.1 local targetPosition if isMoving then targetPosition = targetHead.Position + (targetHead.CFrame.LookVector * crosshairDistance) else targetPosition = targetHead.Position end targetCFrame = CFrame.new(Cam.CFrame.Position, targetPosition) else targetCFrame = Cam.CFrame end Cam.CFrame = Cam.CFrame:Lerp(targetCFrame, 1 / smoothness) end) FovSlider.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLoss) if enterPressed then local newFov = tonumber(FovSlider.Text) if newFov then fov = newFov else FovSlider.Text = tostring(fov) end end end) SmoothnessSlider.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLoss) if enterPressed then local newSmoothness = tonumber(SmoothnessSlider.Text) if newSmoothness then smoothness = newSmoothness else SmoothnessSlider.Text = tostring(smoothness) end end end) CrosshairDistanceSlider.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLoss) if enterPressed then local newCrosshairDistance = tonumber(CrosshairDistanceSlider.Text) if newCrosshairDistance then crosshairDistance = newCrosshairDistance else CrosshairDistanceSlider.Text = tostring(crosshairDistance) end end end)    end})
@@ -2403,7 +2310,6 @@ local TextLabel = Instance.new("TextLabel")
 --Properties
 SimpleSexGUI.Name = "SimpleSexGUI"
 SimpleSexGUI.Parent = game.CoreGui
-
 FGUI.Name = "FGUI"
 FGUI.Parent = SimpleSexGUI
 FGUI.BackgroundColor3 = Color3.new(255,255,255)
@@ -2411,7 +2317,6 @@ FGUI.BorderSizePixel = 1
 FGUI.Position = UDim2.new(0,0, 0.667, 0)
 FGUI.Size = UDim2.new(0,317, 0,271)
 FGUI.Draggable = true
-
 lbltitle.Name = "Title"
 lbltitle.Parent = FGUI
 lbltitle.BackgroundColor3 = Color3.new(255,255,255)
@@ -2426,7 +2331,6 @@ lbltitle.Font = Enum.Font.SourceSansBold
 lbltitle.Text = "一个简单的操🖕"
 lbltitle.TextColor3 = Color3.new(0, 0, 0)
 lbltitle.TextSize = 20
-
 btnSex.Name = "Sex"
 btnSex.Parent = FGUI
 btnSex.BackgroundColor3 = Color3.new(255,255,255)
@@ -2441,7 +2345,6 @@ btnSex.Font = Enum.Font.SourceSansBold
 btnSex.Text = "┐(´-｀)┌启动吧"
 btnSex.TextColor3 = Color3.new(0, 0, 0)
 btnSex.TextSize = 20
-
 tbxVictim.Name = "VictimTEXT"
 tbxVictim.Parent = FGUI
 tbxVictim.BackgroundColor3 = Color3.new(255,255,255)
@@ -2456,7 +2359,6 @@ tbxVictim.Font = Enum.Font.SourceSansBold
 tbxVictim.Text = "名字"
 tbxVictim.TextColor3 = Color3.new(0, 0, 0)
 tbxVictim.TextSize = 20
-
 lblFUCKEMALL.Name = "FUCKEMALL"
 lblFUCKEMALL.Parent = FGUI
 lblFUCKEMALL.BackgroundColor3 = Color3.new(255,255,255)
@@ -2468,14 +2370,12 @@ lblFUCKEMALL.Font = Enum.Font.SourceSansBold
 lblFUCKEMALL.Text = "一玩一个不吱声"
 lblFUCKEMALL.TextColor3 = Color3.new(0, 0, 0)
 lblFUCKEMALL.TextSize = 20
-
 ImageLabel.Name = "ImageLabel"
 ImageLabel.Parent = FGUI
 ImageLabel.Image = "http://www.roblox.com/asset/?id=42837..."
 ImageLabel.BorderSizePixel = 1
 ImageLabel.Position = UDim2.new (0.274, 0,0.358, 0)
-ImageLabel.Size = UDim2.new (0, 106,0, 121)
---Scripts
+ImageLabel.Size = UDim2.new (0, 106,0, 121)--Scripts
 btnSex.MouseButton1Click:Connect(function()
 local player = tbxVictim.Text
 local stupid = Instance.new('Animation')
