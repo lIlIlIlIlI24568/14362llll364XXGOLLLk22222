@@ -481,13 +481,161 @@ Tab:AddButton({    Name ="黑洞 0.4",    Callback = function()      loadstring(
 Tab:AddButton({    Name ="黑洞 1.5",    Callback = function()      loadstring(game:HttpGet('https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E9%BB%91%E6%B4%9E'))()  
 Tab:AddButton({    Name ="循环V2",  Callback = function()      loadstring(game:HttpGet("https://raw.githubusercontent.com/BOOSBS/666/refs/heads/main/656"))()  end})
 Tab:AddButton({    Name ="循环v3",    Callback = function()    loadstring(game:HttpGet("https://pastefy.app/vaXK1Kgy/raw"))()    end})      end})
-Tab:AddButton({    Name = "黑洞E键控制", Callback = function()  loadstring(game:HttpGet("https://pastebin.com/raw/Kgtw4gt7"))()  end})
+Tab:AddButton({    Name = "黑洞E键控制", Callback = function()  local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local Folder = Instance.new("Folder", game:GetService("Workspace"))
+local Part = Instance.new("Part", Folder)
+Part.Anchored = true
+Part.CanCollide = false
+Part.Transparency = 1
+local Attachment1 = Instance.new("Attachment", Part)
+local Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+local ForceStrength = math.huge
+local function TeleportPart(v)
+   if v:IsA("Part") and v.Anchored == false and v.Parent ~= game:GetService("Players").LocalPlayer.Character then
+       Mouse.TargetFilter = v
+       for _, x in next, v:GetChildren() do
+           if x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or x:IsA("BodyThrust") or x:IsA("BodyVelocity") or x:IsA("RocketPropulsion") then
+               x:Destroy()
+           end       end
+       if v:FindFirstChild("Attachment") then
+           v:FindFirstChild("Attachment"):Destroy()
+       end
+       v.CanCollide = false
+       local Torque = Instance.new("BodyAngularVelocity", v)
+       Torque.AngularVelocity = Vector3.new(0, math.rad(ForceStrength * 4), 0) -- 更快的旋转速度
+       local AlignPosition = Instance.new("AlignPosition", v)
+       local Attachment2 = Instance.new("Attachment", v)
+       AlignPosition.MaxForce = math.huge
+       AlignPosition.MaxVelocity = math.huge
+       AlignPosition.Responsiveness = math.huge  -- 始终在吸取范围内
+       AlignPosition.Attachment0 = Attachment2
+       AlignPosition.Attachment1 = Attachment1
+   end      end
+local function TeleportAllParts()
+   for _, v in next, game:GetService("Workspace"):GetDescendants() do
+       if v:IsA("Part") and v.Parent ~= game:GetService("Players").LocalPlayer.Character then
+           TeleportPart(v)
+       end   end      end
+TeleportAllParts()
+game:GetService("Workspace").DescendantAdded:Connect(function(v)
+   if v:IsA("Part") and v.Parent ~= game:GetService("Players").LocalPlayer.Character then
+       TeleportPart(v)
+   end      end)
+UserInputService.InputBegan:Connect(function(Key, Chat)
+   if Key.KeyCode == Enum.KeyCode.E and not Chat then
+       Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+   end     end)
+spawn(function()
+   while game:GetService("RunService").RenderStepped:Wait() do
+       Attachment1.WorldCFrame = Updated
+   end     end)
+print('Hello World!');local UserInputService = game:GetService("UserInputService")
+local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local Folder = Instance.new("Folder", game:GetService("Workspace"))
+local Part = Instance.new("Part", Folder)
+Part.Anchored = true
+Part.CanCollide = false
+Part.Transparency = 1
+local Attachment1 = Instance.new("Attachment", Part)
+local Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+local ForceStrength = math.huge
+local function TeleportPart(v)
+   if v:IsA("Part") and v.Anchored == false and v.Parent ~= game:GetService("Players").LocalPlayer.Character then
+       Mouse.TargetFilter = v
+       for _, x in next, v:GetChildren() do
+           if x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or x:IsA("BodyThrust") or x:IsA("BodyVelocity") or x:IsA("RocketPropulsion") then
+               x:Destroy()
+           end       end
+       if v:FindFirstChild("Attachment") then
+           v:FindFirstChild("Attachment"):Destroy()
+       end
+       v.CanCollide = false
+       local Torque = Instance.new("BodyAngularVelocity", v)
+       Torque.AngularVelocity = Vector3.new(0, math.rad(ForceStrength * 4), 0) -- 更快的旋转速度
+       local AlignPosition = Instance.new("AlignPosition", v)
+       local Attachment2 = Instance.new("Attachment", v)
+       AlignPosition.MaxForce = math.huge
+       AlignPosition.MaxVelocity = math.huge
+       AlignPosition.Responsiveness = math.huge  -- 始终在吸取范围内
+       AlignPosition.Attachment0 = Attachment2
+       AlignPosition.Attachment1 = Attachment1
+   end      end
+local function TeleportAllParts()
+   for _, v in next, game:GetService("Workspace"):GetDescendants() do
+       if v:IsA("Part") and v.Parent ~= game:GetService("Players").LocalPlayer.Character then
+           TeleportPart(v)
+       end   end     end
+TeleportAllParts()
+game:GetService("Workspace").DescendantAdded:Connect(function(v)
+   if v:IsA("Part") and v.Parent ~= game:GetService("Players").LocalPlayer.Character then
+       TeleportPart(v)
+   end      end)
+UserInputService.InputBegan:Connect(function(Key, Chat)
+   if Key.KeyCode == Enum.KeyCode.E and not Chat then
+       Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+   end      end)
+spawn(function()
+   while game:GetService("RunService").RenderStepped:Wait() do
+       Attachment1.WorldCFrame = Updated
+   end       end)
+loadstring(game:HttpGet(('https://pastefy.app/BbXuvVkK/raw'),true))()  end})
 Tab:AddButton({    Name = "低配版不会太卡E键控制",  Callback = function()  loadstring(game:HttpGet("https://pastebin.com/raw/Sx6PY4gV"))()  end})
 Tab:AddButton({    Name ="卡哇伊黑洞（可以锁人的哦）",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E9%BB%91%E6%B4%9E",true))()    end})
 Tab:AddButton({    Name ="甩人通用",   Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E7%94%A9%E4%BA%BA%E9%80%9A%E7%94%A8"))()    end})
 Tab:AddButton({    Name ="锁定甩飞，不过你也会死",   Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/KAWAII-FREAKY-FLING/main/kawaii_freaky_fling.lua"))()    end})
 Tab:AddButton({    Name ="xgo 锁定甩飞",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo%20%E9%94%81%E5%AE%9A%E7%94%A9%E9%A3%9E.lua"))()    end})
-Tab:AddButton({    Name ="反挂机",    Callback = function()    loadstring(game:HttpGet("https://pastebin.com/raw/9fFu43FF"))()    end})
+Tab:AddButton({    Name ="反挂机",    Callback = function()  print('Hello World!')
+local UserInputService = game:GetService("UserInputService")
+local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local Folder = Instance.new("Folder", game:GetService("Workspace"))
+local Part = Instance.new("Part", Folder)
+Part.Anchored = true
+Part.CanCollide = false
+Part.Transparency = 1
+local Attachment1 = Instance.new("Attachment", Part)
+local Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+local ForceStrength = 1000
+local function TeleportPart(v)
+    if v:IsA("Part") and v.Anchored == false and v.Parent ~= game:GetService("Players").LocalPlayer.Character then
+        Mouse.TargetFilter = v
+        for _, x in next, v:GetChildren() do
+            if x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or x:IsA("BodyThrust") or x:IsA("BodyVelocity") or x:IsA("RocketPropulsion") then
+                x:Destroy()
+            end        end
+        if v:FindFirstChild("Attachment") then
+            v:FindFirstChild("Attachment"):Destroy()
+        end
+        v.CanCollide = false 
+        local Torque = Instance.new("BodyAngularVelocity", v)
+        Torque.AngularVelocity = Vector3.new(0, math.rad(ForceStrength), 0)
+        Torque.MaxTorque = Vector3.new(10000, 10000, 10000) -- 限制最大扭矩以防止散架
+        local AlignPosition = Instance.new("AlignPosition", v)
+        local Attachment2 = Instance.new("Attachment", v)
+        AlignPosition.MaxForce = 50000 -- 限制最大力以防止崩溃
+        AlignPosition.MaxVelocity = 50 -- 限制最大速度以保持稳定
+        AlignPosition.Responsiveness = 50
+        AlignPosition.Attachment0 = Attachment2
+        AlignPosition.Attachment1 = Attachment1
+    end      end
+local function TeleportAllParts()
+    for _, v in next, game:GetService("Workspace"):GetDescendants() do
+        if v:IsA("Part") and v.Parent ~= game:GetService("Players").LocalPlayer.Character then
+            TeleportPart(v)
+        end    end     end
+TeleportAllParts()
+game:GetService("Workspace").DescendantAdded:Connect(function(v)
+    if v:IsA("Part") and v.Parent ~= game:GetService("Players").LocalPlayer.Character then
+        TeleportPart(v)
+    end     end)
+UserInputService.InputBegan:Connect(function(Key, Chat)
+    if Key.KeyCode == Enum.KeyCode.E and not Chat then
+        Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+    end     end)
+spawn(function()
+    while game:GetService("RunService").RenderStepped:Wait() do
+        Attachment1.WorldCFrame = Updated
+    end      end)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/SAZXHUB/Control-update/main/README.md'),true))()   end})
 Tab:AddButton({    Name ="F3X",    Callback = function()     loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()    end})
 Tab:AddButton({    Name ="工具包（三个经典工具）",    Callback = function()    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	  	    end})
 Tab:AddButton({    Name ="工具挂",    Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/StandAwekening.lua"))()    end})
@@ -869,7 +1017,7 @@ UserInputService.InputBegan:Connect(function(pA, pB)
             		end        	end	end    end)
 settings().Physics.AllowSleep = false
 sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius", math.huge)  end})
-Tab:AddParagraph("教程（手机需要键盘）:","1.J-飞起来    2.K-回到手中")
+Tab:AddParagraph("教程（手机需要键盘）:","1. J-飞起来    2. K-回到手中")
 Tab:AddButton({  Name = "道具控制器",  Callback = function()   local sandbox = function(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -1136,7 +1284,7 @@ for i,v in pairs(cors) do
 	spawn(function()
 		pcall(v)
 end)     end  end})
-Tab:AddParagraph("教程（手机需要键盘）:","1.Q - 靠近2.E - 离远3.Y - 投掷4.J - 超级投掷5.U - 使物体自转6.P - 使物体悬浮在空中7.X - 走得更远一点8.L - 使方块变直并锁定在前部")
+Tab:AddParagraph("教程（手机需要键盘）:","1. Q - 靠近   2. E - 离远   3. Y - 投掷   4. J - 超级投掷   5. U - 使物体自转   6. P - 使物体悬浮在空中   7. X - 走得更远一点   8. L - 使方块变直并锁定在前部")
 local Tab = Window:MakeTab({    Name = "聊天中枢",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 Tab:AddButton({	   Name = "查玩家ip地址 聊天发送（只能吓唬人 因为是随机数字）",	Callback = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/BingusWR/FakeRobloxIPGrabber/refs/heads/main/FERobloxIpGrabberScrip"))()    end})
 Tab:AddButton({    Name = "传送到玩家面前循环（嘲讽）",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Orbit%20GUI"))()      end})
