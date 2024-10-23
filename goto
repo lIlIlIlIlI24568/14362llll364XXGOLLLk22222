@@ -2553,7 +2553,6 @@ Tab:AddButton({    Name="游戏v2",    Callback=function()     loadstring(game:H
 
 
 
-OrionLib:Init()
 
 
 
