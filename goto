@@ -2879,7 +2879,7 @@ local Tab = Window:MakeTab({    Name = "goto☃️",    Icon = "rbxassetid://187
 local Section = Tab:AddParagraph("xgo 留言", "你可以理解为其他游戏脚本在里边，主要的那些通用都在这边有的一些是之前加的，我就不想搬过去了 V2和v1都会覆盖,这两个是我的宝藏，里面都是游戏脚本,这两个我基本会随机添加几个游戏在里面.")
 local Section = Tab:AddSection({	Name = "goto游戏中心💗💗💗💗💗💗💗💗💗💗💗💗🕊️爱你们🕊️💗💗💗💗💗💗💗💗💗💗💗💗💗💗"})
 Tab:AddButton({    Name="游戏v1",    Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/143628IIIIlllllliilililIIlll.YXZX.LUA/refs/heads/main/V1"))()  end})
-Tab:AddButton({    Name="游戏v2",    Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/143628IIIIlllllliilililIIlll.YXZX.LUA/refs/heads/main/V2"))()  end})
+Tab:AddButton({    Name="游戏v2",    Callback=function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/143628IIIIlllllliilililIIlll.YXZX.LUA/refs/heads/main/V2.lua"))()  end})
 
 
 
