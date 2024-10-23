@@ -689,9 +689,7 @@ tool.Equipped:Connect(function() wait()
        Character.HumanoidRootPart.CFrame = Character.HumanoidRootPart.CFrame * CFrame.new(0, -offset, 0)
        Character.Humanoid.HipHeight = 0
        Character.Humanoid:ChangeState(11)
-   end
-   tool.Parent = Backpack
-end)
+   end   tool.Parent = Backpack      end)
 Character.ChildAdded:Connect(function(child) wait()
    if invisible and child:IsA("Tool") and child ~= heldTool and child ~= tool then
        heldTool = child
@@ -710,11 +708,9 @@ Character.ChildAdded:Connect(function(child) wait()
                heldTool.Grip = lastGrip
                heldTool.Parent = Backpack
                heldTool.Parent = Character
-           end
-       end)
-   end
-end)  end})
-Tab:AddButton({	   Name = "小go制作玩家控制喜欢俄亥俄的，可以搭配起来超级好用",	Callback = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6"))()    end})
+           end       end)   end     end)  end})
+Tab:AddButton({    Name = "隐身（亲测有效）",	Callback = function()        loadstring(game:HttpGet("https://pastebin.com/raw/3Rnd9rHf"))()      end})
+Tab:AddButton({	   Name = "玩家控制喜欢俄亥俄的，可以搭配起来超级好用",	Callback = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6"))()    end})
 Tab:AddButton({    Name = "小go超级无敌旋转",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E5%88%9D%E4%BB%A3%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()      end})
 Tab:AddButton({    Name = "小go超级无敌旋转2.0",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()    end})
 Tab:AddButton({	   Name = "一键脱衣（衬衫之类）",	Callback = function()        local player = game.Players.LocalPlayer           local character = player.Character or player.CharacterAdded:Wait()       local function removeClothes()    for _, item in pairs(character:GetChildren()) do        if item:IsA("Shirt") or item:IsA("Pants") then          item:Destroy()        end    end    end     removeClothes()	end})
