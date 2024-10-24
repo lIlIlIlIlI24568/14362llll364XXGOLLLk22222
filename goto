@@ -1008,8 +1008,7 @@ Tab:AddButton({  Name = "道具控制器",  Callback = function()   local sandbo
 		__index = function(self,k)
 			if k=="script" then
 				return var
-			else
-				return env[k]
+	else		return env[k]
 			end		end,	})
 	setfenv(func,newenv)
 	return func       end
@@ -1152,11 +1151,9 @@ table.insert(cors,sandbox(LocalScript3,function()
 					if (mouse.Target==nil) then
 						local lv = _CF_new(front.Position,mouse.Hit.p)
 						p.CFrame = _CF_new(front.Position+(lv.lookVector*1000))
-					else
-						p.CFrame = _CF_new(mouse.Hit.p)
+	else     				p.CFrame = _CF_new(mouse.Hit.p)
 					end
-				else
-					LineConnect(front,object,workspace)
+	else             		LineConnect(front,object,workspace)
 					break
 				end
 				wait()
@@ -1253,8 +1250,7 @@ end 		end 	end
 		mouse.Icon = "rbxasset://textures\\GunCursor.png"
 		if uis.TouchEnabled then
 			uis.TouchEnded:Connect(function() mousedown = false end)
-		else
-			mouse.Button1Up:connect(function() mousedown = false end)
+else     		mouse.Button1Up:connect(function() mousedown = false end)
 		end	end
 	tool.Equipped:connect(onEquipped)
 	tool.Unequipped:connect(function() mousedown = false end)
@@ -2176,13 +2172,14 @@ Tab:AddButton({	Name = "自瞄ui",	Callback = function()      loadstring(game:Ht
 Tab:AddButton({	Name = "自瞄ui2.0",	Callback = function()      loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/111111/refs/heads/main/%E8%BE%85%E5%8A%A9%E7%9E%84%E5%87%86"))()    end}) 
 Tab = Window:MakeTab({    Name = "道具玩偶",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
 local Section = Tab:AddSection({	Name = "娱乐ก็ʕ•͡ᴥ•ʔ ก้小go🕊️🕊️🕊️🕊️所有地图皆可是休闲如DOORS 小屋角色扮演等 有些服务器不能用🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️"})
+Tab:AddButton({  Name = "没有头部",  Callback = function(bool)    getgenv().game.Players.LocalPlayer.Character.Head.Transparency = 1    getgenv().game.Players.LocalPlayer.Character.Head.face:Destroy()    getgenv().game.Players.LocalPlayer.Character.Head.face:Destroy()  end})
 Tab:AddButton({  Name = "大飞机",  Callback = function()     loadstring(game:HttpGet("https://pastebin.com/raw/EJS2Fde3"))()  end})
 Tab:AddButton({  Name = "巫毒娃娃",  Callback = function()   loadstring(game:HttpGet("https://pastebin.com/raw/xqCCqeha"))()  end})
-Tab:AddButton({    Name ="火焰特效",    Callback = function()    local Object = game:GetObjects("rbxassetid://16408664901")[1]     Object.Parent = game.Workspace       Object:PivotTo(game.Players.LocalPlayer.Character:GetPivot())     end})
-Tab:AddButton({    Name ="召唤一辆小汽车",    Callback = function()    local Object = game:GetObjects("rbxassetid://16725966639")[1]Object.Parent = game.Workspace        Object:PivotTo(game.Players.LocalPlayer.Character:GetPivot())    end})
+Tab:AddButton({  Name ="火焰特效",    Callback = function()    local Object = game:GetObjects("rbxassetid://16408664901")[1]     Object.Parent = game.Workspace       Object:PivotTo(game.Players.LocalPlayer.Character:GetPivot())     end})
+Tab:AddButton({  Name ="召唤一辆小汽车",    Callback = function()    local Object = game:GetObjects("rbxassetid://16725966639")[1]Object.Parent = game.Workspace        Object:PivotTo(game.Players.LocalPlayer.Character:GetPivot())    end})
 Tab:AddButton({  Name = "大飞机",  Callback = function()     loadstring(game:HttpGet("https://pastebin.com/raw/EJS2Fde3"))()  end})
 Tab:AddButton({  Name = "天使",  Callback = function()   loadstring(game:HttpGet("https://pastebin.com/raw/RaXbiByH"))()  end})
-Tab:AddButton({    Name ="DOORS骷髅钥匙",    Callback = function()    local item = game:GetObjects("rbxassetid://11697889137")[1]item.Parent = game.Players.LocalPlayer.Backpack    end})
+Tab:AddButton({  Name ="DOORS骷髅钥匙",    Callback = function()    local item = game:GetObjects("rbxassetid://11697889137")[1]item.Parent = game.Players.LocalPlayer.Backpack    end})
 Tab:AddButton({	Name = "普通剑",	Callback = function()    local item = game:GetObjects("rbxassetid://8517347614")[1]    item.Parent = game.Players.LocalPlayer.Backpack  	end    })
 Tab:AddButton({	Name = "我的世界钻石剑",	Callback = function()    local item = game:GetObjects("rbxassetid://5138636091")[1]    item.Parent = game.Players.LocalPlayer.Backpack  	end    })
 Tab:AddButton({	Name = "MM2小刀",	Callback = function()   local item = game:GetObjects("rbxassetid://3576051114")[1]    item.Parent = game.Players.LocalPlayer.Backpack  	end    })
