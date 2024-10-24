@@ -1570,6 +1570,10 @@ v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
 Tab:AddButton({  Name = "隐身道具",  Callback = function()    loadstring(game:HttpGet("https://gist.githubusercontent.com/skid123skidlol/cd0d2dce51b3f20ad1aac941da06a1a1/raw/f58b98cce7d51e53ade94e7bb460e4f24fb7e0ff/%257BFE%257D%2520Invisible%2520Tool%2520(can%2520hold%2520tools)",true))()  end})
 Tab:AddButton({    Name="立即死亡",   Callback= function()        game.Players.LocalPlayer.Character.Humanoid.Health=0    end})  
 local TeleportTo = Window:MakeTab({	Name = "传送玩家",	Icon = "rbxassetid://18923878915",	PremiumOnly = false})
+local playersDropdown = Tab:AddDropdown({	Name = "玩家",	Default = "PlayerName",	Options = players,	Callback = function(selectedPlayer)		targ = selectedPlayer	end})
+function UpdatePlayersTable()	players = {}	for _, player in pairs(game.Players:GetPlayers()) do		if player ~= game.Players.LocalPlayer then			table.insert(players, player.Name)		end	end	playersDropdown:Refresh(players, true)end
+spawn(function()	while wait(0.5) do		UpdatePlayersTable()	end   end)
+Tab:AddButton({	Name = "传送到玩家",	Callback = function()		if targ == nil or targ == "" or targ == " " then			game.StarterGui:SetCore("SendNotification", {				Title = "没有玩家!",				Text = "或者玩家已离开",				Duration = 5			})		else			game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(game.Players[targ].Character.PrimaryPart.CFrame)		end	end})
 TeleportTo:AddSection({    Name = "选择玩家进行传送"})
 for i, player in ipairs(game.Players:GetPlayers()) do    TeleportTo:AddButton({        Name = player.Name,        Callback = function()           teleportTo(player)        end    })end
 local Tab = Window:MakeTab({    Name = "透视自瞄",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
@@ -2979,37 +2983,6 @@ local Section = Tab:AddSection({	Name = "xgo   其他" })
 local itemgrab = false
 Tab:AddToggle({	Name = "抓住物品光环",	Default = false,	Callback = function(v)		itemgrab = v	end})
 spawn(function()	game.RunService.RenderStepped:Connect(function()		if itemgrab then			task.wait(1)			for i,v in pairs(game.Workspace:GetDescendants()) do				if v:IsA("Tool") or table.find({"Flashlight", "FlashLight", "Battery"}, v.Name) then					fireclickdetector(v:FindFirstChild("ClickDetector"))				end			end		end	end)  end)
-local Section = Tab:AddSection({Name = "玩家"})
-local players = {}
-local playersDropdown = plr:AddDropdown({	Name = "玩家",	Default = "PlayerName",	Options = players,	Callback = function(selectedPlayer)		targ = selectedPlayer	end})
-function UpdatePlayersTable()	players = {}	for _, player in pairs(game.Players:GetPlayers()) do		if player ~= game.Players.LocalPlayer then			table.insert(players, player.Name)		end	end	playersDropdown:Refresh(players, true)end
-spawn(function()	while wait(0.5) do		UpdatePlayersTable()	end   end)
-plr:AddButton({	Name = "传送到玩家",	Callback = function()		if targ == nil or targ == "" or targ == " " then			game.StarterGui:SetCore("SendNotification", {				Title = "没有玩家!",				Text = "或者玩家已离开",				Duration = 5			})		else			game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(game.Players[targ].Character.PrimaryPart.CFrame)		end	end})
-plr:AddButton({	Name = "透视玩家",	Callback = function()		if targ == nil or targ == "" or targ == " " then			game.StarterGui:SetCore("SendNotification", {				Title = "没有玩家!",				Text = "或者玩家已离开",				Duration = 5      })
-else     		local bi = Instance.new("BillboardGui", game.Players[targ].Character.HumanoidRootPart)
-			bi.Name = "ESP"
-			bi.StudsOffset = Vector3.new(0, game.Players[targ].Character.HumanoidRootPart.Size.Y + 6, 0)
-			bi.Adornee = game.Players[targ].Character.HumanoidRootPart
-			bi.AlwaysOnTop = true
-			bi.Size = UDim2.new(0, 200, 0, 50)
-			local esplabelfr = Instance.new("TextLabel")
-			esplabelfr.Name = "esplabelfr"
-			esplabelfr.Text = targ
-			esplabelfr.Size = UDim2.new(1, 0, 0, 70)
-			esplabelfr.BackgroundColor3 = Color3.new(0, 0, 0)
-			esplabelfr.TextColor3 = TextColor or Color3.fromRGB(255, 255, 255)
-			esplabelfr.BackgroundTransparency = 1
-			esplabelfr.TextStrokeTransparency = 0
-			esplabelfr.TextStrokeColor3 = Color3.new(0, 0, 0)
-			esplabelfr.TextSize = 12
-			esplabelfr.TextScaled = false
-			esplabelfr.Font = "Arcade"
-			esplabelfr.Parent = bi		end	end})
-plr:AddButton({    Name = "吐温到玩家",    Callback = function()        if targ == nil or targ == "" or targ == " " then            game.StarterGui:SetCore("SendNotification", {               Title = "没有玩家!",               Text = "或者玩家已离开",               Duration = 5            })       else            local ts = game:GetService("TweenService")           local humanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart            local targetHumanoidRootPart = game.Players[targ].Character.HumanoidRootPart           local tweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)            local propertyGoals = {               CFrame = targetHumanoidRootPart.CFrame            }            local tween = ts:Create(humanoidRootPart, tweenInfo, propertyGoals)            tween:Play()      end    end})
-local cbring = false
-plr:AddToggle({	Name = "客户带来的玩家",	Default = false,	Callback = function(v)		cbring = v		if targ == nil or targ == "" or targ == " " then		game.StarterGui:SetCore("SendNotification", {			Title = "球员是零的!",				Text = "目标未选择",				Duration = 5			})		else		while task.wait(.1) do				if cbring then				game.Players[targ].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.PrimaryPart.CFrame				end			end		end	end})
-plr:AddButton({	Name = "增加播放器撞嘴箱",	Callback = function()		if targ == nil or targ == "" or targ == " " then			game.StarterGui:SetCore("SendNotification", {				Title = "没有玩家!",				Text = "目标未选择",				Duration = 5			})		else			while task.wait(.1) do				game.Players[targ].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.PrimaryPart.CFrame			end		end	end})
-
 
 
 
