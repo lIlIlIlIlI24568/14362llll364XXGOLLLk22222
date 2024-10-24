@@ -3287,7 +3287,6 @@ function tpToDungeonEntrance()
 
 end
 
-
 if not isfolder("SFX") then
     makefolder("SFX")
 end
@@ -3370,7 +3369,7 @@ IntroText = "Made By Roge#4087"
 })
 
 local Tab = Window:MakeTab({
-	Name = "自动粪便",
+	Name = "Auto-Dung",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -3380,7 +3379,7 @@ local Section = Tab:AddSection({
 })
 
 Section:AddToggle({
-	Name = "自动地牢",
+	Name = "Auto-Dungeon",
 	Default = _G.Settings.AutoDungeon,
 	Callback = function(newValue)
 		_G.Settings.AutoDungeon = newValue
@@ -3389,7 +3388,7 @@ Section:AddToggle({
 })
 
 Section:AddToggle({
-	Name = "Tween而不是传送",
+	Name = "Tween Instead Of Teleport",
 	Default = _G.Settings.Tween,
 	Callback = function(newValue)
 		_G.Settings.Tween = newValue
@@ -3398,7 +3397,7 @@ Section:AddToggle({
 })
 
 Section:AddSlider({
-	Name = "速度补间",
+	Name = "Tween Speed",
 	Min = 1,
 	Max = 150,
 	Default = _G.Settings.TweenSpeed,
@@ -3434,7 +3433,7 @@ local Section = Tab:AddSection({
 })
 
 Section:AddSlider({
-	Name = "在加入地牢之后等待的时间 - 对于坏pcs",
+	Name = "Time To Wait After Joining Dungeon - For Bad PCs",
 	Min = 0,
 	Max = 20,
 	Default = _G.Settings.JoinDelay,
@@ -3448,7 +3447,7 @@ Section:AddSlider({
 })
 
 Section:AddSlider({
-	Name = "是时候运行更长的时间 - 反排行榜",
+	Name = "Time To Make Run Longer - Anti-Leaderboard",
 	Min = 0,
 	Max = 20,
 	Default = _G.Settings.Delay,
@@ -3460,7 +3459,6 @@ Section:AddSlider({
         updJS()
 	end    
 })
-
 task.spawn(function()
     task.wait(3)
     pcall(function() updateTotalGem() end)
@@ -3480,8 +3478,11 @@ Section:AddTextbox({
         updJS()
 	end	  
 })
-local Section = Tab:AddSection({
-	Name = "礼品搜索者"
+
+local Tab = Window:MakeTab({
+	Name = "Gift-Searcher",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
 })
 
 function getHighestRQCM(Type,types)
@@ -3722,6 +3723,7 @@ game:GetService("Workspace").ChildAdded:Connect(function(child)
     end
 end)
 
+
 function _G.DoDungeon()
 
     if not _G.Doing then
@@ -3879,7 +3881,8 @@ function _G.DoDungeon()
             end
         end
     end
-    for i = 1,4 do
+
+        for i = 1,4 do
         killAllMobs()
     end
     killBoss()
@@ -3971,7 +3974,7 @@ _G.WebHook = LPH_JIT_MAX(function(oldGems,newGems,oldLegArt,newLegArt,oldImpArt,
                 ["description"]= "~ **Hello Baby Girl - ||"..game.Players.LocalPlayer.Name.."||**\n\n~ **Here Are Your Stats ;) - ||"..game.Players.LocalPlayer.Name.."||**\n\n- Gem Gain: ** "..comma_value(profitGem).."+**\n- Legendary Artifact Gain: ** "..comma_value(profitLegArt).."+**\n- Impossible Artifact Gain: **"..comma_value(profitImpArt).."+ **\n\n- Total Leg Artifacts On All Accounts: ** "..comma_value(totalLegArt).."**\n- Total Imp Artifacts On All Accounts: ** "..comma_value(totalImpArt).." **\n- Total Gems On All Accounts: ** "..comma_value(totalGem).." **\n\n\n~ **Have Sex With Me Later OwO~ - ||"..game.Players.LocalPlayer.Name.."||**\n\n",
                 ["timestamp"]= "",
                 ["author"]= {
-                  ["name"]= "我很性感，嫁给我!",
+                  ["name"]= "I'm So Sexy, Marry Me!",
                   ["url"]= "",
                   ["icon_url"]= "https://cdn.discordapp.com/attachments/912431345765081148/1023696455715786863/unknown.png"
                 },
@@ -4001,7 +4004,7 @@ task.spawn(function()
             if _G.Settings.MobSwordNickname ~= "" and _G.Settings.BossSwordNickname ~= "" and _G.Settings.ChestSwordNickname ~= "" then
                 _G.StartDungeon()
             else
-                _G.SendNotification("错误" "其中一个昵称是空的")
+                _G.SendNotification("Error","One Of The Nicknames Are Empty")
             end
         end
     end
@@ -4045,6 +4048,84 @@ task.spawn(function()
         end
     end
 end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
