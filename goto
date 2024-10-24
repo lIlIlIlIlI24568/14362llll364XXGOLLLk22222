@@ -2826,8 +2826,6 @@ Tab:AddToggle({   Name = "自动获取小猫猫",	Default = false,    Callback =
 Tab:AddToggle({    Name = "自动重生",    Default = false,    Callback = function(state)        _G.AutoRebirth = state        while _G.AutoRebirth do            ReplicatedStorage:WaitForChild("Rebirth"):FireServer()            task.wait()        end    end})
 Tab:AddToggle({   Name = "自动升级",    Default = false,    Callback = function(state)        _G.AutoUpgrade = state        while _G.AutoUpgrade do            ReplicatedStorage:WaitForChild("MultiShop")['x100']:FireServer()            for _, event in ipairs(ReplicatedStorage.Shop:GetChildren()) do                event:FireServer()                task.wait()            end        end    end})
 Tab:AddButton({    Name = "反-AFK",    Default = false,    Callback = function()        local virtualUser = game:GetService('VirtualUser')       local players = game:GetService('Players')        local player = players.LocalPlayer        game:GetService('Players').LocalPlayer.Idled:Connect(function()            virtualUser:CaptureController()            virtualUser:ClickButton2(Vector2.new())            print('反-AFK triggered')         end)         print("防止挂机  Anti-AFK")    end})
-
-
 local ESPLib = {}
 function ESPLib:CreateESPTag(params)
 	local RunService = game:GetService("RunService")
@@ -2945,6 +2943,7 @@ local function FullBright()
 		Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
 	end      end
 local Tab = Window:MakeTab({Name = "住宅大屠杀👻",	Icon = "rbxassetid://18787314969",	PremiumOnly = false})
+local Section = Tab:AddSection({Name = "恐怖故事模拟器👻"})
 Tab:AddButton({	Name = "透视Larry",	Callback = function()		ESPLib:CreateESPTag({			Text = "Mutant",			Part = game.Workspace:WaitForChild("Mutant").DeathHitbox,			TextSize = 9,			TextColor = Color3.new(255,0,0),			BoxColor = Color3.new(255,0,0),			TracerColor = Color3.new(255,0,0),			TracerWidth = 3		}) 	end})
 Tab:AddButton({	Name = "自动获胜（夜间开始使用）白天使用封禁后果自负",	Callback = function()		noclip()		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-78.8145981, 19.2749767, -134.283234, 0.806505084, 0, -0.591227174, 0, 1, 0, 0.591227174, 0, 0.806505084)	end})
 local Clip = false
@@ -2972,6 +2971,11 @@ b("起居室", function()	tp(CFrame.new(-30.4597397, 9.54158783, -48.7385521, -0
 b("发电机", function()	tp(CFrame.new(-79.0926361, 6.17452288, -132.726837, 0.999816597, 1.17400432e-05, 0.0191521458, -1.32483137e-07, 0.999999821, -0.000605979934, -0.0191521496, 0.000605866197, 0.999816418))      end)
 b("电源控制台", function()	tp(CFrame.new(-2.41564226, 6.19921589, -92.5593948, -0.98161006, 0.000280018401, -0.190896764, -1.27568831e-06, 0.999998927, 0.00147344405, 0.190896958, 0.00144659204, -0.981608987))   end)
 local Section = Tab:AddSection({	Name = "怪物游戏机  xxxxg"})
+local mn = Window:MakeTab({
+	Name = "Monster Gamemode",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 local InfBlood = false
 mn:AddToggle({	Name = "无限血液",	Default = false,	Callback = function(v)		InfBlood = v	end})
 spawn(function()	game.RunService.RenderStepped:Connect(function()		if InfBlood then			task.wait()			game.Players.LocalPlayer.Character:WaitForChild("Blood").Value = 999998927		end	end)    end)
