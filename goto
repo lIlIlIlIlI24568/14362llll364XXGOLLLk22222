@@ -2970,22 +2970,22 @@ b("楼梯 ", function()	tp(CFrame.new(-0.173666388, 9.29997444, -81.3216171, 0.7
 b("起居室", function()	tp(CFrame.new(-30.4597397, 9.54158783, -48.7385521, -0.716877401, -3.08829655e-08, -0.697199285, 5.5513663e-08, 1, -1.01376258e-07, 0.697199285, -1.11378434e-07, -0.716877401))    end)
 b("发电机", function()	tp(CFrame.new(-79.0926361, 6.17452288, -132.726837, 0.999816597, 1.17400432e-05, 0.0191521458, -1.32483137e-07, 0.999999821, -0.000605979934, -0.0191521496, 0.000605866197, 0.999816418))      end)
 b("电源控制台", function()	tp(CFrame.new(-2.41564226, 6.19921589, -92.5593948, -0.98161006, 0.000280018401, -0.190896764, -1.27568831e-06, 0.999998927, 0.00147344405, 0.190896958, 0.00144659204, -0.981608987))   end)
-local mn = Tab:AddSection({	Name = "怪物游戏机  xxxxg"})
+local Section = Tab:AddSection({	Name = "怪物游戏机  xxxxg"})
 local InfBlood = false
-mn:AddToggle({	Name = "无限血液",	Default = false,	Callback = function(v)		InfBlood = v	end})
+Tab:AddToggle({	Name = "无限血液",	Default = false,	Callback = function(v)		InfBlood = v	end})
 spawn(function()	game.RunService.RenderStepped:Connect(function()		if InfBlood then			task.wait()			game.Players.LocalPlayer.Character:WaitForChild("Blood").Value = 999998927		end	end)    end)
-mn:AddButton({	Name = "大点钟",	Callback = function()		for i,v in pairs(game.Players:GetChildren()) do			if v:IsA("Player") and v.Name ~= game.Players.LocalPlayer.Name then				v.Character.HumanoidRootPart.Size = Vector3.new(100,100,100)			end		end	end})
-local misc = Tab:AddSection({	Name = "xgo   其他" })
+Tab:AddButton({	Name = "大点钟",	Callback = function()		for i,v in pairs(game.Players:GetChildren()) do			if v:IsA("Player") and v.Name ~= game.Players.LocalPlayer.Name then				v.Character.HumanoidRootPart.Size = Vector3.new(100,100,100)			end		end	end})
+local Section = Tab:AddSection({	Name = "xgo   其他" })
 local itemgrab = false
-misc:AddToggle({	Name = "抓住物品光环",	Default = false,	Callback = function(v)		itemgrab = v	end})
+Tab:AddToggle({	Name = "抓住物品光环",	Default = false,	Callback = function(v)		itemgrab = v	end})
 spawn(function()	game.RunService.RenderStepped:Connect(function()		if itemgrab then			task.wait(1)			for i,v in pairs(game.Workspace:GetDescendants()) do				if v:IsA("Tool") or table.find({"Flashlight", "FlashLight", "Battery"}, v.Name) then					fireclickdetector(v:FindFirstChild("ClickDetector"))				end			end		end	end)  end)
-local plr = Tab:AddSection({Name = "玩家"})
+local Section = Tab:AddSection({Name = "玩家"})
 local players = {}
 local playersDropdown = plr:AddDropdown({	Name = "玩家",	Default = "PlayerName",	Options = players,	Callback = function(selectedPlayer)		targ = selectedPlayer	end})
 function UpdatePlayersTable()	players = {}	for _, player in pairs(game.Players:GetPlayers()) do		if player ~= game.Players.LocalPlayer then			table.insert(players, player.Name)		end	end	playersDropdown:Refresh(players, true)end
 spawn(function()	while wait(0.5) do		UpdatePlayersTable()	end   end)
-plr:AddButton({	Name = "传送到玩家",	Callback = function()		if targ == nil or targ == "" or targ == " " then			game.StarterGui:SetCore("SendNotification", {				Title = "没有玩家!",				Text = "或者玩家已离开",				Duration = 5			})		else			game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(game.Players[targ].Character.PrimaryPart.CFrame)		end	end})
-plr:AddButton({	Name = "透视玩家",	Callback = function()		if targ == nil or targ == "" or targ == " " then			game.StarterGui:SetCore("SendNotification", {				Title = "没有玩家!",				Text = "或者玩家已离开",				Duration = 5      })
+Tab:AddButton({	Name = "传送到玩家",	Callback = function()		if targ == nil or targ == "" or targ == " " then			game.StarterGui:SetCore("SendNotification", {				Title = "没有玩家!",				Text = "或者玩家已离开",				Duration = 5			})		else			game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(game.Players[targ].Character.PrimaryPart.CFrame)		end	end})
+Tab:AddButton({	Name = "透视玩家",	Callback = function()		if targ == nil or targ == "" or targ == " " then			game.StarterGui:SetCore("SendNotification", {				Title = "没有玩家!",				Text = "或者玩家已离开",				Duration = 5      })
 else     		local bi = Instance.new("BillboardGui", game.Players[targ].Character.HumanoidRootPart)
 			bi.Name = "ESP"
 			bi.StudsOffset = Vector3.new(0, game.Players[targ].Character.HumanoidRootPart.Size.Y + 6, 0)
@@ -3005,10 +3005,10 @@ else     		local bi = Instance.new("BillboardGui", game.Players[targ].Character.
 			esplabelfr.TextScaled = false
 			esplabelfr.Font = "Arcade"
 			esplabelfr.Parent = bi		end	end})
-plr:AddButton({    Name = "吐温到玩家",    Callback = function()        if targ == nil or targ == "" or targ == " " then            game.StarterGui:SetCore("SendNotification", {               Title = "没有玩家!",               Text = "或者玩家已离开",               Duration = 5            })       else            local ts = game:GetService("TweenService")           local humanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart            local targetHumanoidRootPart = game.Players[targ].Character.HumanoidRootPart           local tweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)            local propertyGoals = {               CFrame = targetHumanoidRootPart.CFrame            }            local tween = ts:Create(humanoidRootPart, tweenInfo, propertyGoals)            tween:Play()      end    end})
+Tab:AddButton({    Name = "吐温到玩家",    Callback = function()        if targ == nil or targ == "" or targ == " " then            game.StarterGui:SetCore("SendNotification", {               Title = "没有玩家!",               Text = "或者玩家已离开",               Duration = 5            })       else            local ts = game:GetService("TweenService")           local humanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart            local targetHumanoidRootPart = game.Players[targ].Character.HumanoidRootPart           local tweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)            local propertyGoals = {               CFrame = targetHumanoidRootPart.CFrame            }            local tween = ts:Create(humanoidRootPart, tweenInfo, propertyGoals)            tween:Play()      end    end})
 local cbring = false
-plr:AddToggle({	Name = "客户带来的玩家",	Default = false,	Callback = function(v)		cbring = v		if targ == nil or targ == "" or targ == " " then		game.StarterGui:SetCore("SendNotification", {			Title = "球员是零的!",				Text = "目标未选择",				Duration = 5			})		else		while task.wait(.1) do				if cbring then				game.Players[targ].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.PrimaryPart.CFrame				end			end		end	end})
-plr:AddButton({	Name = "增加播放器撞嘴箱",	Callback = function()		if targ == nil or targ == "" or targ == " " then			game.StarterGui:SetCore("SendNotification", {				Title = "没有玩家!",				Text = "目标未选择",				Duration = 5			})		else			while task.wait(.1) do				game.Players[targ].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.PrimaryPart.CFrame			end		end	end})
+Tab:AddToggle({	Name = "客户带来的玩家",	Default = false,	Callback = function(v)		cbring = v		if targ == nil or targ == "" or targ == " " then		game.StarterGui:SetCore("SendNotification", {			Title = "球员是零的!",				Text = "目标未选择",				Duration = 5			})		else		while task.wait(.1) do				if cbring then				game.Players[targ].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.PrimaryPart.CFrame				end			end		end	end})
+Tab:AddButton({	Name = "增加播放器撞嘴箱",	Callback = function()		if targ == nil or targ == "" or targ == " " then			game.StarterGui:SetCore("SendNotification", {				Title = "没有玩家!",				Text = "目标未选择",				Duration = 5			})		else			while task.wait(.1) do				game.Players[targ].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.PrimaryPart.CFrame			end		end	end})
 
 
 
