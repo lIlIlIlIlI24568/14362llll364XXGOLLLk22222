@@ -3329,15 +3329,6 @@ if readfile and isfile and isfile("SFX/"..game.Players.LocalPlayer.Name.."/Setti
     local HS = game:GetService("HttpService")
     _G.Settings = HS:JSONDecode(readfile("SFX/"..game.Players.LocalPlayer.Name.."/Settings.json"))
 end
-
-local Window = OrionLib:MakeWindow({
-Name = "SFX",
-HidePremium = false,
-SaveConfig = false,
-ConfigFolder = "OrionTest",
-IntroText = "Made By Roge#4087"
-})
-
 local Tab = Window:MakeTab({
 	Name = "Auto-Dung",
 	Icon = "rbxassetid://4483345998",
