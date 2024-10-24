@@ -3011,7 +3011,7 @@ else    		local bi = Instance.new("BillboardGui", game.Players[targ].Character.H
 			esplabelfr.TextScaled = false
 			esplabelfr.Font = "Arcade"
 			esplabelfr.Parent = bi		end	end})
-plr:AddButton({  Name = "Tween to Player",   Callback = function()      if targ == nil or targ == "" or targ == " " then            game.StarterGui:SetCore("SendNotification", {        Title = "xxxg",	Text = "没有玩家或者已经离开",                Duration = 5  })
+plr:AddButton({  Name = "补间 to Player",   Callback = function()      if targ == nil or targ == "" or targ == " " then            game.StarterGui:SetCore("SendNotification", {        Title = "xxxg",	Text = "没有玩家或者已经离开",                Duration = 5  })
 else        local ts = game:GetService("TweenService")
             local humanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
             local targetHumanoidRootPart = game.Players[targ].Character.HumanoidRootPart
@@ -3023,9 +3023,9 @@ else        local ts = game:GetService("TweenService")
             tween:Play()
         end    end})
 local cbring = false
-plr:AddToggle({ Name = "Client-Bring Player",	Default = false,	Callback = function(v)		cbring = v		if targ == nil or targ == "" or targ == " " then	game.StarterGui:SetCore("SendNotification", {		Title = "xxxg",		Text = "没有玩家或者已经离开",		Duration = 5})	
+plr:AddToggle({ Name = "客户-带来 Player",	Default = false,	Callback = function(v)		cbring = v		if targ == nil or targ == "" or targ == " " then	game.StarterGui:SetCore("SendNotification", {		Title = "xxxg",		Text = "没有玩家或者已经离开",		Duration = 5})	
 else			while task.wait(.1) do				if cbring then					game.Players[targ].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.PrimaryPart.CFrame				end			end		end	end})
-plr:AddButton({	Name = "Increase Player Hitbox",	Callback = function()	if targ == nil or targ == "" or targ == " " then		game.StarterGui:SetCore("SendNotification", {			Title = "xxxg",				Text = "没有玩家或者已经离开",				Duration = 5})
+plr:AddButton({	Name = "增加 Player Hitbox",	Callback = function()	if targ == nil or targ == "" or targ == " " then		game.StarterGui:SetCore("SendNotification", {			Title = "xxxg",				Text = "没有玩家或者已经离开",				Duration = 5})
 else		while task.wait(.1) do				game.Players[targ].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.PrimaryPart.CFrame			end		end	end})
 
 
