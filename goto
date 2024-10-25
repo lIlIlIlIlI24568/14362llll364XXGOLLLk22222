@@ -3293,11 +3293,11 @@ local Section = Tab:AddSection({	Name = "剑"})
 local swordTypes = {"Mob","Boss","Chest"}
 for i = 1,#swordTypes do
     Section:AddTextbox({
-        Name = swordTypes[i].." Sword Nickname",
-        Default = _G.Settings[swordTypes[i].."SwordNickname"],
+        Name = swordTypes[i].." 剑昵称",
+        Default = _G.Settings[swordTypes[i].."剑昵称"],
         TextDisappear = false,
         Callback = function(newValue)
-            _G.Settings[swordTypes[i].."SwordNickname"] = newValue
+            _G.Settings[swordTypes[i].."剑昵称"] = newValue
             updJS()       end	      })end
 local Section = Tab:AddSection({	Name = "其他"})
 Section:AddSlider({	Name = "在加入地牢之后等待的时间 - 对于坏pcs",	Min = 0,	Max = 20,	Default = _G.Settings.JoinDelay,	Color = Color3.fromRGB(255,255,255),	Increment = 1,	ValueName = "",	Callback = function(newValue)		_G.Settings.JoinDelay = newValue        updJS()	end    })
@@ -3305,9 +3305,7 @@ Section:AddSlider({	Name = "是时候运行更长的时间 - 反排行榜",	Min 
 task.spawn(function()    task.wait(3)    pcall(function() updateTotalGem() end)    pcall(function() updateTotalArtifacts() end)end)
 local Section = Tab:AddSection({Name = "Webhook"})
 Section:AddTextbox({	Name = "Webhook链接",	Default = _G.Settings.WebHookLink,	TextDisappear = false,	Callback = function(newValue)		_G.Settings.WebHookLink = newValue        updJS()	end	  })
-local Tab = Window:MakeTab({
-	Name = "礼品搜索者↑》",
-	Icon = "rbxassetid://18787314969",	PremiumOnly = false})
+local Tab = Window:MakeTab({	Name = "礼品搜索者↑》",	Icon = "rbxassetid://18787314969",	PremiumOnly = false})
 function getHighestRQCM(Type,types)
     local add = {
         ["Rarity"] = "Rarities",
@@ -3347,9 +3345,9 @@ local types = {"Rarity","Class","Mold"}
 _G.Best = {}
 for i = 1, #types do
     local Section = Tab:AddSection({   Name = types[i]  })
-    local a = Section:AddParagraph("Best Sword By: "..types[i]," Rarity: \nClass: \nMold: ")
+    local a = Section:AddParagraph("最好的剑: "..types[i]," Rarity: \nClass: \nMold: ")
     Section:AddButton({
-        Name = "最好 "..types[i].." From Gifts",
+        Name = "最好 "..types[i].." 来自礼物",
         Callback = function()
             pcall(function()
                 _G.Best[types[i]] = getHighestRQCM(types[i],types)
@@ -3368,7 +3366,7 @@ for i = 1, #types do
                 return i
             end       end   end
     Section:AddButton({
-        Name = "索赔最好 "..types[i].." From Gifts",
+        Name = "索赔最好 "..types[i].." 来自礼物",
         Callback = function()  
             pcall(function()   
                 for a,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.MainGui.GiftsMenu.ScrollingFrame:GetChildren()) do
