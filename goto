@@ -2291,6 +2291,7 @@ Tab:AddButton({  Name ="召唤一辆小汽车",    Callback = function()    loca
 Tab:AddButton({  Name = "天使",  Callback = function()   loadstring(game:HttpGet("https://pastebin.com/raw/RaXbiByH"))()  end})
 Tab:AddButton({  Name ="DOORS骷髅钥匙",    Callback = function()    local item = game:GetObjects("rbxassetid://11697889137")[1]item.Parent = game.Players.LocalPlayer.Backpack    end})
 Tab:AddButton({	Name = "普通剑",	Callback = function()    local item = game:GetObjects("rbxassetid://8517347614")[1]    item.Parent = game.Players.LocalPlayer.Backpack  	end    })
+Tab:AddButton({	Name = "彩虹剑",	Callback = function()    loadstring(game:HttpGet("https://pastebin.com/raw/FW0zvFkH"))()	   end    })
 Tab:AddButton({	Name = "我的世界钻石剑",	Callback = function()    local item = game:GetObjects("rbxassetid://5138636091")[1]    item.Parent = game.Players.LocalPlayer.Backpack  	end    })
 Tab:AddButton({	Name = "MM2小刀",	Callback = function()   local item = game:GetObjects("rbxassetid://3576051114")[1]    item.Parent = game.Players.LocalPlayer.Backpack  	end    })
 Tab:AddButton({	Name = "金属棒球棍",	Callback = function()    local Item = game:GetObjects("rbxassetid://12550781805")[1]    Item.Parent = game.Players.LocalPlayer.Backpack 	end    })
