@@ -717,6 +717,41 @@ Character.ChildAdded:Connect(function(child) wait()
                heldTool.Parent = Character
            end       end)   end     end)  end})
 Tab:AddButton({    Name = "隐身（亲测有效）",	Callback = function()        loadstring(game:HttpGet("https://pastebin.com/raw/3Rnd9rHf"))()      end})
+Tab:AddButton({    Name = "锁定视角人物可移动",	Callback = function()       local player = game.Players.LocalPlayer
+local camera = workspace.CurrentCamera
+local runService = game:GetService("RunService")
+local cameraFrozen = false
+local lastCameraCFrame = camera.CFrame
+local dragged = false  -- Variable para saber si fue arrastrado
+local screenGui = Instance.new("ScreenGui")
+screenGui.ResetOnSpawn = false  -- Esto asegura que no se reinicie la interfaz
+screenGui.Parent = player:WaitForChild("PlayerGui")
+local stopButton = Instance.new("TextButton")
+stopButton.Size = UDim2.new(0, 60, 0, 25)  -- Tamaño reducido del botón
+stopButton.Position = UDim2.new(0.5, -30, 0.5, -12.5) -- Centrado en la pantalla
+stopButton.Text = "结束"
+stopButton.BackgroundColor3 = Color3.new(1, 0, 0)
+stopButton.TextColor3 = Color3.new(1, 1, 1)
+stopButton.BackgroundTransparency = 0.48 -- 48% transparente
+stopButton.Parent = screenGui
+local deleteButton = Instance.new("TextButton")
+deleteButton.Size = UDim2.new(0, 15, 0, 15)  -- Tamaño pequeño del botón de borrar
+deleteButton.Position = UDim2.new(1, -15, 0, 0)  -- Colocarlo en la esquina superior derecha
+deleteButton.Text = "X"
+deleteButton.BackgroundColor3 = Color3.new(0.8, 0, 0)
+deleteButton.TextColor3 = Color3.new(1, 1, 1)
+deleteButton.BackgroundTransparency = 0.48 -- 48% transparente
+deleteButton.Parent = stopButton
+local function freezeCamera()   if not dragged then          cameraFrozen = not cameraFrozen       if cameraFrozen then            lastCameraCFrame = camera.CFrame            stopButton.Text = "Don't Stop"         else            stopButton.Text = "Stop Camera"         end    end    dragged = false  -- Reiniciar el estado de arrastre      end
+deleteButton.MouseButton1Click:Connect(function()    stopButton:Destroy() end)
+runService.RenderStepped:Connect(function()    if cameraFrozen then        camera.CFrame = lastCameraCFrame    end     end)
+local UIS = game:GetService("UserInputService")
+local dragging = false
+local dragInput, dragStart, startPos
+stopButton.InputBegan:Connect(function(input)    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then       dragging = true        dragStart = input.Position        startPos = stopButton.Position        dragged = false      input.Changed:Connect(function()            if input.UserInputState == Enum.UserInputState.End then                dragging = false            end        end)    end    end)
+stopButton.InputChanged:Connect(function(input)    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then        dragInput = input   end       end)
+UIS.InputChanged:Connect(function(input)    if input == dragInput and dragging then       local delta = input.Position - dragStart        stopButton.Position = UDim2.new(            startPos.X.Scale, startPos.X.Offset + delta.X,            startPos.Y.Scale, startPos.Y.Offset + delta.Y      )        dragged = true     end    end)
+stopButton.MouseButton1Click:Connect(freezeCamera)     end})
 Tab:AddButton({	   Name = "玩家控制喜欢俄亥俄的，可以搭配起来超级好用",	Callback = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6"))()    end})
 Tab:AddButton({    Name = "小go超级无敌旋转",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E5%88%9D%E4%BB%A3%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()      end})
 Tab:AddButton({    Name = "小go超级无敌旋转2.0",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()    end})
