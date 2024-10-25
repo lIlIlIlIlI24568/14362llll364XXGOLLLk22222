@@ -1602,6 +1602,7 @@ Tab:AddTextbox({   Name = "跳跃高度设置",	Default = "输入",	TextDisappea
 Tab:AddTextbox({   Name = "移动速度设置",	Default = "输入",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value	end})
 Tab:AddTextbox({   Name = "重力设置",	Default = "输入",	TextDisappear = true,	Callback = function(Value)		game.Workspace.Gravity = Value	end})
 Tab:AddButton({    Name = "人物坐下",    Callback = function()     local player = game.Players.LocalPlayer               local character = player.Character or player.CharacterAdded:Wait()              local humanoid = character:WaitForChild("Humanoid")         if humanoid and character then    humanoid.Sit = true        else    warn("Humanoid or Character not found.")      end       end})
+Tab:AddButton({    Name = "人物坐下（单独按钮）",    Callback = function()  loadstring(game:HttpGet("https://pastebin.com/raw/7RHML3DK"))()     end})
 Tab:AddToggle({	Name = "穿墙",	Default = false,	Callback = function(Value)
  if Value then
   Noclip = true
