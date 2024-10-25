@@ -717,7 +717,7 @@ Character.ChildAdded:Connect(function(child) wait()
                heldTool.Parent = Character
            end       end)   end     end)  end})
 Tab:AddButton({    Name = "隐身（亲测有效）",	Callback = function()        loadstring(game:HttpGet("https://pastebin.com/raw/3Rnd9rHf"))()      end})
-Tab:AddButton({    Name = "锁定视角人物可移动",	Callback = function()    loadstring(game:HttpGet("https://pastebin.com/raw/9XnGn9HS"))()       end})
+Tab:AddButton({    Name = "锁定视角人物可移动",	Callback = function()    loadstring(game:HttpGet("https://pastebin.com/raw/6eVUiUnv"))()       end})
 Tab:AddButton({	   Name = "玩家控制喜欢俄亥俄的，可以搭配起来超级好用",	Callback = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6"))()    end})
 Tab:AddButton({    Name = "小go超级无敌旋转",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E5%88%9D%E4%BB%A3%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()      end})
 Tab:AddButton({    Name = "小go超级无敌旋转2.0",	Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()    end})
