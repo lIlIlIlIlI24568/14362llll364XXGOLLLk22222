@@ -1,12 +1,12 @@
 --XGO 超级无敌源码    
 local resume = coroutine.resume           local create = coroutine.create
-getgenv().autoCollectEnabled = true        --[[  ⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣶⣶⣦⠀      ⠀]]
-getgenv().autoSellEnabled = true           --[[  ⠀⠀⣠⣤⣤⣄⣀⣾⣿⠟⠛⠻⢿⣷⠀      ]]
-getgenv().autoBuyEnabled = true            --[[  ⢰⣿⡿⠛⠙⠻⣿⣿⠁⠀⠀⠀⣶⢿⡇      ]]
-getgenv().infiniteJumpEnabled = true       --[[  ⢿⣿⣇⠀⠀⠀⠈⠏⠀⠀ 𝟓𝟐𝟎🎀      ]]
-getgenv().clickTpEnabled = true            --[[⠀  ⠻⣿⣷⣦⣤⣀⠀⠀⠀⠀⣾⡿⠃⠀      ]]
-getgenv().autoObbyEnabled = true           --[[⠀⠀  ⠀⠀⠉⠉⠻⣿⣄⣴⣿⠟⠀⠀⠀      ]]⠀⠀⠀
---🫧 𝙻𝚒𝚔𝚎 -🖇🤍꙳✧˖°. ⁺₊⋆ ✩🖇..★⛓.*☠️.☆♪   --[[⠀⠀⠀  ⠀⠀⠀⠀⣿⡿⠟⠁⠀⠀⠀⠀      ]]
+getgenv().autoCollectEnabled = true        --⠀  ⠀⠀⠀⠀⠀⠀⠀⣠⣶⣶⣶⣦⠀      ⠀
+getgenv().autoSellEnabled = true           -- ⠀ ⠀⣠⣤⣤⣄⣀⣾⣿⠟⠛⠻⢿⣷⠀      
+getgenv().autoBuyEnabled = true            --   ⢰⣿⡿⠛⠙⠻⣿⣿⠁⠀⠀⠀⣶⢿⡇      
+getgenv().infiniteJumpEnabled = true       --   ⢿⣿⣇⠀⠀⠀⠈⠏⠀⠀ 𝟓𝟐𝟎🎀      
+getgenv().clickTpEnabled = true            --⠀   ⠻⣿⣷⣦⣤⣀⠀⠀⠀⠀⣾⡿⠃⠀      
+getgenv().autoObbyEnabled = true           --⠀⠀  ⠀⠀⠉⠉⠻⣿⣄⣴⣿⠟⠀⠀⠀      ⠀
+--🫧 𝙻𝚒𝚔𝚎 -🖇🤍꙳✧˖°. ⁺₊⋆ ✩🖇..★⛓.*☠️.☆♪   --⠀⠀⠀  ⠀⠀⠀⠀⣿⡿⠟⠁⠀⠀⠀⠀      
 local function destroyIfExists(obj)    if obj then        obj:Destroy()    end    end
 function teleportLocalPlayer(input)    local Player = game.Players.LocalPlayer    local Mouse = Player:GetMouse()    local UIS = game:GetService("UserInputService")    if clickTpEnabled and input.UserInputType == Enum.UserInputType.MouseButton1 and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then       local Char = Player.Character       if Char then          Char:MoveTo(Mouse.Hit.p)       end    end end
 function walkSpeed(speed)    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed      end
