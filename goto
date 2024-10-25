@@ -647,6 +647,12 @@ Tab:AddButton({    Name ="键盘",    Callback = function()    loadstring(game:H
 Tab:AddButton({	   Name = "替身",	Callback = function()      loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrillexMe/SkrillexLoader/main/SkrillexLoadMain')))()    end})
 Tab:AddButton({	   Name = "爬墙",	Callback = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/refs/heads/main/FE%20Walk%20On%20Walls%20Script%20(R6%2615).txt"))()    end}) 
 local Tab = Window:MakeTab({    Name = "通用2",    Icon = "rbxassetid://18923878915",    PremiumOnly = false})
+Tab:AddButton({	   Name = "把玩家传送到高空",	Callback = function()    local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local rootPart = character:WaitForChild("HumanoidRootPart")
+local function teleportAndFall()    rootPart.CFrame = rootPart.CFrame + Vector3.new(0, 800, 0)
+local bodyVelocity = Instance.new("BodyVelocity")    bodyVelocity.Velocity = Vector3.new(0, -200, 0)    bodyVelocity.MaxForce = Vector3.new(0, math.huge, 0)   bodyVelocity.Parent = rootPart        wait(5)    bodyVelocity:Destroy()end        teleportAndFall() end})
 Tab:AddButton({	   Name = "xgo制作幽灵状态 可能会掉血",	Callback = function()     local offset = 1100 
 local LocalPlayer = game.Players.LocalPlayer
 local Backpack = LocalPlayer.Backpack
