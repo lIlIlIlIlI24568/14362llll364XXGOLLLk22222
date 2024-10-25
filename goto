@@ -1145,7 +1145,7 @@ Tab:AddButton({    Name ="黑洞 汉化",    Callback = function()     loadstrin
 Tab:AddButton({    Name ="黑洞 0.4",    Callback = function()      loadstring(game:HttpGet('https://gist.githubusercontent.com/AxolotlBmgo/8888080921c2b426a32dd9ff587baff1/raw/d45e03afed3c1716f36523bbf6dd741d3d2aad00/gistfile1.txt'))()    end})
 Tab:AddButton({    Name ="黑洞 1.5",    Callback = function()      loadstring(game:HttpGet('https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E9%BB%91%E6%B4%9E'))()  
 Tab:AddButton({    Name ="循环V2",  Callback = function()      loadstring(game:HttpGet("https://raw.githubusercontent.com/BOOSBS/666/refs/heads/main/656"))()  end})
-Tab:AddButton({    Name ="循环v3",    Callback = function()    loadstring(game:HttpGet("https://pastefy.app/vaXK1Kgy/raw"))()    end})      end})
+Tab:AddButton({    Name ="循环v3",    Callback = function()    loadstring(game:HttpGet("https://pastefy.app/vaXK1Kgy/raw"))()    end})     
 Tab:AddButton({    Name = "黑洞E键控制", Callback = function()  local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
 local Folder = Instance.new("Folder", game:GetService("Workspace"))
 local Part = Instance.new("Part", Folder)
