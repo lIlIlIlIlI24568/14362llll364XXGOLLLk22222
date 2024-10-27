@@ -555,27 +555,7 @@ local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="goto制作小宇飞1.
 local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="甩人通用",    ["Content"] ="甩飞游戏内的所有人",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E7%94%A9%E4%BA%BA%E9%80%9A%E7%94%A8"))()    end})
 local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="锁定甩飞，不过你也会死",    ["Content"] ="锁定甩飞，可以搜索玩家名称进行甩飞",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/KAWAII-FREAKY-FLING/main/kawaii_freaky_fling.lua"))()    end})
 local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="xgo 锁定甩飞",     ["Content"] ="锁定甩飞，可以搜索玩家名称进行甩飞",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo%20%E9%94%81%E5%AE%9A%E7%94%A9%E9%A3%9E.lua"))()    end})
-local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="反挂机",     ["Content"] ="防止20分钟后强制掉线",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()  print('Hello World!')
-local UserInputService = game:GetService("UserInputService")
-local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
-local Folder = Instance.new("Folder", game:GetService("Workspace"))
-local Part = Instance.new("Part", Folder)   Part.Anchored = true     Part.CanCollide = false   Part.Transparency = 1
-local Attachment1 = Instance.new("Attachment", Part)
-local Updated = Mouse.Hit + Vector3.new(0, 5, 0)
-local ForceStrength = 1000
-local function TeleportPart(v)   if v:IsA("Part") and v.Anchored == false and v.Parent ~= game:GetService("Players").LocalPlayer.Character then        Mouse.TargetFilter = v        for _, x in next, v:GetChildren() do           if x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or x:IsA("BodyThrust") or x:IsA("BodyVelocity") or x:IsA("RocketPropulsion") then                x:Destroy()            end        end        if v:FindFirstChild("Attachment") then           v:FindFirstChild("Attachment"):Destroy()        end        v.CanCollide = false 
-local Torque = Instance.new("BodyAngularVelocity", v)       Torque.AngularVelocity = Vector3.new(0, math.rad(ForceStrength), 0) Torque.MaxTorque = Vector3.new(10000, 10000, 10000) -- 限制最大扭矩以防止散架
-local AlignPosition = Instance.new("AlignPosition", v)
-local Attachment2 = Instance.new("Attachment", v)
-AlignPosition.MaxForce = 50000 -- 限制最大力以防止崩溃
-AlignPosition.MaxVelocity = 50 -- 限制最大速度以保持稳定
-AlignPosition.Responsiveness = 50
-AlignPosition.Attachment0 = Attachment2
-AlignPosition.Attachment1 = Attachment1    end      end
-local function TeleportAllParts()    for _, v in next, game:GetService("Workspace"):GetDescendants() do        if v:IsA("Part") and v.Parent ~= game:GetService("Players").LocalPlayer.Character then            TeleportPart(v)        end    end     end
-TeleportAllParts()    game:GetService("Workspace").DescendantAdded:Connect(function(v)    if v:IsA("Part") and v.Parent ~= game:GetService("Players").LocalPlayer.Character then       TeleportPart(v)    end     end)
-UserInputService.InputBegan:Connect(function(Key, Chat)  if Key.KeyCode == Enum.KeyCode.E and not Chat then        Updated = Mouse.Hit + Vector3.new(0, 5, 0)   end     end)
-spawn(function()    while game:GetService("RunService").RenderStepped:Wait() do        Attachment1.WorldCFrame = Updated   end      end)  loadstring(game:HttpGet(('https://raw.githubusercontent.com/SAZXHUB/Control-update/main/README.md'),true))()   end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="反挂机",     ["Content"] ="防止20分钟后强制掉线",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()   loadstring(game:HttpGet("https://pastebin.com/raw/9fFu43FF"))()   end})
 local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="F3X",     ["Content"] ="改变局内工具",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()     loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()    end})
 local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="工具包（三个经典工具）",     ["Content"] ="三个工具经典",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	  	    end})
 local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="工具挂",     ["Content"] ="工具菜单",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/StandAwekening.lua"))()    end})
@@ -584,6 +564,202 @@ local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="xgo键盘",     ["Con
 local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="键盘",     ["Content"] ="键盘",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()    end})
 local Button = xgo4Tab:MakeButton("Button", {	["Title"]  = "替身",	 ["Content"] ="可以创造分身",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()      loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrillexMe/SkrillexLoader/main/SkrillexLoadMain')))()    end})
 local Button = xgo4Tab:MakeButton("Button", {	["Title"]  = "爬墙",	 ["Content"] ="人物爬墙",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/refs/heads/main/FE%20Walk%20On%20Walls%20Script%20(R6%2615).txt"))()    end}) 
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  = "把玩家传送到高空",	 ["Content"] ="把玩家传送到高空进行自由落体",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local rootPart = character:WaitForChild("HumanoidRootPart")
+local function teleportAndFall()    rootPart.CFrame = rootPart.CFrame + Vector3.new(0, 800, 0)
+local bodyVelocity = Instance.new("BodyVelocity")    bodyVelocity.Velocity = Vector3.new(0, -200, 0)    bodyVelocity.MaxForce = Vector3.new(0, math.huge, 0)   bodyVelocity.Parent = rootPart        wait(5)    bodyVelocity:Destroy()end        teleportAndFall() end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  = "xgo制作幽灵状态 可能会掉血",	 ["Content"] ="幽灵状态进入后，别人不可见",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    local offset = 1100 
+local LocalPlayer = game.Players.LocalPlayer
+local Backpack = LocalPlayer.Backpack
+local Character = LocalPlayer.Character
+local invisible = false
+local grips = {}
+local heldTool
+local gripChanged
+local handle
+local weld       function setDisplayDistance(distance)   for _,player in pairs(game.Players:GetPlayers()) do if player.Character and player.Character:FindFirstChildWhichIsA("Humanoid") then player.Character:FindFirstChildWhichIsA("Humanoid").NameDisplayDistance = distance player.Character:FindFirstChildWhichIsA("Humanoid").HealthDisplayDistance = distance end end     end
+local tool = Instance.new("Tool", Backpack)   tool.Name = "xgo 幽灵状态可能会掉血"   tool.RequiresHandle = false     tool.CanBeDropped = false     tool.Equipped:Connect(function() wait()   
+if not invisible then       invisible = true       tool.Name = "xgo 幽灵状态可能会掉血"
+if handle then handle:Destroy() end if weld then weld:Destroy() end       handle = Instance.new("Part", workspace) handle.Name = "Handle" handle.Transparency = 1 handle.CanCollide = false handle.Size = Vector3.new(2, 1, 1)       weld = Instance.new("Weld", handle) weld.Part0 = handle weld.Part1 = Character.HumanoidRootPart weld.C0 = CFrame.new(0, offset-1.5, 0)       setDisplayDistance(offset+100)      workspace.CurrentCamera.CameraSubject = handle       Character.HumanoidRootPart.CFrame = Character.HumanoidRootPart.CFrame * CFrame.new(0, offset, 0)       Character.Humanoid.HipHeight = offset       Character.Humanoid:ChangeState(11)       for _,child in pairs(Backpack:GetChildren()) do if child:IsA("Tool") and child ~= tool then grips[child] = child.Grip end end   elseif invisible then       invisible = false       tool.Name = "xgo 幽灵状态可能会掉血"       if handle then handle:Destroy() end if weld then weld:Destroy() end       for _,child in pairs(Character:GetChildren()) do if child:IsA("Tool") then child.Parent = Backpack end end       for tool,grip in pairs(grips) do if tool then tool.Grip = grip end end       heldTool = nil       setDisplayDistance(100)       workspace.CurrentCamera.CameraSubject = Character.Humanoid       Character.Animate.Disabled = false       Character.HumanoidRootPart.CFrame = Character.HumanoidRootPart.CFrame * CFrame.new(0, -offset, 0)       Character.Humanoid.HipHeight = 0       Character.Humanoid:ChangeState(11)   end   tool.Parent = Backpack      end)   Character.ChildAdded:Connect(function(child) wait()
+if invisible and child:IsA("Tool") and child ~= heldTool and child ~= tool then       heldTool = child
+local lastGrip = heldTool.Grip
+if not grips[heldTool] then grips[heldTool] = lastGrip end       for _,track in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do track:Stop() end       Character.Animate.Disabled = true       heldTool.Grip = heldTool.Grip*(CFrame.new(0, offset-1.5, 1.5) * CFrame.Angles(math.rad(-90), 0, 0))       heldTool.Parent = Backpack       heldTool.Parent = Character
+if gripChanged then gripChanged:Disconnect() end      gripChanged = heldTool:GetPropertyChangedSignal("Grip"):Connect(function() wait()
+if not invisible then gripChanged:Disconnect() end
+if heldTool.Grip ~= lastGrip then               lastGrip = heldTool.Grip*(CFrame.new(0, offset-1.5, 1.5) * CFrame.Angles(math.rad(-90), 0, 0))               heldTool.Grip = lastGrip               heldTool.Parent = Backpack               heldTool.Parent = Character           end       end)   end     end)  end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  ="隐身（亲测有效）",	 ["Content"] ="隐身进入隐身玩家不可见",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()      loadstring(game:HttpGet("https://pastebin.com/raw/3Rnd9rHf"))()      end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  = "锁定视角人物可移动",	 ["Content"] ="将视角锁定",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://pastebin.com/raw/6eVUiUnv"))()       end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  = "玩家控制",	 ["Content"] ="可搭配所有射击游戏",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6"))()    end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  = "小go超级无敌旋转",	 ["Content"] ="无敌旋转",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E5%88%9D%E4%BB%A3%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()      end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  = "小go超级无敌旋转2.0",	 ["Content"] ="无敌旋转",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%94%A9%E9%A3%9E"))()    end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  = "一键脱衣（衬衫之类）",	 ["Content"] ="将衬衫之类的衣服脱下",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()        local player = game.Players.LocalPlayer           local character = player.Character or player.CharacterAdded:Wait()       local function removeClothes()    for _, item in pairs(character:GetChildren()) do        if item:IsA("Shirt") or item:IsA("Pants") then          item:Destroy()        end    end    end     removeClothes()	end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  = "xgo一键脱衣2.0",	 ["Content"] ="将除衬衫以外，衣服脱下，R6有效果",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()   local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};coroutine.resume(coroutine.create(function()	settings().Physics.AllowSleep = false;	game.RunService.RenderStepped:Connect(function()		for i, v in pairs(game.Players:GetPlayers()) do			if v ~= plr then				v.MaximumSimulationRadius = 0.1;				v.SimulationRadius = 0;   else				v.MaximumSimulationRadius = math.pow(math.huge, math.huge);				v.SimulationRadius = math.pow(math.huge, 2);			end		end	end)    end))   function ftp(str)
+local pt = {};    if str ~= 'me' and str ~= 'random' then        for i, v in pairs(game.Players:GetPlayers()) do           if v.Name:lower():find(str:lower()) then                table.insert(pt, v);            end        end    elseif str == 'me' then        table.insert(pt, plr);	elseif str == 'random' then		table.insert(pt, game.Players:GetPlayers()[math.random(1, #game.Players:GetPlayers())]);    end    return pt;  end      for _, v in pairs(hum:GetAccessories()) do
+local b = v.Handle;	b.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0, 0, 0);	b.CanCollide = false;	b:BreakJoints();	for _, k in pairs(v:GetChildren()) do		if not k:IsA'SpecialMesh' and not k:IsA'Part' then			k:Destroy();		end	end
+local still = Instance.new('BodyAngularVelocity', b);	still.MaxTorque = Vector3.new(math.huge, math.huge, math.huge);	still.AngularVelocity = Vector3.new(0, 0, 0);
+local align = Instance.new('AlignPosition', b);	align.MaxForce = 1000000;	align.MaxVelocity = math.huge;	align.RigidityEnabled = false;	align.ApplyAtCenterOfMass = true;	align.Responsiveness = 200;
+local a0 = Instance.new('Attachment', b);
+local a1 = Instance.new('Attachment', chr.Head);	align.Attachment0 = a0;	align.Attachment1 = a1;	table.insert(mov, a1);	table.insert(mov2, still);  end
+local par = {};    for _, v in pairs(mov) do
+local parr = Instance.new('Part', workspace);	parr.Anchored = true;	parr.Size = Vector3.new(1, 1, 1);	parr.Transparency = 1;	parr.CanCollide = false;	table.insert(par, parr);  end
+local rotx = 0;
+local rotz = math.pi / 2;
+local height = 0;
+local heighti = 1;
+local offset = 10;
+local speed = 0.5;
+local mode = 4;
+local angular = Vector3.new(0, 0, 0);
+local l = 1;  game['Run Service'].RenderStepped:Connect(function()	rotx = rotx + speed / 100;	rotz = rotz + speed / 100;	l = (l >= 360 and 1 or l + speed);
+for i, v in pairs(par) do		v.CFrame = CFrame.new(chr.HumanoidRootPart.Position) * CFrame.fromEulerAnglesXYZ(0, math.rad(l + (360 / #par) * i + speed), 0) * CFrame.new(offset, 0, 0);	end	if heighti == 1 then		height = height + speed / 100;	elseif heighti == 2 then		height = height - speed / 100;	end	if height > 2 then		heighti = 2;	end	if height < -1 then		heighti = 1;	end	if mode == 1 then
+for _, v in pairs(mov) do			v.Position = Vector3.new(math.sin(rotx) * offset, 0, math.sin(rotz) * offset);		end	elseif mode == 2 then
+for _, v in pairs(mov) do			v.Position = Vector3.new(offset, height, offset);		end	elseif mode == 3 then
+for _, v in pairs(mov) do			v.Position = Vector3.new(math.sin(rotx) * offset, height, math.sin(rotz) * offset);		end	elseif mode == 4 then
+for i, v in pairs(mov) do			v.Position = Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Z);		end	elseif mode == 5 then
+for i, v in pairs(mov) do			v.Position = Vector3.new((math.sin(rotx)) * offset, height, (math.cos(rotz) - i) * offset);		end	elseif mode == 6 then
+for i, v in pairs(mov) do			v.Position = Vector3.new((math.sin(rotx)) * offset, height, (math.tan(rotz) - i) * offset);		end	elseif mode == 7 then
+for i, v in pairs(mov) do			v.Position = Vector3.new(math.cos(rotx * i) * offset, 0, math.cos(rotz * i) * offset);		end	elseif mode == 8 then
+for i, v in pairs(mov) do			v.Position = Vector3.new(math.sin(rotx) * i * offset, 0, math.sin(rotz) * i * offset);		end	elseif mode == 9 then		pcall(function()
+local so = nil;			for k, b in pairs(chr:GetChildren()) do				if b:IsA'Tool' then					for h, j in pairs(b:GetDescendants()) do						if j:IsA'Sound' then							so = j;						end					end				end			end			if so ~= nil then				offset = so.PlaybackLoudness / 35;				speed = so.PlaybackLoudness / 500;				angular = Vector3.new(0, so.PlaybackLoudness / 75, 0);			end		end)
+for i, v in pairs(mov) do			v.Position = Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Z);		end	elseif mode == 10 then		offset = height * 15;
+for i, v in pairs(mov) do			v.Position = Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Z);		end	elseif mode == 11 then		
+for i, v in pairs(mov) do			v.Position = Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(plr:GetMouse().Hit.p)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(plr:GetMouse().Hit.p)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(plr:GetMouse().Hit.p)).Z) + Vector3.new(chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).X, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Y, chr.HumanoidRootPart.CFrame:ToObjectSpace(CFrame.new(par[i].Position)).Z);		end	end
+for _, v in pairs(mov2) do		v.AngularVelocity = angular;	end     end)   game.Players.LocalPlayer.Chatted:Connect(function(c)	if c:split(' ')[1] == '.orbit' then
+for _, v in pairs(mov) do			chr = ftp(c:split(' ')[2])[1].Character;			v.Parent = ftp(c:split(' ')[2])[1].Character.HumanoidRootPart;		end	end	if c:split(' ')[1] == '.speed' then		speed = tonumber(c:split(' ')[2]);	end	if c:split(' ')[1] == '.mode' then		mode = tonumber(c:split(' ')[2]);	end	if c:split(' ')[1] == '.offset' then		offset = tonumber(c:split(' ')[2]);	end	if c:split(' ')[1] == '.angular' then		angular = Vector3.new(tonumber(c:split(' ')[2]), tonumber(c:split(' ')[3]), tonumber(c:split(' ')[4]));	end     end)
+for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do    if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then     game:GetService("RunService").Heartbeat:connect(function()    v.Velocity = Vector3.new(-30,0,0)    end)    end    endgame:GetService("StarterGui"):SetCore("SendNotification", {         Title = "xgo 一键脱衣2.0";        Text = "警视觉效果";       Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})    Duration = 16;   end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  ="鼠标（手机非常不建议用）",	 ["Content"] ="鼠标应用脚本错误时使用",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()        loadstring(game:HttpGet(('https://pastefy.ga/V75mqzaz/raw'),true))()	end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  ="锁定视角 摄像机",     ["Content"] ="可以将视角锁定人物可移动",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E9%94%81%E5%AE%9A%E8%A7%86%E8%A7%92"))()  end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  ="小go 在外网找的几个道具",     ["Content"] ="外网的几个道具",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()      loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/b04e28198c8eeb1408921a1560792152/raw/67739a2bc571093976e6cd7e51fb526dedd75861/tools",true))()  end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  ="聊天绘画图",     ["Content"] ="在聊天上绘画",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/143628lllkaiiiiiwggv.panmn.lua/refs/heads/main/xz"))()  end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  ="死亡笔记",     ["Content"] ="死亡笔记",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/%E6%AD%BB%E4%BA%A1%E7%AC%94%E8%AE%B0"))()  end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  ="娱乐特效",     ["Content"] ="局内改特效",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/xgoizlx/refs/heads/main/ui"))()  end}) 
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  = "漂浮控制器",   ["Content"] ="教程（手机需要键盘）:1. J-飞起来    2. K-回到手中",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function() local options = {	CaptureAtMagnitude = 5,    	EquipToolOnCapture = true,    	ToolFloatBackSpeed = 500,    	ToolFloatBackResponsiveness = 20,    	HotKeys = {		Release = Enum.KeyCode.J,        	Capture = Enum.KeyCode.K	}         }
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+local PLAYER = Players.LocalPlayer
+local CHARACTER = PLAYER.Character or PLAYER.CharacterAdded:Wait()
+local BACKPACK = PLAYER.Backpack
+local HUMANOID_ROOT_PART = CHARACTER:WaitForChild("HumanoidRootPart")
+local vA = {}
+local function FolderToolParts(pA)
+local tvA = Instance.new("Folder")    	tvA.Parent = pA    	for lvA, lvB in next, pA:GetChildren() do        	if lvB:IsA("BasePart") then            		lvB.Parent = tvA        	end  	end		return tvA    end
+local function FindFirstTool()	for lvA, lvB in next, CHARACTER:GetDescendants() do        	if lvB:IsA("Tool") and lvB:FindFirstChildOfClass("Part") then            		return lvB        	end	end		for lvA, lvB in next, BACKPACK:GetDescendants() do        	if lvB:IsA("Tool") and lvB:FindFirstChildOfClass("Part") then            		return lvB        	end    	end    	return nil    end
+local function Release(pA)
+local tvA = FolderToolParts(pA)    	if #tvA:GetChildren() > 0 then        	for lvA, lvB in next, tvA:GetDescendants() do            		if lvB:IsA("BasePart") then                		lvB.CanCollide = true
+local tvB = Instance.new("BodyForce")                		tvB.Force = Vector3.new(0, lvB:GetMass() * workspace.Gravity, 0)                		tvB.Parent = lvB            		end       	end        	tvA.Parent = workspace		        	table.insert(vA, {tvA, pA})	end      end
+local function Capture(pA)	if pA and pA[1] and pA[2] then
+local tvA = pA[1]:GetChildren()        	for lvA, lvB in next, tvA do			lvB.CanCollide = false        	end
+local tvB = Instance.new("Attachment")        	tvB.Parent = tvA[1]
+local tvC = Instance.new("Attachment")        	tvC.Position = Vector3.new(0, 0, -4)        	tvC.Parent = HUMANOID_ROOT_PART
+local tvD = Instance.new("AlignPosition")        	tvD.RigidityEnabled = false        	tvD.Responsiveness = options.ToolFloatBackResponsiveness        	tvD.MaxVelocity = options.ToolFloatBackSpeed        	tvD.MaxForce = options.ToolFloatBackSpeed       	tvD.Attachment0 = tvB        	tvD.Attachment1 = tvC        	tvD.Parent = tvA[1]        	repeat			wait()		until (tvA[1].Position - HUMANOID_ROOT_PART.Position).Magnitude < options.CaptureAtMagnitude        	for lvA, lvB in next, pA[1]:GetChildren() do
+local tvE = lvB:FindFirstChildOfClass("BodyForce")                        		if tvE then                		tvE:Destroy()            		end            		lvB.Parent = pA[2]        	end      	tvB:Destroy()        	tvC:Destroy()       	tvD:Destroy()        	pA[1]:Destroy()       	pA[2].Parent = options.EquipToolOnCapture and CHARACTER or BACKPACK        	return true	end		return false    endUserInputService.InputBegan:Connect(function(pA, pB)	if pB == false and pA.UserInputType == Enum.UserInputType.Keyboard then        	if pA.KeyCode == options.HotKeys.Release then
+local tvA = FindFirstTool()			if tvA then				if tvA.Parent ~= CHARACTER then					tvA.Parent = CHARACTER					wait(0.5)				end				Release(tvA)			end		elseif pA.KeyCode == options.HotKeys.Capture then            		if #vA > 0 and Capture(vA[#vA]) then                		table.remove(vA, #vA)            		end        	end	end    end)settings().Physics.AllowSleep = false        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius", math.huge)  end})
+local Button = xgo5Tab:MakeButton("Button", {	["Title"]  = "道具控制器",   ["Content"] ="教程（手机需要键盘）:","1. Q - 靠近   2. E - 离远   3. Y - 投掷   4. J - 超级投掷   5. U - 使物体自转   6. P - 使物体悬浮在空中   7. X - 走得更远一点   8. L - 使方块变直并锁定在前部",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()   local sandbox = function(var,func)
+local env = getfenv(func)
+local newenv = setmetatable({},{		__index = function(self,k)			if k=="script" then				return var	else		return env[k]			end		end,	})	setfenv(func,newenv)	return func       end     cors = {}
+local _Name = "物体道具控制"
+local uis = game:GetService("UserInputService")
+local _Ins, _CF_new, _VTR_new = Instance.new, CFrame.new, Vector3.new
+mas = _Ins("Model",game:GetService("Lighting"))
+Tool0 = _Ins("Tool")
+Part1 = _Ins("Part")
+Script2 = _Ins("Script")
+LocalScript3 = _Ins("LocalScript")
+Tool0.Name = _Name
+Tool0.Parent = mas
+Tool0.Grip = _CF_new(0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = _VTR_new(0, 0, 1)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = _CF_new(-3.5, 5.30000019, -3.5, 1, 0, 0, 0, -1, 0, 0, 0, -1)
+Part1.Orientation = _VTR_new(0, 180, 180)
+Part1.Position = _VTR_new(-3.5, 5.300000190734863, -3.5)
+Part1.Rotation = _VTR_new(-180, 0, 0)
+Part1.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part1.Transparency = 1
+Part1.Size = _VTR_new(1, 1, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Institutional white")
+Part1.Locked = true
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Institutional white")Script2.Name = "LineConnect" Script2.Parent = Tool0
+local Sound = _Ins("Sound", game.Workspace)Sound.SoundId = "rbxassetid://1092093337"   Sound:Play()   table.insert(cors,sandbox(Script2,function()	wait()
+local check = script.Part2
+local part1 = script.Part1.Value
+local part2 = script.Part2.Value
+local parent = script.Par.Value
+local color = script.Color
+local line = _Ins("Part")	line.TopSurface = 0	line.BottomSurface = 0	line.Reflectance = .5	line.Name = "Laser"	line.Locked = true	line.CanCollide = false	line.Anchored = true	line.formFactor = 0	line.Size = _VTR_new(1,1,1)
+local mesh = _Ins("BlockMesh")	mesh.Parent = line	while true do		if (check.Value==nil) then break end		if (part1==nil or part2==nil or parent==nil) then break end		if (part1.Parent==nil or part2.Parent==nil) then break end		if (parent.Parent==nil) then break end
+local lv = _CF_new(part1.Position,part2.Position)
+local dist = (part1.Position-part2.Position).magnitude		line.Parent = parent		line.BrickColor = color.Value.BrickColor		line.Reflectance = color.Value.Reflectance		line.Transparency = color.Value.Transparency		line.CFrame = _CF_new(part1.Position+lv.lookVector*dist/2)		line.CFrame = _CF_new(line.Position,part2.Position)		mesh.Scale = _VTR_new(.25,.25,dist)		wait()	end	line:remove()	script:remove()   end))
+Script2.Disabled = true
+LocalScript3.Name = "MainScript"
+LocalScript3.Parent = Tool0
+table.insert(cors,sandbox(LocalScript3,function()
+	wait() 
+	tool = script.Parent
+	lineconnect = tool.LineConnect
+	object = nil
+	mousedown = false
+	found = false
+	BP = _Ins("BodyPosition")
+	BP.maxForce = _VTR_new(math.huge*math.huge,math.huge*math.huge,math.huge*math.huge) --pwns everyone elses bodyposition
+	BP.P = BP.P*3
+	dist = nil
+	point = _Ins("Part")
+	point.Locked = true
+	point.Anchored = true
+	point.formFactor = 0
+	point.Shape = 0
+	point.BrickColor = BrickColor.Blue() 
+	point.Size = _VTR_new(1,1,1)
+	point.CanCollide = false
+local mesh = _Ins("SpecialMesh")	mesh.MeshType = "Sphere"	mesh.Scale = _VTR_new(.7,.7,.7)	mesh.Parent = point	handle = tool.Handle	front = tool.Handle	color = tool.Handle	objval = nil
+local hooked = false 
+local hookBP = BP:clone() 	hookBP.maxForce = _VTR_new(30000,30000,30000) 	function LineConnect(part1,part2,parent)
+local p1 = _Ins("ObjectValue")		p1.Value = part1		p1.Name = "Part1"
+local p2 = _Ins("ObjectValue")		p2.Value = part2		p2.Name = "Part2"
+local par = _Ins("ObjectValue")		par.Value = parent		par.Name = "Par"
+local col = _Ins("ObjectValue")		col.Value = color		col.Name = "Color"
+local s = lineconnect:clone()		s.Disabled = false		p1.Parent = s		p2.Parent = s		par.Parent = s		col.Parent = s		s.Parent = workspace		if (part2==object) then			objval = p2		end	end	function onButton1Down(mouse)		if (mousedown==true) then return end		mousedown = true		coroutine.resume(coroutine.create(function()
+local p = point:clone()			p.Parent = tool			LineConnect(front,p,workspace)			while (mousedown==true) do				p.Parent = tool				if (object==nil) then					if (mouse.Target==nil) then
+local lv = _CF_new(front.Position,mouse.Hit.p)						p.CFrame = _CF_new(front.Position+(lv.lookVector*1000))	else     				p.CFrame = _CF_new(mouse.Hit.p)					end	else             		LineConnect(front,object,workspace)					break				end				wait()			end			p:remove()		end))		while (mousedown==true) do			if (mouse.Target~=nil) then
+local t = mouse.Target				if (t.Anchored==false) then					object = t					dist = (object.Position-front.Position).magnitude					break				end			end			wait()		end		while (mousedown==true) do			if (object.Parent==nil) then break end
+local lv = _CF_new(front.Position,mouse.Hit.p)			BP.Parent = object			BP.position = front.Position+lv.lookVector*dist			wait()		end		BP:remove()		object = nil		objval.Value = nil	end	function onKeyDown(key,mouse) 
+local key = key:lower() 
+local yesh = false 
+if (key=="q") then 			if (dist>=5) then 			dist = dist-5 			end 		end
+if (key=="u") then 
+if (dist ~=1) then 
+BX = _Ins("BodyGyro")
+BX.MaxTorque = _VTR_new(math.huge,0,math.huge)
+BX.CFrame = BX.CFrame * CFrame.Angles(0, math.rad(45), 0)
+BX.D = 0
+BX.Parent = object							end 		end 
+if (key=="p") then 			if (dist ~=1) then
+BX = _Ins("BodyVelocity")
+BX.maxForce = _VTR_new(0,math.huge,0)
+BX.velocity = _VTR_new(0,1,0)				--BX.CFrame = BX.CFrame * CFrame.Angles(0, math.rad(45), 0)
+BX.Parent = object			end 		end 
+if key == "l" then 			if (object==nil) then return end 			for _,v in pairs(object:children()) do 				if v.className == "BodyGyro" then 					return nil 				end 		end 
+BG = _Ins("BodyGyro") 
+BG.maxTorque = _VTR_new(math.huge,math.huge,math.huge) 
+BG.cframe = _CF_new(object.CFrame.p) 
+BG.Parent = object 			repeat wait() until(object.CFrame == _CF_new(object.CFrame.p))
+BG.Parent = nil 
+if (object==nil) then return end 			for _,v in pairs(object:children()) do 				if v.className == "BodyGyro" then 					v.Parent = nil 				end 			end 			object.Velocity = _VTR_new(0,0,0) 			object.RotVelocity = _VTR_new(0,0,0) 		end 
+if (key=="y") then 			if (dist ~=100) then 				dist = 100 			end 		end 
+if (key=="j") then 			if (dist~=5000) then 				dist = 5000 			end 		end
+if (key=="e") then			dist = dist+5		end
+if (key=="x") then 			if dist ~= 15 then 				dist = 15 end 		end 	end		function onEquipped(mouse)		keymouse = mouse
+local char = tool.Parent		human = char.Humanoid		human.Changed:connect(function() if (human.Health==0) then mousedown = false BP:remove() point:remove() tool:remove() end end)		mouse.Button1Down:connect(function() onButton1Down(mouse) end)		mouse.KeyDown:connect(function(key) onKeyDown(key,mouse) end)		mouse.Icon = "rbxasset://textures\\GunCursor.png"		if uis.TouchEnabled then			uis.TouchEnded:Connect(function() mousedown = false end)  else     		mouse.Button1Up:connect(function() mousedown = false end)		end	end	tool.Equipped:connect(onEquipped)	tool.Unequipped:connect(function() mousedown = false end) end))      for i,v in pairs(mas:GetChildren()) do	v.Parent = game:GetService("Players").LocalPlayer.Backpack	pcall(function() v:MakeJoints() end)    end     mas:Destroy()     for i,v in pairs(cors) do	spawn(function()		pcall(v)end)     end  end})
 
 
 
