@@ -202,8 +202,8 @@ local xgoTab = WazureGui:MakeTab("关于作者")
 local xgo1Tab = WazureGui:MakeTab("小go音乐区")
 local xgo2Tab = WazureGui:MakeTab("注入器及管理员")
 local xgo3Tab = WazureGui:MakeTab("图像 画质")
-local xgo4Tab = WazureGui:MakeTab("小go音乐区")
-local xgo5Tab = WazureGui:MakeTab("小go音乐区")
+local xgo4Tab = WazureGui:MakeTab("通用")
+local xgo5Tab = WazureGui:MakeTab("通用2")
 local xgo6Tab = WazureGui:MakeTab("小go音乐区")
 local xgo7Tab = WazureGui:MakeTab("小go音乐区")
 local xgo8Tab = WazureGui:MakeTab("小go音乐区")
@@ -538,7 +538,52 @@ s.Enabled = true
 s.Intensity = 0.01
 s.Spread = 0.146
 print("小go  RTX图形加载完毕!")    end})
-
+local Seperator = xgo4Tab:MakeSeperator("全游戏通用工具")
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="对玩家进行观战",     ["Content"] ="可以观战游戏内的玩家",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/143628llllffaaaYXZS.123/refs/heads/main/%E8%A7%82%E6%88%98%E7%8E%A9%E5%AE%B6"))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="玩家进入通知",     ["Content"] ="有新玩家进入后通知",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="小goFe合集",     ["Content"] ="Fe所有合集",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/Fe"))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  = "无限跳",    ["Content"] ="可以实现无限连跳",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()      loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/lllllllllllllllll114514xxxxg/refs/heads/main/%E6%97%A0%E9%99%90%E8%B7%B3", true))()	end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  = "踏空行走",	 ["Content"] ="可以在空中行走",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()	end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="小go 全图传送 ",     ["Content"] ="地图点到哪传送哪",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "小go全图内任意传送" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpack    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="铁拳（能打飞人）",     ["Content"] ="可以用铁拳来教训人",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_rf6iQURzu1fqrytcnLBAvW34C9N55kS9g9G3CKz086rC47M6632sEd4ZZYB0AYgV.lua.txt'),true))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="iw指令",     ["Content"] ="无限收益",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()  loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="动作🎊",     ["Content"] ="可以更改你的动作，别人可见",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://yarhm.goteamst.com/scr?channel=afem"))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="动作 R6",     ["Content"] =" R6动作更改",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/ocfi/Animations-obfus/refs/heads/main/obfus"))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="goto飞车",     ["Content"] ="可以使车子飞行",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E9%A3%9E%E8%BD%A6"))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="goto制作小宇飞",     ["Content"] ="飞行",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E4%B9%8B%E5%89%8D%E7%9A%84%E9%A3%9E%E8%A1%8C"))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="goto制作小宇飞1.5百倍飞行",     ["Content"] ="百倍飞行",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E5%B0%8F%E5%AE%87%E9%A3%9E"))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="甩人通用",    ["Content"] ="甩飞游戏内的所有人",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E7%94%A9%E4%BA%BA%E9%80%9A%E7%94%A8"))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="锁定甩飞，不过你也会死",    ["Content"] ="锁定甩飞，可以搜索玩家名称进行甩飞",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/KAWAII-FREAKY-FLING/main/kawaii_freaky_fling.lua"))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="xgo 锁定甩飞",     ["Content"] ="锁定甩飞，可以搜索玩家名称进行甩飞",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo%20%E9%94%81%E5%AE%9A%E7%94%A9%E9%A3%9E.lua"))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="反挂机",     ["Content"] ="防止20分钟后强制掉线",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()  print('Hello World!')
+local UserInputService = game:GetService("UserInputService")
+local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local Folder = Instance.new("Folder", game:GetService("Workspace"))
+local Part = Instance.new("Part", Folder)   Part.Anchored = true     Part.CanCollide = false   Part.Transparency = 1
+local Attachment1 = Instance.new("Attachment", Part)
+local Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+local ForceStrength = 1000
+local function TeleportPart(v)   if v:IsA("Part") and v.Anchored == false and v.Parent ~= game:GetService("Players").LocalPlayer.Character then        Mouse.TargetFilter = v        for _, x in next, v:GetChildren() do           if x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or x:IsA("BodyThrust") or x:IsA("BodyVelocity") or x:IsA("RocketPropulsion") then                x:Destroy()            end        end        if v:FindFirstChild("Attachment") then           v:FindFirstChild("Attachment"):Destroy()        end        v.CanCollide = false 
+local Torque = Instance.new("BodyAngularVelocity", v)       Torque.AngularVelocity = Vector3.new(0, math.rad(ForceStrength), 0) Torque.MaxTorque = Vector3.new(10000, 10000, 10000) -- 限制最大扭矩以防止散架
+local AlignPosition = Instance.new("AlignPosition", v)
+local Attachment2 = Instance.new("Attachment", v)
+AlignPosition.MaxForce = 50000 -- 限制最大力以防止崩溃
+AlignPosition.MaxVelocity = 50 -- 限制最大速度以保持稳定
+AlignPosition.Responsiveness = 50
+AlignPosition.Attachment0 = Attachment2
+AlignPosition.Attachment1 = Attachment1    end      end
+local function TeleportAllParts()    for _, v in next, game:GetService("Workspace"):GetDescendants() do        if v:IsA("Part") and v.Parent ~= game:GetService("Players").LocalPlayer.Character then            TeleportPart(v)        end    end     end
+TeleportAllParts()    game:GetService("Workspace").DescendantAdded:Connect(function(v)    if v:IsA("Part") and v.Parent ~= game:GetService("Players").LocalPlayer.Character then       TeleportPart(v)    end     end)
+UserInputService.InputBegan:Connect(function(Key, Chat)  if Key.KeyCode == Enum.KeyCode.E and not Chat then        Updated = Mouse.Hit + Vector3.new(0, 5, 0)   end     end)
+spawn(function()    while game:GetService("RunService").RenderStepped:Wait() do        Attachment1.WorldCFrame = Updated   end      end)  loadstring(game:HttpGet(('https://raw.githubusercontent.com/SAZXHUB/Control-update/main/README.md'),true))()   end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="F3X",     ["Content"] ="改变局内工具",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()     loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="工具包（三个经典工具）",     ["Content"] ="三个工具经典",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	  	    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="工具挂",     ["Content"] ="工具菜单",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/StandAwekening.lua"))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="建筑工具",	 ["Content"] ="可复制建筑来进行建造",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()		Hammer = Instance.new("HopperBin")		Hammer.Name = "锤子"		Hammer.BinType = 4		Hammer.Parent = game.Players.LocalPlayer.Backpack		Clone = Instance.new("HopperBin")		Clone.Name = "克隆"		Clone.BinType = 3		Clone.Parent = game.Players.LocalPlayer.Backpack		Grab = Instance.new("HopperBin")		Grab.Name = "抓取"		Grab.BinType = 2	end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="xgo键盘",     ["Content"] ="键盘",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/GTAFAW/goto/refs/heads/main/xgo%E5%BB%BA%E7%9B%98.lua", true))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  ="键盘",     ["Content"] ="键盘",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  = "替身",	 ["Content"] ="可以创造分身",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()      loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrillexMe/SkrillexLoader/main/SkrillexLoadMain')))()    end})
+local Button = xgo4Tab:MakeButton("Button", {	["Title"]  = "爬墙",	 ["Content"] ="人物爬墙",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()       loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/refs/heads/main/FE%20Walk%20On%20Walls%20Script%20(R6%2615).txt"))()    end}) 
 
 
 
