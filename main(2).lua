@@ -1,4 +1,4 @@
-local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamkhnah/LinoriaUiLibrary/refs/heads/main/source.lua")
+local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamkhnah/LuxuryFluent/refs/heads/main/LuxuryHubFluentFakeNotLegitnhungfarmmupsbantinh.lua")
 Fluent:Notify({
 	Title = "Script loading.",
 	Content = "This might take a bit...",
